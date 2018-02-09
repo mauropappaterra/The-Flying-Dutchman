@@ -2,13 +2,17 @@
    style.css
    Created by Mauro J. Pappaterra on 09 of February 2018.
 */
-
+.content {
+    width: 100%;
+    height: 500px;
+    background-color: yellow;
+}
 
 
 /* BUTTONS */
 .big_button {
     margin: 5%;
-    padding: 5%;
+    padding: 3%;
 
     text-align: center;
     font-size: 40px;
