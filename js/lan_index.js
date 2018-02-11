@@ -2,8 +2,6 @@
  *  language.js
  *  Created by Mauro J. Pappaterra on 11 of February 2018.
  */
-index = 0
-
 var welcome = ["Welcome to The Flying Dutchman!",
                "Välkommen til Flygande Holländaren!",
                "Benvenuti al'Olandese Volante!",
