@@ -1,4 +1,4 @@
-<h1>Welcome to the bar</h1>
+<h1>Welcome to The Flying Dutchman!</h1>
 
 <p>This is our submission for User Interface I, at Uppsala University</p>
 
