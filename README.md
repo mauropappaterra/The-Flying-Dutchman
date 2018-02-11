@@ -1,6 +1,6 @@
 <h1>Welcome to The Flying Dutchman!</h1>
 
-<p>This is our submission for User Interface I, at Uppsala University</p>
+<p>This is our submission for User Interface I</p>
 
 <h2>Group Members are:</h2>
 <ul>
