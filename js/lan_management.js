@@ -3,7 +3,7 @@
  *  Created by Mauro J. Pappaterra on 11 of February 2018.
  */
 var title = ["Management View",
-    "Arbetledare Utsikt",
+    "Arbetledarsidan",
     "Vista Gestione",
     "Vista Administración"]
 
