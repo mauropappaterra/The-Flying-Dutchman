@@ -11,17 +11,17 @@ var welcome = ["Welcome to The Flying Dutchman!",
 var customer = ["Customer login",
                 "Logga in som gäst",
                 "Accesso avventore",
-                "Logueo cliente"]
+                "Acceso cliente"]
 
 var bartender = ["Bartender login",
                 "Logga in som bartender",
                 "Accesso barista",
-                "Logueo barista"]
+                "Acceso barista"]
 
 var management = ["Management login",
                   "Logga in som arbetledare",
                   "Accesso gestione",
-                  "Logueo administración"]
+                  "Acceso administración"]
 
 function translate (index) {
     $("#page_title").text(page_title[index]);
