@@ -2,6 +2,7 @@
  *  language.js
  *  Created by Mauro J. Pappaterra on 11 of February 2018.
  */
+/* INDEX PAGE TEXTS */
 var welcome = ["Welcome to The Flying Dutchman!",
                "Välkommen til Flygande Holländaren!",
                "Benvenuti al'Olandese Volante!",
@@ -23,10 +24,9 @@ var management = ["Management login",
                   "Logueo administración"]
 
 function translate (index) {
+    $("#page_title").text(page_title[index]);
     $("#welcome").text(welcome[index]);
     $("#customer").text(customer[index]);
     $("#bartender").text(bartender[index]);
     $("#management").text(management[index]);
 }
-
-
