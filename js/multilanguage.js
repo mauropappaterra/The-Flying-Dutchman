@@ -14,21 +14,28 @@ var logout = ["Log Out",
     "Desloguear"]
 
 /* LANGUAGE SELECTION CONTROL */
+
+window.onload = translate(localStorage.getItem("index"));
+
 $(document).ready(function () {
 
     $("#eng").click(function(){
         translate(0)
+        localStorage.setItem("index",0);
     })
 
     $("#sve").click(function(){
         translate(1)
+        localStorage.setItem("index",1);
     })
 
     $("#ita").click(function(){
         translate(2)
+        localStorage.setItem("index",2);
     })
 
     $("#esp").click(function(){
         translate(3)
+        localStorage.setItem("index",3);
     })
 })
