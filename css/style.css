@@ -8,6 +8,30 @@
     background-color: yellow;
 }
 
+.menu {
+    width: 70%;
+    height: 500px;
+    background-color: yellow;
+    float: left;
+    overflow: auto;
+}
+
+.selection {
+    width: 30%;
+    height: 500px;
+    background-color: lightseagreen;
+    float: right;
+}
+
+.contents {
+    height: 1500px;
+
+}
+
+.item {
+
+}
+
 /* BUTTONS */
 .big_button {
     margin: 5%;

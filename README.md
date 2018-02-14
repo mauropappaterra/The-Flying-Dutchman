@@ -25,6 +25,8 @@
 </ul>
 
 <h3>Files:</h3>
+
+<h4>General:</h4>
 <ul>
     <li><b>index.html:</b> Log in screen</li>
     <li><b>bartender.html:</b> Bartender view</li>
@@ -32,7 +34,31 @@
     <li><b>management.html:</b> Management view</li>
 </ul>
 
-<h3>Other:</h3>
+<h4>css:</h4>
+<ul>
+    <li><b>style.css:</b> single style sheet for all pages</li>
+</ul>
+
+<h4>js:</h4>
+<ul>
+    <li><b>multilanguage.js:</b> Script for multilanguage functionality</li>
+    <li><b>lang_index.js:</b> Translations for log in screen</li>
+    <li><b>lang_bartender.js:</b> Translations for bartender view</li>
+    <li><b>lang_customer.js:</b> Translations for customer view</li>
+    <li><b>lang_management.js:</b> Translations for management view</li>
+</ul>
+
+<h4>img:</h4>
+<ul>
+    <li><b>favicon.png:</b> Icon for browser</li>
+    <li><b>esp.png:</b> Flag Spain</li>
+    <li><b>eng.png:</b> Flag Union Jack</li>
+    <li><b>sve.png:</b> Flag Sweden</li>
+    <li><b>ita.svg:</b> Flag Italy</li>
+</ul>
+
+
+<h4>Other:</h4>
 <ul>
     <li><b>.gitignore:</b> Use this file to avoid pushing redundant files, add any IDE configuration files you might use </li>
     <li><b>README.md:</b> The contents of this very file.</li>
