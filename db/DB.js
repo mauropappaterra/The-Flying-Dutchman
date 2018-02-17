@@ -611,6 +611,7 @@ var DB_STOCK = [
         "sale_price_per_liter": null,
         "sale_price_per_unit": "700.00",
 
+        "img_src": "img/xxxx.jpg",
         "in_stock": 0
     },
     {
@@ -629,6 +630,7 @@ var DB_STOCK = [
         "sale_price_per_liter": null,
         "sale_price_per_unit": "700.00",
 
+        "img_src": "img/xxxx.jpg",
         "in_stock": 0
     },
     {
@@ -647,6 +649,7 @@ var DB_STOCK = [
         "sale_price_per_liter": null,
         "sale_price_per_unit": "700.00",
 
+        "img_src": "img/xxxx.jpg",
         "in_stock": 0
     }
 ]
