@@ -40,6 +40,12 @@
     <li><b>style.css:</b> single style sheet for all pages</li>
 </ul>
 
+<h4>db:</h4>
+<ul>
+    <li><b>DB.js:</b> The Flying Dutchman's own dummy database</li>
+    <li><b>DB_SYSTEMBOLAGET.js:</b> Systembolaget's dummy database</li>
+</ul>
+
 <h4>js:</h4>
 <ul>
     <li><b>multilanguage.js:</b> Script for multilanguage functionality</li>
@@ -56,6 +62,8 @@
     <li><b>eng.png:</b> Flag Union Jack</li>
     <li><b>sve.png:</b> Flag Sweden</li>
     <li><b>ita.svg:</b> Flag Italy</li>
+    <li><b>pirate.jpg:</b> Pirates Flag</li>
+
 </ul>
 
 
