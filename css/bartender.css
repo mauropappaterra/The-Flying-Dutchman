@@ -1,0 +1,132 @@
+/* Bar 
+   bartender.css
+   Created by Mauro J. Pappaterra on 18 of February 2018.
+*/
+
+/*HEADER*/
+
+.title {
+    background-color: darkgrey;
+    float: left;
+    width: 100%;
+}
+
+/*MENU COLUMN*/
+.menu {
+    width: 70%;
+    height: 67px;
+    background-color: greenyellow;
+    float: left;
+}
+
+.order_list {
+    width: 70%;
+    height: 500px;
+    background-color: yellow;
+    float: left;
+    overflow: auto;
+}
+
+.order {
+    background-color: white;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    margin: 2%;
+
+    border-style: dashed;
+    border-color: grey;
+    border-width: medium;
+
+    width: 90%;
+    height: 60px;
+
+    overflow: hidden;
+}
+
+.order h2 {
+    float: left;
+}
+
+.order a {
+    margin-top: 20px;
+    float: right;
+    background-color: #70ebff;
+    padding: 2px;
+}
+
+
+/*ORDER COLUMN*/
+.selection_header {
+    width: 30%;
+    height: 30%;
+    float: right;
+    background-color: #07ffc2;
+}
+
+.selection {
+    width: 30%;
+    height: 450px;
+    background-color: lightseagreen;
+    float: right;
+    overflow: auto;
+}
+
+.order_details {
+    background-color: white;
+
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    margin: 2%;
+    margin-bottom: 10%;
+
+    border-style: dashed;
+    border-color: grey;
+    border-width: thin;
+
+    width: 92%;
+    clear: both;
+}
+
+.order_details .price {
+    float: right;
+}
+
+.order_details img {
+    height: 80px;
+    float: left;
+}
+
+.checkout {
+    width: 30%;
+    height: 50px;
+    background-color: #ffaf40;
+    float: right;
+}
+
+.checkout h2 {
+    float: right;
+}
+
+/* FOOTER*/
+footer {
+    background-color: #a4a4a4;
+}
+
+.logout {
+    float: left;
+    clear: none;
+}
+
+.languages_menu {
+    float: left;
+    width: 50%;
+    clear: none;
+}
+
+footer .small_button{
+    float: left;
+}
+
+#pay {
+    float: right;
+}

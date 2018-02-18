@@ -17,31 +17,110 @@
 
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bartender.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
 </head>
 <body>
-    <!-- Your code starts here -->
-    <h1 id="title">Bartender View</h1>
-    <hr>
+<!-- Your code starts here -->
 
-    <div class="content">
-        something something
+<header>
+
+    <div class="title">
+        <h1 id="title">Bartender View</h1>
     </div>
 
-    <a href="index.html"><div class="small_button red" id="logout">Log Out</div></a>
+    <hr>
+</header>
+
+
+
+<div class="menu">
+    <h2>Orders Queue</h2>
+</div>
+
+<div class="selection_header">
+    <h2>Order Details</h2>
+</div>
+
+<div class="order_list">
+
+    <div class="order">
+        <h2>ORDER #1 |       Customer: John Jansson  |                     Total: SEK 235:-</h2>
+        <a>Open</a>
+    </div>
+
+    <div class="order">
+        <h2>ORDER #2 |       Customer: Emma Lundviqst  |                     Total: SEK 543:-</h2>
+        <a>Open</a>
+    </div>
+
+    <div class="order">
+        <h2>ORDER #3 |       Customer: Bjorn Johansson  |                     Total: SEK 2630:-</h2>
+        <a>Open</a>
+    </div>
+
+    <div class="order">
+        <h2>ORDER #4 |       Customer: Emil Hammerin  |                     Total: SEK 55:-</h2>
+        <a>Open</a>
+    </div>
+
+
+</div>
+
+<div class="selection">
+
+    <div class="order_details">
+        <h4 class="price">SEK 70:-</h4>
+        <img src="img/drinks/brooklyn.png">
+        <h4>Brooklyn (x2)</h4>
+    </div>
+
+    <div class="order_details">
+        <h4 class="price">SEK 105:-</h4>
+        <img src="img/drinks/brooklyn_orange.png">
+        <h4>Brooklyn IPA (x3)</h4>
+    </div>
+
+    <div class="order_details">
+        <h4 class="price">SEK 20:-</h4>
+        <img src="img/drinks/heineken.png">
+        <h4>Heineken (x1)</h4>
+    </div>
+
+    <div class="order_details">
+        <h4 class="price">SEK 200:-</h4>
+        <img src="img/drinks/corona.png">
+        <h4>Corona (x10)</h4>
+    </div>
+
+</div>
+
+<div class="checkout">
+    <h2>TOTAL: SEK 395</h2>
+</div>
+
+<footer>
+    <!-- LOG OUT BUTTON -->
+    <a href="index.html"><div class="small_button red logout" id="logout">Log Out</div></a>
 
     <!-- LANGUAGE MENU -->
-    <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
-    <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
-    <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
-    <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-    <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+    <div class="languages_menu">
+        <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+        <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+        <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
+        <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
+        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+    </div>
 
+    <!-- PAY BUTTON -->
+    <a href=""><div class="small_button blue" id="pay">Mark as Paid</div></a>
 
-    <!-- Your code ends here -->
+</footer>
+
+<!-- Your code ends here -->
 
     <!-- External Scripts -->
 
