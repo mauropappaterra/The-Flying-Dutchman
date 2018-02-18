@@ -6,14 +6,16 @@
 var page_title = ["The Flying Dutchman",
     "Flygande Holländaren",
     "L'Olandese Volante",
-    "El Holandés Volador"]
+    "El Holandés Volador",
+    "Th' Flyin' Dutchman"]
 
 var logout = ["Log Out",
     "Logga Ut",
     "Esci",
-    "Desloguear"]
+    "Desloguear",
+    "Scuttle"]
 
-/* LANGUAGE SELECTION CONTROL */
+/* LANGUAGE SELECTION CONTROL*/
 
 window.onload = translate(localStorage.getItem("index"));
 
@@ -37,5 +39,10 @@ $(document).ready(function () {
     $("#esp").click(function(){
         translate(3)
         localStorage.setItem("index",3);
+    })
+
+    $("#pirate").click(function(){
+        translate(4)
+        localStorage.setItem("index",4);
     })
 })

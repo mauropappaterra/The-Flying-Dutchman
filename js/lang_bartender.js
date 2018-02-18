@@ -6,7 +6,8 @@
 var title = ["Bartender View",
              "Bartendersidan",
              "Vista Barista",
-             "Vista Barista"]
+             "Vista Barista",
+             "Powder Monkeys"]
 
 function translate (index) {
     $("#page_title").text(page_title[index]);

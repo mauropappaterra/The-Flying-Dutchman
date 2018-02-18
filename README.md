@@ -19,6 +19,7 @@
 <ul>
     <li><b>aud:</b> All audio files go here</li>
     <li><b>css:</b> All CSS files go here</li>
+    <li><b>db:</b> All database files go here</li>
     <li><b>img:</b> All image files go here</li>
     <li><b>js:</b> All JavaScript files go here</li>
     <li><b>vid:</b> All video files go here</li>

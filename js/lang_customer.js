@@ -6,7 +6,8 @@
 var title = ["Customer View",
              "Gästsidan",
              "Vista Avventore",
-             "Vista Cliente"]
+             "Vista Cliente",
+             "Buccaneers"]
 
 function translate (index) {
     $("#page_title").text(page_title[index]);

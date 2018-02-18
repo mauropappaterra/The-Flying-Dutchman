@@ -6,7 +6,8 @@
 var title = ["Management View",
     "Arbetledarsidan",
     "Vista Gestione",
-    "Vista Administración"]
+    "Vista Administración",
+    "Kin' o' th' Pirates"]
 
 function translate (index) {
     $("#page_title").text(page_title[index]);
