@@ -1,17 +1,61 @@
 /* Bar 
-   bartender.css
+   customer.css
    Created by Mauro J. Pappaterra on 18 of February 2018.
 */
+
+/*HEADER*/
+
+header{
+    overflow:hidden;
+    position: relative;
+}
+
+.title {
+    background-color: darkgrey;
+    float: left;
+    width: 100%;
+
+}
+.info {
+    background-color: #797979;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
 
 /*MENU COLUMN*/
 .menu {
     width: 70%;
-    height: 67px;
+    height: 30%;
     background-color: greenyellow;
     float: left;
+    overflow: auto;
 }
 
-.order_list {
+.menu h2 {
+    margin:0px;
+    padding:0px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu a li {
+    display: block;
+    background-color: pink;
+
+    float: left;
+    margin-right:10px;
+    padding:5px;
+    width: 120px;
+}
+
+.menu a:hover li {
+    background-color: #ff2d1b;
+}
+
+.drink_list {
     width: 70%;
     height: 500px;
     background-color: yellow;
@@ -19,10 +63,10 @@
     overflow: auto;
 }
 
-.order {
+.drink {
     background-color: white;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
+
+    padding: 3%;
     margin: 2%;
 
     border-style: dashed;
@@ -30,22 +74,51 @@
     border-width: medium;
 
     width: 90%;
-    height: 60px;
+    height: 185px;
 
-    overflow: hidden;
+    float: left;
+
+    overflow:auto
 }
 
-.order h2 {
+.drink .c1 {
+    width: 25%;
     float: left;
 }
 
-.order a {
-    margin-top: 20px;
-    float: right;
-    background-color: #70ebff;
-    padding: 2px;
+.drink .c2 {
+    width: 30%;
+    float: left;
 }
 
+.drink .c3 {
+    width: 30%;
+    float: left;
+}
+
+.drink .c4 {
+    width: 15%;
+    float: left;
+}
+
+.drink .c1 img{
+    height: 175px;
+}
+
+a h4 {
+    background-color: #43ff20;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+}
+
+a:hover h4 {
+    background-color: #3240ff;
+}
+
+.alert {
+    color: #ff2d1b;
+}
 
 /*ORDER COLUMN*/
 .selection_header {
@@ -63,7 +136,7 @@
     overflow: auto;
 }
 
-.order_details {
+.order {
     background-color: white;
 
     padding-left: 1.5%;
@@ -79,11 +152,11 @@
     clear: both;
 }
 
-.order_details .price {
+.order .price {
     float: right;
 }
 
-.order_details img {
+.order img {
     height: 80px;
     float: left;
 }
@@ -97,6 +170,14 @@
 
 .checkout h2 {
     float: right;
+}
+
+.delete {
+    background-color: #ff2d1b;
+    color: white;
+    float: right;
+    width: 20px;
+    text-align: center;
 }
 
 /* FOOTER*/

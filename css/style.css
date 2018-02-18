@@ -3,6 +3,26 @@
    Created by Mauro J. Pappaterra on 09 of February 2018.
 */
 
+/*HEADER*/
+header{
+    overflow:hidden;
+    position: relative;
+}
+
+.title {
+    background-color: darkgrey;
+    float: left;
+    width: 100%;
+}
+
+.info {
+    background-color: #797979;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
+
+
 /* BUTTONS */
 .big_button {
     margin: 5%;

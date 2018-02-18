@@ -52,13 +52,7 @@ header{
 }
 
 .menu a:hover li {
-    display: block;
     background-color: #ff2d1b;
-
-    float: left;
-    margin-right:10px;
-    padding:5px;
-    width: 60px;
 }
 
 .drink_list {
