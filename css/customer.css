@@ -1,0 +1,178 @@
+/* Bar 
+   customer.css
+   Created by Mauro J. Pappaterra on 18 of February 2018.
+*/
+
+/*HEADER*/
+
+header{
+    overflow:hidden;
+    position: relative;
+}
+
+.title {
+    background-color: darkgrey;
+    float: left;
+    width: 100%;
+
+}
+.info {
+    background-color: #797979;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
+
+/*MENU COLUMN*/
+.menu {
+    width: 70%;
+    height: 30%;
+    background-color: greenyellow;
+    float: left;
+    overflow: auto;
+}
+
+.menu h2 {
+    margin:0px;
+    padding:0px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu a li {
+    display: block;
+    background-color: pink;
+
+    float: left;
+    margin-right:10px;
+    padding:5px;
+    width: 60px;
+}
+
+.menu a:hover li {
+    display: block;
+    background-color: #ff2d1b;
+
+    float: left;
+    margin-right:10px;
+    padding:5px;
+    width: 60px;
+}
+
+.drink_list {
+    width: 70%;
+    height: 500px;
+    background-color: yellow;
+    float: left;
+    overflow: auto;
+}
+
+.drink {
+    background-color: white;
+
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    margin: 2%;
+
+    border-style: dashed;
+    border-color: grey;
+    border-width: medium;
+
+    width: 170px;
+    height: 280px;
+
+    float: left;
+
+    overflow:auto
+}
+
+.drink img {
+    padding-left: 15%;
+    height: 55%;
+}
+
+/*ORDER COLUMN*/
+.selection_header {
+    width: 30%;
+    height: 30%;
+    float: right;
+    background-color: #07ffc2;
+}
+
+.selection {
+    width: 30%;
+    height: 450px;
+    background-color: lightseagreen;
+    float: right;
+    overflow: auto;
+}
+
+.order {
+    background-color: white;
+
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    margin: 2%;
+    margin-bottom: 10%;
+
+    border-style: dashed;
+    border-color: grey;
+    border-width: thin;
+
+    width: 92%;
+    clear: both;
+}
+
+.order .price {
+    float: right;
+}
+
+.order img {
+    height: 80px;
+    float: left;
+}
+
+.checkout {
+    width: 30%;
+    height: 50px;
+    background-color: #ffaf40;
+    float: right;
+}
+
+.checkout h2 {
+    float: right;
+}
+
+.delete {
+    background-color: #ff2d1b;
+    color: white;
+    float: right;
+    width: 20px;
+    text-align: center;
+}
+
+/* FOOTER*/
+footer {
+    background-color: #a4a4a4;
+}
+
+.logout {
+    float: left;
+    clear: none;
+}
+
+.languages_menu {
+    float: left;
+    width: 50%;
+    clear: none;
+}
+
+footer .small_button{
+    float: left;
+}
+
+#pay {
+    float: right;
+}

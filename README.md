@@ -66,7 +66,6 @@
 
 </ul>
 
-
 <h4>Other:</h4>
 <ul>
     <li><b>.gitignore:</b> Use this file to avoid pushing redundant files, add any IDE configuration files you might use </li>
