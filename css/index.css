@@ -1,0 +1,23 @@
+/* Bar 
+   index.css
+   Created by Mauro J. Pappaterra on 20 of February 2018.
+*/
+
+/*WELCOME PIRATE IMAGE*/
+.welcome_pirate{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.welcome_pirate_small {
+    width: 65%;
+}
+
+.welcome_pirate_medium {
+    width: 500px;
+}
+
+.welcome_pirate_large {
+    width: 525px;
+}
