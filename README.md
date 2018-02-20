@@ -1,8 +1,8 @@
 <h1>Welcome to The Flying Dutchman!</h1>
 
-<img src="https://imgur.com/xDMDTqw">
-
 <p>This is our submission for User Interface I</p>
+
+<img src="https://imgur.com/xDMDTqw.png">
 
 <h2>Group Members are:</h2>
 <ul>
