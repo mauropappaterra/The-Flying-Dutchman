@@ -330,7 +330,7 @@ var DB_MANAGERS =[
 /*DB of customers transactions saved as an array of objects, each object represents a single transaction*/
 var DB_TRANSACTIONS = [
     {
-        "transaction_id": "T0000x",
+        "transaction_id": "T00001",
         "bartender_id": "B000x0",
         "customer_id": "C0000x",
         "amount": 0,
@@ -464,8 +464,7 @@ var DB_TRANSACTIONS = [
 var DB_ORDERS = [
     {
         "order_id": "R0000x",
-        "manager_id": "B000x0",
-        "customer_id": "C0000x",
+        "manager_id": "M00001",
         "amount": 0,
         "timestamp": "2014-10-10 19:04:13"
     },
@@ -478,7 +477,6 @@ var DB_ORDERS = [
     {
         "order_id": "R0000x",
         "manager_id": "B000x0",
-        "customer_id": "C0000x",
         "amount": 0,
         "timestamp": "2014-10-10 19:46:18"
     },
@@ -600,7 +598,7 @@ var DB_STOCK = [
         "name": "Braastad XO",
         "description": "Cognac",
         "year": "",
-        "country": "Frankrike",
+        "country": "France",
         "producer": "Tiffon",
         "volume_ml": null,
         "alcohol_percentage": "40%",
@@ -611,7 +609,6 @@ var DB_STOCK = [
         "sale_price_per_liter": null,
         "sale_price_per_unit": "700.00",
 
-        "img_src": "img/xxxx.jpg",
         "in_stock": 0
     },
     {

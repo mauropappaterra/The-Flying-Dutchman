@@ -3,7 +3,10 @@
  *  Created by Mauro J. Pappaterra on 20 of February 2018.
  */
 
-/*RESPONSIVENESS CONTROLS*/
+/*RESPONSIVENESS CONTROLS
+* Call responsive() method on corresponding script page
+* This script must be loaded in all pages, along with both the js script and view corresponding to that particular page!
+*/
 
-$(window).onload(responsive());
-$(window).resize(responsive()); /*NEEDS FIXIN'*/
+$(window).onload(responsive()); /*On windows load*/
+$(window).resize(responsive()); /*On window resize (This one needs some fixin')*/
