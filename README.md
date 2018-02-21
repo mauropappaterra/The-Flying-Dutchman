@@ -2,7 +2,7 @@
 
 <p>This is our submission for User Interface I</p>
 
-<img src="https://imgur.com/xDMDTqw.png">
+<img src="https://i.imgur.com/UZSXGaC.png">
 
 <h2>Group Members are:</h2>
 <ul>
