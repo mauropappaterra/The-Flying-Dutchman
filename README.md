@@ -23,7 +23,9 @@
     <li><b>css:</b> All CSS files go here</li>
     <li><b>db:</b> All database files go here</li>
     <li><b>img:</b> All image files go here</li>
+    <li><b>img/drinks:</b> All drinks image files go here</li>
     <li><b>js:</b> All JavaScript files go here</li>
+    <li><b>js/view:</b> All multilanguage display texts go here</li>
     <li><b>vid:</b> All video files go here</li>
 </ul>
 
@@ -39,7 +41,11 @@
 
 <h4>css:</h4>
 <ul>
-    <li><b>style.css:</b> single style sheet for all pages</li>
+    <li><b>style.css:</b> style sheet common to all pages</li>
+    <li><b>index.css:</b> style sheet for log in page</li>
+    <li><b>bartender.css:</b> style sheet for bartender view</li>
+    <li><b>customer.css:</b> style sheet for customer view</li>
+    <li><b>management.css:</b> style sheet for management view</li>
 </ul>
 
 <h4>db:</h4>
@@ -51,15 +57,26 @@
 <h4>js:</h4>
 <ul>
     <li><b>multilanguage.js:</b> Script for multilanguage functionality</li>
-    <li><b>lang_index.js:</b> Translations for log in screen</li>
-    <li><b>lang_bartender.js:</b> Translations for bartender view</li>
-    <li><b>lang_customer.js:</b> Translations for customer view</li>
-    <li><b>lang_management.js:</b> Translations for management view</li>
+    <li><b>responsive.js:</b> Script for responsive functionality</li>
+    <li><b>index.js:</b> Scripts for log in screen</li>
+    <li><b>bartender.js:</b> Scripts for bartender view</li>
+    <li><b>customer.js:</b> Scripts for customer view</li>
+    <li><b>management.js:</b> Scripts for management view</li>
+</ul>
+
+<h4>js/view:</h4>
+<ul>
+    <li><b>view_common.js:</b> All common multilanguage texts</li>
+    <li><b>view_index.js:</b> Multilanguage texts for log in screen</li>
+    <li><b>view_bartender.js:</b> Multilanguage texts or bartender view</li>
+    <li><b>view_customer.js:</b> Multilanguage texts for customer view</li>
+    <li><b>view_management.js:</b> Multilanguage texts for management view</li>
 </ul>
 
 <h4>img:</h4>
 <ul>
     <li><b>favicon.png:</b> Icon for browser</li>
+    <li><b>welcome_pirate.jpg:</b> Welcome pirate image</li>
     <li><b>esp.png:</b> Flag Spain</li>
     <li><b>eng.png:</b> Flag Union Jack</li>
     <li><b>sve.png:</b> Flag Sweden</li>
