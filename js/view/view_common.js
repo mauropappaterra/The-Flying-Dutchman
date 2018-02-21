@@ -5,7 +5,7 @@
 
 /* ALL COMMON PAGE TEXTS
 *  The indexes and their corresponding languages: [0] English , [1] Swedish, [2] Italian, [3] Spanish, [4] Pirate
-*  Follow this template:
+*  1. First create an array, follow this template:
 *
 *  var redundant_name = ["ENGLISH",
 *                        "SWEDISH",
@@ -13,8 +13,9 @@
 *                        "SPANISH",
 *                        "PIRATE"]
 *
-*  Do not skip any indexes! Locate HTML object add id="unique_id" on the HTML file.
-*  Then update translate() method on the corresponding js script page!
+*  Do not skip any indexes! Follow indentation!
+*  2. Locate HTML object on the corresponding HTML file -> add id="unique_id"
+*  3. Then update translate() method on the corresponding js script page!
 */
 
 var page_title = ["The Flying Dutchman",
