@@ -9,7 +9,8 @@
 *
 *  var redundant_name = ["ENGLISH","SWEDISH","ITALIAN","SPANISH","PIRATE"]
 *
-*  Do not skip any indexes!
+*  Do not skip any indexes! Locate HTML object add id="unique_id" on the HTML file.
+*  Then update translate() method on the corresponding js script page!
 */
 
 var title = ["Management View",
