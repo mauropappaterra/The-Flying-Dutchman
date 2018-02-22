@@ -175,10 +175,10 @@ footer {
     clear: none;
 }
 
-footer .small_button{
+.small_button {
     float: left;
 }
 
-#pay {
-    float: right;
+.delete, .pay {
+    size: 20px;
 }
