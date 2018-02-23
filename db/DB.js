@@ -13,7 +13,7 @@ var DB_CUSTOMERS = [
         "last_name": "Assies",
         "email": "jory.assies@it.uu.se",
         "phone": "0704811411",
-        "credit": 0
+        "credit": 300
     },
     {
         "customer_id": "C00002",
@@ -23,7 +23,7 @@ var DB_CUSTOMERS = [
         "last_name": "Street",
         "email": "sulayman.street@it.uu.se",
         "phone": "0701517627",
-        "credit": 0
+        "credit": 650
     },
     {
         "customer_id": "C00003",
@@ -33,7 +33,7 @@ var DB_CUSTOMERS = [
         "last_name": "Panders",
         "email": "orabela.panders@it.uu.se",
         "phone": "0701503294",
-        "credit": 0
+        "credit": 840
     },
     {
         "customer_id": "C00004",
@@ -43,7 +43,7 @@ var DB_CUSTOMERS = [
         "last_name": "Olguin",
         "email": "kenan.olguin@it.uu.se",
         "phone": "0706569560",
-        "credit": 0
+        "credit": 1250
     },
     {
         "customer_id": "C00005",
@@ -53,7 +53,7 @@ var DB_CUSTOMERS = [
         "last_name": "Kr\u00fcger",
         "email": "sasa.kruger@it.uu.se",
         "phone": "0705349276",
-        "credit": 0
+        "credit": 955
     },
     {
         "customer_id": "C00006",
@@ -63,7 +63,7 @@ var DB_CUSTOMERS = [
         "last_name": "Todd",
         "email": "ervin.todd@it.uu.se",
         "phone": "0702339018",
-        "credit": 0
+        "credit": 720
     },
     {
         "customer_id": "C00007",
@@ -73,7 +73,7 @@ var DB_CUSTOMERS = [
         "last_name": "Lyndon",
         "email": "aquilina.lyndon@it.uu.se",
         "phone": "0702611287",
-        "credit": 0
+        "credit": 135
     },
     {
         "customer_id": "C00008",
@@ -83,7 +83,7 @@ var DB_CUSTOMERS = [
         "last_name": "Nicholson",
         "email": "lasse.nicholson@it.uu.se",
         "phone": "0703238992",
-        "credit": 0
+        "credit": 535
     },
     {
         "customer_id": "C00009",
@@ -93,7 +93,7 @@ var DB_CUSTOMERS = [
         "last_name": "Honda",
         "email": "maiken.honda@it.uu.se",
         "phone": "0709533955",
-        "credit": 0
+        "credit": 1395
     },
     {
         "customer_id": "C00010",
@@ -103,9 +103,9 @@ var DB_CUSTOMERS = [
         "last_name": "Christopherson",
         "email": "hiram.christopherson@it.uu.se",
         "phone": "0709599269",
-        "credit": 0
+        "credit": 1435
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00011",
         "password": "7e3f6af9d6c2385a79b49b03e87234e5",
         "username": "larsch",
@@ -115,7 +115,7 @@ var DB_CUSTOMERS = [
         "phone": "0702721289",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00012",
         "password": "1db930e727e73c027fc58b5554935be8",
         "username": "janhei",
@@ -125,7 +125,7 @@ var DB_CUSTOMERS = [
         "phone": "0707977965",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00013",
         "password": "f3e3fbabe1b745defda645e5d85a6ac7",
         "username": "svetor",
@@ -135,7 +135,7 @@ var DB_CUSTOMERS = [
         "phone": "0707459505",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00014",
         "password": "75f589d96b212b65298b31717a2641c9",
         "username": "pomgra",
@@ -145,7 +145,7 @@ var DB_CUSTOMERS = [
         "phone": "0701584121",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00015",
         "password": "9e44cc19b9f726583ccc93fa7908f7fd",
         "username": "valpag",
@@ -155,7 +155,7 @@ var DB_CUSTOMERS = [
         "phone": "0703156441",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00016",
         "password": "0f1903b5119eadb705ddba7f2750792f",
         "username": "domolh",
@@ -165,7 +165,7 @@ var DB_CUSTOMERS = [
         "phone": "0702459084",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00017",
         "password": "3fb65e8d64eb23e63c71a86ea97951e0",
         "username": "gollan",
@@ -175,7 +175,7 @@ var DB_CUSTOMERS = [
         "phone": "0702677189",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00018",
         "password": "3c244190040aedd134913562509a5ea0",
         "username": "hyrlap",
@@ -185,7 +185,7 @@ var DB_CUSTOMERS = [
         "phone": "0702177650",
         "credit": 0
     },
-    {
+    {   //Non-VIP customer with no credit.
         "customer_id": "C00019",
         "password": "84db5f68a5f2ad3f25bb4445148f434c",
         "username": "katfab",
@@ -203,7 +203,7 @@ var DB_CUSTOMERS = [
         "last_name": "Pender",
         "email": "sulis\u0142aw.pender@it.uu.se",
         "phone": "0709481365",
-        "credit": 0
+        "credit": 1465
     },
     {
         "customer_id": "C00021",
@@ -213,7 +213,7 @@ var DB_CUSTOMERS = [
         "last_name": "Schermer",
         "email": "danna.schermer@it.uu.se",
         "phone": "0709593528",
-        "credit": 0
+        "credit": 1690
     },
     {
         "customer_id": "C00022",
@@ -223,7 +223,7 @@ var DB_CUSTOMERS = [
         "last_name": "Sitz",
         "email": "jove.sitz@it.uu.se",
         "phone": "0704408722",
-        "credit": 0
+        "credit": 245
     },
     {
         "customer_id": "C00023",
@@ -233,7 +233,7 @@ var DB_CUSTOMERS = [
         "last_name": "Pickle",
         "email": "elektra.pickle@it.uu.se",
         "phone": "0708681770",
-        "credit": 0
+        "credit": 2000
     },
     {
         "customer_id": "C00024",
@@ -243,7 +243,7 @@ var DB_CUSTOMERS = [
         "last_name": "Toft",
         "email": "muhammed.toft@it.uu.se",
         "phone": "0708579214",
-        "credit": 0
+        "credit": 1885
     },
     {
         "customer_id": "C00025",
@@ -253,7 +253,7 @@ var DB_CUSTOMERS = [
         "last_name": "Gorecki",
         "email": "zuleika.gorecki@it.uu.se",
         "phone": "0705595808",
-        "credit": 0
+        "credit": 865
     }
 ];
 
@@ -331,132 +331,150 @@ var DB_MANAGERS =[
 var DB_TRANSACTIONS = [
     {
         "transaction_id": "T00001",
-        "bartender_id": "B000x0",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "bartender_id": "B00001",
+        "customer_id": "C00001",
+        "amount": 160,
         "timestamp": "2014-10-10 19:04:13"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00002",
+        "bartender_id": "B00001",
+        "customer_id": "C00002",
+        "amount": 230,
         "timestamp": "2014-10-10 19:36:43"
     },
     {
-        "transaction_id": "T0000x",
-        "bartender_id": "B000x0",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00003",
+        "bartender_id": "B00001",
+        "customer_id": "C00003",
+        "amount": 415,
         "timestamp": "2014-10-10 19:46:18"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00004",
+        "bartender_id": "B00002",
+        "customer_id": "C00004",
+        "amount": 615,
         "timestamp": "2014-10-10 20:06:52"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00005",
+        "bartender_id": "B00002",
+        "customer_id": "C00005",
+        "amount": 175,
         "timestamp": "2014-10-10 20:18:32"
     },
     {
-        "transaction_id": "T0000x",
-        "bartender_id": "B000x0",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 20:33:43"
+        "transaction_id": "T00006",
+        "bartender_id": "B00003",
+        "customer_id": "C00005",
+        "amount": 220,
+        "timestamp": "2014-10-12 20:33:43"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 20:34:45"
+        "transaction_id": "T00007",
+        "bartender_id": "B00003",
+        "customer_id": "C00006",
+        "amount": 115,
+        "timestamp": "2014-10-12 21:34:45"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 21:07:57"
+        "transaction_id": "T00008",
+        "bartender_id": "B00003",
+        "customer_id": "C00007",
+        "amount": 40,
+        "timestamp": "2014-10-12 21:07:57"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 21:08:08"
+        "transaction_id": "T00008",
+        "bartender_id": "B00004",
+        "customer_id": "C00008",
+        "amount": 335,
+        "timestamp": "2014-10-13 21:08:08"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00009",
+        "bartender_id": "B00004",
+        "customer_id": "C00009",
+        "amount": 435,
         "timestamp": "2014-10-10 21:09:04"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00010",
+        "bartender_id": "B00001",
+        "customer_id": "C00010",
+        "amount": 655,
         "timestamp": "2014-10-10 21:09:16"
     },
-    {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+    {   //Transaction for Non-VIP Customer with no credit
+        "transaction_id": "T00011",
+        "bartender_id": "B00005",
+        "customer_id": "C00011",
+        "amount": 375,
         "timestamp": "2014-10-12 00:05:15"
     },
-    {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-12 00:05:28"
+    {   //Transaction for Non-VIP Customer with no credit
+        "transaction_id": "T00012",
+        "bartender_id": "B00005",
+        "customer_id": "C00016",
+        "amount": 685,
+        "timestamp": "2014-10-12 00:25:28"
     },
-    {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+    {   //Transaction for Non-VIP Customer with no credit
+        "transaction_id": "T00013",
+        "bartender_id": "B00004",
+        "customer_id": "C00018",
+        "amount": 296,
         "timestamp": "2014-10-12 00:05:37"
     },
-    {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+    {   //Transaction for Non-VIP Customer with no credit
+        "transaction_id": "T00014",
+        "bartender_id": "B00001",
+        "customer_id": "C00015",
+        "amount": 595,
         "timestamp": "2014-10-15 22:53:09"
     },
-    {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:53:28"
+    {   //Transaction for Non-VIP Customer with no credit
+        "transaction_id": "T00015",
+        "bartender_id": "B00002",
+        "customer_id": "C00013",
+        "amount": 845,
+        "timestamp": "2014-10-15 23:15:28"
     },
-    {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+    {   //Transaction for Non-VIP Customer with no credit
+        "transaction_id": "T00016",
+        "bartender_id": "B00003",
+        "customer_id": "C00011",
+        "amount": 465,
         "timestamp": "2014-10-15 22:54:22"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00017",
+        "bartender_id": "B00001",
+        "customer_id": "C00022",
+        "amount": 100,
         "timestamp": "2014-10-15 22:56:38"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:57:11"
+        "transaction_id": "T00018",
+        "bartender_id": "B00002",
+        "customer_id": "C00023",
+        "amount": 1115,
+        "timestamp": "2014-10-15 23:57:11"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
+        "transaction_id": "T00019",
+        "bartender_id": "B00002",
+        "customer_id": "C00024",
+        "amount": 485,
         "timestamp": "2014-10-15 22:57:30"
     },
     {
-        "transaction_id": "T0000x",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:57:38"
+        "transaction_id": "T00020",
+        "bartender_id": "B00004",
+        "customer_id": "C00025",
+        "amount": 260,
+        "timestamp": "2014-10-15 23:48:38"
     }
 ]
 
