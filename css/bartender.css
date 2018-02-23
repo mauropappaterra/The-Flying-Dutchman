@@ -71,6 +71,8 @@
     margin-right: auto;
 
     overflow: hidden;
+
+    cursor:zoom-in;
 }
 
 .left {
@@ -107,6 +109,11 @@
 
 .active:after {
     content: "Close Order"; /* \2796 Unicode character for "minus" sign (-) */
+
+}
+
+.zoom_out{
+    cursor:zoom-out;
 }
 
 
