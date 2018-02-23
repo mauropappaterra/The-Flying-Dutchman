@@ -30,13 +30,6 @@ header{
 
 
 /* BUTTONS */
-.big_button {
-    margin: 5%;
-    padding: 3%;
-
-    text-align: center;
-    font-size: 40px;
-}
 
 .small_button {
     margin: 0.8%;
@@ -73,7 +66,26 @@ a:active {
 }
 
 .languages_menu{
+    background-color: #a4a4a4;
+    bottom: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     clear: both;
+}
+
+/*UNDO-REDO MENU*/
+
+.undo_redo_menu{
+    background-color: #a4a4a4;
+    float: left;
+    margin: 2%;
+    margin-top: 0%;
+
+}
+
+#undo, #redo {
+    float: left;
 }
 
 
