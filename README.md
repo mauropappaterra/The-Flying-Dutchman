@@ -6,7 +6,7 @@
 
 <h2>Group Members are:</h2>
 <ul>
-    <li>Hassan Odime</li>
+    <li>Hassan Odimi</li>
     <li>Elsa Slättegård</li>
     <li>Jenny Olsson</li>
     <li>Yawen Yi</li>
