@@ -84,6 +84,8 @@ header{
     float: left;
     text-align: center;
 
+    cursor: move;
+
     overflow:auto
 }
 
