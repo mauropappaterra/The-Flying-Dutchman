@@ -1,6 +1,7 @@
 /** Bar
  *  view_customer.js
  *  Created by Mauro J. Pappaterra on 21 of February 2018.
+ *  Updated by Hassan Odimi on 23 of February 2018.
  */
 
 /* CUSTOMER PAGE TEXTS
@@ -71,15 +72,15 @@ var wines= ["Wines",
 var spiritis= ["Spirits",
 "Sprit",
 "Sprits",
-"Espíritu",
+"Bebida Espirituosa",
 "EspÃ­ritu"
 ]
 
-var gluten_free= ["Gluten Free",
-"Glutenfri",
-"Senza glutine",
-"Sin gluten",
-"Gluten Free"
+var kosher= ["Kosher",
+"Koscher",
+"Kosher",
+"Kosher",
+"Kosher"
 ]
 
 var ecologic= ["Ecologic",

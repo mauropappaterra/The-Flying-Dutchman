@@ -1,6 +1,7 @@
 /** Bar
  *  bartender.js
  *  Created by Mauro J. Pappaterra on 11 of February 2018.
+ *  Updated by Hassan Odimi on 23 of February 2018.
  */
 
 /*BARTENDER PAGE SCRIPTS
@@ -27,6 +28,14 @@ function translate (index) {
     $("#page_title").text(page_title[index]);
     $("#title").text(title[index]);
     $("#logout").text(logout[index]);
+    $("#login_as").text(login_as[index]);
+    $("#orders_q").text(orders_q[index]);
+    $("#cancel_order").text(cancel_order[index]);
+    $("#mark_paid").text(mark_paid[index]);
+
+
+
+
 }
 
 function responsive() {

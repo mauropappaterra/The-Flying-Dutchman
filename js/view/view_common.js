@@ -27,5 +27,5 @@ var page_title = ["The Flying Dutchman",
 var logout = ["Log Out",
     "Logga Ut",
     "Esci",
-    "Desloguear",
+    "Cerrar Sesión",
     "Scuttle"]
