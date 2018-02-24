@@ -1,6 +1,7 @@
 /** Bar
  *  customer.js
  *  Created by Mauro J. Pappaterra on 11 of February 2018.
+ *  Updated by Hassan Odimi on 23 of February 2018.
  */
 
 /*CUSTOMER PAGE SCRIPTS
@@ -19,7 +20,7 @@ function translate (index) {
     $("#beers").text(beers[index]);
     $("#wines").text(wines[index]);
     $("#spiritis").text(spiritis[index]);
-    $("#gluten_free").text(gluten_free[index]);
+    $("#kosher").text(kosher[index]);
     $("#ecologic").text(ecologic[index]);
     $("#specials").text(specials[index]);
     $("#your_order").text(your_order[index]);
