@@ -12,7 +12,33 @@ function translate (index) {
     $("#page_title").text(page_title[index]);
     $("#title").text(title[index]);
     $("#logout").text(logout[index]);
-    $("#stock_order").text(stock_order[index])
+    $("#stock_order").text(stock_order[index]);
+    $("#login_as").text(login_as[index]);
+
+    $("#drinks_list").text(drinks_list[index]);
+    $("#check_stock").text(check_stock[index]);
+    $("#shortage_alert").text(shortage_alert[index]);
+
+    // Translating the drink's details
+    $("#drink_name").text(drink_name[index]);
+    $("#type").text(type[index]);
+    $("#price").text(price[index]);
+    $("#country").text(country[index]);
+    $("#volume").text(volume[index]);
+    $("#alcohol").text(alcohol[index]);
+    $("#drink_id").text(drink_id[index]);
+    $("#producer").text(producer[index]);
+    $("#delivery").text(delivery[index]);
+    $("#cost").text(cost[index]);
+    // <end> Translating the drink's details
+
+    $("#inStock").text(inStock[index]);
+    $("#add_one").text(add_one[index]);
+    $("#add_ten").text(add_ten[index]);
+    $("#add_hundred").text(add_hundred[index]);
+
+    $("#total").text(total[index]);
+    $("#pay").text(pay[index]);
 }
 
 function responsive() {
