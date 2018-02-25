@@ -334,147 +334,168 @@ var DB_TRANSACTIONS = [
         "bartender_id": "B00001",
         "customer_id": "C00001",
         "amount": 160,
-        "timestamp": "2014-10-10 19:04:13"
+        "timestamp": "2014-10-10 19:04:13",
+        "paid":"true"
     },
     {
         "transaction_id": "T00002",
         "bartender_id": "B00001",
         "customer_id": "C00002",
         "amount": 230,
-        "timestamp": "2014-10-10 19:36:43"
+        "timestamp": "2014-10-10 19:36:43",
+        "paid":"false"
     },
     {
         "transaction_id": "T00003",
         "bartender_id": "B00001",
         "customer_id": "C00003",
         "amount": 415,
-        "timestamp": "2014-10-10 19:46:18"
+        "timestamp": "2014-10-10 19:46:18",
+        "paid":"true"
     },
     {
         "transaction_id": "T00004",
         "bartender_id": "B00002",
         "customer_id": "C00004",
         "amount": 615,
-        "timestamp": "2014-10-10 20:06:52"
+        "timestamp": "2014-10-10 20:06:52",
+        "paid":"true"
     },
     {
         "transaction_id": "T00005",
         "bartender_id": "B00002",
         "customer_id": "C00005",
         "amount": 175,
-        "timestamp": "2014-10-10 20:18:32"
+        "timestamp": "2014-10-10 20:18:32",
+        "paid":"false"
     },
     {
         "transaction_id": "T00006",
         "bartender_id": "B00003",
         "customer_id": "C00005",
         "amount": 220,
-        "timestamp": "2014-10-12 20:33:43"
+        "timestamp": "2014-10-12 20:33:43",
+        "paid":"false"
     },
     {
         "transaction_id": "T00007",
         "bartender_id": "B00003",
         "customer_id": "C00006",
         "amount": 115,
-        "timestamp": "2014-10-12 21:34:45"
+        "timestamp": "2014-10-12 21:34:45",
+        "paid":"true"
     },
     {
         "transaction_id": "T00008",
         "bartender_id": "B00003",
         "customer_id": "C00007",
         "amount": 40,
-        "timestamp": "2014-10-12 21:07:57"
+        "timestamp": "2014-10-12 21:07:57",
+        "paid":"true"
     },
     {
         "transaction_id": "T00008",
         "bartender_id": "B00004",
         "customer_id": "C00008",
         "amount": 335,
-        "timestamp": "2014-10-13 21:08:08"
+        "timestamp": "2014-10-13 21:08:08",
+        "paid":"false"
     },
     {
         "transaction_id": "T00009",
         "bartender_id": "B00004",
         "customer_id": "C00009",
         "amount": 435,
-        "timestamp": "2014-10-10 21:09:04"
+        "timestamp": "2014-10-10 21:09:04",
+        "paid":"true"
     },
     {
         "transaction_id": "T00010",
         "bartender_id": "B00001",
         "customer_id": "C00010",
         "amount": 655,
-        "timestamp": "2014-10-10 21:09:16"
+        "timestamp": "2014-10-10 21:09:16",
+        "paid":"true"
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00011",
         "bartender_id": "B00005",
         "customer_id": "C00011",
         "amount": 375,
-        "timestamp": "2014-10-12 00:05:15"
+        "timestamp": "2014-10-12 00:05:15",
+        "paid":"true"
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00012",
         "bartender_id": "B00005",
         "customer_id": "C00016",
         "amount": 685,
-        "timestamp": "2014-10-12 00:25:28"
+        "timestamp": "2014-10-12 00:25:28",
+        "paid":"false"
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00013",
         "bartender_id": "B00004",
         "customer_id": "C00018",
         "amount": 296,
-        "timestamp": "2014-10-12 00:05:37"
+        "timestamp": "2014-10-12 00:05:37",
+        "paid":"false"
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00014",
         "bartender_id": "B00001",
         "customer_id": "C00015",
         "amount": 595,
-        "timestamp": "2014-10-15 22:53:09"
+        "timestamp": "2014-10-15 22:53:09",
+        "paid":"false"
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00015",
         "bartender_id": "B00002",
         "customer_id": "C00013",
         "amount": 845,
-        "timestamp": "2014-10-15 23:15:28"
+        "timestamp": "2014-10-15 23:15:28",
+        "paid":"false"
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00016",
         "bartender_id": "B00003",
         "customer_id": "C00011",
         "amount": 465,
-        "timestamp": "2014-10-15 22:54:22"
+        "timestamp": "2014-10-15 22:54:22",
+        "paid":"true"
     },
     {
         "transaction_id": "T00017",
         "bartender_id": "B00001",
         "customer_id": "C00022",
         "amount": 100,
-        "timestamp": "2014-10-15 22:56:38"
+        "timestamp": "2014-10-15 22:56:38",
+        "paid":"true"
     },
     {
         "transaction_id": "T00018",
         "bartender_id": "B00002",
         "customer_id": "C00023",
         "amount": 1115,
-        "timestamp": "2014-10-15 23:57:11"
+        "timestamp": "2014-10-15 23:57:11",
+        "paid":"false"
     },
     {
         "transaction_id": "T00019",
         "bartender_id": "B00002",
         "customer_id": "C00024",
         "amount": 485,
-        "timestamp": "2014-10-15 22:57:30"
+        "timestamp": "2014-10-15 22:57:30",
+        "paid":"true"
     },
     {
         "transaction_id": "T00020",
         "bartender_id": "B00004",
         "customer_id": "C00025",
         "amount": 260,
-        "timestamp": "2014-10-15 23:48:38"
+        "timestamp": "2014-10-15 23:48:38",
+        "paid":"true"
     }
 ]
 
