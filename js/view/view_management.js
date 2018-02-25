@@ -25,7 +25,136 @@ var title = ["Management View",
              "Kin' o' th' Pirates"]
 
 var stock_order = ["Stock Order",
-                   "SWEDISH",
+                   "Lagerbeställning",
                    "Ordine",
                    "Perdido",
-                    "PIRATE"]
+                    "Stock Order"]
+
+var login_as = ["Log in as:",
+    "Logga in som:",
+    "Accedi come:",
+    "Iniciar sesión como:",
+    "Log in as pirate:"]
+
+ var drinks_list = ["Full Drinks List",
+    "Full drinklista",
+    "Lista delle bevande complete",
+    "Lista completa de bebidas",
+    "Full Drinks List"]
+    
+var check_stock = ["Check Bar Stock",
+    "Kontrollera Bar Lager",
+    "Controlla il magazzino della barra",
+    "Compruebe la acción de la barra",
+    "Check Bar Stock"]
+
+var shortage_alert = ["Shortage Alert (!)",
+    "Bristvarning (!)",
+    "Avviso di carenza (!)",
+    "Alerta de escasez (!)",
+    "Shortage Alert (!)"]
+
+// The drink's details.
+var drink_name = ["Name:",
+    "Namn:",
+    "Nome:",
+    "Nombre:",
+    "Name:"]
+
+var type = ["Type:",
+    "Typ:",
+    "Tipo:",
+    "El tipo:",
+    "Type:"]
+
+var price= ["Price:",
+"Pris:",
+"Prezzo:",
+"Precio:",
+"Price:"]
+
+var country= ["Country:",
+"Land:",
+"Nazione:",
+"País:",
+"Island:"]
+
+var volume= ["Volume:",
+"Volym:",
+"Volume:",
+"Volumen:",
+"Volume:"]
+
+var alcohol=["Alcohol:",
+"Alkohol:",
+"Alcol:",
+"Alcohol:",
+"Alcohol:"]
+
+var drink_id=["ID:",
+"ID:",
+"ID:",
+"ID:",
+"ID:"]
+
+var producer=["Producer:",
+"Producent:",
+"Produttore:",
+"Productor:",
+"Producer:"]
+
+var delivery=["Delivery:",
+"Leverans:",
+"La Consegna:",
+"La Entrega:",
+"Delivery:"]
+
+var cost=["Cost per Liter:",
+"Kostnad per liter:",
+"Costo per litro:",
+"Costo por litro:",
+"Cost per Liter:"]
+// <END> The drink's details.
+
+var inStock=["In Stock:",
+"I lager:",
+"Disponibile:",
+"En stock:",
+"In The Ship:"]
+
+var add_one=["Add +1",
+"Tillägga +1",
+"Aggiungere +1",
+"Agregar +1",
+"Add +1"]
+
+var add_ten=["Add +10",
+"Tillägga +10",
+"Aggiungere +10",
+"Agregar +10",
+"Add +10"]
+
+var add_hundred=["Add +100",
+"Tillägga +100",
+"Aggiungere +100",
+"Agregar +100",
+"Add +100"]
+
+var total= ["TOTAL:",
+"TOTAL:",
+"TOTALE:",
+"TOTAL:",
+"TOTAL:"
+]
+
+var pay= ["Place Stock Order",
+"Placera lagerorder",
+"Posizionare l'ordine",
+"Realizar pedido",
+"Place Stock Order"
+]
+
+
+
+
+
