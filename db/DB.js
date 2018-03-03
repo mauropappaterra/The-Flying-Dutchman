@@ -502,131 +502,130 @@ var DB_TRANSACTIONS = [
 /*DB of orders saved as an array of objects, each object represents a single order*/
 var DB_ORDERS = [
     {
-        "order_id": "R0000x",
+        "order_id": "R00001",
         "manager_id": "M00001",
-        "amount": 0,
+        "amount": 250,
         "timestamp": "2014-10-10 19:04:13"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
+        "order_id": "R00002",
+        "manager_id": "M00001",
+        "amount": 60,
         "timestamp": "2014-10-10 19:36:43"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "B000x0",
-        "amount": 0,
+        "order_id": "R00003",
+        "manager_id": "M00001",
+        "amount": 75,
         "timestamp": "2014-10-10 19:46:18"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 20:06:52"
+        "order_id": "R00004",
+        "manager_id": "M00001",
+        "amount": 34,
+        "timestamp": "2014-10-11 22:06:52"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 20:18:32"
+        "order_id": "R00005",
+        "manager_id": "M00001",
+        "amount": 85,
+        "timestamp": "2014-10-11 20:18:32"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "B000x0",
-        "customer_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 20:33:43"
+        "order_id": "R00006",
+        "manager_id": "M00001",
+        "amount": 125,
+        "timestamp": "2014-10-14 20:33:43"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 20:34:45"
+        "order_id": "R00007",
+        "manager_id": "M00001",
+        "amount": 195,
+        "timestamp": "2014-10-16 20:34:45"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 21:07:57"
+        "order_id": "R00008",
+        "manager_id": "M00001",
+        "amount": 230,
+        "timestamp": "2014-10-20 21:07:57"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 21:08:08"
+        "order_id": "R00009",
+        "manager_id": "M00001",
+        "amount": 80,
+        "timestamp": "2014-10-21 10:15:08"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 21:09:04"
+        "order_id": "R00010",
+        "manager_id": "M00001",
+        "amount": 110,
+        "timestamp": "2014-10-22 09:20:04"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-10 21:09:16"
+        "order_id": "R00011",
+        "manager_id": "M00002",
+        "amount": 70,
+        "timestamp": "2014-10-23 13:09:16"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-12 00:05:15"
+        "order_id": "R00012",
+        "manager_id": "M00002",
+        "amount": 25,
+        "timestamp": "2014-10-25 08:05:15"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-12 00:05:28"
+        "order_id": "R00013",
+        "manager_id": "M00002",
+        "amount": 85,
+        "timestamp": "2014-10-25 16:05:28"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-12 00:05:37"
+        "order_id": "R00014",
+        "manager_id": "M00002",
+        "amount": 24,
+        "timestamp": "2014-10-26 00:05:37"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:53:09"
+        "order_id": "R00015",
+        "manager_id": "M00002",
+        "amount": 46,
+        "timestamp": "2014-10-26 22:53:09"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:53:28"
+        "order_id": "R00016",
+        "manager_id": "M00002",
+        "amount": 92,
+        "timestamp": "2014-10-27 21:03:28"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:54:22"
+        "order_id": "R00017",
+        "manager_id": "M00002",
+        "amount": 20,
+        "timestamp": "2014-10-27 21:54:22"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:56:38"
+        "order_id": "R00018",
+        "manager_id": "M00002",
+        "amount": 60,
+        "timestamp": "2014-10-28 08:56:38"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:57:11"
+        "order_id": "R00019",
+        "manager_id": "M00002",
+        "amount": 46,
+        "timestamp": "2014-11-02 09:57:11"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:57:30"
+        "order_id": "R00020",
+        "manager_id": "M00002",
+        "amount": 260,
+        "timestamp": "2014-11-02 10:57:30"
     },
     {
-        "order_id": "R0000x",
-        "manager_id": "C0000x",
-        "amount": 0,
-        "timestamp": "2014-10-15 22:57:38"
+        "order_id": "R00021",
+        "manager_id": "M00001",
+        "amount": 65,
+        "timestamp": "2014-11-02 20:57:38"
     }
 ]
 
