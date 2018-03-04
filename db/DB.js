@@ -1,6 +1,7 @@
 /** Bar
  *  DB.js
  *  Created by Mauro J. Pappaterra on 17 of February 2018.
+ *  Updated by Hassan Odimi
  */
 
 /*DB of all users saved as an array of objects, each object represents a single user*/
