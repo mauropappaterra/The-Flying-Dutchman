@@ -83,4 +83,51 @@ function checkLogin(form) {
         
     } else {  alert("Invalid UserID") } 
 }
+
+function picToGif1(pic, gif) {
+    changeDisplay(pic, 'none');
+    changeDisplay(gif, 'block');
+    document.getElementById(gif).play();
+}
+
+function picToGif(ev) {
+    ev.preventDefault();
+    changeDisplay('piratePic', 'none');
+    changeDisplay('great', 'block');
+    document.getElementById('great').play();
+    document.body.style.background="#62CB62";
+}
+
+function changeGif(ev) {
+    changeDisplay('gifSwe', 'block');
+    alert("cmon");
+    ev.preventDefault();
+
+    elements = document.getElementsByClassName('gif');
+    document.getElementById('ori').style.display = "none";
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display="none";
+        //elements[i].style.backgroundColor="blue";
+    }
+    var data = event.dataTransfer.getData("Text");
+    alert(data);
+    changeisplay(document.getElementById(data), 'block');
+}
+
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+    //ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.target.id;
+    alert(data);
+    document.getElementById(ev).style.display = "none";
+}
 ;
