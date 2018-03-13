@@ -31,13 +31,25 @@
         <div class="title">
             <h1 id="title">Customer View</h1>
         </div>
-
+<table class="info">
+  <tr>
+    <th> Costumer:  </th>
+    <td id="usr"> usr </td>
+  </tr>
+    <tr>
+    <th> Credit:  </th>
+    <td id="cre"> cre </td>
+    </tr>
+</table>
+        
+<!--
         <div class="info">
-            <b id="customer">Customer:</b>John Smith <br>
-            <b id="credit">Credit:</b> SEK 1000
+    <b id="customer">Customer:</b>John Smith <br>
+    <b id="credit">Credit:</b> SEK 1000
+
         </div>
 
-        <hr>
+        <hr> -->
     </header>
 
     <div class="menu">
@@ -58,7 +70,7 @@
     <div class="selection_header">
         <h2 id="your_order">Your Order</h2>
     </div>
-
+    
     <div class="drink_list">
 
         <div class="drink">
@@ -198,7 +210,8 @@
     <footer>
 
         <!-- LOG OUT BUTTON -->
-        <a href="index.html"><div class="small_button red logout" id="logout">Log Out</div></a>
+        <!-- <a href="index.html"><div class="small_button red logout" id="logout">Log Out</div></a> -->
+        <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
 
         <!-- LANGUAGE MENU -->
         <div class="languages_menu">
@@ -233,6 +246,8 @@
     <script src="js/customer.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
     <script src="js/responsive.js" type="text/javascript"></script>
+
+     <script src="db/DB.js" type="text/javascript"></script>
 
 </body>
 </html>
