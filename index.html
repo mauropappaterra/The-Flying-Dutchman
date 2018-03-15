@@ -22,45 +22,61 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
-
 </head>
 <body>
+ 
 
-    <!-- Your code starts here -->
-    
-    <h1 id="welcome">Welcome to The Flying Dutchman!</h1>
+  
+  <!-- Your code starts here -->
 
-        <!-- login box -->     
-    <div id ="loginBox" class="login">
+  <!-- temporary table for checking login  -->
+  <!--
+  <h1>test</h1>
 
-      <button id = "close" class="close" onclick="changeDisplay('loginBox', 'none')">X</button>  
- <!--     <form action="file:///var/lib/git/Bar/customer.html"> -->
- <!--     <form>  action = "/action_page.php"> -->
-   <form name = "loginForm" > <!--  action = index.html> -->
+  <table>
+    <tr>
+      <th> username:  </th>
+      <th id="usr"> usr </th>
+    </tr>
+    <tr>
+      <th> balance:  </th>
+      <th id="cre"> cre </th>
+    </tr>
+  </table>
+  -->
+
+  <h1 id="welcome">Welcome to The Flying Dutchman!</h1>
+  <!-- login box -->     
+  <div id="loginBox" class="login">
+
+    <button id = "close" class="close" onclick="changeDisplay('loginBox', 'none')">X</button>  
+    <form name = "loginForm" action="javascript: void(0);"> <!--customer.html> <!--  action = index.html> -->
+      
+      <a id="user_name">user_name</a>
+      <input type="text" id="user_name" name="user_name" placeholder="Your UserName.."> 
+
+      <a id="password">password</a>
+      <input type="password" id="password" name="password" placeholder="Your Password..">
+      
+      <div align="center">
+        <!-- <input type="submit" id="login" name="login" value="login" onClick="checkLogin(loginForm)"> -->
+        <input type="submit" id="login" name="login" value="login" onClick="loginDB(loginForm)">
         
-     <a id="user_name">user_name</a>
-     <input type="text" id="user_name" name="user_name" placeholder="Your UserName.."> 
+      </div>
+    </form>
+  </div>
 
-        <a id="password">password</a>
-        <input type="password" id="password" name="password" placeholder="Your Password..">
-        
-        <div align="center">
-         <input type="submit" id="login" name="login" value="login" onClick="checkLogin(loginForm)">
-        </div>
-      </form>
-    </div>
-
-    <a display="block" onclick="openLogin('loginBox', 'block', 'customer')"><div class="login_button flipper" id="customer">Customer login</div></a>
+  <a display="block" onclick="openLogin('loginBox', 'block', 'customer')"><div class="login_button flipper" id="customer">Customer login</div></a>
 
 
-    <!-- DnD pics/gifs -->
+  <!-- DnD pics/gifs -->
   <div align="center" ondrop="picToGif(event)"  ondragover="allowDrop(event)">
     
     <img id="piratePic" class="gif" style="display:block; min-height: 397.391px; width: 400px;" src="img/welcome_pirate.jpg"> 
     
-   <video id="great" class="gif" id="gifPirate" preload="auto" poster="https://img-9gag-fun.9cache.com/photo/ajEXymq_460s.jpg" loop="loop" style="display:none; min-height: 397.391px; width: 400px;">
-     <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460sv.mp4" type="video/mp4">
-       <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460svwm.webm" type="video/webm"></video>
+    <video id="great" class="gif" id="gifPirate" preload="auto" poster="https://img-9gag-fun.9cache.com/photo/ajEXymq_460s.jpg" loop="loop" style="display:none; min-height: 397.391px; width: 400px;">
+      <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460sv.mp4" type="video/mp4">
+        <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460svwm.webm" type="video/webm"></video>
 
     </div> 
   
@@ -93,5 +109,8 @@
     <script src="js/multilanguage.js" type="text/javascript"></script>
     <script src="js/responsive.js" type="text/javascript"></script>
 
+    <script src="db/DB.js" type="text/javascript"></script>
+
+    
 </body>
 </html>

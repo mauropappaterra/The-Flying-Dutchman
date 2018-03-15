@@ -33,10 +33,18 @@
             <h1 id="title">Management View</h1>
         </div>
 
+        <table class="info">
+          <tr>
+            <th> Manager:  </th>
+            <td id="usr"> usr </td>
+          </tr>
+        </table>
+        
+        <!--
         <div class="info">
             <b id="login_as">Log in as:</b> John Smith <br>
         </div>
-
+-->
         <hr>
     </header>
 
@@ -221,26 +229,27 @@
 
     <footer>
 
-        <!-- LOG OUT BUTTON -->
-        <a href="index.html"><div class="small_button red logout" id="logout">Log Out</div></a>
+      <!-- LOG OUT BUTTON -->
+      <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
 
-        <!-- LANGUAGE MENU -->
-        <div class="languages_menu">
-            <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
-            <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
-            <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
-            <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-            <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
-        </div>
+      
+      <!-- LANGUAGE MENU -->
+      <div class="languages_menu">
+        <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+        <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+        <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
+        <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
+        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+      </div>
 
-        <!-- UNDO-REDO MENU -->
-        <div class="undo_redo_menu">
-            <a href="#" id="undo"><div class="undo_redo"> <img src="img/undo.svg"></div></a>
-            <a href="#" id="redo"><div class="undo_redo"> <img src="img/redo.svg"></div></a>
-        </div>
+      <!-- UNDO-REDO MENU -->
+      <div class="undo_redo_menu">
+        <a href="#" id="undo"><div class="undo_redo"> <img src="img/undo.svg"></div></a>
+        <a href="#" id="redo"><div class="undo_redo"> <img src="img/redo.svg"></div></a>
+      </div>
 
-        <!-- PAY BUTTON -->
-        <a href=""><div class="small_button blue" id="pay">Place Stock Order</div></a>
+      <!-- PAY BUTTON -->
+      <a href=""><div class="small_button blue" id="pay">Place Stock Order</div></a>
     </footer>
 
     <!-- Your code ends here -->
@@ -257,5 +266,7 @@
     <script src="js/multilanguage.js" type="text/javascript"></script>
     <script src="js/responsive.js" type="text/javascript"></script>
 
+    <script src="db/DB.js" type="text/javascript"></script>
+    
 </body>
 </html>

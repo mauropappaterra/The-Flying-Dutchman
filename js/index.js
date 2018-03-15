@@ -56,32 +56,13 @@ function responsive() {
     }
 }
 
-// login related functions
+// login/gif related functions
 function openLogin(elem, show, user) {
-  //  userType = user;
-    //TODO: affect which page to open after login
+    localStorage.setItem('usertype', user);
     changeDisplay(elem, show);
 }
 function changeDisplay(elem, show) {
     document.getElementById(elem).style.display = show;
-}
-
-//var user = "John Doe";
-//var userType = "guest";
-
-function getUser(){
- //   return user;
-}
- 
-function checkLogin(form) {
-    event.preventDefault();  // disable normal form submit behavior
-    if (form.user_name.value=="1") { 
-        if (form.password.value=="2") {
-            alert("Succesfull login!")
-  //        document.getElementById(form).action=customer.html  // obviously not right ^^'
-        } else {  alert("Invalid Password") }
-        
-    } else {  alert("Invalid UserID") } 
 }
 
 function picToGif1(pic, gif) {
@@ -107,13 +88,11 @@ function changeGif(ev) {
     document.getElementById('ori').style.display = "none";
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.display="none";
-        //elements[i].style.backgroundColor="blue";
     }
     var data = event.dataTransfer.getData("Text");
     alert(data);
     changeisplay(document.getElementById(data), 'block');
 }
-
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -121,7 +100,6 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-    //ev.dataTransfer.setData("text", ev.target.id);
 }
 
 function drop(ev) {
