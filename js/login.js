@@ -83,8 +83,7 @@ window.onload = function() {
     user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
     if (!isVIP(user)) {
         document.getElementById("specials").style.display = 'none';
-        document.getElementById("creditDisplay").style.display = 'none';
-        
+        document.getElementById("creditDisplay").style.display = 'none';   
     }
    
     // TODO:setup differently depending on current page/user, depending on design

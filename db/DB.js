@@ -715,7 +715,7 @@ var DB_STOCK = [{
         "volume_ml": 320,
         "alcohol_percentage": 4.5,
         "sale_price": 75.0,
-        "in_stock": 5,
+        "in_stock": 0,
         "kosher": false,
         "ecologic": false,
         "special": false

@@ -48,10 +48,10 @@ $(document).ready(function() {
         retrieveEcologic();
     });
 
-    if (true) {$("#specials").click(function(){ // HERE
+    $("#specials").click(function(){ 
         $("#drink_database").empty();
         retrieveSpecial();
-    })};
+    });
 
     $(document).on('click','.drink',function(){
         var article_id = $(this).find('span').html();
@@ -70,8 +70,6 @@ $(document).ready(function() {
         order.splice(i, 1); // remove both order and quantity (same index)
         quantity.splice(i, 1);
 
-        //alert(article_id)
-        //alert(order)
         $(this).closest('.order').remove(); // remove from DOM
     });
 });
@@ -174,13 +172,24 @@ function retrieveSpecial () {
 }
 
 function printToDOM (element){
+    
+    var pic_id = element.article_id + "pic";
+    var text_id = element.article_id + "text";
+    
     $("#drink_database").append(
-        '<div class="drink">' +
-        '<h4>' + element.name + '</h4>' +
-        '<img src="img/drinks/' + element.article_id + '.png">' +
-        '<h4>SEK ' + element.sale_price + ':-</h4>' +
-        '<span hidden>' + element.article_id + '</span>'+
-        '</div>');
+        '<div id="' + pic_id + '" class="drink">' +
+            '<h4>' + element.name + '</h4>' +
+            '<img  src="img/drinks/' + element.article_id + '.png">' +
+            '<font id="' + text_id + '" color="red"></font>' +
+            '<h4>SEK ' + element.sale_price + ':-</h4>' +
+            '<span hidden>' + element.article_id + '</span>'+          
+            '</div>');
+    
+    if (element.in_stock < 1) {  // out of stock
+        document.getElementById(text_id).innerHTML = "Out of stock";
+        document.getElementById(pic_id).setAttribute('class', 'drink fade');}
+    else if (element.in_stock < 20) { // low stock
+        document.getElementById(text_id).innerHTML = "Les then 20 in stock";}
 }
 
 function addOrder (article_id) {
@@ -223,4 +232,12 @@ function addOrder (article_id) {
 function updateTotal () {
     $('#total').empty().append('Total: SEK ' + total + ':-')
 }
+
+function outOfStock(article_id) {
+    for (i in DB_STOCK) {
+        if (DB_STOCK[i].article_id == article_id) {return (DB_STOCK[i].in_stock < 0);}
+    };
+    return true;
+}
+
 ;
