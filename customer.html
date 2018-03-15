@@ -70,142 +70,18 @@
     <div class="selection_header">
         <h2 id="your_order">Your Order</h2>
     </div>
-    
-    <div class="drink_list">
-
-        <div class="drink">
-            <h4>Corona</h4>
-            <img src="img/drinks/corona.png">
-            <h4>SEK 25:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn</h4>
-            <img src="img/drinks/brooklyn.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn Orange</h4>
-            <img src="img/drinks/brooklyn_orange.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Heineken</h4>
-            <img src="img/drinks/heineken.png">
-            <h4>SEK 20:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Corona</h4>
-            <img src="img/drinks/corona.png">
-            <h4>SEK 25:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn</h4>
-            <img src="img/drinks/brooklyn.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn Orange</h4>
-            <img src="img/drinks/brooklyn_orange.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Heineken</h4>
-            <img src="img/drinks/heineken.png">
-            <h4>SEK 20:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Corona</h4>
-            <img src="img/drinks/corona.png">
-            <h4>SEK 25:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn</h4>
-            <img src="img/drinks/brooklyn.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn Orange</h4>
-            <img src="img/drinks/brooklyn_orange.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Heineken</h4>
-            <img src="img/drinks/heineken.png">
-            <h4>SEK 20:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Corona</h4>
-            <img src="img/drinks/corona.png">
-            <h4>SEK 25:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn</h4>
-            <img src="img/drinks/brooklyn.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Brooklyn Orange</h4>
-            <img src="img/drinks/brooklyn_orange.png">
-            <h4>SEK 35:-</h4>
-        </div>
-
-        <div class="drink">
-            <h4>Heineken</h4>
-            <img src="img/drinks/heineken.png">
-            <h4>SEK 20:-</h4>
-        </div>
-
+ 
+    <div class="drink_list" id="drink_database">
+        <!-- Drinks Database loads here -->
     </div>
 
-    <div class="selection">
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 70:-</h4>
-            <img src="img/drinks/brooklyn.png">
-            <h4>Brooklyn (x2)</h4>
-        </div>
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 105:-</h4>
-            <img src="img/drinks/brooklyn_orange.png">
-            <h4>Brooklyn IPA (x3)</h4>
-        </div>
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 20:-</h4>
-            <img src="img/drinks/heineken.png">
-            <h4>Heineken (x1)</h4>
-        </div>
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 200:-</h4>
-            <img src="img/drinks/corona.png">
-            <h4>Corona (x10)</h4>
-        </div>
-
+    <div class="selection" id="drink_selection">
+        <!-- Drink Selection pops up here -->
     </div>
 
     <div class="checkout">
-        <h2 id="total">TOTAL: SEK 395</h2>
-    </div>
+        <h2 id="total">Total: SEK 0 :-</h2>
+    </div>   
 
     <footer>
 
@@ -239,6 +115,8 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Load Database -->
+    <script src="db/DB.js" type="text/javascript"></script>
     <!-- Scripts -->
     <script src="js/view/view_common.js" type="text/javascript"></script>
     <script src="js/view/view_customer.js" type="text/javascript"></script>

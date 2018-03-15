@@ -659,63 +659,208 @@ var DB_ORDERS = [
 ]
 
 /*DB of Bar's Stock saved as an array of objects, each object represents a beverage*/
-var DB_STOCK = [
+var DB_STOCK = [{
+        "article_id": "1132", // same as Sytembolaget
+        "name": "Heineken",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Netherlands",
+        "volume_ml": 350,
+        "alcohol_percentage": 5.0,
+        "sale_price": 50.0,
+        "in_stock": 100,
+        "kosher": false,
+        "ecologic": false,
+        "special": true // FALSE!!!
+    },{
+        "article_id": "1134", // same as Sytembolaget
+        "name": "Newcastle Brown Ale",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Australia",
+        "volume_ml": 350,
+        "alcohol_percentage": 7.0,
+        "sale_price": 65.0,
+        "in_stock": 10,
+        "kosher": false,
+        "ecologic": true, // FALSE!!!
+        "special": false
+    },{
+        "article_id": "166018", // same as Sytembolaget
+        "name": "Brooklyn Lager",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "United States",
+        "volume_ml": 350,
+        "alcohol_percentage": 6.0,
+        "sale_price": 80.0,
+        "in_stock": 50,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "593104", // same as Sytembolaget
+        "name": "Chang Beer",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Thailand",
+        "volume_ml": 320,
+        "alcohol_percentage": 4.5,
+        "sale_price": 75.0,
+        "in_stock": 5,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+    "article_id": "1194", // same as Sytembolaget
+    "name": "Corona",
+    "beer": true,
+    "wine": false,
+    "spirit": false,
+    "year": null,
+    "country": "Mexico",
+    "volume_ml": 320,
+    "alcohol_percentage": 4.55,
+    "sale_price": 55.0,
+    "in_stock": 500,
+    "kosher": false,
+    "ecologic": false,
+    "special": false
+    },
+
+    /*ADD +25 MORE BEERS HERE*/
     {
-        "article_id": "25053",
-        "name": "Braastad XO",
-        "description": "Cognac",
-        "year": "",
+        "article_id": "37500", // same as Sytembolaget
+        "name": "Lindemans Chardonnay",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Australia",
+        "volume_ml": 300,
+        "alcohol_percentage": 13.5,
+        "sale_price": 80.0,
+        "in_stock": 10,
+        "kosher": true, // FALSE!!!!
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "166487", // same as Sytembolaget
+        "name": "Passo",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
         "country": "France",
-        "producer": "Tiffon",
-        "volume_ml": null,
-        "alcohol_percentage": "40%",
-
-        "cost_per_liter": null,
-        "cost_per_unit": "442.00",
-
-        "sale_price_per_liter": null,
-        "sale_price_per_unit": "700.00",
-
-        "in_stock": 0
+        "volume_ml": 300,
+        "alcohol_percentage": 17.0,
+        "sale_price": 80.0,
+        "in_stock": 10,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "205747", // same as Sytembolaget
+        "name": "Foot of Africa",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "South Africa",
+        "volume_ml": 300,
+        "alcohol_percentage": 14.0,
+        "sale_price": 50.0,
+        "in_stock": 100,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
     },
+    /*ADD +15 MORE WINES HERE*/
     {
-        "article_id": "25053",
-        "name": "Braastad XO",
-        "description": "Cognac",
-        "year": "",
-        "country": "Frankrike",
-        "producer": "Tiffon",
-        "volume_ml": null,
-        "alcohol_percentage": "40%",
-
-        "cost_per_liter": null,
-        "cost_per_unit": "442.00",
-
-        "sale_price_per_liter": null,
-        "sale_price_per_unit": "700.00",
-
-        "img_src": "img/xxxx.jpg",
-        "in_stock": 0
-    },
-    {
-        "article_id": "25053",
-        "name": "Braastad XO",
-        "description": "Cognac",
-        "year": "",
-        "country": "Frankrike",
-        "producer": "Tiffon",
-        "volume_ml": null,
-        "alcohol_percentage": "40%",
-
-        "cost_per_liter": null,
-        "cost_per_unit": "442.00",
-
-        "sale_price_per_liter": null,
-        "sale_price_per_unit": "700.00",
-
-        "img_src": "img/xxxx.jpg",
-        "in_stock": 0
+        "article_id": "733051", // same as Sytembolaget
+        "name": "Rhum J. M",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "France",
+        "volume_ml": 50,
+        "alcohol_percentage": 46.6,
+        "sale_price": 65.0,
+        "in_stock": 12,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "723428", // same as Sytembolaget
+        "name": "Kullados",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "Sweden",
+        "volume_ml": 45,
+        "alcohol_percentage": 40.0,
+        "sale_price": 75.0,
+        "in_stock": 25,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "817010", // same as Sytembolaget
+        "name": "Strane London Dry Gin",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "United Kingdom",
+        "volume_ml": 45,
+        "alcohol_percentage": 47.4,
+        "sale_price": 75.0,
+        "in_stock": 25,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "411", // same as Sytembolaget
+        "name": "Johnnie Walker",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "Scotland",
+        "volume_ml": 45,
+        "alcohol_percentage": 40.0,
+        "sale_price": 80.0,
+        "in_stock": 25,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "828902", // same as Sytembolaget
+        "name": "Bocchino Riserva Cantina Privata",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "Italy",
+        "volume_ml": 50,
+        "alcohol_percentage": 45.0,
+        "sale_price": 200.0,
+        "in_stock": 3,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
     }
+    /*ADD +25 MORE SPIRITS HERE*/
 ]
 
 

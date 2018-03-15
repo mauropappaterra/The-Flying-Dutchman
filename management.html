@@ -63,168 +63,16 @@
         <h2 id="stock_order">Stock Order</h2>
     </div>
 
-    <div class="drink_list">
-
-        <div class="drink">
-
-        <div class="c1">
-            <img src="img/drinks/corona.png">
-        </div>
-
-        <div class="c2">
-            <b id="drink_name">Name:</b> Corona <br>
-            <b id="type">Type:</b> Beer<br>
-            <b id="price">Price:</b> SEK 10<br>
-            <b id="country">Country:</b> Mexico<br>
-            <b id="volume">Volume:</b> 350 ml<br>
-            <b id="alcohol">Alcohol:</b> 4.5%<br>
-            <b id="drink_id">ID:</b> 123456789<br>
-            <b id="producer">Producer:</b> Corona S.A.<br>
-            <b id="delivery">Delivery:</b> Corona<br>
-            <b id="cost">Cost per Liter:</b> SEK 35<br>
-        </div>
-
-        <div class="c3">
-            <br><br><br>
-            <h2 id="inStock">In Stock: 1000</h2>
-        </div>
-
-        <div class="c4">
-            <a class="add_button"><h4 id="add_one">Add +1</h4></a>
-            <a class="add_button"><h4 id="add_ten">Add +10</h4></a>
-            <a class="add_button"><h4 id="add_hundred">Add +100</h4></a>
-        </div>
+    <div class="drink_list" id="drink_database">
+      <!-- Drinks Database loads here -->
     </div>
 
-        <div class="drink">
-
-            <div class="c1">
-                <img src="img/drinks/heineken.png">
-            </div>
-
-            <div class="c2">
-                <b>Name:</b> Heineken <br>
-                <b>Type:</b> Beer<br>
-                <b>Price:</b> SEK 10<br>
-                <b>Country:</b> Netherlands<br>
-                <b>Volume:</b> 350 ml<br>
-                <b>Alcohol:</b> 4.5%<br>
-                <b>ID:</b> 123456789<br>
-                <b>Producer:</b> Corona S.A.<br>
-                <b>Delivery:</b> Corona<br>
-                <b>Cost per Liter:</b> SEK 35<br>
-            </div>
-
-            <div class="c3">
-                <br><br><br>
-                <h2>In Stock: 553</h2>
-            </div>
-
-            <div class="c4">
-                <a class="add_button"><h4>Add +1</h4></a>
-                <a class="add_button"><h4>Add +10</h4></a>
-                <a class="add_button"><h4>Add +100</h4></a>
-            </div>
-        </div>
-
-        <div class="drink">
-
-            <div class="c1">
-                <img src="img/drinks/brooklyn_orange.png">
-            </div>
-
-            <div class="c2">
-                <b>Name:</b> Brooklyn IPA <br>
-                <b>Type:</b> Beer<br>
-                <b>Price:</b> SEK 10<br>
-                <b>Country:</b> United States<br>
-                <b>Volume:</b> 350 ml<br>
-                <b>Alcohol:</b> 4.5%<br>
-                <b>ID:</b> 123456789<br>
-                <b>Producer:</b> Corona S.A.<br>
-                <b>Delivery:</b> Corona<br>
-                <b>Cost per Liter:</b> SEK 35<br>
-            </div>
-
-            <div class="c3">
-                <br><br><br>
-                <h2 class="alert">In Stock: 6</h2>
-            </div>
-
-            <div class="c4">
-                <a class="add_button"><h4>Add +1</h4></a>
-                <a class="add_button"><h4>Add +10</h4></a>
-                <a class="add_button"><h4>Add +100</h4></a>
-            </div>
-        </div>
-
-        <div class="drink">
-
-            <div class="c1">
-                <img src="img/drinks/brooklyn.png">
-            </div>
-
-            <div class="c2">
-                <b>Name:</b> Brooklyn <br>
-                <b>Type:</b> Beer<br>
-                <b>Price:</b> SEK 10<br>
-                <b>Country:</b> United States<br>
-                <b>Volume:</b> 350 ml<br>
-                <b>Alcohol:</b> 4.5%<br>
-                <b>ID:</b> 123456789<br>
-                <b>Producer:</b> Corona S.A.<br>
-                <b>Delivery:</b> Corona<br>
-                <b>Cost per Liter:</b> SEK 35<br>
-            </div>
-
-            <div class="c3">
-                <br><br><br>
-                <h2 class="alert">In Stock: 13</h2>
-            </div>
-
-            <div class="c4">
-                <a class="add_button"><h4>Add +1</h4></a>
-                <a class="add_button"><h4>Add +10</h4></a>
-                <a class="add_button"><h4>Add +100</h4></a>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="selection">
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 2000:-</h4>
-            <img src="img/drinks/brooklyn.png">
-            <h4>Brooklyn (x250)</h4>
-        </div>
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 10500:-</h4>
-            <img src="img/drinks/brooklyn_orange.png">
-            <h4>Brooklyn IPA (x367)</h4>
-        </div>
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 2000:-</h4>
-            <img src="img/drinks/heineken.png">
-            <h4>Heineken (x100)</h4>
-        </div>
-
-        <div class="order">
-            <a class="delete">X</a>
-            <h4 class="price">SEK 20000:-</h4>
-            <img src="img/drinks/corona.png">
-            <h4>Corona (x1000)</h4>
-        </div>
-
+    <div class="selection" id="drink_selection">
+      <!-- Drink Selection pops up here -->
     </div>
 
     <div class="checkout">
-        <h2 id="total">TOTAL: SEK 60000</h2>
+        <h2 id="total">Total: SEK 0 :-</h2>
     </div>
 
     <footer>
@@ -258,6 +106,9 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Load Database -->
+    <script src="db/DB.js" type="text/javascript"></script>
+    <script src="db/DB_SYSTEMBOLAGET.js" type="text/javascript"></script>
     <!-- Scripts -->
     <script src="js/view/view_common.js" type="text/javascript"></script>
     <script src="js/view/view_management.js" type="text/javascript"></script>
