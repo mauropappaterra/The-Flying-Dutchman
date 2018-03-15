@@ -48,10 +48,10 @@ $(document).ready(function() {
         retrieveEcologic();
     });
 
-    $("#specials").click(function(){
+    if (true) {$("#specials").click(function(){ // HERE
         $("#drink_database").empty();
         retrieveSpecial();
-    });
+    })};
 
     $(document).on('click','.drink',function(){
         var article_id = $(this).find('span').html();

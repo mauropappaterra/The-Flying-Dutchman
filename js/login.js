@@ -58,7 +58,7 @@ function loginDB(form) {
    alert("Wrong username");  // TODO: alert only when something is wrong or specify if its the pass/name? 
 }
 
-function checkAccess() {   // TODO: possibly define 'better' maybe managers can act as bartenders etc.
+function checkAccess() { 
     var ut = localStorage.getItem('usertype');
     var page = window.location.pathname.split("/").pop().split(".")[0];
     if ((ut == page) || (ut == null && page == 'index') || (page == 'index')) {return;}
@@ -73,11 +73,20 @@ function logOut() {  // TODO: pop asking to confirm?
     window.location.href = "index.html";
 }
 
-window.onload = function(){
+function isVIP(user) { // TODO: fix according to VIP bool
+    return user.credit > 0;
+}
+
+window.onload = function() {
 //    alert("onload");
     checkAccess();
     user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
-
+    if (!isVIP(user)) {
+        document.getElementById("specials").style.display = 'none';
+        document.getElementById("creditDisplay").style.display = 'none';
+        
+    }
+   
     // TODO:setup differently depending on current page/user, depending on design
     document.getElementById("usr").innerHTML = user.first_name;
     document.getElementById("cre").innerHTML = user.credit; 
