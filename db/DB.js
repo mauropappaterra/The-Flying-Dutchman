@@ -7,9 +7,9 @@
 /*DB of all users saved as an array of objects, each object represents a single user*/
 var DB_CUSTOMERS = [
     {
-        "customer_id": "0",
-        "password": "pass",
-        "username": "name",
+        "customer_id": "C00000",
+        "password": "test",
+        "username": "test",
         "first_name": "John",
         "last_name": "Doe",
         "email": "john.Doe@it.uu.se",
@@ -270,6 +270,15 @@ var DB_CUSTOMERS = [
 
 var DB_BARTENDERS = [
     {
+        "bartender_id": "B00000",
+        "password": "test",
+        "username": "test",
+        "first_name": "Bart",
+        "last_name": "Ender",
+        "email": "bart.ender@it.uu.se",
+        "phone": "0000000000"
+    },
+    {
         "bartender_id": "B00001",
         "password": "ffc2364a0f7bedd01fd49f0eda069906",
         "username": "schjou",
@@ -318,6 +327,15 @@ var DB_BARTENDERS = [
 ];
 
 var DB_MANAGERS =[
+    {
+        "manager_id": "M00000",
+        "password": "test",
+        "username": "test",
+        "first_name": "Mana",
+        "last_name": "Ger",
+        "email": "mana.ger@it.uu.se",
+        "phone": "0000000000"
+    },
     {
         "manager_id": "M00001",
         "password": "88ab1f4dac9422a7ee3cb34eca3793b7",
@@ -641,138 +659,208 @@ var DB_ORDERS = [
 ]
 
 /*DB of Bar's Stock saved as an array of objects, each object represents a beverage*/
-var DB_STOCK = [
+var DB_STOCK = [{
+        "article_id": "1132", // same as Sytembolaget
+        "name": "Heineken",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Netherlands",
+        "volume_ml": 350,
+        "alcohol_percentage": 5.0,
+        "sale_price": 50.0,
+        "in_stock": 100,
+        "kosher": false,
+        "ecologic": false,
+        "special": true // FALSE!!!
+    },{
+        "article_id": "1134", // same as Sytembolaget
+        "name": "Newcastle Brown Ale",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Australia",
+        "volume_ml": 350,
+        "alcohol_percentage": 7.0,
+        "sale_price": 65.0,
+        "in_stock": 10,
+        "kosher": false,
+        "ecologic": true, // FALSE!!!
+        "special": false
+    },{
+        "article_id": "166018", // same as Sytembolaget
+        "name": "Brooklyn Lager",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "United States",
+        "volume_ml": 350,
+        "alcohol_percentage": 6.0,
+        "sale_price": 80.0,
+        "in_stock": 50,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "593104", // same as Sytembolaget
+        "name": "Chang Beer",
+        "beer": true,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Thailand",
+        "volume_ml": 320,
+        "alcohol_percentage": 4.5,
+        "sale_price": 75.0,
+        "in_stock": 0,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+    "article_id": "1194", // same as Sytembolaget
+    "name": "Corona",
+    "beer": true,
+    "wine": false,
+    "spirit": false,
+    "year": null,
+    "country": "Mexico",
+    "volume_ml": 320,
+    "alcohol_percentage": 4.55,
+    "sale_price": 55.0,
+    "in_stock": 500,
+    "kosher": false,
+    "ecologic": false,
+    "special": false
+    },
+
+    /*ADD +25 MORE BEERS HERE*/
     {
-        "article_id": "25053",
-        "name": "Braastad XO",
-        "description": "Cognac",
-        "year": "",
+        "article_id": "37500", // same as Sytembolaget
+        "name": "Lindemans Chardonnay",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Australia",
+        "volume_ml": 300,
+        "alcohol_percentage": 13.5,
+        "sale_price": 80.0,
+        "in_stock": 10,
+        "kosher": true, // FALSE!!!!
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "166487", // same as Sytembolaget
+        "name": "Passo",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
         "country": "France",
-        "producer": "Tiffon",
-        "volume_ml": null,
-        "alcohol_percentage": "40%",
-
-        "cost_per_liter": null,
-        "cost_per_unit": "442.00",
-
-        "sale_price_per_liter": null,
-        "sale_price_per_unit": "700.00",
-
-        "in_stock": 0
+        "volume_ml": 300,
+        "alcohol_percentage": 17.0,
+        "sale_price": 80.0,
+        "in_stock": 10,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "205747", // same as Sytembolaget
+        "name": "Foot of Africa",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "South Africa",
+        "volume_ml": 300,
+        "alcohol_percentage": 14.0,
+        "sale_price": 50.0,
+        "in_stock": 100,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
     },
+    /*ADD +15 MORE WINES HERE*/
     {
-        "article_id": "25053",
-        "name": "Braastad XO",
-        "description": "Cognac",
-        "year": "",
-        "country": "Frankrike",
-        "producer": "Tiffon",
-        "volume_ml": null,
-        "alcohol_percentage": "40%",
-
-        "cost_per_liter": null,
-        "cost_per_unit": "442.00",
-
-        "sale_price_per_liter": null,
-        "sale_price_per_unit": "700.00",
-
-        "img_src": "img/xxxx.jpg",
-        "in_stock": 0
-    },
-    {
-        "article_id": "25053",
-        "name": "Braastad XO",
-        "description": "Cognac",
-        "year": "",
-        "country": "Frankrike",
-        "producer": "Tiffon",
-        "volume_ml": null,
-        "alcohol_percentage": "40%",
-
-        "cost_per_liter": null,
-        "cost_per_unit": "442.00",
-
-        "sale_price_per_liter": null,
-        "sale_price_per_unit": "700.00",
-
-        "img_src": "img/xxxx.jpg",
-        "in_stock": 0
+        "article_id": "733051", // same as Sytembolaget
+        "name": "Rhum J. M",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "France",
+        "volume_ml": 50,
+        "alcohol_percentage": 46.6,
+        "sale_price": 65.0,
+        "in_stock": 12,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "723428", // same as Sytembolaget
+        "name": "Kullados",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "Sweden",
+        "volume_ml": 45,
+        "alcohol_percentage": 40.0,
+        "sale_price": 75.0,
+        "in_stock": 25,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "817010", // same as Sytembolaget
+        "name": "Strane London Dry Gin",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "United Kingdom",
+        "volume_ml": 45,
+        "alcohol_percentage": 47.4,
+        "sale_price": 75.0,
+        "in_stock": 25,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "411", // same as Sytembolaget
+        "name": "Johnnie Walker",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "Scotland",
+        "volume_ml": 45,
+        "alcohol_percentage": 40.0,
+        "sale_price": 80.0,
+        "in_stock": 25,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
+    },{
+        "article_id": "828902", // same as Sytembolaget
+        "name": "Bocchino Riserva Cantina Privata",
+        "beer": false,
+        "wine": false,
+        "spirit": true,
+        "year": null,
+        "country": "Italy",
+        "volume_ml": 50,
+        "alcohol_percentage": 45.0,
+        "sale_price": 200.0,
+        "in_stock": 3,
+        "kosher": false,
+        "ecologic": false,
+        "special": false
     }
+    /*ADD +25 MORE SPIRITS HERE*/
 ]
-
-
-/* login functions */
-
-var user = "blank";
-
-function findByID(id, db) { // assuming 'id' is the first objectvalue
-    for (i in db) {
-        for (j in db[i]) {
-            if(db[i][j] == id) {return db[i]}
-            break;
-        }
-    }
-}
-
-function typeToDB(usertype) {
-    if (usertype == 'customer')  { return DB_CUSTOMERS;}
-    if (usertype == 'bartender') { return DB_BARTENDERS;}
-    if (usertype == 'manager')   { return DB_MANAGERS;}
-
-   // else {alert("todo?: invalid userType")}
-}
-
-
-function goToUserPage(usertype) {
-    if      (usertype == 'customer')  { window.location.href = "customer.html";}
-    else if (usertype == 'bartender') { window.location.href = "bartender.html";}
-    else if (usertype == 'manager')   { window.location.href = "manager.html";}
-    else { window.location.href = "index.html";}
-}
-
-function loginDB(form) {
-    var username = form.user_name.value;
-    var password = form.password.value;
-    var db = typeToDB(localStorage.getItem('usertype'));
-    for (i in db) {
-        if (db[i].username == username) {
-            if (db[i].password == password) {
-                user = db[i];
-                for (j in db[i]) {                
-                    localStorage.setItem('id', db[i][j]);
-                    break;}
-                goToUserPage(localStorage.getItem('usertype'));
-                return;
-            }
-            else { alert("Wrong password"); } 
-        }
-    }
-   alert("Wrong username");  // TODO: alert only when something is wrong or specify if its the pass/name? 
-}
-
-function checkAccess() {   // TODO: possibly define 'better' maybe managers can act as bartenders etc.
-    var ut = localStorage.getItem('usertype');
-    var page = window.location.pathname.split("/").pop().split(".")[0];
-    if ((ut == page) || (ut == null && page == 'index') || (page == 'index')) {return;}
-    else {
-        alert("Acces Denied");
-        goToUserPage(ut);
-    }
-}
-
-function logOut() {  // TODO: pop asking to confirm?
-    localStorage.clear();
-    window.location.href = "index.html";
-}
-
-window.onload = function(){
-//    alert("onload");
-    checkAccess();
-    user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
-
-    // TODO:setup differently depending on current page/user, depending on design
-    document.getElementById("usr").innerHTML = user.first_name;
-    document.getElementById("cre").innerHTML = user.credit; 
-}
 ;
 
