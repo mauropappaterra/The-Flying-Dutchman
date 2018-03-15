@@ -30,7 +30,7 @@
 .big_button {
     margin: 5%;
     padding: 2%;
-
+    display: block;
     text-align: center;
     font-size: 40px;
 }
@@ -45,7 +45,7 @@
 
 .big_button_medium,.big_button_large{
     width: 45%;
-    float: right;
+    float: right; /*right;*/
     clear: none;
 
     margin: 2%;
@@ -100,7 +100,8 @@ input[type=submit]:hover {
     border-radius: 5px;
     background-color: yellow;
     padding: 20px;
-    position: absolute; 
+    position: absolute;
+    z-index:1;
 }
 
 .close {
@@ -116,4 +117,25 @@ input[type=submit]:hover {
     padding:2px 5px;
     background:#ccc;
     color:#fff;
+}
+
+.gif {
+    float:center;
+    vertical-align: middle;
+    display:none;
+}
+
+.test {
+    loop: loop;
+    autoplay: autoplay;
+}
+    
+/*why wont u center...*/
+.login_button {
+    float: center;
+    margin: 5%;
+    padding: 2%;
+    display: block;
+    text-align: center;
+    font-size: 40px;
 }

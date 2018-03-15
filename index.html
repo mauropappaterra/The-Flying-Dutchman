@@ -25,15 +25,12 @@
 
 </head>
 <body>
+
     <!-- Your code starts here -->
     
     <h1 id="welcome">Welcome to The Flying Dutchman!</h1>
-    
-    <img class="welcome_pirate welcome_pirate_medium" src="img/welcome_pirate.jpg">
 
-    <a onclick="openLogin('loginBox', 'block', 'customer')"><div class="big_button green" id="customer">Customer login</div></a>
-
-    <!-- login box -->     
+        <!-- login box -->     
     <div id ="loginBox" class="login">
 
       <button id = "close" class="close" onclick="changeDisplay('loginBox', 'none')">X</button>  
@@ -53,7 +50,20 @@
       </form>
     </div>
 
+    <a display="block" onclick="openLogin('loginBox', 'block', 'customer')"><div class="login_button flipper" id="customer">Customer login</div></a>
+
+
+    <!-- DnD pics/gifs -->
+  <div align="center" ondrop="picToGif(event)"  ondragover="allowDrop(event)">
     
+    <img id="piratePic" class="gif" style="display:block; min-height: 397.391px; width: 400px;" src="img/welcome_pirate.jpg"> 
+    
+   <video id="great" class="gif" id="gifPirate" preload="auto" poster="https://img-9gag-fun.9cache.com/photo/ajEXymq_460s.jpg" loop="loop" style="display:none; min-height: 397.391px; width: 400px;">
+     <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460sv.mp4" type="video/mp4">
+       <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460svwm.webm" type="video/webm"></video>
+
+    </div> 
+  
 
     <!-- LANGUAGE MENU -->
     <div class="languages_menu">
@@ -61,7 +71,7 @@
         <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
         <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
         <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg" id="pirateFlag" draggable="true" ondragstart="drag(event)"></div></a>
     </div>
 
     <div>
