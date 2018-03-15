@@ -7,9 +7,9 @@
 /*DB of all users saved as an array of objects, each object represents a single user*/
 var DB_CUSTOMERS = [
     {
-        "customer_id": "0",
-        "password": "pass",
-        "username": "name",
+        "customer_id": "C00000",
+        "password": "test",
+        "username": "test",
         "first_name": "John",
         "last_name": "Doe",
         "email": "john.Doe@it.uu.se",
@@ -270,6 +270,15 @@ var DB_CUSTOMERS = [
 
 var DB_BARTENDERS = [
     {
+        "bartender_id": "B00000",
+        "password": "test",
+        "username": "test",
+        "first_name": "Bart",
+        "last_name": "Ender",
+        "email": "bart.ender@it.uu.se",
+        "phone": "0000000000"
+    },
+    {
         "bartender_id": "B00001",
         "password": "ffc2364a0f7bedd01fd49f0eda069906",
         "username": "schjou",
@@ -318,6 +327,15 @@ var DB_BARTENDERS = [
 ];
 
 var DB_MANAGERS =[
+    {
+        "manager_id": "M00000",
+        "password": "test",
+        "username": "test",
+        "first_name": "Mana",
+        "last_name": "Ger",
+        "email": "mana.ger@it.uu.se",
+        "phone": "0000000000"
+    },
     {
         "manager_id": "M00001",
         "password": "88ab1f4dac9422a7ee3cb34eca3793b7",
@@ -717,7 +735,7 @@ function findByID(id, db) { // assuming 'id' is the first objectvalue
 function typeToDB(usertype) {
     if (usertype == 'customer')  { return DB_CUSTOMERS;}
     if (usertype == 'bartender') { return DB_BARTENDERS;}
-    if (usertype == 'manager')   { return DB_MANAGERS;}
+    if (usertype == 'management')   { return DB_MANAGERS;}
 
    // else {alert("todo?: invalid userType")}
 }
@@ -726,7 +744,7 @@ function typeToDB(usertype) {
 function goToUserPage(usertype) {
     if      (usertype == 'customer')  { window.location.href = "customer.html";}
     else if (usertype == 'bartender') { window.location.href = "bartender.html";}
-    else if (usertype == 'manager')   { window.location.href = "manager.html";}
+    else if (usertype == 'management')   { window.location.href = "management.html";}
     else { window.location.href = "index.html";}
 }
 
