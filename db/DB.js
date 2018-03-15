@@ -7,6 +7,16 @@
 /*DB of all users saved as an array of objects, each object represents a single user*/
 var DB_CUSTOMERS = [
     {
+        "customer_id": "0",
+        "password": "pass",
+        "username": "name",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.Doe@it.uu.se",
+        "phone": "0000000000",
+        "credit": 400
+    },
+    {
         "customer_id": "C00001",
         "password": "b690bc2447d40ea8a6f78345eb979a28",
         "username": "jorass",
@@ -689,3 +699,80 @@ var DB_STOCK = [
         "in_stock": 0
     }
 ]
+
+
+/* login functions */
+
+var user = "blank";
+
+function findByID(id, db) { // assuming 'id' is the first objectvalue
+    for (i in db) {
+        for (j in db[i]) {
+            if(db[i][j] == id) {return db[i]}
+            break;
+        }
+    }
+}
+
+function typeToDB(usertype) {
+    if (usertype == 'customer')  { return DB_CUSTOMERS;}
+    if (usertype == 'bartender') { return DB_BARTENDERS;}
+    if (usertype == 'manager')   { return DB_MANAGERS;}
+
+   // else {alert("todo?: invalid userType")}
+}
+
+
+function goToUserPage(usertype) {
+    if      (usertype == 'customer')  { window.location.href = "customer.html";}
+    else if (usertype == 'bartender') { window.location.href = "bartender.html";}
+    else if (usertype == 'manager')   { window.location.href = "manager.html";}
+    else { window.location.href = "index.html";}
+}
+
+function loginDB(form) {
+    var username = form.user_name.value;
+    var password = form.password.value;
+    var db = typeToDB(localStorage.getItem('usertype'));
+    for (i in db) {
+        if (db[i].username == username) {
+            if (db[i].password == password) {
+                user = db[i];
+                for (j in db[i]) {                
+                    localStorage.setItem('id', db[i][j]);
+                    break;}
+                goToUserPage(localStorage.getItem('usertype'));
+                return;
+            }
+            else { alert("Wrong password"); } 
+        }
+    }
+   alert("Wrong username");  // TODO: alert only when something is wrong or specify if its the pass/name? 
+}
+
+function checkAccess() {   // TODO: possibly define 'better' maybe managers can act as bartenders etc.
+    var ut = localStorage.getItem('usertype');
+    var page = window.location.pathname.split("/").pop().split(".")[0];
+    if ((ut == page) || (ut == null && page == 'index') || (page == 'index')) {return;}
+    else {
+        alert("Acces Denied");
+        goToUserPage(ut);
+    }
+}
+
+function logOut() {  // TODO: pop asking to confirm?
+    localStorage.clear();
+    window.location.href = "index.html";
+}
+
+window.onload = function(){
+//    alert("onload");
+    checkAccess();
+    user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
+
+    // TODO:setup differently depending on current page/user, depending on design
+    document.getElementById("usr").innerHTML = user.first_name;
+    document.getElementById("cre").innerHTML = user.credit; 
+}
+;
+

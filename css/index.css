@@ -30,7 +30,7 @@
 .big_button {
     margin: 5%;
     padding: 2%;
-
+    display: block;
     text-align: center;
     font-size: 40px;
 }
@@ -45,8 +45,97 @@
 
 .big_button_medium,.big_button_large{
     width: 45%;
-    float: right;
+    float: right; /*right;*/
     clear: none;
 
     margin: 2%;
+}
+
+.margin_button{
+    display: block;
+    width: 20%;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
+    clear: both;
+    margin-bottom: 2%;
+
+}
+
+/*login stuff below*/
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 60%;
+    background-color: green;    
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: darkgreen;
+}
+
+.login {
+    display: none;
+    width: 60%;
+    margin: 80px 100px;
+    border-radius: 5px;
+    background-color: yellow;
+    padding: 20px;
+    position: absolute;
+    z-index:1;
+}
+
+.close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+
+.close:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+    color:#fff;
+}
+
+.gif {
+    float:center;
+    vertical-align: middle;
+    display:none;
+}
+
+.test {
+    loop: loop;
+    autoplay: autoplay;
+}
+    
+/*why wont u center...*/
+.login_button {
+    float: center;
+    margin: 5%;
+    padding: 2%;
+    display: block;
+    text-align: center;
+    font-size: 40px;
 }

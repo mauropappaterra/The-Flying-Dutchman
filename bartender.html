@@ -32,10 +32,17 @@
             <h1 id="title">Bartender View</h1>
         </div>
 
+        <table class="info">
+          <tr>
+            <th> Bartender:  </th>
+            <td id="usr"> usr </td>
+          </tr>
+        </table>
+        <!--
         <div class="info">
             <b id ="login_as">Log in as:</b> John Smith <br>
         </div>
-
+-->
         <hr>
     </header>
 
@@ -631,7 +638,7 @@
     <footer>
 
         <!-- LOG OUT BUTTON -->
-        <a href="index.html"><div class="small_button red logout" id="logout">Log Out</div></a>
+        <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
 
         <!-- LANGUAGE MENU -->
         <div class="languages_menu">
@@ -664,6 +671,8 @@
     <script src="js/multilanguage.js" type="text/javascript"></script>
     <script src="js/responsive.js" type="text/javascript"></script>
 
+    <script src="db/DB.js" type="text/javascript"></script>
+    
 
 </body>
 </html>

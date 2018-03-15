@@ -19,25 +19,44 @@
 */
 
 var welcome = ["Welcome to The Flying Dutchman!",
-    "Välkommen til Flygande Holländaren!",
-    "Benvenuti al'Olandese Volante!",
-    "Bienvenidos al Holandés Volador!",
-    "Ahoy t' th' Flyin' Dutchman!"]
+               "Välkommen til Flygande Holländaren!",
+               "Benvenuti al'Olandese Volante!",
+               "Bienvenidos al Holandés Volador!",
+               "Ahoy t' th' Flyin' Dutchman!"]
 
 var customer = ["Customer login",
-    "Logga in som gäst",
-    "Accesso avventore",
-    "Acceso cliente",
-    "Ahoy Buccaneers"]
+                "Logga in som gäst",
+                "Accesso avventore",
+                "Acceso cliente",
+                "Ahoy Buccaneers"]
 
 var bartender = ["Bartender login",
-    "Logga in som bartender",
-    "Accesso barista",
-    "Acceso barista",
-    "Ahoy Powder Monkeys"]
+                 "Logga in som bartender",
+                 "Accesso barista",
+                 "Acceso barista",
+                 "Ahoy Powder Monkeys"]
 
 var management = ["Management login",
-    "Logga in som arbetledare",
-    "Accesso gestione",
-    "Acceso administración",
-    "Kin' o' th' Pirates"]
+                  "Logga in som arbetledare",
+                  "Accesso gestione",
+                  "Acceso administración",
+                  "Kin' o' th' Pirates"]
+
+var user_name = ["User name",
+                 "Användarnamn",
+                 "TODO",
+                 "TODO",
+                 "TODO"]
+
+var password = ["Password",
+                "Lösenord",
+                "TODO",
+                "TODO",
+                "TODO"]
+
+var login = ["Login",
+             "Logga in",
+             "TODO",
+             "TODO",
+             "TODO"]
+
