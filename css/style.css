@@ -63,13 +63,14 @@ a:active {
 }
 
 .languages img {
-    width: 10%;
+    size: ;
+    width:70px;
+    height: 40px;
     float: left;
     padding: 2%;
 }
 
 .languages_menu{
-    background-color: #a4a4a4;
     bottom: 0px;
     display: block;
     margin-left: auto;
@@ -79,8 +80,8 @@ a:active {
 
 /*UNDO-REDO MENU*/
 
-.undo_redo_menu{
-    background-color: #a4a4a4;
+.undo_redo_menu {
+/**    background-color: #a4a4a4;*/
     float: left;
     margin: 2%;
     margin-top: 0%;
@@ -88,7 +89,15 @@ a:active {
 }
 
 #undo, #redo {
+    color: #A4B9B6;
     float: left;
+    vertical-align: middle;
+
+    width: 50px;
+    height: 80 px;
+}
+#undo:hover, #redo:hover {
+    color: white;
 }
 
 
@@ -98,7 +107,7 @@ a:active {
 }
 
 .blue {
-    background-color: #007bff;
+    background-color: #AA8139;
 }
 
 .orange {
@@ -106,5 +115,21 @@ a:active {
 }
 
 .red {
-    background-color: red;
+    background-color: #AD2535;
+}
+.headergreen {
+    background-color: #0C2924;
+}
+
+.darkgreen {
+    background-color: #254540;
+}
+.green {
+    background-color: #567973;
+}
+.backgroundgreen {
+    background-color: #A4B9B6;
+}
+.highlightgreen{
+    background-color: #C0CFCC;
 }

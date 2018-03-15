@@ -47,6 +47,9 @@ function responsive() {
         $('.welcome_pirate').removeClass('welcome_pirate_medium');
         $('.welcome_pirate').removeClass('welcome_pirate_small');
 
+      /*  $('.bgrimg').addClass('background_img');*/
+
+
         $('.big_button').addClass('big_button_large');
         $('.big_button').removeClass('big_button_medium');
         $('.big_button').removeClass('big_button_small');

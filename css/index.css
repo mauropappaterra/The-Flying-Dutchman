@@ -30,9 +30,10 @@
 .big_button {
     margin: 5%;
     padding: 2%;
-
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
+
+
 }
 
 .big_button_small{
@@ -44,9 +45,23 @@
 }
 
 .big_button_medium,.big_button_large{
-    width: 45%;
-    float: right;
+    width: 25%;
+  /*  float: left;*/
+    left: 50%;
+    top: 65%;
     clear: none;
-
     margin: 2%;
+  /**  transform: translateY(200%);*/
+
+}
+.languages_menu{
+
+}
+
+body {
+    background-image: url("../img/background/back4.jpeg");
+    background-size: cover;
+
+    max-width: 100%;
+    background-repeat: no-repeat;
 }
