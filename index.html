@@ -18,6 +18,7 @@
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
@@ -25,15 +26,34 @@
 </head>
 <body>
     <!-- Your code starts here -->
-
+    
     <h1 id="welcome">Welcome to The Flying Dutchman!</h1>
-
+    
     <img class="welcome_pirate welcome_pirate_medium" src="img/welcome_pirate.jpg">
 
-    <a href="customer.html"><div class="big_button green" id="customer">Customer login</div></a>
-    <a href="bartender.html"><div class="big_button blue" id="bartender">Bartender login</div></a>
-    <a href="management.html"><div class="big_button orange" id="management">Management login</div></a>
+    <a onclick="openLogin('loginBox', 'block', 'customer')"><div class="big_button green" id="customer">Customer login</div></a>
 
+    <!-- login box -->     
+    <div id ="loginBox" class="login">
+
+      <button id = "close" class="close" onclick="changeDisplay('loginBox', 'none')">X</button>  
+ <!--     <form action="file:///var/lib/git/Bar/customer.html"> -->
+ <!--     <form>  action = "/action_page.php"> -->
+   <form name = "loginForm" > <!--  action = index.html> -->
+        
+     <a id="user_name">user_name</a>
+     <input type="text" id="user_name" name="user_name" placeholder="Your UserName.."> 
+
+        <a id="password">password</a>
+        <input type="password" id="password" name="password" placeholder="Your Password..">
+        
+        <div align="center">
+         <input type="submit" id="login" name="login" value="login" onClick="checkLogin(loginForm)">
+        </div>
+      </form>
+    </div>
+
+    
 
     <!-- LANGUAGE MENU -->
     <div class="languages_menu">
@@ -44,6 +64,11 @@
         <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
     </div>
 
+    <div>
+     
+    <a onclick="openLogin('loginBox', 'block', 'bartender')"><div class="margin_button grey" id="bartender">Bartender login</div></a> 
+    <a onclick="openLogin('loginBox', 'block', 'manager')"><div class="margin_button grey" id="management">Management login</div></a>
+    </div>
     <!-- Your code ends here -->
 
     <!-- External Scripts -->

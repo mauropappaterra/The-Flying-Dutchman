@@ -14,6 +14,9 @@ function translate (index) {
     $("#customer").text(customer[index]);
     $("#bartender").text(bartender[index]);
     $("#management").text(management[index]);
+    $("#user_name").text(user_name[index]);
+    $("#password").text(password[index]);
+    $("#login").text(login[index]);
 }
 
 function responsive() {
@@ -51,4 +54,33 @@ function responsive() {
         $('.big_button').removeClass('big_button_medium');
         $('.big_button').removeClass('big_button_small');
     }
-};
+}
+
+// login related functions
+function openLogin(elem, show, user) {
+  //  userType = user;
+    //TODO: affect which page to open after login
+    changeDisplay(elem, show);
+}
+function changeDisplay(elem, show) {
+    document.getElementById(elem).style.display = show;
+}
+
+//var user = "John Doe";
+//var userType = "guest";
+
+function getUser(){
+ //   return user;
+}
+ 
+function checkLogin(form) {
+    event.preventDefault();  // disable normal form submit behavior
+    if (form.user_name.value=="1") { 
+        if (form.password.value=="2") {
+            alert("Succesfull login!")
+  //        document.getElementById(form).action=customer.html  // obviously not right ^^'
+        } else {  alert("Invalid Password") }
+        
+    } else {  alert("Invalid UserID") } 
+}
+;
