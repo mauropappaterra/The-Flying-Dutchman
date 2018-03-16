@@ -2508,7 +2508,7 @@ var DB_STOCK = [{
         "wine": false,
         "spirit": true,
         "in_stock": 10
-    },
+    }
     /*ADD +0 MORE SPIRITS HERE*/
 ]
 ;
