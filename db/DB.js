@@ -14,7 +14,8 @@ var DB_CUSTOMERS = [
         "last_name": "Doe",
         "email": "john.Doe@it.uu.se",
         "phone": "0000000000",
-        "credit": 400
+        "credit": 400,
+        "vip": true
     },
     {
         "customer_id": "C00001",
@@ -24,7 +25,8 @@ var DB_CUSTOMERS = [
         "last_name": "Assies",
         "email": "jory.assies@it.uu.se",
         "phone": "0704811411",
-        "credit": 300
+        "credit": 300,
+        "vip": true
     },
     {
         "customer_id": "C00002",
@@ -34,7 +36,8 @@ var DB_CUSTOMERS = [
         "last_name": "Street",
         "email": "sulayman.street@it.uu.se",
         "phone": "0701517627",
-        "credit": 650
+        "credit": 650,
+        "vip": true
     },
     {
         "customer_id": "C00003",
@@ -44,7 +47,8 @@ var DB_CUSTOMERS = [
         "last_name": "Panders",
         "email": "orabela.panders@it.uu.se",
         "phone": "0701503294",
-        "credit": 840
+        "credit": 840,
+        "vip": true
     },
     {
         "customer_id": "C00004",
@@ -54,7 +58,8 @@ var DB_CUSTOMERS = [
         "last_name": "Olguin",
         "email": "kenan.olguin@it.uu.se",
         "phone": "0706569560",
-        "credit": 1250
+        "credit": 1250,
+        "vip": true
     },
     {
         "customer_id": "C00005",
@@ -64,7 +69,8 @@ var DB_CUSTOMERS = [
         "last_name": "Kr\u00fcger",
         "email": "sasa.kruger@it.uu.se",
         "phone": "0705349276",
-        "credit": 955
+        "credit": 955,
+        "vip": true
     },
     {
         "customer_id": "C00006",
@@ -74,7 +80,8 @@ var DB_CUSTOMERS = [
         "last_name": "Todd",
         "email": "ervin.todd@it.uu.se",
         "phone": "0702339018",
-        "credit": 720
+        "credit": 720,
+        "vip": true
     },
     {
         "customer_id": "C00007",
@@ -84,7 +91,8 @@ var DB_CUSTOMERS = [
         "last_name": "Lyndon",
         "email": "aquilina.lyndon@it.uu.se",
         "phone": "0702611287",
-        "credit": 135
+        "credit": 135,
+        "vip": true
     },
     {
         "customer_id": "C00008",
@@ -94,7 +102,8 @@ var DB_CUSTOMERS = [
         "last_name": "Nicholson",
         "email": "lasse.nicholson@it.uu.se",
         "phone": "0703238992",
-        "credit": 535
+        "credit": 535,
+        "vip": true
     },
     {
         "customer_id": "C00009",
@@ -104,7 +113,8 @@ var DB_CUSTOMERS = [
         "last_name": "Honda",
         "email": "maiken.honda@it.uu.se",
         "phone": "0709533955",
-        "credit": 1395
+        "credit": 1395,
+        "vip": true
     },
     {
         "customer_id": "C00010",
@@ -114,7 +124,8 @@ var DB_CUSTOMERS = [
         "last_name": "Christopherson",
         "email": "hiram.christopherson@it.uu.se",
         "phone": "0709599269",
-        "credit": 1435
+        "credit": 1435,
+        "vip": true
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00011",
@@ -134,7 +145,8 @@ var DB_CUSTOMERS = [
         "last_name": "Heiman",
         "email": "jancsi.heiman@it.uu.se",
         "phone": "0707977965",
-        "credit": 0
+        "credit": 0,
+        "vip": false
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00013",
@@ -154,7 +166,8 @@ var DB_CUSTOMERS = [
         "last_name": "Graner",
         "email": "pompeius.graner@it.uu.se",
         "phone": "0701584121",
-        "credit": 0
+        "credit": 0,
+        "vip": false
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00015",
@@ -164,7 +177,8 @@ var DB_CUSTOMERS = [
         "last_name": "Pagani",
         "email": "valeria.pagani@it.uu.se",
         "phone": "0703156441",
-        "credit": 0
+        "credit": 0,
+        "vip": false
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00016",
@@ -174,7 +188,8 @@ var DB_CUSTOMERS = [
         "last_name": "Olhouser",
         "email": "domen.olhouser@it.uu.se",
         "phone": "0702459084",
-        "credit": 0
+        "credit": 0,
+        "vip": false
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00017",
@@ -184,7 +199,8 @@ var DB_CUSTOMERS = [
         "last_name": "Langley",
         "email": "golnar.langley@it.uu.se",
         "phone": "0702677189",
-        "credit": 0
+        "credit": 0,
+        "vip": false
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00018",
@@ -194,7 +210,8 @@ var DB_CUSTOMERS = [
         "last_name": "Lapointe",
         "email": "hyram.lapointe@it.uu.se",
         "phone": "0702177650",
-        "credit": 0
+        "credit": 0,
+        "vip": false
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00019",
@@ -204,7 +221,8 @@ var DB_CUSTOMERS = [
         "last_name": "Fabre",
         "email": "katrien.fabre@it.uu.se",
         "phone": "0705701344",
-        "credit": 0
+        "credit": 0,
+        "vip": false
     },
     {
         "customer_id": "C00020",
@@ -214,7 +232,8 @@ var DB_CUSTOMERS = [
         "last_name": "Pender",
         "email": "sulis\u0142aw.pender@it.uu.se",
         "phone": "0709481365",
-        "credit": 1465
+        "credit": 1465,
+        "vip": true
     },
     {
         "customer_id": "C00021",
@@ -224,7 +243,8 @@ var DB_CUSTOMERS = [
         "last_name": "Schermer",
         "email": "danna.schermer@it.uu.se",
         "phone": "0709593528",
-        "credit": 1690
+        "credit": 1690,
+        "vip": true
     },
     {
         "customer_id": "C00022",
@@ -234,7 +254,8 @@ var DB_CUSTOMERS = [
         "last_name": "Sitz",
         "email": "jove.sitz@it.uu.se",
         "phone": "0704408722",
-        "credit": 245
+        "credit": 245,
+        "vip": true
     },
     {
         "customer_id": "C00023",
@@ -244,7 +265,8 @@ var DB_CUSTOMERS = [
         "last_name": "Pickle",
         "email": "elektra.pickle@it.uu.se",
         "phone": "0708681770",
-        "credit": 2000
+        "credit": 2000,
+        "vip": true
     },
     {
         "customer_id": "C00024",
@@ -254,7 +276,8 @@ var DB_CUSTOMERS = [
         "last_name": "Toft",
         "email": "muhammed.toft@it.uu.se",
         "phone": "0708579214",
-        "credit": 1885
+        "credit": 1885,
+        "vip": true
     },
     {
         "customer_id": "C00025",
@@ -264,7 +287,8 @@ var DB_CUSTOMERS = [
         "last_name": "Gorecki",
         "email": "zuleika.gorecki@it.uu.se",
         "phone": "0705595808",
-        "credit": 865
+        "credit": 865,
+        "vip": true
     }
 ];
 
