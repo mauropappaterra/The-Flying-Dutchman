@@ -2,6 +2,7 @@
  *  customer.js
  *  Created by Mauro J. Pappaterra on 11 of February 2018.
  *  Updated by Hassan Odimi on 23 of February 2018.
+ *  Updated on 16 March
  */
 
 /*CUSTOMER PAGE SCRIPTS
@@ -53,6 +54,11 @@ $(document).ready(function() {
     $("#specials").click(function(){ 
         $("#drink_database").empty();
         retrieveSpecial();
+    });
+
+    $("#pay").click(function(){
+        alert(order);
+        alert(quantity);
     });
 
     $(document).on('click','.drink',function(){
@@ -173,25 +179,27 @@ function retrieveSpecial () {
     });
 }
 
-function printToDOM (element){
-    
-    var pic_id = element.article_id + "pic";
-    var text_id = element.article_id + "text";
-    
+function printToDOM (element) {
+
+    var stock_message = "";
+    var classes = "";
+
+    if (checkStock(element.article_id) < 10) {  // low items
+        stock_message = "<br> <b class='textRed'>LOW STOCK!</b>";
+    }
+
+    if (checkStock(element.article_id) < 1) {  // out of stock
+        stock_message = "<br><b class='textRed alert'>OUT OF STOCK</b>";
+        classes = " fade";
+    }
+
     $("#drink_database").append(
-        '<div id="' + pic_id + '" class="drink">' +
-            '<h4>' + element.name + '</h4>' +
-            '<img  src="img/drinks/' + element.article_id + '.png">' +
-            '<font id="' + text_id + '" color="red"></font>' +
-            '<h4>SEK ' + element.sale_price + ':-</h4>' +
-            '<span hidden>' + element.article_id + '</span>'+          
-            '</div>');
-    
-    if (element.in_stock < 1) {  // out of stock
-        document.getElementById(text_id).innerHTML = "Out of stock";
-        document.getElementById(pic_id).setAttribute('class', 'drink fade');}
-    else if (element.in_stock < 20) { // low stock
-        document.getElementById(text_id).innerHTML = "Les then 20 in stock";}
+        '<div class="drink' + classes + '">' +
+        '<h4>' + element.name + '</h4>' +
+        '<img  src="img/drinks/' + element.article_id + '.png">' +
+        '<h4>SEK ' + element.sale_price + ':- ' +  stock_message +'</h4>' +
+        '<span hidden>' + element.article_id + '</span>' +
+        '</div>');
 }
 
 function addOrder (article_id) {
@@ -207,7 +215,7 @@ function addOrder (article_id) {
                     '<h4 class="price">SEK <span class="loreen">' + this.sale_price + '</span>:-</h4>' +
                     '<span class="sum" hidden>' + this.sale_price + '</span>' +
                     '<img src="img/drinks/' + this.article_id + '.png">' +
-                    '<h4>' + this.name + '<span class="quantity"></span></h4>' +
+                    '<h4>' + this.name + '<span class="quantity textRed"></span></h4>' +
                     '</div>'
                 )
                 total += parseInt(this.sale_price);
@@ -232,14 +240,15 @@ function addOrder (article_id) {
 }
 
 function updateTotal () {
-    $('#total').empty().append('Total: SEK ' + total + ':-')
+    $('#total').empty().append('Total: SEK ' + Math.max(total,0) + ':-')
 }
 
-function outOfStock(article_id) {
-    for (i in DB_STOCK) {
-        if (DB_STOCK[i].article_id == article_id) {return (DB_STOCK[i].in_stock < 0);}
-    };
-    return true;
-}
-
-;
+function checkStock (article_id) {
+    var counter = 0;
+    $.each(DB_STOCK, function(element){
+        if (this.article_id == article_id){
+            counter = this.in_stock;
+        }
+    });
+    return counter;
+};

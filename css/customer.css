@@ -114,12 +114,13 @@ header{
     float: left;
     text-align: center;
 
-    cursor: move;
+    cursor: pointer;
 
-    overflow:auto
+    overflow:hidden;
 }
 
 .drink img {
+    
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -129,9 +130,7 @@ header{
 
 .fade {
     opacity: 0.5;
-    filter: alpha(opacity=40);
-    zoom: 1;
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .fade2 {
@@ -241,4 +240,9 @@ body {
 
 .highlight {
     background-color: #3240ff;
+}
+
+
+#total {
+    text-align: center;
 }

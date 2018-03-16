@@ -151,8 +151,9 @@ input[type=submit]:hover {
     float: none;
     width: 30%;
     height: 40px;
-    margin: 4%;
+    margin: 3%;
     margin-left: 35%;
+    margin-right: 35%;
     padding: 1%;
     display: block;
     text-align: center;

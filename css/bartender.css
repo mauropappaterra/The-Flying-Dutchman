@@ -6,11 +6,33 @@
 /*Style Sheet for the bartender page*/
 
 /*MENU COLUMN*/
+
 .menu {
     width: 100%;
-    height: 67px;
+    height: 98px;/*67px;*/
     background-color: greenyellow;
     float: left;
+}
+
+.menu ul {
+    list-style-type: none;
+    float: left;
+}
+
+.menu a li {
+    display: block;
+    background-color: pink;
+
+    text-align: center;
+
+    float: left;
+    margin-right:10px;
+    padding:3px;
+    width: 120px;
+}
+
+.menu a:hover li {
+    background-color: #ff2d1b;
 }
 
 .order_list {
@@ -108,8 +130,7 @@
 }
 
 .active:after {
-    content: "Close Order"; /* \2796 Unicode character for "minus" sign (-) */
-
+    content: "Hide Order"; /* \2796 Unicode character for "minus" sign (-) */
 }
 
 .zoom_out{
@@ -141,7 +162,7 @@
     text-align: center;
 
     width: 100px;
-    height: 200px;
+    height: 250px;
     float: left;
 }
 
@@ -150,7 +171,7 @@
 }
 
 .order_details img {
-    height: 80px;
+    height: 100px;
 
     display: block;
     margin-left: auto;
@@ -160,11 +181,16 @@
 
 .checkout {
     width: 100%;
-    height: 50px;
+    height: 75px;
     background-color: #ffaf40;
     clear: both;
     text-align: right;
 }
+
+.total {
+    pointer-events: none;
+    float: right;
+ }
 
 /* FOOTER*/
 footer {

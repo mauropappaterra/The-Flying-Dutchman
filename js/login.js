@@ -1,14 +1,6 @@
 //const DB = require('../db/DB.js');
 //import {tmp} from '../db/DB';
 
-
-function translate (index) {
-    $("#page_title").text(page_title[index]);
-    $("#user_name").text(user_name[index]);
-    $("#password").text(password[index]);
-    $("#login").text(login[index]);
-}
-
 /* login functions */
 
 var user = "blank";
@@ -77,10 +69,11 @@ function isVIP(user) { // TODO: fix according to VIP bool
     return user.credit > 0;
 }
 
-window.onload = function() {
-//    alert("onload");
+$(function (){
+
     checkAccess();
     user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
+    
     if (!isVIP(user)) {
         document.getElementById("specials").style.display = 'none';
         document.getElementById("creditDisplay").style.display = 'none';   
@@ -89,5 +82,5 @@ window.onload = function() {
     // TODO:setup differently depending on current page/user, depending on design
     document.getElementById("usr").innerHTML = user.first_name;
     document.getElementById("cre").innerHTML = user.credit; 
-}
+});
 
