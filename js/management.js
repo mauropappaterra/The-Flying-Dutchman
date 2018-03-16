@@ -32,6 +32,11 @@ $(document).ready(function() {
         retrieveShortage();
     });
 
+    $("#pay").click(function(){
+        alert(big_orders);
+        alert(big_quantity);
+    });
+
     $(document).on('click','#add1',function(){
         var article_id = $(this).parent().find('span').html();
         //alert("You have chosen: " + article_id);
@@ -52,17 +57,16 @@ $(document).ready(function() {
 
     $(document).on('click','.delete',function(){
 
-        total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
+        big_total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
         updateTotal();
 
         var article_id = $(this).closest('.order').attr('id'); // get id
-        var i = $.inArray(article_id,order);
+        var i = $.inArray(article_id,big_orders);
 
-        order.splice(i, 1); // remove both order and quantity (same index)
-        quantity.splice(i, 1);
+        big_orders.splice(i, 1); // remove both order and quantity (same index)
+        big_quantity.splice(i, 1);
 
-        //alert(article_id)
-        //alert(order)
+        //alert($(this).closest('.order').html());
         $(this).closest('.order').remove(); // remove from DOM
     });
 });
@@ -109,12 +113,10 @@ function responsive() {
 
     if ($(window).width() > 641 && $(window).width() < 1007){/* Medium size */
         //alert("Medium Size! -> " + size + " px!");
-
     }
 
     if ($(window).width() > 1008){/* Large size */
         //alert("Large Size! -> " + size + " px!");
-
     }
 }
 
@@ -152,6 +154,16 @@ function checkStock (article_id) {
 
 function printToDOM (element){
 
+    var classes = '';
+
+    if (checkStock(element.artikelid) < 15){
+        classes = ' class ="textRed"';
+    }
+
+    if (checkStock(element.artikelid) == 0){
+        classes = ' class ="textGrey"';
+    }
+
     $("#drink_database").append(
         '<div class="drink">'+
 
@@ -174,7 +186,7 @@ function printToDOM (element){
 
         '<div class="c3">' +
         '<br><br><br>' +
-        '<h2>In Stock: '+ checkStock(element.artikelid) +'</h2>' +
+        '<h2 '+ classes +'>In Stock: '+ checkStock(element.artikelid) +'</h2>' +
         '</div>' +
 
         '<div class="c4">' +
@@ -201,10 +213,10 @@ function addOrder (article_id, number) {
                     '<h4 class="price">SEK <span class="loreen">' + parseInt(this.prisinklmoms * number) + '</span>:-</h4>' +
                     '<span class="sum" hidden>' + parseInt(this.prisinklmoms) + '</span>' +
                     '<img src="img/drinks/' + this.artikelid + '.png">' +
-                    '<h4>' + this.namn + ' ' + this.namn2 + '<span class="quantity"> ( x ' + number + ')</span></h4>' +
+                    '<h4>' + this.namn + ' ' + this.namn2 + '<span class="quantity textRed"> ( x ' + number + ')</span></h4>' +
                     '</div>'
                 )
-                big_total = parseInt(this.prisinklmoms * number);
+                big_total += parseInt(this.prisinklmoms * number);
                 ;}
         });
         big_orders.push(article_id);
@@ -227,8 +239,5 @@ function addOrder (article_id, number) {
 }
 
 function updateTotal (){
-    $('#total').empty().append('Total: SEK ' + big_total + ':-')
-}
-
-
-;
+    $('#total').empty().append('Total: SEK ' + Math.max(big_total,0) + ':-')
+};

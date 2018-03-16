@@ -112,7 +112,7 @@ a h4 {
     width: 100px;
     padding: 5px;
     text-align: center;
-    cursor: move;
+    cursor: pointer;
 }
 
 a:hover h4 {

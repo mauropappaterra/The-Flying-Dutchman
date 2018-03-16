@@ -124,3 +124,22 @@ a:active {
 .flipper {
     background-color: #FB6601;
 }
+
+.light_orange {
+    background-color: #fbe104;
+}
+
+.textRed{
+    color: red;
+}
+
+.alert{
+    padding:2px;
+    border: dashed;
+    border-width: 2px;
+    border-color: red;
+}
+
+.textGrey{
+    color: #676767;
+}
