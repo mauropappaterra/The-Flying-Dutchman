@@ -8,7 +8,7 @@
 /*HEADER*/
 
 header{
-    overflow: hidden;
+    overflow:hidden;
     position: relative;
     background-color: #0A2521;
 }
@@ -60,6 +60,11 @@ header{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
+    box-shadow: 5px -5px 5px black;
+    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.25), 0 -10px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 4px -4px 10px black, 4px 0 10px black;
+
+
 
 }
 
@@ -70,7 +75,7 @@ header{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.menu a:active li {
+.menu a.current li {
     background-color: #A4B9B6;
     border: solid;
     border-color: #A4B9B6;
@@ -78,10 +83,15 @@ header{
     border-top-right-radius: 10px;
 }
 
+
+.selected {
+    background-color: #2dff12;
+}
+
 .drink_list {
     width: 70%;
     height: 500px;
-    background-color: 	#A4B9B6;
+    background-color: #A4B9B6;
     float: left;
     overflow: auto;
 }
@@ -115,6 +125,21 @@ header{
     margin-right: auto;
     clear: both;
     height: 55%;
+}
+
+.fade {
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+    zoom: 1;
+    pointer-events:none;
+}
+
+.fade2 {
+    background-color: grey;
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+    zoom: 1;
+    pointer-events:none;
 }
 
 /*ORDER COLUMN*/
@@ -206,11 +231,14 @@ footer .small_button{
     border-radius: 5px;
 }
 
-
 #pay {
     float: right;
 }
 
 body {
     background-color: #0A2521;
+}
+
+.highlight {
+    background-color: #3240ff;
 }

@@ -18,21 +18,72 @@
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
 </head>
 <body>
-    <!-- Your code starts here -->
 
-    <h1 id="welcome">Welcome to The Flying Dutchman!</h1>
 
+
+  <!-- Your code starts here -->
+
+  <!-- temporary table for checking login  -->
+  <!--
+  <h1>test</h1>
+
+  <table>
+    <tr>
+      <th> username:  </th>
+      <th id="usr"> usr </th>
+    </tr>
+    <tr>
+      <th> balance:  </th>
+      <th id="cre"> cre </th>
+    </tr>
+  </table>
+  -->
+
+  <!-- login box -->
+  <div id="loginBox" class="login">
+
+    <button id = "close" class="close" onclick="changeDisplay('loginBox', 'none')">X</button>
+    <form name = "loginForm" action="javascript: void(0);"> <!--customer.html> <!--  action = index.html> -->
+
+      <a id="user_name">user_name</a>
+      <input type="text" id="user_name" name="user_name" placeholder="Your UserName..">
   <!--  <img class="welcome_pirate welcome_pirate_medium" src="img/welcome_pirate.jpg"> -->
 
     <a href="customer.html"><div class="big_button green" id="customer">Customer login</div></a>
   <!--  <a href="bartender.html"><div class="big_button blue" id="bartender">Bartender login</div></a>
     <a href="management.html"><div class="big_button orange" id="management">Management login</div></a> -->
+
+      <a id="password">password</a>
+      <input type="password" id="password" name="password" placeholder="Your Password..">
+
+      <div align="center">
+        <!-- <input type="submit" id="login" name="login" value="login" onClick="checkLogin(loginForm)"> -->
+        <input type="submit" id="login" name="login" value="login" onClick="loginDB(loginForm)">
+
+      </div>
+    </form>
+  </div>
+
+
+
+  <!-- DnD pics/gifs -->
+  <div align="center" ondrop="picToGif(event)"  ondragover="allowDrop(event)">
+
+    <img id="piratePic" class="gif" style="display:block; height: 40%; width: 40%; margin-right: 30%; margin-left: 30%;" src="img/logo/white2.png">
+
+    <video id="great" class="gif" id="gifPirate" preload="auto" poster="https://img-9gag-fun.9cache.com/photo/ajEXymq_460s.jpg" loop="loop" style="display:none; min-height: 397.391px; width: 400px;">
+      <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460sv.mp4" type="video/mp4">
+        <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460svwm.webm" type="video/webm"></video>
+
+    </div>
+  <a display="block" onclick="openLogin('loginBox', 'block', 'customer')"><div class="login_button flipper" id="customer">Customer login</div></a>
 
 
     <!-- LANGUAGE MENU -->
@@ -41,22 +92,36 @@
         <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
         <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
         <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg" id="pirateFlag" draggable="true" ondragstart="drag(event)"></div></a>
     </div>
 
+    <div>
+
+    <a onclick="openLogin('loginBox', 'block', 'bartender')"><div class="margin_button grey" id="bartender">Bartender login</div></a>
+    <a onclick="openLogin('loginBox', 'block', 'management')"><div class="margin_button grey" id="management">Management login</div></a>
+
+    </div>
     <!-- Your code ends here -->
 
     <!-- External Scripts -->
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Load Database -->
+   <script src="db/DB.js" type="text/javascript"></script>
+
     <!-- Scripts -->
     <script src="js/view/view_common.js" type="text/javascript"></script>
     <script src="js/view/view_index.js" type="text/javascript"></script>
 
     <script src="js/index.js" type="text/javascript"></script>
+    <script src="js/login.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
     <script src="js/responsive.js" type="text/javascript"></script>
+
+
+
 
 </body>
 </html>

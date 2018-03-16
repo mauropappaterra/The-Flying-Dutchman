@@ -94,7 +94,7 @@ a:active {
     vertical-align: middle;
 
     width: 50px;
-    height: 80 px;
+    height: 80px;
 }
 #undo:hover, #redo:hover {
     color: white;
@@ -132,4 +132,21 @@ a:active {
 }
 .highlightgreen{
     background-color: #C0CFCC;
+}
+
+
+.grey {
+    background-color: #676b6d;
+}
+
+.yellow {
+    background-color: #f3ff19;
+}
+
+.beek {
+    background-color: #B9CB00;
+}
+
+.flipper {
+    background-color: #FB6601;
 }
