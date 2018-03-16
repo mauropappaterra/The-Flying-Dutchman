@@ -10,10 +10,11 @@
 header{
     overflow:hidden;
     position: relative;
+    background-color: #0A2521;
 }
 
 .title {
-    background-color: darkgrey;
+    background-color: #0A2521;
     float: left;
     width: 100%;
 
@@ -29,7 +30,7 @@ header{
 .menu {
     width: 70%;
     height: 30%;
-    background-color: greenyellow;
+    background-color: #0A2521;
     float: left;
     overflow: auto;
 }
@@ -45,39 +46,67 @@ header{
 
 .menu a li {
     display: block;
-    background-color: pink;
+    background-color: #567973;
 
     text-align: center;
 
     float: left;
     margin-right:10px;
     padding:3px;
-    width: 80px;
+    width: 11%;
+    height: 30px;
+    border: solid;
+    border-color: #567973;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    box-shadow: 5px -5px 5px black;
+    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.25), 0 -10px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 4px -4px 10px black, 4px 0 10px black;
+
+
+
 }
 
 .menu a:hover li {
-    background-color: #ff2d1b;
+    background-color: #D6DDDC;
+    border: solid;
+    border-color: #D6DDDC;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.menu a.current li {
+    background-color: #A4B9B6;
+    border: solid;
+    border-color: #A4B9B6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.selected {
+    background-color: #2dff12;
 }
 
 .drink_list {
     width: 70%;
     height: 500px;
-    background-color: yellow;
+    background-color: #A4B9B6;
     float: left;
     overflow: auto;
 }
 
 .drink {
-    
-    background-color: white;
+    background-color: #C0CFCC;
 
     padding-left: 1.5%;
     padding-right: 1.5%;
     margin: 2%;
 
-    border-style: dashed;
-    border-color: grey;
+    border-style: solid;
+    border-color: #C0CFCC;
     border-width: medium;
+    border-radius: 3%;
 
     width: 170px;
     height: 280px;
@@ -117,19 +146,19 @@ header{
     width: 30%;
     height: 30%;
     float: right;
-    background-color: #07ffc2;
+    background-color: #254540;
 }
 
 .selection {
     width: 30%;
     height: 450px;
-    background-color: lightseagreen;
+    background-color: #567973;
     float: right;
     overflow: auto;
 }
 
 .order {
-    background-color: white;
+    background-color: #A4B9B6;
 
     padding-left: 1.5%;
     padding-right: 1.5%;
@@ -137,7 +166,7 @@ header{
     margin-bottom: 10%;
 
     border-style: dashed;
-    border-color: grey;
+    border-color: #254540;
     border-width: thin;
 
     width: 92%;
@@ -156,16 +185,16 @@ header{
 .checkout {
     width: 30%;
     height: 50px;
-    background-color: #ffaf40;
+    background-color: #254540;
     float: right;
 }
 
 .checkout h2 {
-    float: right;
+    float: left;
 }
 
 .delete {
-    background-color: #ff2d1b;
+    background-color: #AF370B;
     color: white;
     float: right;
     width: 20px;
@@ -174,7 +203,7 @@ header{
 
 /* FOOTER*/
 footer {
-    background-color: #a4a4a4;
+    background-color: #0C2924;
 }
 
 .logout {
@@ -185,16 +214,34 @@ footer {
 .languages_menu {
     float: left;
     width: 50%;
+    height: 50%;
+    padding-top: 5px;
     clear: none;
+}
+
+.undo{
+    width: 50px;
 }
 
 footer .small_button{
     float: left;
+    height: 50%;
+    border: solid;
+    border-radius: 5px;
 }
 
 #pay {
     float: right;
 }
+
+body {
+    background-color: #0A2521;
+}
+
+.highlight {
+    background-color: #3240ff;
+}
+
 
 #total {
     text-align: center;

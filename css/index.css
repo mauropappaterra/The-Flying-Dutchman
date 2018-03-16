@@ -9,6 +9,7 @@
 
 .welcome_pirate_small {
     width: 65%;
+    height: 65%
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -26,6 +27,7 @@
 }
 
 /*Menu Buttons*/
+
 
 .big_button {
     margin: 5%;
@@ -49,6 +51,20 @@
     clear: none;
 
     margin: 2%;
+  /**  transform: translateY(200%);*/
+
+}
+.languages_menu{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+body {
+    background-image: url("../img/background/back9.jpg");
+    background-size: cover;
+
+    max-width: 100%;
+    background-repeat: no-repeat;
 }
 
 .margin_button{
@@ -81,7 +97,7 @@ input[type=text], select {
 
 input[type=submit] {
     width: 60%;
-    background-color: green;    
+    background-color: green;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -129,13 +145,17 @@ input[type=submit]:hover {
     loop: loop;
     autoplay: autoplay;
 }
-    
+
 /*why wont u center...*/
 .login_button {
-    float: center;
-    margin: 5%;
-    padding: 2%;
+    float: none;
+    width: 30%;
+    height: 40px;
+    margin: 3%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 1%;
     display: block;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
 }

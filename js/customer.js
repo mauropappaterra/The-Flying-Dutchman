@@ -22,11 +22,13 @@ $(document).ready(function() {
     $("#all").click(function(){
         $("#drink_database").empty();
         retrieveDB();
+        $(this).addClass('highlight');
     });
 
     $("#beers").click(function(){
         $("#drink_database").empty();
         retrieveBeers();
+
     });
 
     $("#wines").click(function(){
