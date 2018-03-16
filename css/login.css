@@ -30,12 +30,15 @@ input[type=password], select {
 
 input[type=submit] {
     width: 60%;
-    background-color: green;    
-    color: white;
+    background: linear-gradient(darkgray,grey);
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border-radius: 4px;
     cursor: pointer;
+    border-color: black;
+    box-shadow: 1px 1px 20px #061614, -1px -1px 20px #061614;
+
 }
 
 input[type=submit]:hover {
@@ -44,8 +47,16 @@ input[type=submit]:hover {
 
 .login {
     border-radius: 5px;
-    background-color: yellow;
+    background-color: #0C2924;
     padding: 20px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    background: linear-gradient(#254540,#0C2924);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px black;
 }
 
 

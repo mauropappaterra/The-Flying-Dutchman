@@ -63,11 +63,11 @@ a:active {
 }
 
 .languages img {
-    size: ;
     width:70px;
     height: 40px;
     float: left;
     padding: 2%;
+
 }
 
 .languages_menu{
@@ -84,7 +84,7 @@ a:active {
 /**    background-color: #a4a4a4;*/
     float: left;
     margin: 2%;
-    margin-top: 0%;
+    margin-top: 1%;
 
 }
 
@@ -149,11 +149,11 @@ a:active {
 
 .flipper {
   /*  background-color: #FB6601;*/
-    background: linear-gradient(darkgray,grey);
+    background: linear-gradient(#254540,#0C2924);
     border-width: thin;
     border-style: solid;
     border-radius: 7px;
-    box-shadow: 2px 2px 10px black;
+    box-shadow: 2px 2px 10px #2b150c, -2px -2px 10px #2b150c;
 }
 
 .light_orange {
@@ -174,3 +174,4 @@ a:active {
 .textGrey{
     color: #676767;
 }
+

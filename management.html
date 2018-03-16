@@ -15,6 +15,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png">
 
+
+    <!-- CSS Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/management.css">
@@ -29,7 +33,7 @@
 
     <header>
 
-        <div class="title">
+        <div class="title headergreen">
             <h1 id="title">Management View</h1>
         </div>
 
@@ -45,10 +49,9 @@
             <b id="login_as">Log in as:</b> John Smith <br>
         </div>
 -->
-        <hr>
     </header>
 
-    <div class="menu">
+    <div class="menu headergreen">
         <h2>Systembolaget Database</h2>
 
         <ul class="type_menu">
@@ -60,19 +63,19 @@
 
     </div>
 
-    <div class="selection_header">
+    <div class="selection_header darkgreen">
         <h2 id="stock_order">Stock Order</h2>
     </div>
 
-    <div class="drink_list" id="drink_database">
+    <div class="drink_list backgroundgreen" id="drink_database">
       <!-- Drinks Database loads here -->
     </div>
 
-    <div class="selection" id="drink_selection">
+    <div class="selection green" id="drink_selection">
       <!-- Drink Selection pops up here -->
     </div>
 
-    <div class="checkout">
+    <div class="checkout darkgreen">
         <h2 id="total">Total: SEK 0 :-</h2>
     </div>
 
@@ -93,8 +96,8 @@
 
       <!-- UNDO-REDO MENU -->
       <div class="undo_redo_menu">
-        <a href="#" id="undo"><div class="undo_redo"> <img src="img/undo.svg"></div></a>
-        <a href="#" id="redo"><div class="undo_redo"> <img src="img/redo.svg"></div></a>
+          <a href="#" id="undo"><div class="undo_redo"> <i class="fa fa-arrow-left fa-2x"></i></div></a>
+          <a href="#" id="redo"><div class="undo_redo"> <i class="fa fa-arrow-right fa-2x"></i></div></a>
       </div>
 
       <!-- PAY BUTTON -->
