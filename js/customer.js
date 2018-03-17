@@ -14,6 +14,10 @@ var order = []; // keeps list of drinks ordered
 var quantity = []; // keeps list of quantities with matching indexes
 var total = 0; // calculates the total
 
+var done = new Array();    //keeps track of 'done' actions
+var undone = new Array();  //keeps track of 'redone' actions
+
+
 $(document).ready(function() {
 
     retrieveDB(); // load database on page load
@@ -61,13 +65,13 @@ $(document).ready(function() {
         alert(quantity);
     });
 
-    $(document).on('click','.drink',function(){
+    $(document).on('click','.drink',function() {
         var article_id = $(this).find('span').html();
         //alert("You have chosen: " + article_id);
         addOrder(article_id);
     });
 
-    $(document).on('click','.delete',function(){
+    $(document).on('click','.delete',function() {
 
         total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
         updateTotal();
@@ -79,7 +83,19 @@ $(document).ready(function() {
         quantity.splice(i, 1);
 
         $(this).closest('.order').remove(); // remove from DOM
+ 
+        addAction('delete', article_id);
     });
+    $(document).on('click','.undo',function() {
+        var article_id = $(this).find('span').html();
+        //alert("You have chosen: " + article_undo(       
+        undo();
+    });
+    $(document).on('click','.redo',function() {
+        var article_id = $(this).find('span').html();
+        //alert("You have chosen: " + article_id);
+    });
+    
 });
 
 function translate (index) {
@@ -171,8 +187,7 @@ function retrieveEcologic () {
 }
 
 function retrieveSpecial () {
-    $.each(DB_STOCK, function(element){
-
+    $.each(DB_SPECIALSTOCK, function(element){
         if (this.special == true){ // filter only specials
             printToDOM(this);
         };
@@ -183,12 +198,18 @@ function printToDOM (element) {
 
     var stock_message = "";
     var classes = "";
+    var img_src ="img/drinks/";
+    var db = DB_STOCK;
+    
+    if (element.special) {
+        db = DB_SPECIALSTOCK;
+        img_src ="img/drinks/special_beers/"; }
 
-    if (checkStock(element.article_id) < 10) {  // low items
+    if (checkStock(db, element.article_id) < 10) {  // low items
         stock_message = "<br> <b class='textRed'>LOW STOCK!</b>";
     }
 
-    if (checkStock(element.article_id) < 1) {  // out of stock
+    if (checkStock(db, element.article_id) < 1) {  // out of stock
         stock_message = "<br><b class='textRed alert'>OUT OF STOCK</b>";
         classes = " fade";
     }
@@ -196,7 +217,7 @@ function printToDOM (element) {
     $("#drink_database").append(
         '<div class="drink' + classes + '">' +
         '<h4>' + element.name + '</h4>' +
-        '<img  src="img/drinks/' + element.article_id + '.png">' +
+        '<img  src="' + img_src + element.article_id + '.png">' +
         '<h4>SEK ' + element.sale_price + ':- ' +  stock_message +'</h4>' +
         '<span hidden>' + element.article_id + '</span>' +
         '</div>');
@@ -205,7 +226,7 @@ function printToDOM (element) {
 function addOrder (article_id) {
     i = $.inArray(article_id,order);
 
-    if (i == -1){ // if drink is not already on the order print to DOM
+    if (i == -1) { // if drink is not already on the order print to DOM
 
         $.each(DB_STOCK, function(element){
             if (this.article_id == article_id){ // retrieve article from the database
@@ -235,6 +256,7 @@ function addOrder (article_id) {
     }
 
     updateTotal();
+    addAction('order', article_id);
     //FOR TESTING PURPOSES
     //alert (order +' X '+quantity)
 }
@@ -243,12 +265,33 @@ function updateTotal () {
     $('#total').empty().append('Total: SEK ' + Math.max(total,0) + ':-')
 }
 
-function checkStock (article_id) {
+function addAction(type, article_id) {
+   done.push([type, article_id]);
+ //   alert(done); 
+}
+
+function undo() {
+    lastAction = done.pop();
+    if (lastAction[0] == 'order') {alert(lastAction[0]);}
+    else if (lastAction[0] == 'delete') {alert(lastAction[1]);}
+    undone.push(done.pop());
+    
+    //alert(done);
+}
+
+function redo() {    
+  //  alert(undone);
+    done.push(undone.pop());
+}
+
+function checkStock (db, article_id) {
     var counter = 0;
-    $.each(DB_STOCK, function(element){
+    $.each(db, function(element){
         if (this.article_id == article_id){
             counter = this.in_stock;
         }
     });
     return counter;
 };
+
+

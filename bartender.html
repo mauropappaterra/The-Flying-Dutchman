@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bartender.css">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+
+    <!-- CSS Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
@@ -30,11 +37,11 @@
 
     <header>
 
-        <div class="title">
+        <div class="title headergreen">
             <h1 id="title">Bartender View</h1>
         </div>
 
-        <table class="info">
+        <table class="info headergreen">
           <tr>
             <th> Bartender:  </th>
             <td id="usr"> usr </td>
@@ -45,10 +52,9 @@
             <b id ="login_as">Log in as:</b> John Smith <br>
         </div>
 -->
-        <hr>
     </header>
 
-    <div class="menu">
+    <div class="menu darkgreen">
 
         <h2 id="orders_q">Orders Queue</h2>
 
@@ -61,7 +67,7 @@
     </div>
 
 
-    <div class="order_list" id="all_orders">
+    <div class="order_list backgroundgreen" id="all_orders">
         <!-- All customer orders load here -->
     </div>
 
@@ -81,8 +87,8 @@
 
         <!-- UNDO-REDO MENU -->
         <div class="undo_redo_menu">
-            <a href="#" id="undo"><div class="undo_redo"> <img src="img/undo.svg"></div></a>
-            <a href="#" id="redo"><div class="undo_redo"> <img src="img/redo.svg"></div></a>
+            <a href="#" id="undo"><div class="undo_redo"> <i class="fa fa-arrow-left fa-2x"></i></div></a>
+            <a href="#" id="redo"><div class="undo_redo"> <i class="fa fa-arrow-right fa-2x"></i></div></a>
         </div>
 
     </footer>

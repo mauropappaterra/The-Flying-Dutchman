@@ -60,7 +60,7 @@
 }
 
 body {
-    background-image: url("../img/background/back9.jpg");
+    background-image: url("../img/background/back12.png");
     background-size: cover;
 
     max-width: 100%;
@@ -68,14 +68,13 @@ body {
 }
 
 .margin_button{
-    display: block;
-    width: 20%;
-    font-size: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    float: right;
+    display: inline-block;
+    font-size: 17px;
+    width: 40%;
     clear: both;
-    margin-bottom: 2%;
+    margin: 2%;
+    text-align: center;
+    position: relative;
 
 }
 
@@ -111,10 +110,11 @@ input[type=submit]:hover {
 
 .login {
     display: none;
-    width: 60%;
+    width: 100%;
+    margin-top: 50%;
     margin: 80px 100px;
     border-radius: 5px;
-    background-color: yellow;
+    background-color: #0C2924;
     padding: 20px;
     position: absolute;
     z-index:1;
@@ -158,4 +158,10 @@ input[type=submit]:hover {
     display: block;
     text-align: center;
     font-size: 35px;
+
+}
+#barManLog{
+    display: inline;
+    float: right;
+    width: 30%;
 }

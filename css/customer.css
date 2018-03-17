@@ -10,13 +10,16 @@
 header{
     overflow:hidden;
     position: relative;
+   /* background-color: #0A2521;*/
     background-color: #0A2521;
+
 }
 
 .title {
     background-color: #0A2521;
     float: left;
     width: 100%;
+
 
 }
 .info {
@@ -54,15 +57,13 @@ header{
     margin-right:10px;
     padding:3px;
     width: 11%;
-    height: 30px;
+    height: 30%;
     border: solid;
     border-color: #567973;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
-    box-shadow: 5px -5px 5px black;
-    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.25), 0 -10px 20px 0 rgba(0, 0, 0, 0.25);
-    box-shadow: 4px -4px 10px black, 4px 0 10px black;
+    box-shadow: 2px -2px 10px black, 2px 0 10px black;
 
 
 
@@ -146,6 +147,7 @@ header{
     width: 30%;
     height: 30%;
     float: right;
+
     background-color: #254540;
 }
 
@@ -202,8 +204,10 @@ header{
 }
 
 /* FOOTER*/
-footer {
+.footer {
     background-color: #0C2924;
+    bottom:0;
+    float:bottom;
 }
 
 .logout {
@@ -235,6 +239,7 @@ footer .small_button{
 }
 
 body {
+    heiht: 100%;
     background-color: #0A2521;
 }
 
