@@ -1,4 +1,4 @@
-var MIKES_DB = [
+var DB_MIKES = [
         {
             "article_id": "MIKE01",
             "name": "mike's Robust Imperial Porter",
