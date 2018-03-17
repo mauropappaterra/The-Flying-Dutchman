@@ -204,8 +204,10 @@ header{
 }
 
 /* FOOTER*/
-footer {
+.footer {
     background-color: #0C2924;
+    bottom:0;
+    float:bottom;
 }
 
 .logout {
@@ -237,6 +239,7 @@ footer .small_button{
 }
 
 body {
+    heiht: 100%;
     background-color: #0A2521;
 }
 

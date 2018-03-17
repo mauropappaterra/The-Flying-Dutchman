@@ -731,7 +731,7 @@ var DB_STOCK = [{
         "in_stock": 100,
         "kosher": false,
         "ecologic": false,
-        "special": true // FALSE!!!
+        "special": false // FALSE!!!
     },{
         "article_id": "1134", // same as Sytembolaget
         "name": "Newcastle Brown Ale",

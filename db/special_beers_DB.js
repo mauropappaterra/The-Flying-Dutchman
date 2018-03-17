@@ -1,4 +1,4 @@
-var DB_STOCK =
+var DB_SPECIALSTOCK =
  [
      {
     "article_id": "MIKE01", 
