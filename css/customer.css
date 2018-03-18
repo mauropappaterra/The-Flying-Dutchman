@@ -10,12 +10,12 @@
 header{
     overflow:hidden;
     position: relative;
-    background-color: #0d463f;
+    background-color: rgba(103, 103, 103, 0.2);
     color: white;
 }
 
 .title {
-    background-color: #0d463f;
+    background-color: rgba(103, 103, 103, 0.2);
     float: left;
     width: 100%;
 
@@ -31,7 +31,7 @@ header{
 .menu {
     width: 70%;
     height: 30%;
-    background-color: #0d463f;
+    /*background-color: #0d463f;*/
     float: left;
     overflow: auto;
 }
@@ -65,8 +65,6 @@ header{
     box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.25), 0 -10px 20px 0 rgba(0, 0, 0, 0.25);
     box-shadow: 4px -4px 10px black, 4px 0 10px black;
 
-
-
 }
 
 .menu a:hover li {
@@ -92,7 +90,9 @@ header{
 .drink_list {
     width: 70%;
     height: 500px;
-    background-color: #A4B9B6;
+    /*background-color: rgba(15, 172, 86, 0.8);*/
+    background-image: url("../img/background.jpg");
+    opacity: 0.8;
     float: left;
     overflow: auto;
 }
@@ -147,19 +147,24 @@ header{
     width: 30%;
     height: 30%;
     float: right;
-    background-color: #0d463f;
+    /*background-color: #0d463f;*/
 }
 
 .selection {
     width: 30%;
     height: 450px;
-    background-color: #567973;
+    /*background-color: rgba(12, 96, 42, 0.9);*/
     float: right;
     overflow: auto;
 }
 
+.piraty {
+    background-image: url("../img/background.jpg");
+    opacity: 0.8;
+}
+
 .order {
-    background-color: #A4B9B6;
+    background-color: rgba(150, 185, 165, 0.9);
 
     padding-left: 1.5%;
     padding-right: 1.5%;
@@ -204,7 +209,8 @@ header{
 
 /* FOOTER*/
 footer {
-    background-color: #0d463f;
+    /*background-color: #0d463f;
+    background-image: url("../img/wood.jpg");*/
 }
 
 .logout {
@@ -236,7 +242,8 @@ footer .small_button{
 }
 
 body {
-    background-color: #0d463f;
+    background-image: url("../img/wood.jpg");
+
 }
 
 .highlight {
