@@ -97,8 +97,23 @@ a:active {
     height: 80px;
 }
 #undo:hover, #redo:hover {
-    color: white;
+                 color: white;
+             }
+
+
+.fade {
+    opacity: 0.5;
+    pointer-events: none;
 }
+
+.fade2 {
+    background-color: grey;
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+    zoom: 1;
+    pointer-events:none;
+}
+
 /*
 .undo {
     color: red;
