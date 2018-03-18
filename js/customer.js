@@ -199,8 +199,10 @@ function responsive() {
 
 /*Call printToDOM() method on all elements in the DB*/
 function retrieveDB () {
-    $.each(DB_STOCK, function(element){
-        printToDOM(this); // Call method to print to DOM
+    $.each(DB_STOCK, function(element) {
+        if (!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)) {
+            printToDOM(this); // Call method to print to DOM
+        }
     });
 }
 

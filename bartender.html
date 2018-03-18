@@ -33,84 +33,72 @@
 
 </head>
 <body>
-    <!-- Your code starts here -->
+<!-- Your code starts here -->
 
-    <header>
+<div class="menu darkgreen">
 
-        <div class="title headergreen">
-            <h1 id="title">Bartender View</h1>
-        </div>
-
-        <table class="info headergreen">
-          <tr>
+    <table class="info headergreen">
+        <tr>
             <th> Bartender:  </th>
             <td id="usr"> usr </td>
-          </tr>
-        </table>
-        <!--
-        <div class="info">
-            <b id ="login_as">Log in as:</b> John Smith <br>
-        </div>
--->
-    </header>
+        </tr>
+    </table>
 
-    <div class="menu darkgreen">
+    <h2 id="orders_q">Orders Queue</h2>
 
-        <h2 id="orders_q">Orders Queue</h2>
+    <ul class="menu_tabs">
+        <a><li id="all">All Orders</li></a>
+        <a><li id="unpaid">Unpaid Orders</li></a>
+        <a><li id="paid">Paid Orders</li></a>
+    </ul>
 
-        <ul class="menu_tabs">
-            <a><li id="all">All Orders</li></a>
-            <a><li id="unpaid">Unpaid Orders</li></a>
-            <a><li id="paid">Paid Orders</li></a>
-        </ul>
+</div>
 
+
+<div class="order_list backgroundgreen" id="all_orders">
+    <!-- All customer orders load here -->
+</div>
+
+
+<footer>
+    <!-- LOG OUT BUTTON -->
+    <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
+
+    <!-- LANGUAGE MENU -->
+    <div class="languages_menu">
+        <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+        <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+        <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
+        <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
+        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
     </div>
 
-
-    <div class="order_list backgroundgreen" id="all_orders">
-        <!-- All customer orders load here -->
+    <!-- UNDO-REDO MENU -->
+    <div class="undo_redo_menu">
+        <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
+        <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
     </div>
 
+</footer>
 
-    <footer>
-        <!-- LOG OUT BUTTON -->
-        <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
+<!-- Your code ends here -->
 
-        <!-- LANGUAGE MENU -->
-        <div class="languages_menu">
-            <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
-            <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
-            <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
-            <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-            <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
-        </div>
+<!-- External Scripts -->
 
-        <!-- UNDO-REDO MENU -->
-        <div class="undo_redo_menu">
-            <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
-            <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
-        </div>
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    </footer>
+<!-- Load Database -->
+<script src="db/DB.js" type="text/javascript"></script>
 
-    <!-- Your code ends here -->
+<!-- Scripts -->
+<script src="js/view/view_common.js" type="text/javascript"></script>
+<script src="js/view/view_bartender.js" type="text/javascript"></script>
 
-    <!-- External Scripts -->
-
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Load Database -->
-   <script src="db/DB.js" type="text/javascript"></script>
-
-    <!-- Scripts -->
-    <script src="js/view/view_common.js" type="text/javascript"></script>
-    <script src="js/view/view_bartender.js" type="text/javascript"></script>
-
-    <script src="js/login.js" type="text/javascript"></script>
-    <script src="js/multilanguage.js" type="text/javascript"></script>
-    <script src="js/responsive.js" type="text/javascript"></script>
-    <script src="js/bartender.js" type="text/javascript"></script>
+<script src="js/login.js" type="text/javascript"></script>
+<script src="js/multilanguage.js" type="text/javascript"></script>
+<script src="js/responsive.js" type="text/javascript"></script>
+<script src="js/bartender.js" type="text/javascript"></script>
 
 
 </body>
