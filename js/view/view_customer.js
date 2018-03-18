@@ -19,11 +19,11 @@
 *  3. Then update translate() method on the corresponding js script page!
 */
 
-var title = ["Customer View",
-    "Gästsidan",
-    "Vista Avventore",
-    "Vista Cliente",
-    "Buccaneers"]
+var title = ["The Flying Dutchman's List of Drinks",
+    "Flygande Holländaren drycklista",
+    "Lista di bevande nell'Olandese Volante",
+    "Lista de tragos del Holandés Volador",
+    "Noocyada Taxanaha Leh ee Holland"]
 
 // User info panel (top right corner)
 var customer= ["Customer:",
