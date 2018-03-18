@@ -220,5 +220,5 @@ var DB_MIKES = [
         "producent": "Mike's Brewery",
         "leverantor": "Kiwi Couriers AB",
         "alkoholhalt": "5.2%"
-     },
+     }
 ];

@@ -9,6 +9,17 @@
 * Methods translate() and responsive() are unique for each individual page.
 */
 
+if (localStorage.getItem("SESSION") == null){
+    localStorage.setItem("SESSION",JSON.stringify(DB_TRANSACTIONS));
+    alert("This is happening!")
+}
+
+var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
+alert(SESSIONS_TRANSACTIONS.toSource());
+
+var current_bartender = localStorage.getItem('id');
+
+
 $(document).ready(function() {
 
     retrieveOrders(); // retrieve all orders from the database
@@ -21,12 +32,20 @@ $(document).ready(function() {
 
     $("#unpaid").click(function(){
         $("#all_orders").empty();
-        retrieveUnpaid();
+        $.each(SESSIONS_TRANSACTIONS, function(element){
+            if (this.paid != true){ // filter only unpaid
+                printToDOM(this);
+            };
+        });
     });
 
     $("#paid").click(function(){
         $("#all_orders").empty();
-        retrievePaid();
+        $.each(SESSIONS_TRANSACTIONS, function(element){
+            if (this.paid == true){ // filter only unpaid
+                printToDOM(this);
+            };
+        });
     });
 
     /* Accordion Script*/
@@ -76,24 +95,8 @@ function responsive() {
 }
 
 function retrieveOrders() {
-    $.each(DB_TRANSACTIONS, function(element){
+    $.each(SESSIONS_TRANSACTIONS, function(element){
         printToDOM(this);
-    });
-}
-
-function retrievePaid () {
-    $.each(DB_TRANSACTIONS, function(element){
-        if (this.paid == true){ // filter only unpaid
-            printToDOM(this);
-        };
-    });
-}
-
-function retrieveUnpaid () {
-    $.each(DB_TRANSACTIONS, function(element){
-        if (this.paid != true){ // filter only unpaid
-            printToDOM(this);
-        };
     });
 }
 
@@ -137,18 +140,18 @@ function getBrevagePrice(brevage_id){
     return parseInt(price);
 }
 
-function paidStamp (boolean){
-    var message = "";
+function paidStamp (boolean, element){
+    var message ="";
     if(boolean){
-        message = "<b class='textRed'>::: ORDER PAID :::</b>"
+        message = "<b class='textRed'>::: ORDER PAID ::: </b>  |    <b>Bartender:</b> " + getBartenderName(current_bartender) + "(" + current_bartender + ")";
     }
     return message;
 }
 
 function printToDOM (element) {
-    var i = $.inArray(element,DB_TRANSACTIONS);
+    var i = $.inArray(element,SESSIONS_TRANSACTIONS);
 
-    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +' |    Customer:</b> '+ getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + ' |    <b>Bartender:</b> '+ getBartenderName(element.bartender_id) +' ('+ element. bartender_id +') | <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  ' + paidStamp(element.paid) + '</button>' +
+    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +' |    Customer:</b> '+ getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  ' + paidStamp(element.paid, element) + '</button>' +
         '<div class="panel">' +
         '<div class="order">' +
 

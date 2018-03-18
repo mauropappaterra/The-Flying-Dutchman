@@ -382,7 +382,6 @@ var DB_MANAGERS =[
 ]
 
 /*DB of customers transactions saved as an array of objects, each object represents a single transaction*/
-// populated by Hassan
 var DB_TRANSACTIONS = [
     {
         "transaction_id": "T00001",
@@ -414,7 +413,7 @@ var DB_TRANSACTIONS = [
         "timestamp": "2014-10-10 19:46:18",
         "paid":true
     },
-    {   
+    {   // start from here Hassan
         "transaction_id": "T00004",
         "bartender_id": "B00000",
         "customer_id": "C00004",
@@ -590,165 +589,130 @@ var DB_TRANSACTIONS = [
 var DB_ORDERS = [
     {
         "order_id": "R00001",
-        "manager_id": "M00000",
-        "order":[25053,190719,51029,513291],
-        "quantities":[110,10,100,14],
-        "amount": 72300,
+        "manager_id": "M00001",
+        "amount": 250,
         "timestamp": "2014-10-10 19:04:13"
     },
     {
         "order_id": "R00002",
-        "manager_id": "M00000",
-        "order":[190719,828902,548667,673941,304394,190013,1134,509166,7627,37500],
-        "quantities":[10,35,10,10,20,10,100,10,15,120],
-        "amount": 80958,
-        "timestamp": "2014-10-25 19:36:43"
+        "manager_id": "M00001",
+        "amount": 60,
+        "timestamp": "2014-10-10 19:36:43"
     },
     {
         "order_id": "R00003",
-        "manager_id": "M00000",
-        "order":[10538,371337,634199,1194,680440],
-        "quantities":[10,100,100,10,10],
-        "amount": 4308,
-        "timestamp": "2014-10-28 19:46:18"
+        "manager_id": "M00001",
+        "amount": 75,
+        "timestamp": "2014-10-10 19:46:18"
     },
     {
         "order_id": "R00004",
-        "manager_id": "M00000",
-        "order":[733051,828902,548667,568606,181,304394,367052,190013,1134],
-        "quantities":[115,200,45,20,10,20,32,50,120],
-        "amount": 1258590,
-        "timestamp": "2015-01-01 22:06:52"
+        "manager_id": "M00001",
+        "amount": 34,
+        "timestamp": "2014-10-11 22:06:52"
     },
     {
         "order_id": "R00005",
-        "manager_id": "M00000",
-        "order":[1147,371337,509166,634199,37500],
-        "quantities":[220,10,5,115,3],
-        "amount": 6405,
-        "timestamp": "2015-01-05 20:18:32"
+        "manager_id": "M00001",
+        "amount": 85,
+        "timestamp": "2014-10-11 20:18:32"
     },
     {
         "order_id": "R00006",
-        "manager_id": "M00000",
-        "order":[25053,513291,733446],
-        "quantities":[10,10,100],
-        "amount": 54470,
-        "timestamp": "2015-01-06 20:33:43"
+        "manager_id": "M00001",
+        "amount": 125,
+        "timestamp": "2014-10-14 20:33:43"
     },
     {
         "order_id": "R00007",
-        "manager_id": "M00000",
-        "order":[678924,490844,510253,53091,245364,367052],
-        "quantities":[30,30,12,10,10,8],
-        "amount": 318958,
-        "timestamp": "2015-02-04 20:34:45"
+        "manager_id": "M00001",
+        "amount": 195,
+        "timestamp": "2014-10-16 20:34:45"
     },
     {
         "order_id": "R00008",
-        "manager_id": "M00000",
-        "order":[16594,37500,720056,508145,608322],
-        "quantities":[10,22,52,10,10],
-        "amount": 6638,
-        "timestamp": "2015-06-20 21:07:57"
+        "manager_id": "M00001",
+        "amount": 230,
+        "timestamp": "2014-10-20 21:07:57"
     },
     {
         "order_id": "R00009",
-        "manager_id": "M00000",
-        "order":[51063,34940,241956,586992,691625,868718,488544],
-        "quantities":[100,20,115,2,60,44,110],
-        "amount": 41901,
-        "timestamp": "2015-07-01 10:15:08"
+        "manager_id": "M00001",
+        "amount": 80,
+        "timestamp": "2014-10-21 10:15:08"
     },
     {
         "order_id": "R00010",
-        "manager_id": "M00000",
-        "order":[691625,34443,22520],
-        "quantities":[20,10,5],
-        "amount": 2428,
-        "timestamp": "2015-07-02 07:20:04"
-    },
-    {   
-        "order_id": "R00011",
         "manager_id": "M00001",
-        "order":[190719,51029,513291,723841,733051,733084],
-        "quantities":[10,20,14,10,10,12],
-        "amount": 26995,
+        "amount": 110,
+        "timestamp": "2014-10-22 09:20:04"
+    },
+    {
+        "order_id": "R00011",
+        "manager_id": "M00002",
+        "amount": 70,
         "timestamp": "2014-10-23 13:09:16"
     },
     {
         "order_id": "R00012",
-        "manager_id": "M00001",
-        "order":[683591,688160,643947,563070,428738,37500,634199],
-        "quantities":[10,12,10,10,25,10,147],
-        "amount": 40423,
+        "manager_id": "M00002",
+        "amount": 25,
         "timestamp": "2014-10-25 08:05:15"
     },
     {
         "order_id": "R00013",
-        "manager_id": "M00001",
-        "order":[733051,828902,548667,568606,1147,371337,509166,634199],
-        "quantities":[200,100,30,10,300,10,70,265],
-        "amount": 256542,
-        "timestamp": "2015-11-28 16:05:28"
+        "manager_id": "M00002",
+        "amount": 85,
+        "timestamp": "2014-10-25 16:05:28"
     },
     {
         "order_id": "R00014",
-        "manager_id": "M00001",
-        "order":[733051,548667,568606,181,304394,367052,190013,1147,371337,634199,37500,611864,659534],
-        "quantities":[100,10,13,2,5,5,8,60,10,124,10,10,10],
-        "amount": 254252,
-        "timestamp": "2016-09-05 00:05:37"
+        "manager_id": "M00002",
+        "amount": 24,
+        "timestamp": "2014-10-26 00:05:37"
     },
     {
         "order_id": "R00015",
-        "manager_id": "M00001",
-        "order":[2,510253,245364,367052,185,50229,186123],
-        "quantities":[20,12,10,3,10,5,115],
-        "amount": 103803,
+        "manager_id": "M00002",
+        "amount": 46,
         "timestamp": "2014-10-26 22:53:09"
     },
     {
         "order_id": "R00016",
         "manager_id": "M00002",
-        "order":[25053,190719,51029,513291,723841,733051,733084,733200,733429,371337,1147,1134,190013,367052],
-        "quantities":[10,10,10,10,124,10,10,100,10,40,214,120,10,12],
-        "amount": 500851,
+        "amount": 92,
         "timestamp": "2014-10-27 21:03:28"
     },
     {
         "order_id": "R00017",
         "manager_id": "M00002",
-        "order":[25053,190719,568606,181,304394,367052,190013,1134,1147,509166,634199,37500,689423],
-        "quantities":[10,10,200,30,24,12,54,145,220,140,60,34,4],
-        "amount": 2563053,
-        "timestamp": "2014-11-02 21:54:22"
+        "amount": 20,
+        "timestamp": "2014-10-27 21:54:22"
     },
     {
         "order_id": "R00018",
         "manager_id": "M00002",
-        "order":[733051,828902,548667,568606,181,304394,367052,190013,1134],
-        "quantities":[10,20,32,13,12,2,3,6,10],
-        "amount": 144068,
-        "timestamp": "2015-09-20 08:56:38"
+        "amount": 60,
+        "timestamp": "2014-10-28 08:56:38"
     },
     {
         "order_id": "R00019",
         "manager_id": "M00002",
-        "order":[719766,508074,717611,507955,593104,1147],
-        "quantities":[100,213,40,100,40,30],
-        "amount": 7612,
-        "timestamp": "2015-09-28 09:57:11"
+        "amount": 46,
+        "timestamp": "2014-11-02 09:57:11"
     },
     {
-        "order_id": "R00019",
+        "order_id": "R00020",
         "manager_id": "M00002",
-        "order":[737636,34443,34564,393010],
-        "quantities":[20,20,10,10],
-        "amount": 5054,
-        "timestamp": "2015-11-02 09:57:11"
+        "amount": 260,
+        "timestamp": "2014-11-02 10:57:30"
+    },
+    {
+        "order_id": "R00021",
+        "manager_id": "M00001",
+        "amount": 65,
+        "timestamp": "2014-11-02 20:57:38"
     }
-
 ]
 
 /*DB of Bar's Stock saved as an array of objects, each object represents a beverage*/
@@ -1554,8 +1518,9 @@ var DB_STOCK = [{
         "spirit": false,
         "in_stock": 400
     },
-
-    /*ADD +0 MORE BEERS HERE*/
+                
+ /* wines*/ 
+                
     {
         "article_id": "37500", // same as Sytembolaget
         "name": "Lindemans Chardonnay",
@@ -1601,124 +1566,355 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-    }, {       // new wines, different format    
-        "nr": "1643401",
-        "article_id": "16594",
-        "varnummer": "16434",
+    },{ 
+        "article_id": "16594", // same as Sytembolaget
         "name": "Jacob's Creek",
-        "namn2": "Semillon Chardonnay",
-        "sale_price": "69.00",
-        "volymiml": null,
-        "prisperliter": null,
-        "saljstart": "1998-11-02",
-        "slutlev": " ",
-        "varugrupp": "Vitt vin,  Friskt & Fruktigt",
-        "forpackning": "Flaska",
-        "forslutning": "Skruvkapsyl",
-        "ursprung": "South Eastern Australia",
-        "ursprunglandnamn": "Australien",
-        "producent": "Orlando",
-        "leverantor": "Pernod Ricard Sweden AB",
-        "argang": "2012",
-        "provadargang": "2012",
-        "alkoholhalt": "11.9%",
-        "modul": "",
-        "sortiment": "FS",
-        "ecologic": "0",
-        "kosher": "0",
         "beer": false,
         "wine": true,
         "spirit": false,
-        "in_stock": 20
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 300,
+        "alcohol_percentage": 11.9,
+        "sale_price": 69.00,
+        "in_stock": 20,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
     }, {
-        "nr": "1216901",
-        "article_id": "12730",
-        "varnummer": "12169",
+        "article_id": "12730", // same as Sytembolaget
         "name": "Pinot Blanc",
-        "namn2": "",
-        "sale_price": "79.00",
-        "volymiml": null,
-        "prisperliter": null,
-        "saljstart": "1997-04-07",
-        "slutlev": " ",
-        "varugrupp": "Vitt vin,  Druvigt & Blommigt",
-        "forpackning": "Flaska",
-        "forslutning": "Plastkork\/syntetkork",
-        "ursprung": "Alsace",
-        "ursprunglandnamn": "Frankrike",
-        "producent": "Bestheim",
-        "leverantor": "Giertz Vinimport AB",
-        "argang": "2012",
-        "provadargang": "2012",
-        "alkoholhalt": "12.5%",
-        "modul": "",
-        "sortiment": "FS",
-        "ecologic": "0",
-        "kosher": "0",
         "beer": false,
         "wine": true,
         "spirit": false,
-        "in_stock": 340
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 300,
+        "alcohol_percentage": 12.5,
+        "sale_price": 79.00,
+        "in_stock": 340,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+      
     }, {            
-        "nr": "1208501",
-        "article_id": "32777",
-        "varnummer": "12085",
-        "name": "Wild Strawberry Sparkling",
-        "namn2": "",
-        "sale_price": "65.00",
-        "volymiml": null,
-        "prisperliter": null,
-        "saljstart": "2002-02-04",
-        "slutlev": " ",
-        "varugrupp": "Mousserande vin, \u00c3\u2013vrigt",
-        "forpackning": "Flaska",
-        "forslutning": "",
-        "ursprung": "Sk\u00c3\u00a5ne l\u00c3\u00a4n, Simrishamns kommun",
-        "ursprunglandnamn": "Sverige",
-        "producent": "\u00c3\u2026kesson Vin AB",
-        "leverantor": "Kiviks Musteri AB",
-        "argang": "",
-        "provadargang": "",
-        "alkoholhalt": "12%",
-        "modul": "",
-        "sortiment": "FS",
-        "ecologic": "0",
-        "kosher": "0",
+       "article_id": "32777", // same as Sytembolaget
+        "name": "Wild Strawberry Sparklingc",
         "beer": false,
         "wine": true,
         "spirit": false,
-        "in_stock": 220
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 300,
+        "alcohol_percentage": 12,
+        "sale_price": 65.00,
+        "in_stock": 220,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+   
     }, {
-        "nr": "1123401",
-        "article_id": "543793",
-        "varnummer": "11234",
+        "article_id": "543793", // same as Sytembolaget
         "name": "Kiviks äppelvin",
-        "namn2": "Halvtorrt",
-        "sale_price": "69.00",
-        "volymiml": null,
-        "prisperliter": null,
-        "saljstart": "2011-04-01",
-        "slutlev": " ",
-        "varugrupp": "Fruktvin, Torrt",
-        "forpackning": "Flaska",
-        "forslutning": "Skruvkapsyl",
-        "ursprung": "Sk\u00c3\u00a5ne l\u00c3\u00a4n, Simrishamns kommun",
-        "ursprunglandnamn": "Sverige",
-        "producent": "Kiviks Musteri AB",
-        "leverantor": "Kiviks Musteri AB",
-        "argang": "",
-        "provadargang": "",
-        "alkoholhalt": "10%",
-        "modul": "",
-        "sortiment": "FS",
-        "ecologic": "0",
-        "kosher": "0",
         "beer": false,
         "wine": true,
         "spirit": false,
-        "in_stock": 210
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 300,
+        "alcohol_percentage": 10,
+        "sale_price": 69.00,
+        "in_stock": 210,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+    },{
+        "article_id": "34443", // same as Sytembolaget
+        "name": "Hermon",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 300,
+        "alcohol_percentage": 14,
+        "sale_price": 116.00,
+        "in_stock": 22,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+    },{
+        "article_id": "50229", // same as Sytembolaget
+        "name": "Scarecrow",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "England",
+        "volume_ml": 300,
+        "alcohol_percentage": 4.7,
+        "sale_price": 24.90,
+        "in_stock": 221,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+   },{
+        "article_id": "405628", // same as Sytembolaget
+        "name": "Altissima",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Sverige",
+        "volume_ml": 300,
+        "alcohol_percentage": 40,
+        "sale_price": 398,
+        "in_stock": 27,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+        },{
+        "article_id": "489875", // same as Sytembolaget
+        "name": "Artisan Collection",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Jerez",
+        "volume_ml": 450,
+        "alcohol_percentage": 41,
+        "sale_price": 749,
+        "in_stock": 32,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+   },{
+        "article_id": "567642", // same as Sytembolaget
+        "name": "Eau de Vie de Kirsch Vieux",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Frankrike",
+        "volume_ml": 450,
+        "alcohol_percentage": 43,
+        "sale_price": 570,
+        "in_stock": 62,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+   },{
+        "article_id": "628817", // same as Sytembolaget
+        "name": "Three Amigos",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Danmark",
+        "volume_ml": 450,
+        "alcohol_percentage": 8,
+        "sale_price": 47.90,
+        "in_stock": 92,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+    },{
+        "article_id": "665387", // same as Sytembolaget
+        "name": "Falcon",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Sverige",
+        "volume_ml": 450,
+        "alcohol_percentage": 4.5,
+        "sale_price": 12.90,
+        "in_stock": 86,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+      },{
+        "article_id": "733468", // same as Sytembolaget
+        "name": "Single Cask",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Sverige",
+        "volume_ml": 450,
+        "alcohol_percentage": 47.6,
+        "sale_price": 529,
+        "in_stock": 12,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+     }, {
+        "article_id": "734572", // same as Sytembolaget
+        "name": "Poli Grappa Barrel Pack",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Italien",
+        "volume_ml": 450,
+        "alcohol_percentage": 40,
+        "sale_price": 549,
+        "in_stock": 11,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+   }, {
+        "article_id": "737636", // same as Sytembolaget
+        "name": "Sintonia",
+        "beer": false,
+        "wine": true,
+        "spirit": false,
+        "year": null,
+        "country": "Spanien",
+        "volume_ml": 450,
+        "alcohol_percentage": 7,
+        "sale_price": 66,
+        "in_stock": 146,
+        "kosher": false,
+        "ecologic": false,
+        "special": false,
+        }, 
+    /*ekologisk*/
+      {
+        "article_id": "404133", // same as Sytembolaget
+        "name": "Rommehed",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 500,
+        "alcohol_percentage": 37.5,
+        "sale_price": 192.0,
+        "in_stock": 121,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
+    },  
+      {
+        "article_id": "50229", // same as Sytembolaget
+        "name": "Scarecrow",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 50,
+        "alcohol_percentage": 4.7,
+        "sale_price": 24.90,
+        "in_stock": 151,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
     },
-    /*ADD +11 MORE WINES HERE*/
+      {
+        "article_id": "428969", // same as Sytembolaget
+        "name": "BrewDog Trashy Blonde",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Skottland",
+        "volume_ml": 450,
+        "alcohol_percentage": 4.1,
+        "sale_price": 19.90,
+        "in_stock": 234,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
+    },  
+     {
+        "article_id": "586898", // same as Sytembolaget
+        "name": "Pistonhead",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Sverige",
+        "volume_ml": 330,
+        "alcohol_percentage": 4.9,
+        "sale_price": 9.90,
+        "in_stock": 45,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
+    },  
+                
+    /*Kosher*/
+     {
+        "article_id": "393010", // same as Sytembolaget
+        "name": "Carmel",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Israel",
+        "volume_ml": 50,
+        "alcohol_percentage": 12.5,
+        "sale_price": 124.0,
+        "in_stock": 102,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+                
+     {
+        "article_id": "22520", // same as Sytembolaget
+        "name": "Yarden",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Golan Heights",
+        "volume_ml": 450,
+        "alcohol_percentage": 14,
+        "sale_price": 136.0,
+        "in_stock": 14,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+                
+     {
+        "article_id": "34443", // same as Sytembolaget
+        "name": "Hermon",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 450,
+        "alcohol_percentage": 14,
+        "sale_price": 116.0,
+        "in_stock": 140,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+      
+       {
+        "article_id": "737636", // same as Sytembolaget
+        "name": "Sintonia",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 50,
+        "alcohol_percentage": 7,
+        "sale_price": 66.0,
+        "in_stock": 148,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+   
+      /*spirit*/
     {
         "article_id": "733051", // same as Sytembolaget
         "name": "Rhum J. M",

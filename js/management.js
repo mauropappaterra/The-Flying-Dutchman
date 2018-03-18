@@ -8,45 +8,101 @@
 * Methods translate() and responsive() are unique for each individual page.
 */
 
+/*if (localStorage.getItem("SESSION2") == null){
+    localStorage.setItem("SESSION_ORDER",JSON.stringify(DB_ORDERS));
+    localStorage.setItem("orders_counter",15);
+    alert("This is happening!")
+}*/
+
+//var SESSIONS_ORDERS = JSON.parse(localStorage.getItem("SESSION_ORDER"));
+//var orders_counter = parseInt(localStorage.getItem("orders_counter"));
+//alert(SESSIONS_TRANSACTIONS.toSource());
+
 var big_orders = []; // keeps list of drinks ordered
 var big_quantity = []; // keeps list of quantities with matching indexes
 var big_total = 0; // calculates the big_total
 
+var current_manager = localStorage.getItem('id');
+
+/*UNDO-REDO ARRAYS*/
 var done = new Array([]);    //keeps track of 'done' actions
-var undone = new Array();  //keeps track of 'redone' actions
+var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
 
-    retrieveDB(); // load database on page load
+    retrieveSystembolaget(); // load database on page load
 
-    //filter drinks by category
-    $("#drinks_list").click(function(){
+    $("#drinks_list").click(function(){ /* Retrieve from Systembolaget*/
         $("#drink_database").empty();
-        retrieveDB();
+        retrieveSystembolaget();
     });
 
-    $("#check_stock").click(function(){
+    $("#specials_db").click(function(){ /* Retrieve from Mike's Specials*/
         $("#drink_database").empty();
-        retrieveStock();
+        $.each(DB_MIKES, function(element){
+            printToDOM(this);
+        });
     });
 
-    $("#shortage_alert").click(function(){
+    $("#check_stock").click(function(){ /* Retrieve in stock*/
         $("#drink_database").empty();
-        retrieveShortage();
+        $.each(DB_SYSTEMBOLAGET, function(element){
+            if (checkStock(this.artikelid) > 0){
+                printToDOM(this);
+            };
+        });
+    });
+
+    $("#shortage_alert").click(function(){ /* Retrieve on shortage alert*/
+        $("#drink_database").empty();
+        $.each(DB_SYSTEMBOLAGET, function(element){
+            if (checkStock(this.artikelid) > 0 && checkStock(this.artikelid) < 15){
+                printToDOM(this);}
+        });
     });
 
     $("#pay").click(function(){
-        alert(big_orders);
-        alert(big_quantity);
+
+        if (big_orders.length > 0){
+
+            //alert(big_orders);
+            //alert(big_quantity);
+
+            orders_counter ++;
+
+            var newBigOrder = {
+                "order_id": "R" + ((orders_counter + 100000).toString()).slice(1),
+                "manager_id": current_manager,
+                "order": big_orders,
+                "quantities": big_quantity,
+                "amount": big_total,
+                "timestamp": formatDate(new Date($.now()))
+            };
+
+            alert("NEW BIG ORDER " + newBigOrder.toSource());
+
+            SESSIONS_ORDERS.push(newBigOrder);
+            //alert(SESSIONS_ORDERS.toSource());
+
+            localStorage.setItem("SESSION2",JSON.stringify(SESSIONS_ORDERS));
+            localStorage.setItem("order_counter", orders_counter);
+
+
+
+        } else {
+            alert("You must select drinks before placing a delivery order!")
+        }
+
     });
 
     $(document).on('click','#add1',function(){
         var article_id = $(this).parent().find('span').html();
         //alert("You have chosen: " + article_id);
         addOrder(article_id, 1);
-        
+
+        //Undo-Redo
         pushOrderTo(done); // update done stack
-        clearUndone();     // clear undone stack after a 'proper' action    
+        clearUndone(); // clear undone stack after a 'proper' action
     });
 
     $(document).on('click','#add10',function(){
@@ -54,8 +110,9 @@ $(document).ready(function() {
         //alert("You have chosen: " + article_id);
         addOrder(article_id, 10);
 
+        //Undo-Redo
         pushOrderTo(done); // update done stack
-        clearUndone();     // clear undone stack after a 'proper' action      
+        clearUndone(); // clear undone stack after a 'proper' action
     });
 
     $(document).on('click','#add100',function(){
@@ -63,13 +120,14 @@ $(document).ready(function() {
         //alert("You have chosen: " + article_id);
         addOrder(article_id, 100);
 
+        //Undo-Redo
         pushOrderTo(done); // update done stack
-        clearUndone();     // clear undone stack after a 'proper' action            
+        clearUndone(); // clear undone stack after a 'proper' action
     });
 
     $(document).on('click','.delete',function(){
 
-        big_total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
+        big_total-= $(this).closest('.order').find('.hiden_price_sum').html(); // deduct from total
         updateTotal();
 
         var article_id = $(this).closest('.order').attr('id'); // get id
@@ -80,16 +138,19 @@ $(document).ready(function() {
 
         //alert($(this).closest('.order').html());
         $(this).closest('.order').remove(); // remove from DOM
-        
+
+        //Undo-Redo
         pushOrderTo(done); // update done stack
-        clearUndone();     // clear undone stack after a 'proper' action    
-        
+        clearUndone(); // clear undone stack after a 'proper' action
     });
-    $(document).on('click','.undo',function() {
-        var article_id = $(this).find('span').html();     
+
+    //UNDO REDO BUTTONS
+    $(document).on('click','#undo',function() {
+        var article_id = $(this).find('span').html();
         undo();
     });
-    $(document).on('click','.redo',function() {
+
+    $(document).on('click','#redo',function() {
         var article_id = $(this).find('span').html();
         redo();
     });
@@ -144,24 +205,9 @@ function responsive() {
     }
 }
 
-function retrieveDB () {
+function retrieveSystembolaget() {
     $.each(DB_SYSTEMBOLAGET, function(element){
         printToDOM(this);
-    });
-}
-
-function retrieveStock() {
-    $.each(DB_SYSTEMBOLAGET, function(element){
-        if (checkStock(this.artikelid) > 0){
-            printToDOM(this);
-        };
-    });
-}
-
-function retrieveShortage() {
-    $.each(DB_SYSTEMBOLAGET, function(element){
-        if (checkStock(this.artikelid) > 0 && checkStock(this.artikelid) < 15){
-            printToDOM(this);}
     });
 }
 
@@ -210,7 +256,7 @@ function printToDOM (element){
 
         '<div class="c3">' +
         '<br><br><br>' +
-        '<h2 '+ classes +'>In Stock: '+ checkStock(element.artikelid) +'</h2>' +
+        '<h2 '+ classes +'>Current Stock <br> '+ checkStock(element.artikelid) +'</h2>' +
         '</div>' +
 
         '<div class="c4">' +
@@ -225,8 +271,9 @@ function printToDOM (element){
 }
 
 function addOrder (article_id, number) {
-    i = $.inArray(article_id, big_orders);
-
+    i = -1;//$.inArray(article_id, big_orders);
+    $.each(big_orders, function(index, element){ if (this == article_id) { i = index; return false;}});
+    
     if (i == -1){ // if drink is not already on the big_orders print to DOM
 
         $.each(DB_SYSTEMBOLAGET, function(element){
@@ -234,7 +281,7 @@ function addOrder (article_id, number) {
                 $("#drink_selection").prepend(
                     '<div class="order" id="'+ this.artikelid +'">' +
                     '<a class="delete">X</a>' +
-                    '<h4 class="price">SEK <span class="loreen">' + parseInt(this.prisinklmoms * number) + '</span>:-</h4>' +
+                    '<h4 class="price">SEK <span class="hiden_price_sum">' + (this.prisinklmoms * number) + '</span>:-</h4>' +
                     '<span class="sum" hidden>' + parseInt(this.prisinklmoms) + '</span>' +
                     '<img src="img/drinks/' + this.artikelid + '.png">' +
                     '<h4>' + this.namn + ' ' + this.namn2 + '<span class="quantity textRed"> ( x ' + number + ')</span></h4>' +
@@ -243,6 +290,24 @@ function addOrder (article_id, number) {
                 big_total += parseInt(this.prisinklmoms * number);
                 ;}
         });
+
+        //For specials
+        $.each(DB_MIKES, function(element){
+            if (this.artikelid == article_id){ // retrieve article from the database
+                $("#drink_selection").prepend(
+                    '<div class="order" id="'+ this.artikelid +'">' +
+                    '<a class="delete">X</a>' +
+                    '<h4 class="price">SEK <span class="hiden_price_sum">' + (this.prisinklmoms * number) + '</span>:-</h4>' +
+                    '<span class="sum" hidden>' + parseInt(this.prisinklmoms) + '</span>' +
+                    '<img src="img/drinks/' + this.artikelid + '.png">' +
+                    '<h4>' + this.namn + ' ' + this.namn2 + '<span class="quantity textRed"> ( x ' + number + ')</span></h4>' +
+                    '</div>'
+                )
+                big_total += parseInt(this.prisinklmoms * number);
+                ;}
+        });
+
+
         big_orders.push(article_id);
         big_quantity.push(number);
 
@@ -254,7 +319,7 @@ function addOrder (article_id, number) {
         $("#"+article_id).find('.quantity').empty().append(" ( x " + big_quantity[i] + ")");
 
         update_price = parseInt($("#"+article_id).find('.sum').html()) * big_quantity[i];
-        $("#"+article_id).find('.loreen').empty().append(update_price);
+        $("#"+article_id).find('.hiden_price_sum').empty().append(update_price);
     }
 
     updateTotal();
@@ -264,42 +329,49 @@ function addOrder (article_id, number) {
 
 function updateTotal (){
     $('#total').empty().append('Total: SEK ' + Math.max(big_total,0) + ':-')
+};
+
+function formatDate (date) {
+    /* Returns formatted date as follows: "2018-03-19 21:00:00" */
+    var formatted_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-"
+        + date.getDate() +" "+ date.getHours() +":"+ date.getMinutes()+ ":" + date.getSeconds();
+    return formatted_date;
 }
 
-/* Undo/Redo funtions */
+/*ALL UNDO/REDO FUNCTIONS*/
 
 function undo() {
     currentOrder = done.pop();
     previousOrder = done.pop();
 
     // change current order and update undo/redo stacks
-    setOrderTo(previousOrder);    
+    setOrderTo(previousOrder);
     done.push(previousOrder);
     undone.push(currentOrder);
-    
+
     // make sure undo/redo can/cant be clicked
     $("#redo").removeClass("fade");
     if (done.length <= 1) { $("#undo").addClass("fade"); }
 }
 
-function redo() {    
+function redo() {
     undoneOrder = undone.pop();
-    
+
     // change current order and update undo/redo stacks
     setOrderTo(undoneOrder);
     done.push(undoneOrder);
-    
+
     // make sure undo/redo can/cant be clicked
     $("#undo").removeClass("fade");
     if (undone.length < 1) { $("#redo").addClass("fade"); }
 }
 
 
-function setOrderTo(newOrder) {  // change the entire order beeing displayed  
+function setOrderTo(newOrder) {  // change the entire order beeing displayed
     // clear current order description
     big_orders = [];
     big_quantity = [];
-    big_total = 0;   
+    big_total = 0;
     $(drink_selection).empty();  // TODO: check
 
     // add the beers from the newOrder
@@ -313,7 +385,7 @@ function pushOrderTo(stack) {  // add an order instance to the done or undone st
     currentOrder[1] = big_quantity.slice();
     stack.push(currentOrder);
     updateTotal();
-    
+
     // make sure undo/redo can/cant be clicked
     if (stack == done) { $("#undo").removeClass("fade");
     } else { $("#redo").removeClass("fade"); }
@@ -321,8 +393,5 @@ function pushOrderTo(stack) {  // add an order instance to the done or undone st
 
 function clearUndone() {
     undone = [];
-    $("#redo").addClass("fade"); 
+    $("#redo").addClass("fade");
 }
-
-
-;
