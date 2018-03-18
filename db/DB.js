@@ -1684,6 +1684,72 @@ var DB_STOCK = [{
     },
     /*ADD +11 MORE WINES HERE*/
                 
+    /*ekologisk*/
+      {
+        "article_id": "404133", // same as Sytembolaget
+        "name": "Rommehed",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 500,
+        "alcohol_percentage": 37.5,
+        "sale_price": 192.0,
+        "in_stock": 121,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
+    },  
+      {
+        "article_id": "50229", // same as Sytembolaget
+        "name": "Scarecrow",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 50,
+        "alcohol_percentage": 4.7,
+        "sale_price": 24.90,
+        "in_stock": 151,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
+    },
+      {
+        "article_id": "428969", // same as Sytembolaget
+        "name": "BrewDog Trashy Blonde",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Skottland",
+        "volume_ml": 450,
+        "alcohol_percentage": 4.1,
+        "sale_price": 19.90,
+        "in_stock": 234,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
+    },  
+     {
+        "article_id": "586898", // same as Sytembolaget
+        "name": "Pistonhead",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Sverige",
+        "volume_ml": 330,
+        "alcohol_percentage": 4.9,
+        "sale_price": 9.90,
+        "in_stock": 45,
+        "kosher": false,
+        "ecologic": true,
+        "special": false
+    },  
+                
     /*Kosher*/
      {
         "article_id": "393010", // same as Sytembolaget
@@ -1697,23 +1763,6 @@ var DB_STOCK = [{
         "alcohol_percentage": 12.5,
         "sale_price": 124.0,
         "in_stock": 102,
-        "kosher": true,
-        "ecologic": false,
-        "special": false
-    },
-      
-     {
-        "article_id": "156303", // same as Sytembolaget
-        "name": "Hoegaarden",
-        "beer": false,
-        "wine": false,
-        "spirit": false,
-        "year": null,
-        "country": "Belgien",
-        "volume_ml": 500,
-        "alcohol_percentage": 4.9,
-        "sale_price": 17.4,
-        "in_stock": 124,
         "kosher": true,
         "ecologic": false,
         "special": false
@@ -1769,7 +1818,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false
     },
-     
    
       /*spirit*/
     {
