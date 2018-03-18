@@ -23,11 +23,13 @@ var current_bartender = localStorage.getItem('id');
 $(document).ready(function() {
 
     retrieveOrders(); // retrieve all orders from the database
+    addBackground();
 
     // filter drinks by category
     $("#all").click(function(){
         $("#all_orders").empty();
         retrieveOrders();
+        addBackground();
     });
 
     $("#unpaid").click(function(){
@@ -37,6 +39,7 @@ $(document).ready(function() {
                 printToDOM(this);
             };
         });
+        addBackground();
     });
 
     $("#paid").click(function(){
@@ -46,6 +49,7 @@ $(document).ready(function() {
                 printToDOM(this);
             };
         });
+        addBackground();
     });
 
     /* Accordion Script*/
@@ -104,6 +108,36 @@ function responsive() {
     }
 }
 
+function printToDOM (element) {
+    var i = $.inArray(element,SESSIONS_TRANSACTIONS);
+
+    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +'<span hidden class="hiddenid">' + element.transaction_id + '</span> |    Customer:</b> '+
+        getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  '
+        + paidStamp(element.paid, element) + '</button>' +
+        '<div class="panel">' +
+        '<div class="order">' +
+
+        printOrder(element.order,element.quantities) + // Contents of the order printed here
+
+        '</div>';
+
+    if (element.paid == false){ // this part is only printed to unpaid transactions
+        content += '<div class="checkout">' +
+            '<a href=""><div class="small_button red delete" id="cancel_order">Cancel Order</div></a>' +
+            '<a href=""><div class="small_button light_green pay" id="mark_paid">Mark as Paid</div></a>' +
+            '<a href=""><div class="small_button total" id="total"><b>TOTAL:</b> SEK '+ element.amount +':-</div></a>' +
+            '</div>';
+    } else {
+        content += '<div class="paidfor">' +
+            '<h1><b>TOTAL PAID:</b> SEK '+ element.amount + ':-</h1>' +
+            '</div>';
+    }
+
+    content += '</div>';
+
+    $("#all_orders").prepend(content);
+}
+
 function retrieveOrders() {
     $.each(SESSIONS_TRANSACTIONS, function(element){
         printToDOM(this);
@@ -158,32 +192,6 @@ function paidStamp (boolean, element){
     return message;
 }
 
-function printToDOM (element) {
-    var i = $.inArray(element,SESSIONS_TRANSACTIONS);
-
-    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +'<span hidden class="hiddenid">' + element.transaction_id + '</span> |    Customer:</b> '+
-        getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  '
-        + paidStamp(element.paid, element) + '</button>' +
-        '<div class="panel">' +
-        '<div class="order">' +
-
-        printOrder(element.order,element.quantities) + // Contents of the order printed here
-
-        '</div>';
-
-    if (element.paid == false){ // this part is only printed to unpaid transactions
-        content += '<div class="checkout">' +
-            '<a href=""><div class="small_button red delete" id="cancel_order">Cancel Order</div></a>' +
-            '<a href=""><div class="small_button blue pay" id="mark_paid">Mark as Paid</div></a>' +
-            '<a href=""><div class="small_button light_orange total" id="total"><b>TOTAL:</b> SEK '+ element.amount +':-</div></a>' +
-            '</div>';
-    }
-
-    content += '</div>';
-
-    $("#all_orders").prepend(content);
-}
-
 function printOrder(order_array,quantities_array){
     //alert(order_array);
     var content = '';
@@ -196,4 +204,8 @@ function printOrder(order_array,quantities_array){
             '</div>';
     });
     return content;
+}
+
+function addBackground (){
+    $("#all_orders").append('<div class="background_wallpaper"></div>');
 }
