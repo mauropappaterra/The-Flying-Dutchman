@@ -17,7 +17,7 @@ if (localStorage.getItem("SESSION") == null){
 var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
 alert(SESSIONS_TRANSACTIONS.toSource());
 
-var current_bartender = 'B00003';
+var current_bartender = localStorage.getItem('id');
 
 
 $(document).ready(function() {
@@ -65,6 +65,8 @@ $(document).ready(function() {
             });
         }
     });
+
+
 
 });
 
