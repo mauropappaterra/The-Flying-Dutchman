@@ -2496,7 +2496,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": true
     },
-
     {
         "article_id": "MIKE02",
         "name": "Taranaki IPA",
@@ -2738,5 +2737,5 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": true
-    }
+    } 
 ];

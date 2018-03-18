@@ -19,9 +19,9 @@ var undone = new Array();  //keeps track of 'redone' actions
 
 
 $(document).ready(function() {
-
+    
     retrieveDB(); // load database on page load
-
+  
     // filter drinks by category
     $("#all").click(function(){
         $("#drink_database").empty();
@@ -32,7 +32,6 @@ $(document).ready(function() {
     $("#beers").click(function(){
         $("#drink_database").empty();
         retrieveBeers();
-
     });
 
     $("#wines").click(function(){
@@ -76,7 +75,7 @@ $(document).ready(function() {
 
     $(document).on('click','.delete',function() {
         total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
-       // alert(total);
+
         updateTotal();
 
         var article_id = $(this).closest('.order').attr('id'); // get id
@@ -191,7 +190,7 @@ function retrieveEcologic () {
 }
 
 function retrieveSpecial () {
-    $.each(DB_SPECIALSTOCK, function(element){
+    $.each(DB_STOCK, function(element){
         if (this.special == true){ // filter only specials
             printToDOM(this);
         };
@@ -206,7 +205,7 @@ function printToDOM (element) {
     var db = DB_STOCK;
     
     if (element.special) {
-        db = DB_SPECIALSTOCK;
+       // db = DB_MIKES;
         img_src ="img/drinks/special_beers/"; }
 
     if (checkStock(db, element.article_id) < 10) {  // low items
@@ -231,15 +230,18 @@ function addOrder (article_id) {
     i = $.inArray(article_id,order);
 
     if (i == -1) { // if drink is not already on the order print to DOM
-
-        $.each(DB_STOCK, function(element){
-            if (this.article_id == article_id){ // retrieve article from the database
+        var img_src ="img/drinks/";
+        
+        $.each(DB_STOCK, function(element) {
+            if (this.special) { img_src ="img/drinks/special_beers/"; }
+            
+            if (this.article_id == article_id) { // retrieve article from the database
                 $("#drink_selection").prepend(
                     '<div class="order " id="'+ this.article_id +'">' +
                     '<a class="delete">X</a>' +
                     '<h4 class="price">SEK <span class="loreen">' + this.sale_price + '</span>:-</h4>' +
                     '<span class="sum" hidden>' + this.sale_price + '</span>' +
-                    '<img src="img/drinks/' + this.article_id + '.png">' +
+                    '<img src="' + img_src  + this.article_id + '.png">' +
                     '<h4>' + this.name + '<span class="quantity textRed"></span></h4>' +
                     '</div>'
                 )
