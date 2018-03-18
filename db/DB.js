@@ -454,7 +454,7 @@ var DB_TRANSACTIONS = [
         "paid":true
     },
     {
-        "transaction_id": "T00008",
+        "transaction_id": "",
         "bartender_id": "B00003",
         "customer_id": "C00007",
         "order":[1134,1132,205747,37500], 
