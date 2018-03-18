@@ -203,6 +203,7 @@ body {
 .total {
     pointer-events: none;
     float: right;
+    width: 50% ;
  }
 
 /* FOOTER*/
