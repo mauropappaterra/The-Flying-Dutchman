@@ -104,25 +104,33 @@ $(document).ready(function() {
     });
 
     $("#pay").click(function(){
-        transactions_counter ++;
-        var newOrder = {
-            "transaction_id": "T" + ((transactions_counter + 100000).toString()).slice(1),
-            "bartender_id": null,
-            "customer_id": current_user,
-            "order":order,
-            "quantities":quantity,
-            "amount": total,
-            "timestamp": formatDate(new Date($.now())),
-            "paid":false
-        };
 
-        alert("NEW ORDER " + newOrder.toSource());
+        if (order.length > 0){
 
-        SESSIONS_TRANSACTIONS.push(newOrder);
-        //alert(SESSIONS_TRANSACTIONS.toSource());
+            transactions_counter ++;
+            var newOrder = {
+                "transaction_id": "T" + ((transactions_counter + 100000).toString()).slice(1),
+                "bartender_id": null,
+                "customer_id": current_user,
+                "order":order,
+                "quantities":quantity,
+                "amount": total,
+                "timestamp": formatDate(new Date($.now())),
+                "paid":false
+            };
 
-        localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
-        localStorage.setItem("transaction_counter", transactions_counter);
+            alert("NEW ORDER " + newOrder.toSource());
+
+            SESSIONS_TRANSACTIONS.push(newOrder);
+            //alert(SESSIONS_TRANSACTIONS.toSource());
+
+            localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
+            localStorage.setItem("transaction_counter", transactions_counter);
+
+        } else {
+            alert("You must select your drinks before placing an order!")
+        }
+
     });
 
     $(document).on('click','.drink',function(){
@@ -148,6 +156,7 @@ $(document).ready(function() {
 
         $(this).closest('.order').remove(); // remove from DOM
 
+        //Undo-Redo
         pushOrderTo(done);  // update done stack
         clearUndone(); // clear undone stack after a 'proper' action
     });

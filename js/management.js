@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     retrieveSystembolaget(); // load database on page load
 
-    $("#drinks_list").click(function(){ /* Retrieve from Systembolaget*/ 
+    $("#drinks_list").click(function(){ /* Retrieve from Systembolaget*/
         $("#drink_database").empty();
         retrieveSystembolaget();
     });
@@ -62,27 +62,37 @@ $(document).ready(function() {
     });
 
     $("#pay").click(function(){
-        //alert(big_orders);
-        //alert(big_quantity);
 
-        orders_counter ++;
+        if (big_orders.length > 0){
 
-        var newBigOrder = {
-            "order_id": "R" + ((orders_counter + 100000).toString()).slice(1),
-            "manager_id": current_manager,
-            "order": big_orders,
-            "quantities": big_quantity,
-            "amount": big_total,
-            "timestamp": formatDate(new Date($.now()))
-        };
+            //alert(big_orders);
+            //alert(big_quantity);
 
-        alert("NEW BIG ORDER " + newBigOrder.toSource());
+            orders_counter ++;
 
-        SESSIONS_ORDERS.push(newBigOrder);
-        //alert(SESSIONS_ORDERS.toSource());
+            var newBigOrder = {
+                "order_id": "R" + ((orders_counter + 100000).toString()).slice(1),
+                "manager_id": current_manager,
+                "order": big_orders,
+                "quantities": big_quantity,
+                "amount": big_total,
+                "timestamp": formatDate(new Date($.now()))
+            };
 
-        localStorage.setItem("SESSION2",JSON.stringify(SESSIONS_ORDERS));
-        localStorage.setItem("order_counter", orders_counter);
+            alert("NEW BIG ORDER " + newBigOrder.toSource());
+
+            SESSIONS_ORDERS.push(newBigOrder);
+            //alert(SESSIONS_ORDERS.toSource());
+
+            localStorage.setItem("SESSION2",JSON.stringify(SESSIONS_ORDERS));
+            localStorage.setItem("order_counter", orders_counter);
+
+
+
+        } else {
+            alert("You must select drinks before placing a delivery order!")
+        }
+
     });
 
     $(document).on('click','#add1',function(){
