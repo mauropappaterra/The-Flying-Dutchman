@@ -382,7 +382,6 @@ var DB_MANAGERS =[
 ]
 
 /*DB of customers transactions saved as an array of objects, each object represents a single transaction*/
-// populated by Hassan
 var DB_TRANSACTIONS = [
     {
         "transaction_id": "T00001",
@@ -414,7 +413,7 @@ var DB_TRANSACTIONS = [
         "timestamp": "2014-10-10 19:46:18",
         "paid":true
     },
-    {   
+    {   // start from here Hassan
         "transaction_id": "T00004",
         "bartender_id": "B00002",
         "customer_id": "C00004",
@@ -590,165 +589,130 @@ var DB_TRANSACTIONS = [
 var DB_ORDERS = [
     {
         "order_id": "R00001",
-        "manager_id": "M00000",
-        "order":[25053,190719,51029,513291],
-        "quantities":[110,10,100,14],
-        "amount": 72300,
+        "manager_id": "M00001",
+        "amount": 250,
         "timestamp": "2014-10-10 19:04:13"
     },
     {
         "order_id": "R00002",
-        "manager_id": "M00000",
-        "order":[190719,828902,548667,673941,304394,190013,1134,509166,7627,37500],
-        "quantities":[10,35,10,10,20,10,100,10,15,120],
-        "amount": 80958,
-        "timestamp": "2014-10-25 19:36:43"
+        "manager_id": "M00001",
+        "amount": 60,
+        "timestamp": "2014-10-10 19:36:43"
     },
     {
         "order_id": "R00003",
-        "manager_id": "M00000",
-        "order":[10538,371337,634199,1194,680440],
-        "quantities":[10,100,100,10,10],
-        "amount": 4308,
-        "timestamp": "2014-10-28 19:46:18"
+        "manager_id": "M00001",
+        "amount": 75,
+        "timestamp": "2014-10-10 19:46:18"
     },
     {
         "order_id": "R00004",
-        "manager_id": "M00000",
-        "order":[733051,828902,548667,568606,181,304394,367052,190013,1134],
-        "quantities":[115,200,45,20,10,20,32,50,120],
-        "amount": 1258590,
-        "timestamp": "2015-01-01 22:06:52"
+        "manager_id": "M00001",
+        "amount": 34,
+        "timestamp": "2014-10-11 22:06:52"
     },
     {
         "order_id": "R00005",
-        "manager_id": "M00000",
-        "order":[1147,371337,509166,634199,37500],
-        "quantities":[220,10,5,115,3],
-        "amount": 6405,
-        "timestamp": "2015-01-05 20:18:32"
+        "manager_id": "M00001",
+        "amount": 85,
+        "timestamp": "2014-10-11 20:18:32"
     },
     {
         "order_id": "R00006",
-        "manager_id": "M00000",
-        "order":[25053,513291,733446],
-        "quantities":[10,10,100],
-        "amount": 54470,
-        "timestamp": "2015-01-06 20:33:43"
+        "manager_id": "M00001",
+        "amount": 125,
+        "timestamp": "2014-10-14 20:33:43"
     },
     {
         "order_id": "R00007",
-        "manager_id": "M00000",
-        "order":[678924,490844,510253,53091,245364,367052],
-        "quantities":[30,30,12,10,10,8],
-        "amount": 318958,
-        "timestamp": "2015-02-04 20:34:45"
+        "manager_id": "M00001",
+        "amount": 195,
+        "timestamp": "2014-10-16 20:34:45"
     },
     {
         "order_id": "R00008",
-        "manager_id": "M00000",
-        "order":[16594,37500,720056,508145,608322],
-        "quantities":[10,22,52,10,10],
-        "amount": 6638,
-        "timestamp": "2015-06-20 21:07:57"
+        "manager_id": "M00001",
+        "amount": 230,
+        "timestamp": "2014-10-20 21:07:57"
     },
     {
         "order_id": "R00009",
-        "manager_id": "M00000",
-        "order":[51063,34940,241956,586992,691625,868718,488544],
-        "quantities":[100,20,115,2,60,44,110],
-        "amount": 41901,
-        "timestamp": "2015-07-01 10:15:08"
+        "manager_id": "M00001",
+        "amount": 80,
+        "timestamp": "2014-10-21 10:15:08"
     },
     {
         "order_id": "R00010",
-        "manager_id": "M00000",
-        "order":[691625,34443,22520],
-        "quantities":[20,10,5],
-        "amount": 2428,
-        "timestamp": "2015-07-02 07:20:04"
-    },
-    {   
-        "order_id": "R00011",
         "manager_id": "M00001",
-        "order":[190719,51029,513291,723841,733051,733084],
-        "quantities":[10,20,14,10,10,12],
-        "amount": 26995,
+        "amount": 110,
+        "timestamp": "2014-10-22 09:20:04"
+    },
+    {
+        "order_id": "R00011",
+        "manager_id": "M00002",
+        "amount": 70,
         "timestamp": "2014-10-23 13:09:16"
     },
     {
         "order_id": "R00012",
-        "manager_id": "M00001",
-        "order":[683591,688160,643947,563070,428738,37500,634199],
-        "quantities":[10,12,10,10,25,10,147],
-        "amount": 40423,
+        "manager_id": "M00002",
+        "amount": 25,
         "timestamp": "2014-10-25 08:05:15"
     },
     {
         "order_id": "R00013",
-        "manager_id": "M00001",
-        "order":[733051,828902,548667,568606,1147,371337,509166,634199],
-        "quantities":[200,100,30,10,300,10,70,265],
-        "amount": 256542,
-        "timestamp": "2015-11-28 16:05:28"
+        "manager_id": "M00002",
+        "amount": 85,
+        "timestamp": "2014-10-25 16:05:28"
     },
     {
         "order_id": "R00014",
-        "manager_id": "M00001",
-        "order":[733051,548667,568606,181,304394,367052,190013,1147,371337,634199,37500,611864,659534],
-        "quantities":[100,10,13,2,5,5,8,60,10,124,10,10,10],
-        "amount": 254252,
-        "timestamp": "2016-09-05 00:05:37"
+        "manager_id": "M00002",
+        "amount": 24,
+        "timestamp": "2014-10-26 00:05:37"
     },
     {
         "order_id": "R00015",
-        "manager_id": "M00001",
-        "order":[2,510253,245364,367052,185,50229,186123],
-        "quantities":[20,12,10,3,10,5,115],
-        "amount": 103803,
+        "manager_id": "M00002",
+        "amount": 46,
         "timestamp": "2014-10-26 22:53:09"
     },
     {
         "order_id": "R00016",
         "manager_id": "M00002",
-        "order":[25053,190719,51029,513291,723841,733051,733084,733200,733429,371337,1147,1134,190013,367052],
-        "quantities":[10,10,10,10,124,10,10,100,10,40,214,120,10,12],
-        "amount": 500851,
+        "amount": 92,
         "timestamp": "2014-10-27 21:03:28"
     },
     {
         "order_id": "R00017",
         "manager_id": "M00002",
-        "order":[25053,190719,568606,181,304394,367052,190013,1134,1147,509166,634199,37500,689423],
-        "quantities":[10,10,200,30,24,12,54,145,220,140,60,34,4],
-        "amount": 2563053,
-        "timestamp": "2014-11-02 21:54:22"
+        "amount": 20,
+        "timestamp": "2014-10-27 21:54:22"
     },
     {
         "order_id": "R00018",
         "manager_id": "M00002",
-        "order":[733051,828902,548667,568606,181,304394,367052,190013,1134],
-        "quantities":[10,20,32,13,12,2,3,6,10],
-        "amount": 144068,
-        "timestamp": "2015-09-20 08:56:38"
+        "amount": 60,
+        "timestamp": "2014-10-28 08:56:38"
     },
     {
         "order_id": "R00019",
         "manager_id": "M00002",
-        "order":[719766,508074,717611,507955,593104,1147],
-        "quantities":[100,213,40,100,40,30],
-        "amount": 7612,
-        "timestamp": "2015-09-28 09:57:11"
+        "amount": 46,
+        "timestamp": "2014-11-02 09:57:11"
     },
     {
-        "order_id": "R00019",
+        "order_id": "R00020",
         "manager_id": "M00002",
-        "order":[737636,34443,34564,393010],
-        "quantities":[20,20,10,10],
-        "amount": 5054,
-        "timestamp": "2015-11-02 09:57:11"
+        "amount": 260,
+        "timestamp": "2014-11-02 10:57:30"
+    },
+    {
+        "order_id": "R00021",
+        "manager_id": "M00001",
+        "amount": 65,
+        "timestamp": "2014-11-02 20:57:38"
     }
-
 ]
 
 /*DB of Bar's Stock saved as an array of objects, each object represents a beverage*/
@@ -1719,6 +1683,95 @@ var DB_STOCK = [{
         "in_stock": 210
     },
     /*ADD +11 MORE WINES HERE*/
+                
+    /*Kosher*/
+     {
+        "article_id": "393010", // same as Sytembolaget
+        "name": "Carmel",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Israel",
+        "volume_ml": 50,
+        "alcohol_percentage": 12.5,
+        "sale_price": 124.0,
+        "in_stock": 102,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+      
+     {
+        "article_id": "156303", // same as Sytembolaget
+        "name": "Hoegaarden",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Belgien",
+        "volume_ml": 500,
+        "alcohol_percentage": 4.9,
+        "sale_price": 17.4,
+        "in_stock": 124,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+                
+     {
+        "article_id": "22520", // same as Sytembolaget
+        "name": "Yarden",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Golan Heights",
+        "volume_ml": 450,
+        "alcohol_percentage": 14,
+        "sale_price": 136.0,
+        "in_stock": 14,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+                
+     {
+        "article_id": "34443", // same as Sytembolaget
+        "name": "Hermon",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 450,
+        "alcohol_percentage": 14,
+        "sale_price": 116.0,
+        "in_stock": 140,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+      
+       {
+        "article_id": "737636", // same as Sytembolaget
+        "name": "Sintonia",
+        "beer": false,
+        "wine": false,
+        "spirit": false,
+        "year": null,
+        "country": "Flaska",
+        "volume_ml": 50,
+        "alcohol_percentage": 7,
+        "sale_price": 66.0,
+        "in_stock": 148,
+        "kosher": true,
+        "ecologic": false,
+        "special": false
+    },
+     
+   
+      /*spirit*/
     {
         "article_id": "733051", // same as Sytembolaget
         "name": "Rhum J. M",
