@@ -91,14 +91,15 @@ header{
     width: 70%;
     height: 500px;
     /*background-color: rgba(15, 172, 86, 0.8);*/
-    background-image: url("../img/background.jpg");
-    opacity: 0.8;
+    background-image: url("../img/wallpaper3.png");
+    opacity: 1;
     float: left;
     overflow: auto;
 }
 
 .drink {
     background-color: #C0CFCC;
+    opacity: 0.9;
 
     padding-left: 1.5%;
     padding-right: 1.5%;
@@ -159,8 +160,7 @@ header{
 }
 
 .piraty {
-    background-image: url("../img/background.jpg");
-    opacity: 0.8;
+    background-image: url("../img/wallpaper3.png");
 }
 
 .order {
