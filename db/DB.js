@@ -1763,22 +1763,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false,
-   }, {
-        "article_id": "737636", // same as Sytembolaget
-        "name": "Sintonia",
-        "beer": false,
-        "wine": true,
-        "spirit": false,
-        "year": null,
-        "country": "Spanien",
-        "volume_ml": 450,
-        "alcohol_percentage": 7,
-        "sale_price": 66,
-        "in_stock": 146,
-        "kosher": false,
-        "ecologic": false,
-        "special": false,
-        }, 
+   },
     /*ekologisk*/
       {
         "article_id": "404133", // same as Sytembolaget
@@ -1879,24 +1864,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false
     },
-                
-     {
-        "article_id": "34443", // same as Sytembolaget
-        "name": "Hermon",
-        "beer": false,
-        "wine": false,
-        "spirit": false,
-        "year": null,
-        "country": "Flaska",
-        "volume_ml": 450,
-        "alcohol_percentage": 14,
-        "sale_price": 116.0,
-        "in_stock": 140,
-        "kosher": true,
-        "ecologic": false,
-        "special": false
-    },
-      
        {
         "article_id": "737636", // same as Sytembolaget
         "name": "Sintonia",
