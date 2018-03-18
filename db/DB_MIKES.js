@@ -10,142 +10,215 @@ var DB_MIKES = [
         "ursprunglandnamn": "New Zealand",
         "producent": "Mike's Brewery",
         "leverantor": "Kiwi Couriers AB",
-        "alkoholhalt": "8%"
-    }/*, // ALL BELOW SHOULD FOLLOW SAME FORMAT AS ABOVE!!! EXACTLY THE SAME (do not delete namn2 even if null!)
-    {
-        "article_id": "MIKE02",
-        "name": "Taranaki IPA",
-        "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 350,
-        "alcohol_percentage": 7.0,
-        "sale_price": 65.0
+        "alkoholhalt": "8.0%"
     },
+    
     {
-        "article_id": "MIKE03",
-        "name": "Vanilla Coffee Porter",
+         "artikelid": "MIKE02",
+        "namn": "Taranaki IPA",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 500,
-        "alcohol_percentage": 8.0,
-        "sale_price": 200.0
-    },
-    {
-        "article_id": "MIKE04",
-        "name": "Chocolate Milk Stout",
+        "prisinklmoms": "65.00",
+        "volymiml": 350,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "7.0%"
+     },
+     
+     {
+         "artikelid": "MIKE03",
+        "namn": "Vanilla Coffee Porter",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 8.0,
-        "sale_price": 150.0
-    },
+        "prisinklmoms": "200.00",
+        "volymiml": 500,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "8.0%"
+     },
     {
-        "article_id": "MIKE05",
-        "name": "Onemorepaleale",
+         "artikelid": "MIKE04",
+        "namn": "Chocolate Milk Stout",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.5,
-        "sale_price": 120.0
-    },
-    {
-        "article_id": "MIKE06",
-        "name": "PilS-NAH",
+        "prisinklmoms": "150.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "8.0%"
+     },
+        
+     {
+         "artikelid": "MIKE05",
+        "namn": "Onemorepaleale",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.0,
-        "sale_price": 165.0
-    },
+        "prisinklmoms": "120.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.5%"
+     },
     {
-        "article_id": "MIKE07",
-        "name": "Longline Lager",
+         "artikelid": "MIKE06",
+        "namn": "PilS-NAH",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.0,
-        "sale_price": 175.0
-    },
+        "prisinklmoms": "165.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.0%"
+     },
+    
     {
-        "article_id": "MIKE08",
-        "name": "Mild Ale",
+         "artikelid": "MIKE07",
+        "namn": "Longline Lager",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 4.0,
-        "sale_price": 145.0
-    },
-    {
-        "article_id": "MIKE09",
-        "name": " Full Nelson IPA",
+        "prisinklmoms": "175.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.0%"
+     },
+    
+     {
+         "artikelid": "MIKE08",
+        "namn": "Mild Ale",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 7.0,
-        "sale_price": 145.0
-    },
-    {
-        "article_id": "MIKE10",
-        "name": " Second Coming IIPA",
+        "prisinklmoms": "145.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "4.0%"
+     },
+    
+     {
+         "artikelid": "MIKE09",
+        "namn": "Full Nelson IPA",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 9.0,
-        "sale_price": 145.0
-    },
-    {
-        "article_id": "MIKE11",
-        "name": " Surf Spot X",
+        "prisinklmoms": "145.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "7.0%"
+     },
+    
+     {
+         "artikelid": "MIKE10",
+        "namn": "Second Coming IIPA",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.7,
-        "sale_price": 115.0
-    },
-    {
-        "article_id": "MIKE12",
-        "name": "Boys N Girls",
+        "prisinklmoms": "145.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "9.0%"
+     },
+     
+    
+      {
+         "artikelid": "MIKE11",
+        "namn": "Surf Spot X",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 8.0,
-        "sale_price": 125.0
-    },
+        "prisinklmoms": "115.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.7%"
+     },
+    
     {
-        "article_id": "MIKE13",
-        "name": "Hopstock & 2 Smoking Barrels",
+         "artikelid": "MIKE12",
+        "namn": "Boys N Girls",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.0,
-        "sale_price": 125.0
-    },
-    {
-        "article_id": "MIKE14",
-        "name": "Damson in Distress",
+        "prisinklmoms": "125.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "8.0%"
+     },
+    
+     {
+         "artikelid": "MIKE13",
+        "namn": "Hopstock & 2 Smoking Barrels",
+        "namn2": "",
         "year": 2018,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.0,
-        "sale_price": 170.0
-    },
+        "prisinklmoms": "125.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.0%"
+     },
+    
     {
-        "article_id": "MIKE15",
-        "name": "Flight of the Falcon",
+         "artikelid": "MIKE14",
+        "namn": "Damson in Distress",
+        "namn2": "",
+        "year": 2018,
+        "prisinklmoms": "170.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.0%"
+     },
+    
+    {
+         "artikelid": "MIKE15",
+        "namn": "Flight of the Falcon",
+        "namn2": "",
         "year": 2010,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.7,
-        "sale_price": 185.0
-    },
-    {
-        "article_id": "MIKE16",
-        "name": "Leaky Boat",
+        "prisinklmoms": "185.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.7%"
+     },
+    
+     {
+         "artikelid": "MIKE16",
+        "namn": "Leaky Boat",
+        "namn2": "",
         "year": 2014,
-        "country": "New Zeland",
-        "volume_ml": 330,
-        "alcohol_percentage": 5.2,
-        "sale_price": 145.0
-    } */
+        "prisinklmoms": "145.00",
+        "volymiml": 330,
+        "varugrupp": "Beer",
+        "ursprunglandnamn": "New Zealand",
+        "producent": "Mike's Brewery",
+        "leverantor": "Kiwi Couriers AB",
+        "alkoholhalt": "5.2%"
+     },
 ];
-
