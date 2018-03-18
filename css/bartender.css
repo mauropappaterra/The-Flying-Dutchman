@@ -14,7 +14,7 @@ body {
     width: 100%;
     height: 30%;/*67px;*/
     float: left;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .menu ul {
@@ -204,7 +204,7 @@ body {
     pointer-events: none;
     float: right;
     width: 50% ;
- }
+}
 
 /* FOOTER*/
 footer {
