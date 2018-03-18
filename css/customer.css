@@ -4,9 +4,12 @@
 */
 
 /*Style Sheet for the customer page*/
+body {
+    font-family: 'Oswald', sans-serif;
+    color: black;
+}
 
 /*HEADER*/
-
 header{
     overflow:hidden;
     position: relative;
@@ -14,14 +17,17 @@ header{
     color: white;
 }
 
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: white;
+}
+
 .title {
-    background-color: rgba(103, 103, 103, 0.2);
     float: left;
     width: 100%;
-
+    font-family: 'Berkshire Swash', cursive;
 }
 .info {
-    background-color: #797979;
     position: absolute;
     top: 0px;
     right: 50px;
@@ -31,7 +37,6 @@ header{
 .menu {
     width: 70%;
     height: 30%;
-    /*background-color: #0d463f;*/
     float: left;
     overflow: auto;
 }
@@ -39,6 +44,7 @@ header{
 .menu h2 {
     margin:0px;
     padding:0px;
+    color: white;
 }
 
 .menu ul {
@@ -90,7 +96,6 @@ header{
 .drink_list {
     width: 70%;
     height: 500px;
-    /*background-color: rgba(15, 172, 86, 0.8);*/
     background-image: url("../img/wallpaper3.png");
     opacity: 1;
     float: left;
@@ -148,13 +153,12 @@ header{
     width: 30%;
     height: 30%;
     float: right;
-    /*background-color: #0d463f;*/
+    color: white;
 }
 
 .selection {
     width: 30%;
     height: 450px;
-    /*background-color: rgba(12, 96, 42, 0.9);*/
     float: right;
     overflow: auto;
 }
@@ -171,7 +175,7 @@ header{
     margin: 2%;
     margin-bottom: 10%;
 
-    border-style: dashed;
+    border-style: solid;
     border-color: #254540;
     border-width: thin;
 
@@ -191,12 +195,12 @@ header{
 .checkout {
     width: 30%;
     height: 50px;
-    background-color: #254540;
-    float: right;
+    background-color: rgba(138, 7, 1, 0.9);
+    float: left;
 }
 
 .checkout h2 {
-    float: left;
+    color: white;
 }
 
 .delete {
@@ -207,11 +211,6 @@ header{
     text-align: center;
 }
 
-/* FOOTER*/
-footer {
-    /*background-color: #0d463f;
-    background-image: url("../img/wood.jpg");*/
-}
 
 .logout {
     float: left;
