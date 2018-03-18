@@ -6,6 +6,7 @@
 var user = "blank";
 
 function findByID(id, db) { // assuming 'id' is the first objectvalue
+
     for (i in db) {
         for (j in db[i]) {
             if(db[i][j] == id) {return db[i]}
