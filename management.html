@@ -15,10 +15,6 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png">
 
-
-    <!-- CSS Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/management.css">
@@ -33,7 +29,7 @@
 
     <header>
 
-        <div class="title headergreen">
+        <div class="title">
             <h1 id="title">Management View</h1>
         </div>
 
@@ -49,33 +45,34 @@
             <b id="login_as">Log in as:</b> John Smith <br>
         </div>
 -->
+        <hr>
     </header>
 
-    <div class="menu headergreen">
+    <div class="menu">
         <h2>Systembolaget Database</h2>
 
         <ul class="type_menu">
-            <a><li id="drinks_list">Full Drinks List</li></a>
+            <a><li id="drinks_list">Systembolaget</li></a>
             <a><li id="check_stock">Check Bar Stock</li></a>
-            <a><li id="specials_db">Specials</li></a>
+            <a><li id="specials_db">Special Orders</li></a>
             <a><li id="shortage_alert">Shortage Alert (!)</li></a>
         </ul>
 
     </div>
 
-    <div class="selection_header darkgreen">
+    <div class="selection_header">
         <h2 id="stock_order">Stock Order</h2>
     </div>
 
-    <div class="drink_list backgroundgreen" id="drink_database">
+    <div class="drink_list" id="drink_database">
       <!-- Drinks Database loads here -->
     </div>
 
-    <div class="selection green" id="drink_selection">
+    <div class="selection" id="drink_selection">
       <!-- Drink Selection pops up here -->
     </div>
 
-    <div class="checkout darkgreen">
+    <div class="checkout">
         <h2 id="total">Total: SEK 0 :-</h2>
     </div>
 
@@ -94,11 +91,11 @@
         <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
       </div>
 
-      <!-- UNDO-REDO MENU -->
-      <div class="undo_redo_menu">
-          <a href="#" id="undo" class="fade"><div class="undo"> <i class="fa fa-arrow-left fa-2x"></i></div></a>
-          <a href="#" id="redo" class="fade"><div class="redo"> <i class="fa fa-arrow-right fa-2x"></i></div></a>
-      </div>
+        <!-- UNDO-REDO MENU -->
+        <div class="undo_redo_menu">
+            <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
+            <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
+        </div>
 
       <!-- PAY BUTTON -->
       <a href=""><div class="small_button blue" id="pay">Place Stock Order</div></a>
@@ -113,6 +110,8 @@
     <!-- Load Database -->
     <script src="db/DB.js" type="text/javascript"></script>
     <script src="db/DB_SYSTEMBOLAGET.js" type="text/javascript"></script>
+    <script src="db/DB_MIKES.js" type="text/javascript"></script>
+
     <!-- Scripts -->
     <script src="js/view/view_common.js" type="text/javascript"></script>
     <script src="js/view/view_management.js" type="text/javascript"></script>
