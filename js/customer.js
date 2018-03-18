@@ -14,7 +14,7 @@ var order = []; // keeps list of drinks ordered
 var quantity = []; // keeps list of quantities with matching indexes
 var total = 0; // calculates the total
 
-var done = new Array();    //keeps track of 'done' actions
+var done = new Array([]);    //keeps track of 'done' actions
 var undone = new Array();  //keeps track of 'redone' actions
 
 
@@ -67,13 +67,16 @@ $(document).ready(function() {
 
     $(document).on('click','.drink',function() {
         var article_id = $(this).find('span').html();
-        //alert("You have chosen: " + article_id);
-        addOrder(article_id);
+        //alert("You have chosen: " + article_id);        
+        addOrder(article_id);      
+
+        pushOrderTo(done); // update done stack
+        clearUndone();     // clear undone stack after a 'proper' action    
     });
 
     $(document).on('click','.delete',function() {
-
         total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
+       // alert(total);
         updateTotal();
 
         var article_id = $(this).closest('.order').attr('id'); // get id
@@ -83,17 +86,18 @@ $(document).ready(function() {
         quantity.splice(i, 1);
 
         $(this).closest('.order').remove(); // remove from DOM
+
+        pushOrderTo(done);  // update done stack
+        clearUndone();     // clear undone stack after a 'proper' action    
  
-        addAction('delete', article_id);
     });
     $(document).on('click','.undo',function() {
-        var article_id = $(this).find('span').html();
-        //alert("You have chosen: " + article_undo(       
+        var article_id = $(this).find('span').html();     
         undo();
     });
     $(document).on('click','.redo',function() {
         var article_id = $(this).find('span').html();
-        //alert("You have chosen: " + article_id);
+        redo();
     });
     
 });
@@ -108,7 +112,7 @@ function translate (index) {
     $("#all").text(all[index]);
     $("#beers").text(beers[index]);
     $("#wines").text(wines[index]);
-    $("#spiritis").text(spiritis[index]);
+    $("#spirits").text(spirits[index]);
     $("#kosher").text(kosher[index]);
     $("#ecologic").text(ecologic[index]);
     $("#specials").text(specials[index]);
@@ -242,7 +246,6 @@ function addOrder (article_id) {
                 total += parseInt(this.sale_price);
                 ;}
         });
-
         order.push(article_id);
         quantity.push(1);
     } else { // if the drink is already in the order, update counter on DOM
@@ -254,9 +257,6 @@ function addOrder (article_id) {
         update_price = parseInt($("#"+article_id).find('.sum').html()) * quantity[i];
         $("#"+article_id).find('.loreen').empty().append(update_price);
     }
-
-    updateTotal();
-    addAction('order', article_id);
     //FOR TESTING PURPOSES
     //alert (order +' X '+quantity)
 }
@@ -265,29 +265,72 @@ function updateTotal () {
     $('#total').empty().append('Total: SEK ' + Math.max(total,0) + ':-')
 }
 
-function addAction(type, article_id) {
-   done.push([type, article_id]);
- //   alert(done); 
-}
-
 function undo() {
-    lastAction = done.pop();
-    if (lastAction[0] == 'order') {alert(lastAction[0]);}
-    else if (lastAction[0] == 'delete') {alert(lastAction[1]);}
-    undone.push(done.pop());
+    currentOrder = done.pop();
+    previousOrder = done.pop();
     
-    //alert(done);
+    // change current order and update undo/redo stacks
+    setOrderTo(previousOrder);    
+    done.push(previousOrder);
+    undone.push(currentOrder);
+    
+    // make sure undo/redo can/cant be clicked
+    $("#redo").removeClass("fade");
+    if (done.length <= 1) { $("#undo").addClass("fade"); }
 }
 
 function redo() {    
-  //  alert(undone);
-    done.push(undone.pop());
+    undoneOrder = undone.pop();
+    
+    // change current order and update undo/redo stacks
+    setOrderTo(undoneOrder);
+    done.push(undoneOrder);
+    
+    // make sure undo/redo can/cant be clicked
+    $("#undo").removeClass("fade");
+    if (undone.length < 1) { $("#redo").addClass("fade"); }
+}
+
+
+function setOrderTo(newOrder) {  // change the entire order beeing displayed  
+    // clear current order description
+    order = [];
+    quantity = [];
+    total = 0;   
+    $(drink_selection).empty();
+
+    // add the beers from the newOrder
+    $.each(newOrder[0], function(i) {      
+        var q = newOrder[1][i];
+        while(q > 0){
+            addOrder(this);
+            q--;
+        }
+    });
+    updateTotal();
+}
+
+function pushOrderTo(stack) {  // add an order instance to the done or undone stack
+    var currentOrder = [];
+    currentOrder[0] = order.slice();
+    currentOrder[1] = quantity.slice();
+    stack.push(currentOrder);
+    updateTotal();
+    
+    // make sure undo/redo can/cant be clicked
+    if (stack == done) { $("#undo").removeClass("fade");
+    } else { $("#redo").removeClass("fade"); }
+}
+
+function clearUndone() {
+    undone = [];
+    $("#redo").addClass("fade"); 
 }
 
 function checkStock (db, article_id) {
     var counter = 0;
     $.each(db, function(element){
-        if (this.article_id == article_id){
+        if (this.article_id == article_id) {
             counter = this.in_stock;
         }
     });

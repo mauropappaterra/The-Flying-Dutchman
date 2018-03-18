@@ -99,13 +99,13 @@ a:active {
 #undo:hover, #redo:hover {
     color: white;
 }
-
+/*
 .undo {
     color: red;
 }
 .redo {
     color: green;
-}
+} */
 
 /* COLORS */
 .green {
