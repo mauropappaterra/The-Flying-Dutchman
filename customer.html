@@ -1,342 +1,132 @@
-/** Bar
- *  customer.js
- *  Created by Mauro J. Pappaterra on 11 of February 2018.
- *  Updated by Hassan Odimi on 23 of February 2018.
- *  Updated on 16 March
- */
+<!-- Bar 
+     customer.html
+     Created by Mauro J. Pappaterra on 09 of February 2018. -->
 
-/*CUSTOMER PAGE SCRIPTS
-* All scripts related to the customer page. Each page has their own scripts in a single js document.
-* Methods translate() and responsive() are unique for each individual page.
-*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-/*LOAD CURRENT SECTION DATA*/
-if (localStorage.getItem("SESSION") == null){
-    localStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
-    localStorage.setItem("transaction_counter",20);
-    //alert("This is happening!")
-}
-var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION_TRANSACTIONS"));
-var transactions_counter = parseInt(localStorage.getItem("transaction_counter"));
-//alert(SESSIONS_TRANSACTIONS.toSource());
+    <!-- Metadata-->
+    <title id="page_title">The Flying Dutchman</title>
+    <meta name="Description goes here" content="">
+    <meta name="Mauro José Pappaterra" content="tags go here">
 
-var order = []; // keeps list of drinks ordered
-var quantity = []; // keeps list of quantities with matching indexes
-var total = 0; // calculates the total
-var current_user = 'C00002';
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
 
-/*UNDO-REDO ARRAYS*/
-var done = new Array([]);    //keeps track of 'done' actions
-var undone = new Array(); //keeps track of 'redone' actions
+    <!-- External CSS sheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/customer.css">
 
-$(document).ready(function() {
+    <!-- CSS Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    retrieveDB(); // load database on page load
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
-    // filter drinks by category
-    $("#all").click(function(){
-        $("#drink_database").empty(); // empty current <div> contents
-        retrieveDB();
-        $(this).addClass('highlight');
-    });
+</head>
+<body>
+    <!-- Your code starts here -->
 
-    $("#beers").click(function(){
-        $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
-            if (this.beer == true){
-                printToDOM(this);// Call method to print to DOM
-            };
-        });
-    });
+    <header>
 
-    $("#wines").click(function(){
-        $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
-            if (this.wine == true){
-                printToDOM(this);// Call method to print to DOM
-            };
-        });
-    });
+        <div class="title">
+            <h1 id="title">Customer View</h1>
+        </div>
+    <table class="info">
+      <tr>
+        <th id="customer"> Costumer:  </th>
+        <td id="usr"> usr </td>
+      </tr>
+        <tr id="creditDisplay">
+        <th id="credit"> Credit:  </th>
+        <td id="cre"> cre </td>
+        </tr>
+    </table>
 
-    $("#spirits").click(function(){
-        $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
-            if (this.spirit == true){
-                printToDOM(this);// Call method to print to DOM
-            };
-        });
-    });
+    <!--
+        <div class="info">
+    <b id="customer">Customer:</b>John Smith <br>
+    <b id="credit">Credit:</b> SEK 1000
 
-    $("#kosher").click(function(){
-        $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
-            if (this.kosher == true){
-                printToDOM(this);// Call method to print to DOM
-            };
-        });
-    });
+        </div>
 
-    $("#ecologic").click(function(){
-        $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
-            if (this.ecologic == true){
-                printToDOM(this);// Call method to print to DOM
-            };
-        });
-    });
+        <hr> -->
+    </header>
 
-    $("#specials").click(function(){ 
-        $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
-            if (this.special == true){
-                printToDOM(this);// Call method to print to DOM
-            };
-        });
-    });
+    <div class="menu">
+        <h2 id="drink_list">Our Drink List</h2>
 
-    $(document).on('click','#undo',function() {
-        var article_id = $(this).find('span').html();
-        undo();
-    });
-    $(document).on('click','#redo',function() {
-        var article_id = $(this).find('span').html();
-        redo();
-    });
+        <ul class="menu_tabs">
+            <a><li id="all">All</li></a>
+            <a><li id="beers">Beers</li></a>
+            <a><li id="wines">Wines</li></a>
+            <a><li id="spirits">Spirits</li></a>
+            <a><li id="kosher">Kosher</li></a>
+            <a><li id="ecologic">Ecologic</li></a>
+            <a><li id="specials">Specials</li></a>
+        </ul>
 
-    $("#pay").click(function(){
-        transactions_counter ++;
-        var newOrder = {
-            "transaction_id": "T" + ((transactions_counter + 100000).toString()).slice(1),
-            "bartender_id": null,
-            "customer_id": current_user,
-            "order":order,
-            "quantities":quantity,
-            "amount": total,
-            "timestamp": formatDate(new Date($.now())),
-            "paid":false
-        };
+    </div>
 
-        alert("NEW ORDER " + newOrder.toSource());
+    <div class="selection_header">
+        <h2 id="your_order">Your Order</h2>
+    </div>
+ 
+    <div class="drink_list" id="drink_database">
+        <!-- Drinks Database loads here -->
+    </div>
 
-        SESSIONS_TRANSACTIONS.push(newOrder);
-        //alert(SESSIONS_TRANSACTIONS.toSource());
+    <div class="selection" id="drink_selection">
+        <!-- Drink Selection pops up here -->
+    </div>
 
-        localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
-        localStorage.setItem("transaction_counter", transactions_counter);
-    });
+    <div class="checkout">
+        <h2 id="total">Total: SEK 0 :-</h2>
+    </div>   
 
-    $(document).on('click','.drink',function(){
-        var article_id = $(this).find('span').html();
-        //alert("You have chosen: " + article_id);
-        addOrder(article_id);
+    <footer>
 
-        //Undo-Redo
-        pushOrderTo(done); // update done stack
-        clearUndone(); // clear undone stack after a 'proper' action
-    });
+        <!-- LOG OUT BUTTON -->
+        <!-- <a href="index.html"><div class="small_button red logout" id="logout">Log Out</div></a> -->
+        <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
 
-    $(document).on('click','.delete',function(){
+        <!-- LANGUAGE MENU -->
+        <div class="languages_menu">
+            <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+            <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+            <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
+            <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
+            <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+        </div>
 
-        total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
-        updateTotal();
+        <!-- UNDO-REDO MENU -->
+        <div class="undo_redo_menu">
+            <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
+            <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
+        </div>
 
-        var article_id = $(this).closest('.order').attr('id'); // get id
-        var i = $.inArray(article_id,order);
+        <!-- PAY BUTTON -->
+        <a href=""><div class="small_button blue" id="pay">Place Order</div></a>
 
-        order.splice(i, 1); // remove both order and quantity (same index)
-        quantity.splice(i, 1);
+    </footer>
 
-        $(this).closest('.order').remove(); // remove from DOM
+    <!-- Your code ends here -->
 
-        pushOrderTo(done);  // update done stack
-        clearUndone(); // clear undone stack after a 'proper' action
-    });
-});
+    <!-- External Scripts -->
 
-function translate (index) {
-    $("#page_title").text(page_title[index]);
-    $("#title").text(title[index]);
-    $("#logout").text(logout[index]);
-    $("#customer").text(customer[index]);
-    $("#credit").text(credit[index]);
-    $("#drink_list").text(drink_list[index]);
-    $("#all").text(all[index]);
-    $("#beers").text(beers[index]);
-    $("#wines").text(wines[index]);
-    $("#spiritis").text(spiritis[index]);
-    $("#kosher").text(kosher[index]);
-    $("#ecologic").text(ecologic[index]);
-    $("#specials").text(specials[index]);
-    $("#your_order").text(your_order[index]);
-    $("#total").text(total[index]);
-    $("#pay").text(pl_order[index]);
-}
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Load Database -->
+    <script src="db/DB.js" type="text/javascript"></script>
+    <!-- Scripts -->
+    <script src="js/view/view_common.js" type="text/javascript"></script>
+    <script src="js/view/view_customer.js" type="text/javascript"></script>
 
-function responsive() {
-    //var size = $(document).width();
-
-    if ($(window).width() < 640) { /* Small size */
-        //alert("Small Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 641 && $(window).width() < 1007){/* Medium size */
-        //alert("Medium Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 1008){/* Large size */
-        //alert("Large Size! -> " + size + " px!");
-    }
-}
-
-/*Call printToDOM() method on all elements in the DB*/
-function retrieveDB () {
-    $.each(DB_STOCK, function(element){
-        printToDOM(this); // Call method to print to DOM
-    });
-}
-
-/*Prints content of DB to DOM*/
-function printToDOM (element) {
-
-    var stock_message = "";
-    var classes = "";
-
-    if (checkStock(element.article_id) < 10) {  // low items
-        stock_message = "<br> <b class='textRed'>LOW STOCK!</b>";
-    }
-
-    if (checkStock(element.article_id) < 1) {  // out of stock
-        stock_message = "<br><b class='textRed alert'>OUT OF STOCK</b>";
-        classes = " fade";
-    }
-
-    $("#drink_database").append(
-        '<div class="drink' + classes + '">' +
-        '<h4>' + element.name + '</h4>' +
-        '<img  src="img/drinks/' + element.article_id + '.png">' +
-        '<h4>SEK ' + parseInt(element.sale_price) + ':- ' +  stock_message +'</h4>' +
-        '<span hidden>' + element.article_id + '</span>' +
-        '</div>');
-}
-
-function addOrder (article_id) {
-    i = $.inArray(article_id,order);
-
-    if (i == -1){ // if drink is not already on the order print to DOM
-
-        $.each(DB_STOCK, function(element){
-            if (this.article_id == article_id){ // retrieve article from the database
-                $("#drink_selection").prepend(
-                    '<div class="order " id="'+ this.article_id +'">' +
-                    '<a class="delete">X</a>' +
-                    '<h4 class="price">SEK <span class="loreen">' + parseInt(this.sale_price) + '</span>:-</h4>' +
-                    '<span class="sum" hidden>' + this.sale_price + '</span>' +
-                    '<img src="img/drinks/' + this.article_id + '.png">' +
-                    '<h4>' + this.name + '<span class="quantity textRed"></span></h4>' +
-                    '</div>'
-                )
-                total += parseInt(this.sale_price);
-                ;}
-        });
-
-        order.push(article_id);
-        quantity.push(1);
-    } else { // if the drink is already in the order, update counter on DOM
-        quantity[i]++;
-        total += parseInt($("#"+article_id).find('.sum').html());
-
-        $("#"+article_id).find('.quantity').empty().append(" ( x " + quantity[i] + ")");
-
-        update_price = parseInt($("#"+article_id).find('.sum').html()) * quantity[i];
-        $("#"+article_id).find('.loreen').empty().append(update_price);
-    }
-
-    updateTotal();
-    //FOR TESTING PURPOSES
-    //alert (order +' X '+quantity)
-}
-
-function updateTotal () {
-    $('#total').empty().append('Total: SEK ' + Math.max(total,0) + ':-')
-}
-
-function checkStock (article_id) {
-    var counter = 0;
-    $.each(DB_STOCK, function(element){
-        if (this.article_id == article_id){
-            counter = this.in_stock;
-        }
-    });
-    return counter;
-};
-
-function formatDate (date) {
-    /* Returns formatted date as follows: "2018-03-19 21:00:00" */
-    var formatted_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-"
-        + date.getDate() +" "+ date.getHours() +":"+ date.getMinutes()+ ":" + date.getSeconds();
-    return formatted_date;
-}
-
-/*ALL UNDO/REDO FUNCTIONS*/
-
-function undo() {
-    currentOrder = done.pop();
-    previousOrder = done.pop();
-
-    // change current order and update undo/redo stacks
-    setOrderTo(previousOrder);
-    done.push(previousOrder);
-    undone.push(currentOrder);
-
-    // make sure undo/redo can/cant be clicked
-    $("#redo").removeClass("fade");
-    if (done.length <= 1) { $("#undo").addClass("fade"); }
-}
-
-function redo() {
-    undoneOrder = undone.pop();
-
-    // change current order and update undo/redo stacks
-    setOrderTo(undoneOrder);
-    done.push(undoneOrder);
-
-    // make sure undo/redo can/cant be clicked
-    $("#undo").removeClass("fade");
-    if (undone.length < 1) { $("#redo").addClass("fade"); }
-}
-
-
-function setOrderTo(newOrder) {  // change the entire order beeing displayed
-    // clear current order description
-    order = [];
-    quantity = [];
-    total = 0;
-    $(drink_selection).empty();
-
-    // add the beers from the newOrder
-    $.each(newOrder[0], function(i) {
-        var q = newOrder[1][i];
-        while(q > 0){
-            addOrder(this);
-            q--;
-        }
-    });
-    updateTotal();
-}
-
-function pushOrderTo(stack) {  // add an order instance to the done or undone stack
-    var currentOrder = [];
-    currentOrder[0] = order.slice();
-    currentOrder[1] = quantity.slice();
-    stack.push(currentOrder);
-    updateTotal();
-
-    // make sure undo/redo can/cant be clicked
-    if (stack == done) { $("#undo").removeClass("fade");
-    } else { $("#redo").removeClass("fade"); }
-}
-
-function clearUndone() {
-    undone = [];
-    $("#redo").addClass("fade");
-}
+    <script src="js/customer.js" type="text/javascript"></script>
+    <script src="js/login.js" type="text/javascript"></script>
+    <script src="js/multilanguage.js" type="text/javascript"></script>
+    <script src="js/responsive.js" type="text/javascript"></script>
+</body>
+</html>
