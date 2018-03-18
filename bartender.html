@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Oswald" rel="stylesheet">
 
 
 
@@ -35,51 +35,52 @@
 <body>
 <!-- Your code starts here -->
 
-<div class="menu darkgreen">
+    <div class="menu">
 
-    <table class="info headergreen">
-        <tr>
-            <th> Bartender:  </th>
-            <td id="usr"> usr </td>
-        </tr>
-    </table>
+        <table class="info">
+            <tr>
+                <th> Bartender:  </th>
+                <td id="usr"> usr </td>
+            </tr>
+        </table>
 
-    <h2 id="orders_q">Orders Queue</h2>
+        <h1 id="orders_q">Orders Queue</h1>
 
-    <ul class="menu_tabs">
-        <a><li id="all">All Orders</li></a>
-        <a><li id="unpaid">Unpaid Orders</li></a>
-        <a><li id="paid">Paid Orders</li></a>
-    </ul>
+        <ul class="menu_tabs">
+            <a><li id="all">All Orders</li></a>
+            <a><li id="unpaid">Unpaid Orders</li></a>
+            <a><li id="paid">Paid Orders</li></a>
+        </ul>
 
-</div>
-
-
-<div class="order_list backgroundgreen" id="all_orders">
-    <!-- All customer orders load here -->
-</div>
-
-
-<footer>
-    <!-- LOG OUT BUTTON -->
-    <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
-
-    <!-- LANGUAGE MENU -->
-    <div class="languages_menu">
-        <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
-        <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
-        <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
-        <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
     </div>
 
-    <!-- UNDO-REDO MENU -->
-    <div class="undo_redo_menu">
-        <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
-        <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
+
+    <div class="order_list" id="all_orders">
+        <!-- All customer orders load here -->
     </div>
 
-</footer>
+
+
+    <footer>
+        <!-- LOG OUT BUTTON -->
+        <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
+
+        <!-- LANGUAGE MENU -->
+        <div class="languages_menu">
+            <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+            <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+            <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
+            <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
+            <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+        </div>
+
+        <!-- UNDO-REDO MENU -->
+        <div class="undo_redo_menu">
+            <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
+            <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
+        </div>
+
+    </footer>
 
 <!-- Your code ends here -->
 
