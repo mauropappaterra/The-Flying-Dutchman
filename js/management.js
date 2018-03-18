@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     retrieveSystembolaget(); // load database on page load
 
-    $("#drinks_list").click(function(){ /* Retrieve from Systembolaget*/
+    $("#drinks_list").click(function(){ /* Retrieve from Systembolaget*/ 
         $("#drink_database").empty();
         retrieveSystembolaget();
     });
