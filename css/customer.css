@@ -129,19 +129,6 @@ header{
     height: 55%;
 }
 
-.fade {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.fade2 {
-    background-color: grey;
-    opacity: 0.5;
-    filter: alpha(opacity=40);
-    zoom: 1;
-    pointer-events:none;
-}
-
 /*ORDER COLUMN*/
 .selection_header {
     width: 30%;
