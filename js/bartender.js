@@ -11,17 +11,14 @@
 
 if (localStorage.getItem("SESSION") == null){
     localStorage.setItem("SESSION",JSON.stringify(DB_TRANSACTIONS));
-    alert("This is happening!")
+    //alert("This is happening!")
 }
 
 var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
-alert(SESSIONS_TRANSACTIONS.toSource());
+//alert(SESSIONS_TRANSACTIONS.toSource());
 
 var current_bartender = localStorage.getItem('id');
 
-/*UNDO-REDO ARRAYS*/
-var done = new Array([]); //keeps track of 'done' actions
-var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
 
@@ -68,14 +65,15 @@ $(document).ready(function() {
             });
         }
     });
-    
-    $(document).on('click','#undo',function() {
-        var article_id = $(this).find('span').html();
-        undo();
+
+    $(document).on('click','.delete',function() {
+        var the_transaction = $(this).find(".hiddenid").html();
+        alert("Ready to delete " + the_transaction)
     });
-    $(document).on('click','#redo',function() {
-        var article_id = $(this).find('span').html();
-        redo();
+
+    $(document).on('click','.pay',function() {
+        var the_transaction = $(this).closest('.hiddenid').html();
+        alert("Ready to mark as paid " + the_transaction)
     });
 
 });
@@ -163,7 +161,9 @@ function paidStamp (boolean, element){
 function printToDOM (element) {
     var i = $.inArray(element,SESSIONS_TRANSACTIONS);
 
-    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +' |    Customer:</b> '+ getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  ' + paidStamp(element.paid, element) + '</button>' +
+    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +'<span hidden class="hiddenid">' + element.transaction_id + '</span> |    Customer:</b> '+
+        getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  '
+        + paidStamp(element.paid, element) + '</button>' +
         '<div class="panel">' +
         '<div class="order">' +
 
@@ -196,68 +196,4 @@ function printOrder(order_array,quantities_array){
             '</div>';
     });
     return content;
-}
-
-/*ALL UNDO/REDO FUNCTIONS*/
-
-function undo() {
-    currentOrder = done.pop();
-    previousOrder = done.pop();
-
-    // change current order and update undo/redo stacks
-    setOrderTo(previousOrder);
-    done.push(previousOrder);
-    undone.push(currentOrder);
-
-    // make sure undo/redo can/cant be clicked
-    $("#redo").removeClass("fade");
-    if (done.length <= 1) { $("#undo").addClass("fade"); }
-}
-
-function redo() {
-    undoneOrder = undone.pop();
-
-    // change current order and update undo/redo stacks
-    setOrderTo(undoneOrder);
-    done.push(undoneOrder);
-
-    // make sure undo/redo can/cant be clicked
-    $("#undo").removeClass("fade");
-    if (undone.length < 1) { $("#redo").addClass("fade"); }
-}
-
-
-function setOrderTo(newOrder) {  // change the entire order beeing displayed
-    // clear current order description
-    order = [];
-    quantity = [];
-    total = 0;
-    $(drink_selection).empty();
-
-    // add the beers from the newOrder
-    $.each(newOrder[0], function(i) {
-        var q = newOrder[1][i];
-        while(q > 0){
-            addOrder(this);
-            q--;
-        }
-    });
-    updateTotal();
-}
-
-function pushOrderTo(stack) {  // add an order instance to the done or undone stack
-    var currentOrder = [];
-    currentOrder[0] = order.slice();
-    currentOrder[1] = quantity.slice();
-    stack.push(currentOrder);
-    updateTotal();
-
-    // make sure undo/redo can/cant be clicked
-    if (stack == done) { $("#undo").removeClass("fade");
-    } else { $("#redo").removeClass("fade"); }
-}
-
-function clearUndone() {
-    undone = [];
-    $("#redo").addClass("fade");
 }
