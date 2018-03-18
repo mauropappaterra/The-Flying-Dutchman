@@ -6,27 +6,31 @@
 var user = "blank";
 
 function findByID(id, db) { // assuming 'id' is the first objectvalue
-    for (i in db) {
-        for (j in db[i]) {
-            if(db[i][j] == id) {return db[i]}
-            break;
-        }
-    }
+    
+    var new_user;
+    $.each(db, function(element) {
+        var found = false;
+        $.each(this, function(element) {
+            if (this == id) { found = true; return false;}            
+        });
+        if (found == true) { new_user = this; return false; }
+    });
+    return new_user;
 }
 
 function typeToDB(usertype) {
-    if (usertype == 'customer')  { return DB_CUSTOMERS;}
-    if (usertype == 'bartender') { return DB_BARTENDERS;}
-    if (usertype == 'management')   { return DB_MANAGERS;}
+    if (usertype == 'customer')   { return DB_CUSTOMERS;}
+    if (usertype == 'bartender')  { return DB_BARTENDERS;}
+    if (usertype == 'management') { return DB_MANAGERS;}
 
    // else {alert("todo?: invalid userType")}
 }
 
 
 function goToUserPage(usertype) {
-    if      (usertype == 'customer')  { window.location.href = "customer.html";}
-    else if (usertype == 'bartender') { window.location.href = "bartender.html";}
-    else if (usertype == 'management')   { window.location.href = "management.html";}
+    if      (usertype == 'customer')   { window.location.href = "customer.html";}
+    else if (usertype == 'bartender')  { window.location.href = "bartender.html";}
+    else if (usertype == 'management') { window.location.href = "management.html";}
     else { window.location.href = "index.html";}
 }
 
@@ -34,20 +38,22 @@ function loginDB(form) {
     var username = form.user_name.value;
     var password = form.password.value;
     var db = typeToDB(localStorage.getItem('usertype'));
-    for (i in db) {
-        if (db[i].username == username) {
-            if (db[i].password == password) {
-                user = db[i];
-                for (j in db[i]) {                
-                    localStorage.setItem('id', db[i][j]);
-                    break;}
+    var wrong =  "Wrong username";  // TODO: alert only when something is wrong or specify if its the pass/name?
+    
+    $.each(db, function(element) {
+        if (this.username == username) {
+            if (this.password == password) {
+                user = this;
+                $.each(this, function(element) {
+                   localStorage.setItem('id', this); return false;                    
+                });
                 goToUserPage(localStorage.getItem('usertype'));
-                return;
-            }
-            else { alert("Wrong password"); } 
+            } else { wrong = "Wrong password"; return false; }
+            return false;
         }
-    }
-   alert("Wrong username");  // TODO: alert only when something is wrong or specify if its the pass/name? 
+    });
+    
+    alert(wrong);
 }
 
 function checkAccess() { 
@@ -65,8 +71,8 @@ function logOut() {  // TODO: pop asking to confirm?
     window.location.href = "index.html";
 }
 
-function isVIP(user) { // TODO: fix according to VIP bool
-    return user.credit > 0;
+function isVIP(user) {
+    return user.vip;
 }
 
 $(function (){
@@ -74,12 +80,12 @@ $(function (){
     user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
     
     if (!isVIP(user)) {
-        document.getElementById("specials").style.display = 'none';
-        document.getElementById("creditDisplay").style.display = 'none';   
+        $('#specials').hide();
+        $('#creditDisplay').hide();
     }
    
     // TODO:setup differently depending on current page/user, depending on design
-    document.getElementById("usr").innerHTML = user.first_name;
-    document.getElementById("cre").innerHTML = user.credit; 
+    $('#usr').html(user.first_name);
+    $('#cre').html(user.credit);
 });
 
