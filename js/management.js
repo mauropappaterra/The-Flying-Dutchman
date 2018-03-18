@@ -22,7 +22,7 @@ var big_orders = []; // keeps list of drinks ordered
 var big_quantity = []; // keeps list of quantities with matching indexes
 var big_total = 0; // calculates the big_total
 
-var current_manager = 'M00001';
+var current_manager = localStorage.getItem('id');
 
 /*UNDO-REDO ARRAYS*/
 var done = new Array([]);    //keeps track of 'done' actions
@@ -261,8 +261,9 @@ function printToDOM (element){
 }
 
 function addOrder (article_id, number) {
-    i = $.inArray(article_id, big_orders);
-
+    i = -1;//$.inArray(article_id, big_orders);
+    $.each(big_orders, function(index, element){ if (this == article_id) { i = index; return false;}});
+    
     if (i == -1){ // if drink is not already on the big_orders print to DOM
 
         $.each(DB_SYSTEMBOLAGET, function(element){

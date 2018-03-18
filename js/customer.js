@@ -20,13 +20,13 @@ var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION_TRANSACTION
 var transactions_counter = parseInt(localStorage.getItem("transaction_counter"));
 //alert(SESSIONS_TRANSACTIONS.toSource());
 
-var order = []; // keeps list of drinks ordered
+var order = [];    // keeps list of drinks ordered
 var quantity = []; // keeps list of quantities with matching indexes
-var total = 0; // calculates the total
-var current_user = 'C00002';
+var total = 0;     // calculates the total
+var current_user = localStorage.getItem('id');
 
 /*UNDO-REDO ARRAYS*/
-var done = new Array([]);    //keeps track of 'done' actions
+var done = new Array([]); //keeps track of 'done' actions
 var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
@@ -220,8 +220,9 @@ function printToDOM (element) {
 }
 
 function addOrder (article_id) {
-    i = $.inArray(article_id,order);
-
+    i = -1;//$.inArray(article_id,order);
+    $.each(order, function(index, element){ if (this == article_id) { i = index; return false;}});
+ 
     if (i == -1){ // if drink is not already on the order print to DOM
 
         $.each(DB_STOCK, function(element){
