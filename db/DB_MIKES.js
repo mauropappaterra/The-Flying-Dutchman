@@ -2,7 +2,7 @@ var DB_MIKES = [
     {
         "artikelid": "MIKE01",
         "namn": "Mike's Robust Imperial Porter",
-        "namn2": null,
+        "namn2": "",
         "year": 2018,
         "prisinklmoms": "50.00",
         "volymiml": 330,
