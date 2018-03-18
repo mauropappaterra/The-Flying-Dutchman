@@ -14,7 +14,7 @@ var DB_MIKES = [
     },
     
     {
-         "artikelid": "MIKE02",
+        "artikelid": "MIKE02",
         "namn": "Taranaki IPA",
         "namn2": "",
         "year": 2018,
@@ -28,7 +28,7 @@ var DB_MIKES = [
      },
      
      {
-         "artikelid": "MIKE03",
+        "artikelid": "MIKE03",
         "namn": "Vanilla Coffee Porter",
         "namn2": "",
         "year": 2018,
@@ -41,7 +41,7 @@ var DB_MIKES = [
         "alkoholhalt": "8.0%"
      },
     {
-         "artikelid": "MIKE04",
+        "artikelid": "MIKE04",
         "namn": "Chocolate Milk Stout",
         "namn2": "",
         "year": 2018,
@@ -55,7 +55,7 @@ var DB_MIKES = [
      },
         
      {
-         "artikelid": "MIKE05",
+        "artikelid": "MIKE05",
         "namn": "Onemorepaleale",
         "namn2": "",
         "year": 2018,
@@ -68,7 +68,7 @@ var DB_MIKES = [
         "alkoholhalt": "5.5%"
      },
     {
-         "artikelid": "MIKE06",
+        "artikelid": "MIKE06",
         "namn": "PilS-NAH",
         "namn2": "",
         "year": 2018,
@@ -82,7 +82,7 @@ var DB_MIKES = [
      },
     
     {
-         "artikelid": "MIKE07",
+        "artikelid": "MIKE07",
         "namn": "Longline Lager",
         "namn2": "",
         "year": 2018,
@@ -96,7 +96,7 @@ var DB_MIKES = [
      },
     
      {
-         "artikelid": "MIKE08",
+        "artikelid": "MIKE08",
         "namn": "Mild Ale",
         "namn2": "",
         "year": 2018,
@@ -110,7 +110,7 @@ var DB_MIKES = [
      },
     
      {
-         "artikelid": "MIKE09",
+        "artikelid": "MIKE09",
         "namn": "Full Nelson IPA",
         "namn2": "",
         "year": 2018,
@@ -124,7 +124,7 @@ var DB_MIKES = [
      },
     
      {
-         "artikelid": "MIKE10",
+        "artikelid": "MIKE10",
         "namn": "Second Coming IIPA",
         "namn2": "",
         "year": 2018,
@@ -139,7 +139,7 @@ var DB_MIKES = [
      
     
       {
-         "artikelid": "MIKE11",
+        "artikelid": "MIKE11",
         "namn": "Surf Spot X",
         "namn2": "",
         "year": 2018,
@@ -153,7 +153,7 @@ var DB_MIKES = [
      },
     
     {
-         "artikelid": "MIKE12",
+        "artikelid": "MIKE12",
         "namn": "Boys N Girls",
         "namn2": "",
         "year": 2018,
@@ -167,7 +167,7 @@ var DB_MIKES = [
      },
     
      {
-         "artikelid": "MIKE13",
+        "artikelid": "MIKE13",
         "namn": "Hopstock & 2 Smoking Barrels",
         "namn2": "",
         "year": 2018,
@@ -181,7 +181,7 @@ var DB_MIKES = [
      },
     
     {
-         "artikelid": "MIKE14",
+        "artikelid": "MIKE14",
         "namn": "Damson in Distress",
         "namn2": "",
         "year": 2018,
@@ -195,7 +195,7 @@ var DB_MIKES = [
      },
     
     {
-         "artikelid": "MIKE15",
+        "artikelid": "MIKE15",
         "namn": "Flight of the Falcon",
         "namn2": "",
         "year": 2010,
