@@ -7,19 +7,25 @@
 
 /*HEADER*/
 body {
-    background-color: #0C2924;
-
+    background-image: url("../img/wood.jpg");
+    color: black;
+    font-family: 'Oswald', sans-serif;
 }
+
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+}
+
 
 header{
     overflow:hidden;
     position: relative;
+    color: white;
 }
 
 .title {
     float: left;
     width: 100%;
-
 }
 .info {
     position: absolute;
@@ -69,6 +75,17 @@ header{
     background-color: #ff2d1b;
 }
 
+.background_wallpaper {
+    background-image: url("../img/background.jpg");
+    opacity: 0.4;
+    width: 100%;
+    height: 515px;
+    position: absolute;
+    left: 0px;
+    top: 130px;
+    z-index: -1;
+}
+
 .drink_list {
     width: 70%;
     height: 500px;
@@ -77,10 +94,9 @@ header{
 }
 
 .drink {
-
     padding: 3%;
     margin: 2%;
-    background-color: #C0CFCC;
+    background-color: rgba(255, 255, 255, 0.9);
 
     border-style: solid;
     border-color: #C0CFCC;
@@ -88,20 +104,28 @@ header{
     border-radius: 4%;
 
     width: 90%;
-    height: 185px;
+    height: 200px;
 
     float: left;
 
-    overflow:auto
+    color: black;
+
+    overflow:hidden;
 }
 
 .drink .c1 {
-    width: 25%;
+    width: 15%;
     float: left;
 }
 
+.drink .c1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .drink .c2 {
-    width: 30%;
+    width: 35%;
     float: left;
 }
 
@@ -111,7 +135,7 @@ header{
 }
 
 .drink .c4 {
-    width: 15%;
+    width: 20%;
     float: left;
 }
 
@@ -125,7 +149,6 @@ a h4 {
     padding: 5px;
     text-align: center;
     cursor: pointer;
-
 }
 
 a:hover h4 {
@@ -141,6 +164,7 @@ a:hover h4 {
     width: 30%;
     height: 30%;
     float: right;
+    color: white;
 }
 
 .selection {
@@ -151,16 +175,15 @@ a:hover h4 {
 }
 
 .order {
-
-    background-color: #A4B9B6;
+    background-color: rgba(255, 255, 255, 0.9);
 
     padding-left: 1.5%;
     padding-right: 1.5%;
     margin: 2%;
     margin-bottom: 10%;
 
-    border-style: dashed;
-    border-color: #254540;
+    border-style: solid;
+    border-color: #ffffff;
     border-width: thin;
 
     width: 92%;
@@ -183,10 +206,12 @@ a:hover h4 {
     width: 30%;
     height: 50px;
     float: right;
+
 }
 
 .checkout h2 {
     float: right;
+    color: white;
 }
 
 .delete {
@@ -195,11 +220,6 @@ a:hover h4 {
     float: right;
     width: 20px;
     text-align: center;
-}
-
-/* FOOTER*/
-footer {
-    background: linear-gradient(#567973,#254540);
 }
 
 .logout {
