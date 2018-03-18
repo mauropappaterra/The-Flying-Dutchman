@@ -19,6 +19,9 @@ alert(SESSIONS_TRANSACTIONS.toSource());
 
 var current_bartender = localStorage.getItem('id');
 
+/*UNDO-REDO ARRAYS*/
+var done = new Array([]); //keeps track of 'done' actions
+var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
 
@@ -64,6 +67,15 @@ $(document).ready(function() {
                 }
             });
         }
+    });
+    
+    $(document).on('click','#undo',function() {
+        var article_id = $(this).find('span').html();
+        undo();
+    });
+    $(document).on('click','#redo',function() {
+        var article_id = $(this).find('span').html();
+        redo();
     });
 
 });
@@ -184,4 +196,68 @@ function printOrder(order_array,quantities_array){
             '</div>';
     });
     return content;
+}
+
+/*ALL UNDO/REDO FUNCTIONS*/
+
+function undo() {
+    currentOrder = done.pop();
+    previousOrder = done.pop();
+
+    // change current order and update undo/redo stacks
+    setOrderTo(previousOrder);
+    done.push(previousOrder);
+    undone.push(currentOrder);
+
+    // make sure undo/redo can/cant be clicked
+    $("#redo").removeClass("fade");
+    if (done.length <= 1) { $("#undo").addClass("fade"); }
+}
+
+function redo() {
+    undoneOrder = undone.pop();
+
+    // change current order and update undo/redo stacks
+    setOrderTo(undoneOrder);
+    done.push(undoneOrder);
+
+    // make sure undo/redo can/cant be clicked
+    $("#undo").removeClass("fade");
+    if (undone.length < 1) { $("#redo").addClass("fade"); }
+}
+
+
+function setOrderTo(newOrder) {  // change the entire order beeing displayed
+    // clear current order description
+    order = [];
+    quantity = [];
+    total = 0;
+    $(drink_selection).empty();
+
+    // add the beers from the newOrder
+    $.each(newOrder[0], function(i) {
+        var q = newOrder[1][i];
+        while(q > 0){
+            addOrder(this);
+            q--;
+        }
+    });
+    updateTotal();
+}
+
+function pushOrderTo(stack) {  // add an order instance to the done or undone stack
+    var currentOrder = [];
+    currentOrder[0] = order.slice();
+    currentOrder[1] = quantity.slice();
+    stack.push(currentOrder);
+    updateTotal();
+
+    // make sure undo/redo can/cant be clicked
+    if (stack == done) { $("#undo").removeClass("fade");
+    } else { $("#redo").removeClass("fade"); }
+}
+
+function clearUndone() {
+    undone = [];
+    $("#redo").addClass("fade");
 }
