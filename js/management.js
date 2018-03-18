@@ -12,6 +12,9 @@ var big_orders = []; // keeps list of drinks ordered
 var big_quantity = []; // keeps list of quantities with matching indexes
 var big_total = 0; // calculates the big_total
 
+var done = new Array([]);    //keeps track of 'done' actions
+var undone = new Array();  //keeps track of 'redone' actions
+
 $(document).ready(function() {
 
     retrieveDB(); // load database on page load
@@ -68,6 +71,14 @@ $(document).ready(function() {
 
         //alert($(this).closest('.order').html());
         $(this).closest('.order').remove(); // remove from DOM
+    });
+    $(document).on('click','.undo',function() {
+        var article_id = $(this).find('span').html();     
+        undo();
+    });
+    $(document).on('click','.redo',function() {
+        var article_id = $(this).find('span').html();
+        redo();
     });
 });
 

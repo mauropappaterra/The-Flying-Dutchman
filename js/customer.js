@@ -204,9 +204,6 @@ function printToDOM (element) {
     var img_src ="img/drinks/";
     var db = DB_STOCK;
     
-    if (element.special) {
-       // db = DB_MIKES;
-        img_src ="img/drinks/special_beers/"; }
 
     if (checkStock(db, element.article_id) < 10) {  // low items
         stock_message = "<br> <b class='textRed'>LOW STOCK!</b>";
@@ -233,7 +230,6 @@ function addOrder (article_id) {
         var img_src ="img/drinks/";
         
         $.each(DB_STOCK, function(element) {
-            if (this.special) { img_src ="img/drinks/special_beers/"; }
             
             if (this.article_id == article_id) { // retrieve article from the database
                 $("#drink_selection").prepend(
