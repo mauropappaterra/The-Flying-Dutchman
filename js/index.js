@@ -59,48 +59,33 @@ function responsive() {
 // login/gif related functions
 function openLogin(elem, show, user) {
     localStorage.setItem('usertype', user);
-    changeDisplay(elem, show);
+    $('#loginBox').show();
 }
 function changeDisplay(elem, show) {
-    document.getElementById(elem).style.display = show;
-}
-
-function picToGif1(pic, gif) {
-    changeDisplay(pic, 'none');
-    changeDisplay(gif, 'block');
-    document.getElementById(gif).play();
+        document.getElementById(elem).style.display = show;
 }
 
 function picToGif(ev) {
     ev.preventDefault();
-    changeDisplay('piratePic', 'none');
-    changeDisplay('great', 'block');
-    document.getElementById('great').play();
-    document.body.style.background="#62CB62";
-}
-
-function changeGif(ev) {
-    changeDisplay('gifSwe', 'block');
-    alert("cmon");
-    ev.preventDefault();
-
-    elements = document.getElementsByClassName('gif');
-    document.getElementById('ori').style.display = "none";
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].style.display="none";
+    if($('#piratePic').css('display') == 'block') { // the logo is currently displayed
+        $('#piratePic').hide();
+        $('#great').show();
+      //  $('#great').gifplayer('play');
+        document.getElementById('great').play();
+        $('body').css('background-color', "#62CB62");
+        $('body').css('background-image', 'none');
+    } else { // the gif is currently displayed
+        $('#piratePic').show();
+        $('#great').hide();
+        document.getElementById('great').pause();
+        $('body').css('background-color', "white");
+        $('body').css('background-image', 'url("img/background/back12.png")');
     }
-    var data = event.dataTransfer.getData("Text");
-    alert(data);
-    changeisplay(document.getElementById(data), 'block');
 }
 
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+function allowDrop(ev) { ev.preventDefault(); }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
+function drag(ev) { ev.dataTransfer.setData("text", ev.target.id);}
 
 function drop(ev) {
     ev.preventDefault();
