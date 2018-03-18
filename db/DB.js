@@ -386,7 +386,7 @@ var DB_MANAGERS =[
 var DB_TRANSACTIONS = [
     {
         "transaction_id": "T00001",
-        "bartender_id": "B00001",
+        "bartender_id": null,
         "customer_id": "C00001",
         "order":[166018,37500,411],
         "quantities":[3,5,2],
@@ -396,7 +396,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00002",
-        "bartender_id": "B00001",
+        "bartender_id": null,
         "customer_id": "C00002",
         "order":[733051,817010],
         "quantities":[2,1],
@@ -406,7 +406,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00003",
-        "bartender_id": "B00001",
+        "bartender_id": null,
         "customer_id": "C00003",
         "order":[1134,1132,166018],
         "quantities":[10,5,5],
@@ -416,7 +416,7 @@ var DB_TRANSACTIONS = [
     },
     {   
         "transaction_id": "T00004",
-        "bartender_id": "B00002",
+        "bartender_id": null,
         "customer_id": "C00004",
         "order":[166018,1134,1132,1194,205747],
         "quantities":[1,2,2,1,1],
@@ -426,7 +426,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00005",
-        "bartender_id": "B00002",
+        "bartender_id": null,
         "customer_id": "C00005",
         "order":[733051,817010,723428,1132,166018,1194], 
         "quantities":[1,1,1,2,1,4],
@@ -436,7 +436,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00006",
-        "bartender_id": "B00003",
+        "bartender_id": null,
         "customer_id": "C00005",
         "order":[1132,1134,166018,37500], 
         "quantities":[4,1,2,1],
@@ -446,7 +446,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00007",
-        "bartender_id": "B00003",
+        "bartender_id": null,
         "customer_id": "C00006",
         "order":[1132],
         "quantities":[2],
@@ -456,7 +456,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00008",
-        "bartender_id": "B00003",
+        "bartender_id": null,
         "customer_id": "C00007",
         "order":[1134,1132,205747,37500], 
         "quantities":[1,5,2,1],
@@ -466,7 +466,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00009",
-        "bartender_id": "B00004",
+        "bartender_id": null,
         "customer_id": "C00009",
         "order":[1132,1134,166018,1194,205747,37500,411], 
         "quantities":[5,3,2,5,2,1,1],
@@ -476,7 +476,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00010",
-        "bartender_id": "B00001",
+        "bartender_id": null,
         "customer_id": "C00010",
         "order":[1132,1134,166018,37500,1194,733051,205747,411,723428,817010],
         "quantities":[5,3,2,2,6,1,2,1,1,1],
@@ -486,7 +486,7 @@ var DB_TRANSACTIONS = [
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00011",
-        "bartender_id": "B00005",
+        "bartender_id": null,
         "customer_id": "C00011",
         "order":[166018,1134,1132,1194],
         "quantities":[1,1,2,1],
@@ -496,7 +496,7 @@ var DB_TRANSACTIONS = [
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00012",
-        "bartender_id": "B00005",
+        "bartender_id": null,
         "customer_id": "C00016",
         "order":[1132,1134,166018,37500,1194,733051,205747,411,817010,723428,828902],
         "quantities":[2,1,3,2,2,2,2,4,2,2,1],
@@ -506,7 +506,7 @@ var DB_TRANSACTIONS = [
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00013",
-        "bartender_id": "B00004",
+        "bartender_id": null,
         "customer_id": "C00018",
         "order":[166018,1134,1132,1194,37500,205747],
         "quantities":[1,2,2,2,1,1],
@@ -516,7 +516,7 @@ var DB_TRANSACTIONS = [
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00014",
-        "bartender_id": "B00001",
+        "bartender_id": null,
         "customer_id": "C00015",
         "order":[411,723428,817010],
         "quantities":[2,1,1],
@@ -526,7 +526,7 @@ var DB_TRANSACTIONS = [
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00015",
-        "bartender_id": "B00002",
+        "bartender_id": null,
         "customer_id": "C00013",
         "order":[1132,1134,166018],
         "quantities":[6,2,2],
@@ -536,7 +536,7 @@ var DB_TRANSACTIONS = [
     },
     {   //Transaction for Non-VIP Customer with no credit
         "transaction_id": "T00016",
-        "bartender_id": "B00003",
+        "bartender_id": null,
         "customer_id": "C00011",
         "order":[1132,1134,37500,817010,723428], 
         "quantities":[2,1,1,1,2],
@@ -546,7 +546,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00017",
-        "bartender_id": "B00001",
+        "bartender_id": null,
         "customer_id": "C00022",
         "order":[1134,1132],
         "quantities":[2,2],
@@ -556,7 +556,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00018",
-        "bartender_id": "B00002",
+        "bartender_id": null,
         "customer_id": "C00023",
         "order":[1134,1132,166018,37500,1194,733051,411,723428],
         "quantities":[5,2,5,3,7,1,1,2],
@@ -566,7 +566,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00019",
-        "bartender_id": "B00002",
+        "bartender_id": null,
         "customer_id": "C00024",
         "order":[1194],
         "quantities":[15],
@@ -576,7 +576,7 @@ var DB_TRANSACTIONS = [
     },
     {
         "transaction_id": "T00020",
-        "bartender_id": "B00004",
+        "bartender_id": null,
         "customer_id": "C00025",
         "order":[205747],
         "quantities":[1],
