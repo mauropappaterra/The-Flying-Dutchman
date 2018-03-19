@@ -75,7 +75,7 @@ function isVIP(user) {
     return user.vip;
 }
 
-$(function (){
+$(function () {
     checkAccess();
     user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
     

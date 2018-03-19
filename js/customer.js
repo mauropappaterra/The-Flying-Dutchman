@@ -111,8 +111,9 @@ $(document).ready(function() {
         redo();
     });
 
-    $("#pay").click(function() {
-
+//    $("#pay").click(function() {
+    $(document).on('click','#pay',function() {
+     
         if (order.length > 0) {
 
             transactions_counter ++;
@@ -135,6 +136,13 @@ $(document).ready(function() {
             localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("transaction_counter", transactions_counter);
 
+            if($("#cre").html() >= total) {
+                alert("Your order has been payed, you can pick up your beverages in the VIP fridge");
+                $('#cre').html( $('#cre').html() - total);             
+            }
+
+            resetPage();
+            
         } else {
             alert("You must select your drinks before placing an order!")
         }
@@ -415,4 +423,19 @@ function rePrintTab() {
             printToDOM(this);                
         };
     }); 
+}
+
+
+// resets the page after a order has been payed, this cannot be undone
+function resetPage() {
+    order = [];    
+    quantity = [];
+    total = 0;
+    $(drink_selection).empty();
+    done = new Array([[], [], copyStock()]);
+    undone = new Array();
+    $("#undo").addClass("fade");
+    $("#redo").addClass("fade");
+
+    updateTotal();
 }
