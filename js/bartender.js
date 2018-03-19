@@ -11,26 +11,25 @@
 
 if (localStorage.getItem("SESSION") == null){
     localStorage.setItem("SESSION",JSON.stringify(DB_TRANSACTIONS));
-    alert("This is happening!")
+    //alert("This is happening!")
 }
 
 var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
-alert(SESSIONS_TRANSACTIONS.toSource());
+//alert(SESSIONS_TRANSACTIONS.toSource());
 
 var current_bartender = localStorage.getItem('id');
 
-/*UNDO-REDO ARRAYS*/
-var done = new Array([]); //keeps track of 'done' actions
-var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
 
     retrieveOrders(); // retrieve all orders from the database
+    addBackground();
 
     // filter drinks by category
     $("#all").click(function(){
         $("#all_orders").empty();
         retrieveOrders();
+        addBackground();
     });
 
     $("#unpaid").click(function(){
@@ -40,6 +39,7 @@ $(document).ready(function() {
                 printToDOM(this);
             };
         });
+        addBackground();
     });
 
     $("#paid").click(function(){
@@ -49,6 +49,7 @@ $(document).ready(function() {
                 printToDOM(this);
             };
         });
+        addBackground();
     });
 
     /* Accordion Script*/
@@ -68,14 +69,15 @@ $(document).ready(function() {
             });
         }
     });
-    
-    $(document).on('click','#undo',function() {
-        var article_id = $(this).find('span').html();
-        undo();
+
+    $(document).on('click','.delete',function() {
+        var the_transaction = $(this).find(".hiddenid").html();
+        alert("Ready to delete " + the_transaction)
     });
-    $(document).on('click','#redo',function() {
-        var article_id = $(this).find('span').html();
-        redo();
+
+    $(document).on('click','.pay',function() {
+        var the_transaction = $(this).closest('.hiddenid').html();
+        alert("Ready to mark as paid " + the_transaction)
     });
 
 });
@@ -104,6 +106,36 @@ function responsive() {
     if ($(window).width() > 1008){/* Large size */
         //alert("Large Size! -> " + size + " px!");
     }
+}
+
+function printToDOM (element) {
+    var i = $.inArray(element,SESSIONS_TRANSACTIONS);
+
+    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +'<span hidden class="hiddenid">' + element.transaction_id + '</span> |    Customer:</b> '+
+        getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  '
+        + paidStamp(element.paid, element) + '</button>' +
+        '<div class="panel">' +
+        '<div class="order">' +
+
+        printOrder(element.order,element.quantities) + // Contents of the order printed here
+
+        '</div>';
+
+    if (element.paid == false){ // this part is only printed to unpaid transactions
+        content += '<div class="checkout">' +
+            '<a href=""><div class="small_button red delete" id="cancel_order">Cancel Order</div></a>' +
+            '<a href=""><div class="small_button light_green pay" id="mark_paid">Mark as Paid</div></a>' +
+            '<a href=""><div class="small_button total" id="total"><b>TOTAL:</b> SEK '+ element.amount +':-</div></a>' +
+            '</div>';
+    } else {
+        content += '<div class="paidfor">' +
+            '<h1><b>TOTAL PAID:</b> SEK '+ element.amount + ':-</h1>' +
+            '</div>';
+    }
+
+    content += '</div>';
+
+    $("#all_orders").prepend(content);
 }
 
 function retrieveOrders() {
@@ -160,30 +192,6 @@ function paidStamp (boolean, element){
     return message;
 }
 
-function printToDOM (element) {
-    var i = $.inArray(element,SESSIONS_TRANSACTIONS);
-
-    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +' |    Customer:</b> '+ getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  ' + paidStamp(element.paid, element) + '</button>' +
-        '<div class="panel">' +
-        '<div class="order">' +
-
-        printOrder(element.order,element.quantities) + // Contents of the order printed here
-
-        '</div>';
-
-    if (element.paid == false){ // this part is only printed to unpaid transactions
-        content += '<div class="checkout">' +
-            '<a href=""><div class="small_button red delete" id="cancel_order">Cancel Order</div></a>' +
-            '<a href=""><div class="small_button blue pay" id="mark_paid">Mark as Paid</div></a>' +
-            '<a href=""><div class="small_button light_orange total" id="total"><b>TOTAL:</b> SEK '+ element.amount +':-</div></a>' +
-            '</div>';
-    }
-
-    content += '</div>';
-
-    $("#all_orders").prepend(content);
-}
-
 function printOrder(order_array,quantities_array){
     //alert(order_array);
     var content = '';
@@ -198,66 +206,6 @@ function printOrder(order_array,quantities_array){
     return content;
 }
 
-/*ALL UNDO/REDO FUNCTIONS*/
-
-function undo() {
-    currentOrder = done.pop();
-    previousOrder = done.pop();
-
-    // change current order and update undo/redo stacks
-    setOrderTo(previousOrder);
-    done.push(previousOrder);
-    undone.push(currentOrder);
-
-    // make sure undo/redo can/cant be clicked
-    $("#redo").removeClass("fade");
-    if (done.length <= 1) { $("#undo").addClass("fade"); }
-}
-
-function redo() {
-    undoneOrder = undone.pop();
-
-    // change current order and update undo/redo stacks
-    setOrderTo(undoneOrder);
-    done.push(undoneOrder);
-
-    // make sure undo/redo can/cant be clicked
-    $("#undo").removeClass("fade");
-    if (undone.length < 1) { $("#redo").addClass("fade"); }
-}
-
-
-function setOrderTo(newOrder) {  // change the entire order beeing displayed
-    // clear current order description
-    order = [];
-    quantity = [];
-    total = 0;
-    $(drink_selection).empty();
-
-    // add the beers from the newOrder
-    $.each(newOrder[0], function(i) {
-        var q = newOrder[1][i];
-        while(q > 0){
-            addOrder(this);
-            q--;
-        }
-    });
-    updateTotal();
-}
-
-function pushOrderTo(stack) {  // add an order instance to the done or undone stack
-    var currentOrder = [];
-    currentOrder[0] = order.slice();
-    currentOrder[1] = quantity.slice();
-    stack.push(currentOrder);
-    updateTotal();
-
-    // make sure undo/redo can/cant be clicked
-    if (stack == done) { $("#undo").removeClass("fade");
-    } else { $("#redo").removeClass("fade"); }
-}
-
-function clearUndone() {
-    undone = [];
-    $("#redo").addClass("fade");
+function addBackground (){
+    $("#all_orders").append('<div class="background_wallpaper"></div>');
 }

@@ -18,17 +18,17 @@
 *  3. Then update translate() method on the corresponding js script page!
 */
 
-var title = ["Management View",
-             "Arbetledarsidan",
-             "Vista Gestione",
-             "Vista Administración",
+var title = ["Drink Delivery Database System",
+             "TODO",
+             "TODO",
+             "TODO",
              "Kin' o' th' Pirates"]
 
 var stock_order = ["Stock Order",
                    "Lagerbeställning",
                    "Ordine",
                    "Perdido",
-                    "Stock Order"]
+                    "Ol' Stock 'rder"]
 
 var login_as = ["Log in as:",
     "Logga in som:",

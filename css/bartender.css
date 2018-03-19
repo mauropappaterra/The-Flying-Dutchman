@@ -7,14 +7,20 @@
 
 /*MENU COLUMN*/
 body {
-    background-color: #0A2521;
+    background-image: url("../img/wood.jpg");
+    font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+    font-family: 'Berkshire Swash', cursive;
 }
 
 .menu {
     width: 100%;
-    height: 30%;/*67px;*/
+    height: 20%;
     float: left;
     overflow: hidden;
+    color: white;
 }
 
 .menu ul {
@@ -51,35 +57,28 @@ body {
 
 .order_list {
     width: 100%;
-    height: 600px;
+    height: 555px;
     float: left;
     overflow: auto;
+    z-index: 1;
 }
 
-.order_header {
-    background-color: white;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-
-    border-style: dashed;
-    border-color: grey;
-    border-width: medium;
-
-    width: 90%;
-    height: 500%;
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    overflow: hidden;
+.background_wallpaper {
+    background-image: url("../img/background.jpg");
+    opacity: 0.3;
+    width: 100%;
+    height: 555px;
+    position: absolute;
+    left: 0px;
+    top: 120px;
+    z-index: -1;
 }
 
 /* ACCORDEON */
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion{
     color: rgb(0, 0, 0);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
 
     text-align: left;
 
@@ -94,9 +93,9 @@ body {
     padding-right: 1.5%;
     margin-top: 15px;
 
-    border-style: dashed;
+    border-style: solid;
     border-color: grey;
-    border-width: medium;
+    border-width: thin;
 
     width: 90%;
     height: 45px;
@@ -117,13 +116,13 @@ body {
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
     color: rgb(211, 142, 79);
-    background-color: white;/*rgba(123,194,211,0.6);*/
+    background-color: white;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
     padding: 0 0px;
-    background-color: #86e7bf;
+    background-color: rgba(103, 103, 103, 0.7);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -152,23 +151,16 @@ body {
 
 
 /*ORDER COLUMN*/
-
-.selection {
-    width: 30%;
-    height: 450px;
-    background-color: lightseagreen;
-    float: right;
-    overflow: auto;
-}
-
 .order_details {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    color: black;
 
     padding-left: 1.5%;
     padding-right: 1.5%;
     margin: 1%;
 
-    border-style: dashed;
+    border-style: solid;
     border-color: grey;
     border-width: thin;
 
@@ -195,20 +187,26 @@ body {
 .checkout {
     width: 100%;
     height: 75px;
-    background-color: #ffaf40;
     clear: both;
     text-align: right;
+    background-color: #ffaf40;
+    opacity: 0.6;
+}
+
+.paidfor {
+    color: black;
+    width: 100%;
+    height: 40px;
+    background-color: #128d3d;
+    opacity: 0.6;
+    clear: both;
+    text-align: center;
 }
 
 .total {
     pointer-events: none;
     float: right;
     width: 50% ;
-}
-
-/* FOOTER*/
-footer {
-    background-color: #0C2924;
 }
 
 .logout {
