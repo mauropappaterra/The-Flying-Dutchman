@@ -19,6 +19,9 @@ var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
 
 var current_bartender = localStorage.getItem('id');
 
+/*UNDO-REDO ARRAYS*/
+var done = new Array([]); //keeps track of 'done' actions
+var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
 
