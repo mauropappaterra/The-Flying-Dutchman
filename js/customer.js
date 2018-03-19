@@ -111,9 +111,9 @@ $(document).ready(function() {
         redo();
     });
 
-    $("#pay").click(function(){
+    $("#pay").click(function() {
 
-        if (order.length > 0){
+        if (order.length > 0) {
 
             transactions_counter ++;
             var newOrder = {

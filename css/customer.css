@@ -25,6 +25,8 @@ h1 {
 .title {
     float: left;
     width: 100%;
+    display: inline;
+    clear:none;
     font-family: 'Berkshire Swash', cursive;
 }
 .info {
@@ -251,5 +253,18 @@ body {
 
 
 #total {
+    text-align: center;
+}
+
+.hello{
+    display: inline-block;
+ 
+
+    clear:none;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.user_welcome {
+    float: center;
     text-align: center;
 }
