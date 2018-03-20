@@ -6,18 +6,18 @@ var page_title = ["Welcome to The Flying Dutchman!",
 
 var user_name = ["User name",
                  "Användarnamn",
-                 "TODO",
-                 "TODO",
-                 "TODO"]
+                 "Nome utente",
+                 "Nombre de usuario",
+                 "Magaca isticmaalaha"]
 
 var password = ["Password",
                 "Lösenord",
-                "TODO",
-                "TODO",
-                "TODO"]
+                "Parola d'ordine",
+                "Contraseña",
+                "Furaha"]
 
 var login = ["Login",
              "Logga in",
-             "TODO",
-             "TODO",
-             "TODO"]
+             "Accesso",
+             "Iniciar sesión",
+             "Galitaanka"]
