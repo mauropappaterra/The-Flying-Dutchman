@@ -4,32 +4,26 @@
 */
 
 /*Style Sheet for the customer page*/
-body {
-    font-family: 'Oswald', sans-serif;
-    color: black;
-}
 
 /*HEADER*/
+
 header{
     overflow:hidden;
     position: relative;
-    background-color: rgba(103, 103, 103, 0.2);
-    color: white;
-}
+   /* background-color: #0A2521;*/
+    background-color: #0A2521;
 
-h1 {
-    font-family: 'Berkshire Swash', cursive;
-    color: white;
 }
 
 .title {
+    background-color: #0A2521;
     float: left;
     width: 100%;
-    display: inline;
-    clear:none;
-    font-family: 'Berkshire Swash', cursive;
+
+
 }
 .info {
+    background-color: #797979;
     position: absolute;
     top: 0px;
     right: 50px;
@@ -39,6 +33,7 @@ h1 {
 .menu {
     width: 70%;
     height: 30%;
+    background-color: #0A2521;
     float: left;
     overflow: auto;
 }
@@ -46,7 +41,6 @@ h1 {
 .menu h2 {
     margin:0px;
     padding:0px;
-    color: white;
 }
 
 .menu ul {
@@ -63,15 +57,15 @@ h1 {
     margin-right:10px;
     padding:3px;
     width: 11%;
-    height: 30px;
+    height: 30%;
     border: solid;
     border-color: #567973;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
-    box-shadow: 5px -5px 5px black;
-    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.25), 0 -10px 20px 0 rgba(0, 0, 0, 0.25);
-    box-shadow: 4px -4px 10px black, 4px 0 10px black;
+    box-shadow: 2px -2px 10px black, 2px 0 10px black;
+
+
 
 }
 
@@ -98,15 +92,13 @@ h1 {
 .drink_list {
     width: 70%;
     height: 500px;
-    background-image: url("../img/wallpaper3.png");
-    opacity: 1;
+    background-color: #A4B9B6;
     float: left;
     overflow: auto;
 }
 
 .drink {
     background-color: #C0CFCC;
-    opacity: 0.9;
 
     padding-left: 1.5%;
     padding-right: 1.5%;
@@ -129,7 +121,7 @@ h1 {
 }
 
 .drink img {
-    
+
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -137,47 +129,32 @@ h1 {
     height: 55%;
 }
 
-.fade {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.fade2 {
-    background-color: grey;
-    opacity: 0.5;
-    filter: alpha(opacity=40);
-    zoom: 1;
-    pointer-events:none;
-}
-
 /*ORDER COLUMN*/
 .selection_header {
     width: 30%;
     height: 30%;
     float: right;
-    color: white;
+
+    background-color: #254540;
 }
 
 .selection {
     width: 30%;
     height: 450px;
+    background-color: #567973;
     float: right;
     overflow: auto;
 }
 
-.piraty {
-    background-image: url("../img/wallpaper3.png");
-}
-
 .order {
-    background-color: rgba(150, 185, 165, 0.9);
+    background-color: #A4B9B6;
 
     padding-left: 1.5%;
     padding-right: 1.5%;
     margin: 2%;
     margin-bottom: 10%;
 
-    border-style: solid;
+    border-style: dashed;
     border-color: #254540;
     border-width: thin;
 
@@ -197,12 +174,12 @@ h1 {
 .checkout {
     width: 30%;
     height: 50px;
-    background-color: rgba(138, 7, 1, 0.9);
-    float: left;
+    background-color: #254540;
+    float: right;
 }
 
 .checkout h2 {
-    color: white;
+    float: left;
 }
 
 .delete {
@@ -213,6 +190,12 @@ h1 {
     text-align: center;
 }
 
+/* FOOTER*/
+.footer {
+    background-color: #0C2924;
+    bottom:0;
+    float:bottom;
+}
 
 .logout {
     float: left;
@@ -243,26 +226,15 @@ footer .small_button{
 }
 
 body {
-    background-image: url("../img/wood.jpg");
+    heiht: 100%;
+    background-color: #0A2521;
 }
 
 .highlight {
     background-color: #3240ff;
 }
 
+
 #total {
-    text-align: center;
-}
-
-.hello{
-    display: inline-block;
- 
-
-    clear:none;
-    font-family: 'Berkshire Swash', cursive;
-}
-
-.user_welcome {
-    float: center;
     text-align: center;
 }
