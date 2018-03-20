@@ -19,9 +19,6 @@ var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
 
 var current_bartender = localStorage.getItem('id');
 
-/*UNDO-REDO ARRAYS*/
-var done = new Array([]); //keeps track of 'done' actions
-var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
 
@@ -74,15 +71,47 @@ $(document).ready(function() {
     });
 
     $(document).on('click','.delete',function() {
-        var the_transaction = $(this).find(".hiddenid").html();
-        alert("Ready to delete " + the_transaction)
+        var find_transaction_id = $(this).attr('id');
+        //alert("Ready to delete " + find_transaction_id);
+        //alert(SESSIONS_TRANSACTIONS.toSource());
+
+        for (i = (SESSIONS_TRANSACTIONS.length - 1); i > -1; i--) {
+            //alert(SESSIONS_TRANSACTIONS[i].transaction_id + ' vs ' + find_transaction_id);
+            if (SESSIONS_TRANSACTIONS[i].transaction_id == find_transaction_id) {
+                break;
+            }
+        }
+
+        //alert ("Index found " + i);
+        SESSIONS_TRANSACTIONS.splice(i, 1);
+        //alert(SESSIONS_TRANSACTIONS.toSource());
+
+        // Remove from DOM
+        $(this).parent().parent().parent().remove();
+        $('#' + find_transaction_id).remove();
     });
 
     $(document).on('click','.pay',function() {
-        var the_transaction = $(this).closest('.hiddenid').html();
-        alert("Ready to mark as paid " + the_transaction)
-    });
+        var find_transaction_id = $(this).attr('id');
+        //alert("Ready to mark as paid " + find_transaction_id);
 
+        for (i = SESSIONS_TRANSACTIONS.length - 1; i > -1; i--) {
+            //alert(SESSIONS_TRANSACTIONS[i].transaction_id + ' vs ' + find_transaction_id);
+            if (SESSIONS_TRANSACTIONS[i].transaction_id == find_transaction_id) {
+                break;
+            }
+        }
+
+        //alert ("Index found " + i);
+        //alert(SESSIONS_TRANSACTIONS[i].toSource())
+        SESSIONS_TRANSACTIONS[i].paid = true;
+        SESSIONS_TRANSACTIONS[i].bartender_id = current_bartender;
+        //alert(SESSIONS_TRANSACTIONS[i].toSource())
+
+        // Update DOM
+        retrieveOrders(); // retrieve all orders from the database
+        addBackground();
+    });
 });
 
 function translate (index) {
@@ -114,7 +143,7 @@ function responsive() {
 function printToDOM (element) {
     var i = $.inArray(element,SESSIONS_TRANSACTIONS);
 
-    var content = '<button class="accordion"><b>ORDER #'+ element.transaction_id.slice(1) +'<span hidden class="hiddenid">' + element.transaction_id + '</span> |    Customer:</b> '+
+    var content = '<button class="accordion" id="'+ element.transaction_id +'"><b>ORDER #'+ element.transaction_id.slice(1) + '|    Customer:</b> '+
         getCustomerName(element.customer_id) +' ('+ element.customer_id +')' + '| <b>Date: </b>'+ element.timestamp + ' | <b>Total:</b> SEK '+ element.amount +':-  '
         + paidStamp(element.paid, element) + '</button>' +
         '<div class="panel">' +
@@ -126,9 +155,9 @@ function printToDOM (element) {
 
     if (element.paid == false){ // this part is only printed to unpaid transactions
         content += '<div class="checkout">' +
-            '<a href=""><div class="small_button red delete" id="cancel_order">Cancel Order</div></a>' +
-            '<a href=""><div class="small_button light_green pay" id="mark_paid">Mark as Paid</div></a>' +
-            '<a href=""><div class="small_button total" id="total"><b>TOTAL:</b> SEK '+ element.amount +':-</div></a>' +
+            '<a><div class="small_button red delete cancel_order" id="' + element.transaction_id + '" >Cancel Order</div></a>' +
+            '<a><div class="small_button light_green pay mark_paid" id="' + element.transaction_id + '" >Mark as Paid</div></a>' +
+            '<a><div class="small_button total" id="total"><b>TOTAL:</b> SEK '+ element.amount +':-</div></a>' +
             '</div>';
     } else {
         content += '<div class="paidfor">' +
@@ -190,7 +219,7 @@ function getBrevagePrice(brevage_id){
 function paidStamp (boolean, element){
     var message ="";
     if(boolean){
-        message = "<b class='textRed'>::: ORDER PAID ::: </b>  |    <b>Bartender:</b> " + getBartenderName(current_bartender) + "(" + current_bartender + ")";
+        message = "<b class='textRed'>::: ORDER PAID ::: </b>  |    <b>Bartender:</b> " + getBartenderName(element.bartender_id) + "(" + element.bartender_id + ")";
     }
     return message;
 }
