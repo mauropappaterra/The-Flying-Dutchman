@@ -19,65 +19,65 @@
 */
 
 var title = ["Drink Delivery Database System",
-             "TODO",
-             "TODO",
-             "TODO",
-             "Kin' o' th' Pirates"]
+             "Drink Delivery Database System",
+             "Bere il sistema di database di consegna",
+             "Sistema de base de datos de entrega",
+             "Nadiifinta Nidaam Database ah"]
 
 var stock_order = ["Stock Order",
                    "Lagerbeställning",
-                   "Ordine",
-                   "Perdido",
-                    "Ol' Stock 'rder"]
+                   "Ordine di riserva",
+                   "Orden de Stock",
+                    "Amarka Stock"]
 
 var login_as = ["Log in as:",
     "Logga in som:",
     "Accedi come:",
     "Iniciar sesión como:",
-    "Log in as pirate:"]
+    "Gali sida:"]
 
  var drinks_list = ["Full Drinks List",
     "Full drinklista",
     "Lista delle bevande complete",
     "Lista completa de bebidas",
-    "Full Drinks List"]
+    "Liiska Diyaarrada oo buuxa"]
     
 var check_stock = ["Check Bar Stock",
     "Kontrollera Bar Lager",
     "Controlla il magazzino della barra",
     "Compruebe la acción de la barra",
-    "Check Bar Stock"]
+    "Hubi Bar Stock"]
 
 var shortage_alert = ["Shortage Alert (!)",
     "Bristvarning (!)",
     "Avviso di carenza (!)",
     "Alerta de escasez (!)",
-    "Shortage Alert (!)"]
+    "Feejignaanta Yaraanta (!)"]
 
 // The drink's details.
 var drink_name = ["Name:",
     "Namn:",
     "Nome:",
     "Nombre:",
-    "Name:"]
+    "Magaca:"]
 
 var type = ["Type:",
     "Typ:",
     "Tipo:",
     "El tipo:",
-    "Type:"]
+    "Nooca:"]
 
 var price= ["Price:",
 "Pris:",
 "Prezzo:",
 "Precio:",
-"Price:"]
+"Qiimo:"]
 
 var country= ["Country:",
 "Land:",
 "Nazione:",
 "País:",
-"Island:"]
+"Dalka:"]
 
 var volume= ["Volume:",
 "Volym:",
@@ -89,7 +89,7 @@ var alcohol=["Alcohol:",
 "Alkohol:",
 "Alcol:",
 "Alcohol:",
-"Alcohol:"]
+"Khamriga:"]
 
 var drink_id=["ID:",
 "ID:",
@@ -101,57 +101,57 @@ var producer=["Producer:",
 "Producent:",
 "Produttore:",
 "Productor:",
-"Producer:"]
+"Soo saaraha:"]
 
 var delivery=["Delivery:",
 "Leverans:",
 "La Consegna:",
 "La Entrega:",
-"Delivery:"]
+"Bixinta:"]
 
 var cost=["Cost per Liter:",
 "Kostnad per liter:",
 "Costo per litro:",
 "Costo por litro:",
-"Cost per Liter:"]
+"Qiimaha halkii luuq:"]
 // <END> The drink's details.
 
 var inStock=["In Stock:",
 "I lager:",
 "Disponibile:",
 "En stock:",
-"In The Ship:"]
+"In The Stock:"]
 
 var add_one=["Add +1",
 "Tillägga +1",
 "Aggiungere +1",
 "Agregar +1",
-"Add +1"]
+"Ku dar +1"]
 
 var add_ten=["Add +10",
 "Tillägga +10",
 "Aggiungere +10",
 "Agregar +10",
-"Add +10"]
+"Ku dar+10"]
 
 var add_hundred=["Add +100",
 "Tillägga +100",
 "Aggiungere +100",
 "Agregar +100",
-"Add +100"]
+"Ku dar +100"]
 
 var total= ["TOTAL:",
 "TOTAL:",
 "TOTALE:",
 "TOTAL:",
-"TOTAL:"
+"WADARTA:"
 ]
 
 var pay= ["Place Stock Order",
 "Placera lagerorder",
 "Posizionare l'ordine",
 "Realizar pedido",
-"Place Stock Order"
+"Ku rid Amarka Stock"
 ]
 
 
