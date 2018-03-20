@@ -128,7 +128,7 @@ $(document).ready(function() {
                 "paid":false
             };
 
-            alert("NEW ORDER " + newOrder.toSource());
+            //alert("NEW ORDER " + newOrder.toSource());
 
             SESSIONS_TRANSACTIONS.push(newOrder);
             //alert(SESSIONS_TRANSACTIONS.toSource());
