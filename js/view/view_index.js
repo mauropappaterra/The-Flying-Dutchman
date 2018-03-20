@@ -22,7 +22,7 @@ var welcome = ["Welcome to The Flying Dutchman!",
                "Välkommen til Flygande Holländaren!",
                "Benvenuti al'Olandese Volante!",
                "Bienvenidos al Holandés Volador!",
-               "Ahoy t' th' Flyin' Dutchman!"]
+               "Ku soo Dhawow Qaadashada Fly Holland"]
 
 var customer = ["Order your Drinks!",
                 "Logga in som gäst",
@@ -34,29 +34,29 @@ var bartender = ["Bartender login",
                  "Logga in som bartender",
                  "Accesso barista",
                  "Acceso barista",
-                 "Ahoy Powder Monkeys"]
+                 "Bartender galaan"]
 
 var management = ["Management login",
                   "Logga in som arbetledare",
                   "Accesso gestione",
                   "Acceso administración",
-                  "Kin' o' th' Pirates"]
+                  "Goobta maamulka"]
 
 var user_name = ["User name",
                  "Användarnamn",
-                 "TODO",
-                 "TODO",
-                 "TODO"]
+                 "Nome utente",
+                 "Nombre de usuario",
+                 "Magaca isticmaalaha"]
 
 var password = ["Password",
                 "Lösenord",
-                "TODO",
-                "TODO",
-                "TODO"]
+                "Parola d'ordine",
+                "Contraseña",
+                "Furaha"]
 
 var login = ["Login",
              "Logga in",
-             "TODO",
-             "TODO",
-             "TODO"]
+             "Accesso",
+             "Iniciar sesión",
+             "Galitaanka"]
 
