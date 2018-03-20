@@ -128,6 +128,13 @@ $(document).ready(function() {
                 "paid":false
             };
 
+            // 'pay' for order immediatly if possible
+            if($("#cre").html() >= total) {
+                alert("Your order has been payed, you can pick up your beverages in the VIP fridge");
+                $('#cre').html( $('#cre').html() - total);
+                newOrder.paid = true;  // mark transaction as paid
+            }
+            
             //alert("NEW ORDER " + newOrder.toSource());
 
             SESSIONS_TRANSACTIONS.push(newOrder);
@@ -135,11 +142,6 @@ $(document).ready(function() {
 
             localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("transaction_counter", transactions_counter);
-
-            if($("#cre").html() >= total) {
-                alert("Your order has been payed, you can pick up your beverages in the VIP fridge");
-                $('#cre').html( $('#cre').html() - total);             
-            }
 
             resetPage();
             

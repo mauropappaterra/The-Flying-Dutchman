@@ -7,6 +7,17 @@
 /*DB of all users saved as an array of objects, each object represents a single user*/
 var DB_CUSTOMERS = [
     {
+        "customer_id": "C",
+        "password": "sudo",
+        "username": "sudo",
+        "first_name": "Super",
+        "last_name": "Duper",
+        "email": "Super.Duper@it.uu.se",
+        "phone": "0000000000",
+        "credit": 44444444444444,
+        "vip": true
+    },
+    {
         "customer_id": "C00000",
         "password": "test",
         "username": "test",
@@ -296,6 +307,16 @@ var DB_CUSTOMERS = [
 
 var DB_BARTENDERS = [
     {
+        "bartender_id": "B",
+        "password": "sudo",
+        "username": "sudo",
+        "first_name": "Super",
+        "last_name": "Duper",
+        "email": "Super.Duper@it.uu.se",
+        "phone": "0000000000"
+
+    },
+    {
         "bartender_id": "B00000",
         "password": "test",
         "username": "test",
@@ -352,6 +373,15 @@ var DB_BARTENDERS = [
 ];
 
 var DB_MANAGERS =[
+    {
+        "manager_id": "M",
+        "password": "sudo",
+        "username": "sudo",
+        "first_name": "Super",
+        "last_name": "Duper",
+        "email": "Super.Duper@it.uu.se",
+        "phone": "0000000000"
+    },
     {
         "manager_id": "M00000",
         "password": "test",

@@ -360,3 +360,8 @@ function countPaid(trans) {
 
     return c;
 }
+
+function updateTransactions() {
+    SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
+    rePrintTab();
+}
