@@ -219,7 +219,7 @@ function getBrevagePrice(brevage_id){
 function paidStamp (boolean, element){
     var message ="";
     if(boolean){
-        message = "<b class='textRed'>::: ORDER PAID ::: </b>  |    <b>Bartender:</b> " + getBartenderName(element.bartender_id) + "(" + element.bartender_id + ")";
+        message = "<b class='textRed'>::: ORDER PAID ::: </b>  |    <b>Bartender:</b> " + getBartenderName(element.bartender_id) + " (" + element.bartender_id + ")";
     }
     return message;
 }
