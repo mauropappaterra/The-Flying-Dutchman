@@ -175,9 +175,7 @@ $(document).ready(function() {
         order.splice(i, 1); // remove both order and quantity (same index)
         quantity.splice(i, 1);
 
-        $(this).closest('.order').remove(); // remove from DOM
-
-       
+        $(this).closest('.order').remove(); // remove from DOM       
         
         //Undo-Redo
         pushOrderTo(done);  // update done stack
@@ -419,7 +417,7 @@ function setStockTo(newStock) {
 function rePrintTab() {
     $("#drink_database").empty();
     $.each(current_stock, function(element) {
-        if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)))) || this[current_tab] == true) {    // TODO: dont show specials in all cases
+        if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)))) || this[current_tab] == true) {  
             printToDOM(this);                
         };
     }); 

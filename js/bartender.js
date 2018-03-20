@@ -18,21 +18,32 @@ var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
 //alert(SESSIONS_TRANSACTIONS.toSource());
 
 var current_bartender = localStorage.getItem('id');
+var current_tab = "all";
+
+/*UNDO-REDO ARRAYS*/
+var done = new Array(); // keeps track of 'done' actions
+var undone = new Array();                    // keeps track of 'redone' actions
+
 
 
 $(document).ready(function() {
-
     retrieveOrders(); // retrieve all orders from the database
     addBackground();
 
+    pushStateTo(done);  // push initial state to 'done' stack
+    $("#redo").addClass("fade");
+    $("#undo").addClass("fade");
+
     // filter drinks by category
-    $("#all").click(function(){
+    $("#all").click(function() {
+        current_tab = "all";
         $("#all_orders").empty();
         retrieveOrders();
         addBackground();
     });
 
-    $("#unpaid").click(function(){
+    $("#unpaid").click(function() {
+        current_tab = "unpaid";
         $("#all_orders").empty();
         $.each(SESSIONS_TRANSACTIONS, function(element){
             if (this.paid != true){ // filter only unpaid
@@ -42,7 +53,8 @@ $(document).ready(function() {
         addBackground();
     });
 
-    $("#paid").click(function(){
+    $("#paid").click(function() {
+        current_tab = "paid";
         $("#all_orders").empty();
         $.each(SESSIONS_TRANSACTIONS, function(element){
             if (this.paid == true){ // filter only unpaid
@@ -79,6 +91,7 @@ $(document).ready(function() {
             //alert(SESSIONS_TRANSACTIONS[i].transaction_id + ' vs ' + find_transaction_id);
             if (SESSIONS_TRANSACTIONS[i].transaction_id == find_transaction_id) {
                 break;
+                
             }
         }
 
@@ -89,10 +102,15 @@ $(document).ready(function() {
         // Remove from DOM
         $(this).parent().parent().parent().remove();
         $('#' + find_transaction_id).remove();
+        
+        //Undo-Redo
+        pushStateTo(done);  // update done stack
+        clearUndone();      // clear undone stack after a 'proper' action        
     });
 
     $(document).on('click','.pay',function() {
         var find_transaction_id = $(this).attr('id');
+
         //alert("Ready to mark as paid " + find_transaction_id);
 
         for (i = SESSIONS_TRANSACTIONS.length - 1; i > -1; i--) {
@@ -111,7 +129,23 @@ $(document).ready(function() {
         // Update DOM
         retrieveOrders(); // retrieve all orders from the database
         addBackground();
+        current_tab = "all";
+        
+        //Undo-Redo
+        pushStateTo(done);  // update done stack
+        clearUndone();      // clear undone stack after a 'proper' action
     });
+    
+    $(document).on('click','#undo',function() {
+        var article_id = $(this).find('span').html();
+        undo();
+    });
+    
+    $(document).on('click','#redo',function() {
+        var article_id = $(this).find('span').html();
+        redo();
+    });
+    
 });
 
 function translate (index) {
@@ -240,4 +274,89 @@ function printOrder(order_array,quantities_array){
 
 function addBackground (){
     $("#all_orders").append('<div class="background_wallpaper"></div>');
+}
+
+/*ALL UNDO/REDO FUNCTIONS*/
+
+function undo() {
+    currentState = done.pop();
+    previousState = done.pop();
+
+    // change current state and update undo/redo stacks
+    setStateTo(previousState);
+    done.push(previousState);
+    undone.push(currentState);
+
+    // make sure undo/redo can/cant be clicked
+    $("#redo").removeClass("fade");
+    if (done.length <= 1) { $("#undo").addClass("fade"); }
+  
+    // reprint state
+    rePrintTab();
+}
+
+function redo() {
+    undoneState = undone.pop();
+
+    // change current state and update undo/redo stacks
+    setStateTo(undoneState);
+    done.push(undoneState);
+
+    // make sure undo/redo can/cant be clicked
+    $("#undo").removeClass("fade");
+    if (undone.length < 1) { $("#redo").addClass("fade"); }
+    
+    // reprint state
+    rePrintTab();
+}
+
+
+function setStateTo(newState) {  // change the entire state beeing displayed
+    // clear current state description
+    SESSIONS_TRANSACTIONS = [];
+
+    $("#all_orders").empty();
+
+    // add the orders from the the newState
+    $.each(newState, function(index, element) {        
+        SESSIONS_TRANSACTIONS[index] = jQuery.extend(true, {}, this);      
+    });
+}
+
+function pushStateTo(stack) {  // add an order instance to the done or undone stack
+    var currentState = [];
+
+    // clone every order in the session
+    $.each(SESSIONS_TRANSACTIONS, function(index, element) {
+        currentState[index] = jQuery.extend(true, {}, this); 
+    });
+    stack.push(currentState);
+ 
+    // make sure undo/redo can/cant be clicked
+    if (stack == done) { $("#undo").removeClass("fade");
+    } else { $("#redo").removeClass("fade"); }
+} 
+
+function clearUndone() {
+    undone = [];
+    $("#redo").addClass("fade");
+}
+
+function rePrintTab() {
+    $("#all_drinks").empty();
+    $.each(SESSIONS_TRANSACTIONS, function(element) {
+        if (current_tab == "all" || ( current_tab == "paid" && this.paid == true) || (current_tab == "unpaid" && this.paid == false)) {    
+            printToDOM(this);                
+        };
+    });
+    addBackground();
+}
+
+function countPaid(trans) {
+    var c = 0;
+    $.each(trans, function(element) {
+        if (this.paid) {c++;}
+    });
+
+    return c;
 }
