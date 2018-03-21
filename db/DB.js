@@ -1,6 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  DB.js
- *  Created by Mauro J. Pappaterra on 17 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 17 of February 2018.
  *  Updated by Hassan Odimi
  */
 
