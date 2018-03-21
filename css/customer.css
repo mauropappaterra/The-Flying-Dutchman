@@ -268,10 +268,12 @@ body {
     text-align: center;
 }
 .welcome{
-    display: inline-block;
+    display: inline;
     width: 50%;
     margin-left: 35%;
     margin-right: 35%;
+    text-align:center;
+    float: center;
 }
 
 /*Responsiveness*/
