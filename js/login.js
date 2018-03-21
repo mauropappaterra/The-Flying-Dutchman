@@ -38,9 +38,8 @@ function loginDB(form) {
     var username = form.user_name.value;
     var password = form.password.value;
     var db = typeToDB(localStorage.getItem('usertype'));
-    var wrong =  "Wrong username";  // TODO: alert only when something is wrong or specify if its the pass/name?
     
-    $.each(db, function(element) {
+    $.each(db, function(index, element) {
         if (this.username == username) {
             if (this.password == password) {
                 user = this;
@@ -48,12 +47,13 @@ function loginDB(form) {
                    localStorage.setItem('id', this); return false;                    
                 });
                 goToUserPage(localStorage.getItem('usertype'));
-            } else { wrong = "Wrong password"; return false; }
+            } else { alert("Wrong password"); return false; }
             return false;
         }
+        if (index + 1 == db.length) {alert("Wrong username");}
     });
     
-    alert(wrong);
+
 }
 
 function checkAccess() {

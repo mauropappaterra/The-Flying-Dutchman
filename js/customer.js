@@ -129,12 +129,12 @@ $(document).ready(function() {
 
             // 'pay' for order immediatly if possible
             if($("#cre").html() >= total) {
-                alert("Your order has been payed using your available credit, you can pick up your beverages in the VIP fridge");
+                alert(payed_order_msg);
                 $('#cre').html( $('#cre').html() - total);
                 newOrder.paid = true;  // mark transaction as paid
             } else {
 
-                alert("Your order has been placed!, Direct to the counter and pay for your order before you can pick up your drinks!");
+                alert(placed_order_msg);
 
             }
             
@@ -151,7 +151,8 @@ $(document).ready(function() {
             resetPage();
             
         } else {
-            alert("You must select your drinks before placing an order!")
+            alert(empty_order_msg);
+         
         }
 
     });
@@ -207,6 +208,11 @@ function translate (index) {
     $("#your_order").text(your_order[index]);
     $("#total").text(total[index]);
     $("#pay").text(pl_order[index]);
+    $("#hello").text(hello[index]);
+    $("#your_credit").text(your_credit[index]);
+    empty_order_msg = (empty_order[index]);
+    payed_order_msg = (payed_order[index]);
+    placed_order_msg = (placed_order[index]);
 }
 
 function responsive() {
