@@ -1,7 +1,6 @@
 /** Bar
  *  customer.js
- *  Created by Mauro J. Pappaterra on 11 of February 2018.
- *  Updated by Hassan Odimi on 23 of February 2018.
+ *  Created by Pirates of the Caribbean on 11 of February 2018.
  *  Updated on 16 March
  */
 
