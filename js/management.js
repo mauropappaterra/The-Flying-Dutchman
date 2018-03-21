@@ -1,6 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  management.js
- *  Created by Pirates of the Caribbean on 11 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 11 of February 2018.
  */
 
 /*MANAGEMENT PAGE SCRIPTS
