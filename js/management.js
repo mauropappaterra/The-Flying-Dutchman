@@ -5,18 +5,31 @@
 
 /*MANAGEMENT PAGE SCRIPTS
 * All scripts related to the management page. Each page has their own scripts in a single js document.
-* Methods translate() and responsive() are unique for each individual page.
+* Method translate() is unique for each individual page and can be found at the bottom of each script.
 */
 
-/*if (localStorage.getItem("SESSION2") == null){
-    localStorage.setItem("SESSION_ORDER",JSON.stringify(DB_ORDERS));
-    localStorage.setItem("orders_counter",15);
-    alert("This is happening!")
-}*/
+/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
+if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
+    sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
+    //alert("Stock database loaded from script!")
+} else {
+    //alert("Stock database will be loaded from session storage!")
+}
 
-//var SESSIONS_ORDERS = JSON.parse(localStorage.getItem("SESSION_ORDER"));
-//var orders_counter = parseInt(localStorage.getItem("orders_counter"));
-//alert(SESSIONS_TRANSACTIONS.toSource());
+if (sessionStorage.getItem("SESSION_ORDERS") == null){
+    sessionStorage.setItem("SESSION_ORDERS",JSON.stringify(DB_ORDERS));
+    sessionStorage.setItem("orders_counter",22);
+    //alert("Orders database loaded from script!")
+} else {
+    //alert("Orders database will be loaded from session storage!")
+}
+
+var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
+var orders_counter = sessionStorage.getItem("orders_counter");
+
+var SESSIONS_ORDERS = JSON.parse(sessionStorage.getItem("SESSION_ORDERS"));
+/* END SESSION STORAGE DATA LOADING*/
+
 
 var big_orders = []; // keeps list of drinks ordered
 var big_quantity = []; // keeps list of quantities with matching indexes
@@ -69,10 +82,8 @@ $(document).ready(function() {
     $("#pay").click(function(){
 
         if (big_orders.length > 0){
-
             //alert(big_orders);
             //alert(big_quantity);
-
             orders_counter ++;
 
             var newBigOrder = {
@@ -89,10 +100,14 @@ $(document).ready(function() {
             SESSIONS_ORDERS.push(newBigOrder);
             //alert(SESSIONS_ORDERS.toSource());
 
-            localStorage.setItem("SESSION2",JSON.stringify(SESSIONS_ORDERS));
-            localStorage.setItem("order_counter", orders_counter);
+            /*
+             * Update STOCK TOO! INSERT THAT PART HERE
+             *
+             */
 
-
+            localStorage.setItem("SESSION_ORDERS",JSON.stringify(SESSIONS_ORDERS));
+            localStorage.setItem("orders_counter", orders_counter);
+            localStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
         } else {
             alert("You must select drinks before placing a delivery order!")
@@ -161,55 +176,6 @@ $(document).ready(function() {
     });
 });
 
-function translate (index) {
-    $("#page_title").text(page_title[index]);
-    $("#title").text(title[index]);
-    $("#logout").text(logout[index]);
-    $("#stock_order").text(stock_order[index]);
-    $("#login_as").text(login_as[index]);
-
-    $("#drinks_list").text(drinks_list[index]);
-    $("#check_stock").text(check_stock[index]);
-    $("#shortage_alert").text(shortage_alert[index]);
-
-    // Translating the drink's details
-    $("#drink_name").text(drink_name[index]);
-    $("#type").text(type[index]);
-    $("#price").text(price[index]);
-    $("#country").text(country[index]);
-    $("#volume").text(volume[index]);
-    $("#alcohol").text(alcohol[index]);
-    $("#drink_id").text(drink_id[index]);
-    $("#producer").text(producer[index]);
-    $("#delivery").text(delivery[index]);
-    $("#cost").text(cost[index]);
-    // <end> Translating the drink's details
-
-    $("#inStock").text(inStock[index]);
-    $("#add_one").text(add_one[index]);
-    $("#add_ten").text(add_ten[index]);
-    $("#add_hundred").text(add_hundred[index]);
-
-    $("#big_total").text(big_total[index]);
-    $("#pay").text(pay[index]);
-}
-
-function responsive() {
-    //var size = $(document).width();
-
-    if ($(window).width() < 640) { /* Small size */
-        //alert("Small Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 641 && $(window).width() < 1007){/* Medium size */
-        //alert("Medium Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 1008){/* Large size */
-        //alert("Large Size! -> " + size + " px!");
-    }
-}
-
 function retrieveSystembolaget() {
     $.each(DB_SYSTEMBOLAGET, function(element){
         printToDOM(this);
@@ -218,12 +184,11 @@ function retrieveSystembolaget() {
 
 function checkStock (article_id) {
     var counter = 0;
-    $.each(DB_STOCK, function(element){
+    $.each(SESSION_STOCK_INFO, function(element){
         if (this.article_id == article_id){
             counter = this.in_stock;
         }
     });
-
     return counter;
 }
 
@@ -312,7 +277,6 @@ function addOrder (article_id, number) {
                 ;}
         });
 
-
         big_orders.push(article_id);
         big_quantity.push(number);
 
@@ -377,7 +341,7 @@ function setOrderTo(newOrder) {  // change the entire order beeing displayed
     big_orders = [];
     big_quantity = [];
     big_total = 0;
-    $(drink_selection).empty();  // TODO: check
+    $(drink_selection).empty();
 
     // add the beers from the newOrder
     $.each(newOrder[0], function(i) {addOrder(this, newOrder[1][i]); });
@@ -403,4 +367,37 @@ function clearUndone() {
 
 function addBackground (){
     $("#drink_database").append('<div class="background_wallpaper"></div>');
+}
+
+function translate (index) {
+    $("#page_title").text(page_title[index]);
+    $("#title").text(title[index]);
+    $("#logout").text(logout[index]);
+    $("#stock_order").text(stock_order[index]);
+    $("#login_as").text(login_as[index]);
+
+    $("#drinks_list").text(drinks_list[index]);
+    $("#check_stock").text(check_stock[index]);
+    $("#shortage_alert").text(shortage_alert[index]);
+
+    // Translating the drink's details
+    $("#drink_name").text(drink_name[index]);
+    $("#type").text(type[index]);
+    $("#price").text(price[index]);
+    $("#country").text(country[index]);
+    $("#volume").text(volume[index]);
+    $("#alcohol").text(alcohol[index]);
+    $("#drink_id").text(drink_id[index]);
+    $("#producer").text(producer[index]);
+    $("#delivery").text(delivery[index]);
+    $("#cost").text(cost[index]);
+    // <end> Translating the drink's details
+
+    $("#inStock").text(inStock[index]);
+    $("#add_one").text(add_one[index]);
+    $("#add_ten").text(add_ten[index]);
+    $("#add_hundred").text(add_hundred[index]);
+
+    $("#big_total").text(big_total[index]);
+    $("#pay").text(pay[index]);
 }
