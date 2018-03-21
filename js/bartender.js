@@ -47,7 +47,8 @@ $(document).ready(function() {
     $("#check").click(function() {
         $("#check").css("background-color","green");
         updateTransactions();
-      
+        clearUndone();
+        clearDone();      
     });
 
     // filter drinks by category
@@ -357,6 +358,12 @@ function pushStateTo(stack) {  // add an order instance to the done or undone st
 function clearUndone() {
     undone = [];
     $("#redo").addClass("fade");
+}
+
+function clearDone() {
+    done = [];
+    pushStateTo(done);
+    $("#undo").addClass("fade");
 }
 
 function rePrintTab() {
