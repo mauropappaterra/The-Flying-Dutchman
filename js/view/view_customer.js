@@ -118,3 +118,40 @@ var pl_order= ["Place Order",
 "Realizar pedido",
 "Amarka Goobta"
 ]
+
+var hello = ["Hello ",
+             "Hejsan ",
+             "Ciao ",
+             "Hola ",
+             "Ahoy "]
+
+var your_credit = ["Your credit is ",
+                   "Din kredit är ",
+                   "Il tuo credito è ",
+                   "Tu crédito es ",
+                   "In yer duffle there be " ]
+
+var empty_order = ["You must select your drinks before placing an order!",
+                   "Du måste välja dina drycker innan du gör din beställning!",
+                   "È necessario selezionare le bevande prima di effettuare un ordine!",
+                   "¡Debe seleccionar sus bebidas antes de realizar un pedido!",
+                   "Ye must select yer drinks afore placin' an order!"
+                  ]
+
+var payed_order = ["Your order has been payed using your available credit, you can pick up your beverages in the VIP fridge.",
+                   "Din beställning har blivit betalad med din tillgängliga kredit, du kan hämta dina drycker i VIP kylen.",
+                   "Il tuo ordine è stato pagato utilizzando il tuo credito disponibile, puoi ritirare le tue bevande nel frigo VIP.",
+                   "Su orden ha sido pagada usando su crédito disponible, puede recoger sus bebidas en el refrigerador VIP.",
+                   "Yer order has been payed usin' yer available credit, ye can pick up yer beverages in th' VIP fridge."
+                  ]
+
+var placed_order = ["Your order has been placed! Direct to the counter and pay for your order before you can pick up your drinks.",
+                    "Din beställning är skickad! Var vänlig betala vid disken innan du kan hämta dina drycker.",
+                    "Il tuo ordine è stato inoltrato! Direttamente al banco e paga il tuo ordine prima di poter ritirare i tuoi drink.",
+                    "¡Su orden ha sido puesta! Dirígete al mostrador y paga tu pedido antes de que puedas recoger tus bebidas.",
+                    "Yer order has been placed! Direct t' th' counter 'n pay fer yer order afore ye can pick up yer drinks."         
+                 ] 
+
+var empty_order_msg = empty_order[0]
+var payed_order_msg = payed_order[0]
+var placed_order_msg = placed_order[0]
