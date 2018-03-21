@@ -7,14 +7,14 @@
 /*DB of all users saved as an array of objects, each object represents a single user*/
 var DB_CUSTOMERS = [
     {
-        "customer_id": "C",
+        "customer_id": "C€$#=@",
         "password": "sudo",
         "username": "sudo",
         "first_name": "Super",
         "last_name": "Duper",
         "email": "Super.Duper@it.uu.se",
         "phone": "0000000000",
-        "credit": 44444444444444,
+        "credit": 0,
         "vip": true
     },
     {
@@ -307,7 +307,7 @@ var DB_CUSTOMERS = [
 
 var DB_BARTENDERS = [
     {
-        "bartender_id": "B",
+        "bartender_id": "B€$#=@",
         "password": "sudo",
         "username": "sudo",
         "first_name": "Super",
@@ -620,130 +620,124 @@ var DB_ORDERS = [
     {
         "order_id": "R00001",
         "manager_id": "M00001",
-        "amount": 250,
+        "order": [25053,190719,611864,659534,723428],
+        "quantities": [10,10,10,10,10],
+        "amount": 16840,
         "timestamp": "2014-10-10 19:04:13"
     },
     {
         "order_id": "R00002",
         "manager_id": "M00001",
-        "amount": 60,
+        "order": ['MIKE01','MIKE02','MIKE03','MIKE04','MIKE05','MIKE06','MIKE07','MIKE08','MIKE09','MIKE10','MIKE11','MIKE12','MIKE13','MIKE14','MIKE15','MIKE16'],
+        "quantities": [20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20],
+        "amount": 44499,
         "timestamp": "2014-10-10 19:36:43"
     },
     {
         "order_id": "R00003",
         "manager_id": "M00001",
-        "amount": 75,
+        "order":[733051],
+        "quantities":[100],
+        "amount": 72900,
         "timestamp": "2014-10-10 19:46:18"
     },
     {
         "order_id": "R00004",
         "manager_id": "M00001",
-        "amount": 34,
+        "order":[643947,688160,52586,701825,159537,568606,539688],
+        "quantities":[3,3,2,1,3,1,1],
+        "amount": 6134,
         "timestamp": "2014-10-11 22:06:52"
     },
     {
         "order_id": "R00005",
         "manager_id": "M00001",
-        "amount": 85,
+        "order":[723428],
+        "quantities":[10],
+        "amount": 4990,
         "timestamp": "2014-10-11 20:18:32"
     },
     {
         "order_id": "R00006",
         "manager_id": "M00001",
-        "amount": 125,
+        "order":[717611,191617,507955,275861,586898],
+        "quantities":[100,100,100,100,100],
+        "amount": 6730,
         "timestamp": "2014-10-14 20:33:43"
     },
     {
         "order_id": "R00007",
         "manager_id": "M00001",
-        "amount": 195,
+        "order":[310574],
+        "quantities":[500],
+        "amount": 5590,
         "timestamp": "2014-10-16 20:34:45"
     },
     {
         "order_id": "R00008",
         "manager_id": "M00001",
-        "amount": 230,
+        "order":[185,186123,508039],
+        "quantities":[100,10,10],
+        "amount": 22224,
         "timestamp": "2014-10-20 21:07:57"
     },
     {
         "order_id": "R00009",
         "manager_id": "M00001",
-        "amount": 80,
+        "order":[1134,1132,166018,1147,593104,1163,626306],
+        "quantities":[500,500,500,500,500,500,1000],
+        "amount": 57608,
         "timestamp": "2014-10-21 10:15:08"
     },
     {
         "order_id": "R00010",
         "manager_id": "M00001",
-        "amount": 110,
+        "order":[25053],
+        "quantities":[3],
+        "amount": 1326,
         "timestamp": "2014-10-22 09:20:04"
     },
     {
         "order_id": "R00011",
         "manager_id": "M00002",
-        "amount": 70,
+        "order":[404133,817010,195565],
+        "quantities":[5,5,5],
+        "amount": 4360,
         "timestamp": "2014-10-23 13:09:16"
     },
     {
         "order_id": "R00012",
         "manager_id": "M00002",
-        "amount": 25,
+        "order":[1132],
+        "quantities":[1000],
+        "amount": 13090,
         "timestamp": "2014-10-25 08:05:15"
     },
     {
         "order_id": "R00013",
         "manager_id": "M00002",
-        "amount": 85,
+        "order":[1163,371337,508168],
+        "quantities":[50,50,50],
+        "amount": 2767,
         "timestamp": "2014-10-25 16:05:28"
     },
     {
         "order_id": "R00014",
         "manager_id": "M00002",
-        "amount": 24,
+        "order":[304394,510253,342442,53091,159609],
+        "quantities":[3,3,3,10,10],
+        "amount": 12787,
         "timestamp": "2014-10-26 00:05:37"
     },
     {
         "order_id": "R00015",
-        "manager_id": "M00002",
-        "amount": 46,
+        "manager_id": "M00003",
+        "order":[507849,508019,507701,10538,370625],
+        "quantities":[500,500,500,300,20],
+        "amount": 33870,
         "timestamp": "2014-10-26 22:53:09"
-    },
-    {
-        "order_id": "R00016",
-        "manager_id": "M00002",
-        "amount": 92,
-        "timestamp": "2014-10-27 21:03:28"
-    },
-    {
-        "order_id": "R00017",
-        "manager_id": "M00002",
-        "amount": 20,
-        "timestamp": "2014-10-27 21:54:22"
-    },
-    {
-        "order_id": "R00018",
-        "manager_id": "M00002",
-        "amount": 60,
-        "timestamp": "2014-10-28 08:56:38"
-    },
-    {
-        "order_id": "R00019",
-        "manager_id": "M00002",
-        "amount": 46,
-        "timestamp": "2014-11-02 09:57:11"
-    },
-    {
-        "order_id": "R00020",
-        "manager_id": "M00002",
-        "amount": 260,
-        "timestamp": "2014-11-02 10:57:30"
-    },
-    {
-        "order_id": "R00021",
-        "manager_id": "M00001",
-        "amount": 65,
-        "timestamp": "2014-11-02 20:57:38"
     }
-]
+];
 
 /*DB of Bar's Stock saved as an array of objects, each object represents a beverage*/
 var DB_STOCK = [{
