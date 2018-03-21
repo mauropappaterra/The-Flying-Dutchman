@@ -1,6 +1,6 @@
 /** Bar
  *  multilanguage.js
- *  Created by Mauro J. Pappaterra on 09 of February 2018.
+ *  Created by Pirates of the Caribbean on 09 of February 2018.
  */
 
 /*LANGUAGE SELECTION CONTROL
