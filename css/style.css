@@ -67,6 +67,7 @@ a:active {
     height: 40px;
     float: left;
     padding: 2%;
+   /* border-radius: 30%;*/ /* round the edges*/
 
 }
 
