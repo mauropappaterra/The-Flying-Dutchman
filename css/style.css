@@ -83,18 +83,17 @@ a:active {
 .undo_redo_menu {
 /**    background-color: #a4a4a4;*/
     float: left;
-    margin: 2%;
+    margin: 1%;
     margin-top: 1%;
+
 
 }
 
 #undo, #redo {
     color: #A4B9B6;
-    float: left;
-    vertical-align: middle;
-
-    width: 50px;
-    height: 80px;
+    float: none;
+    width: 10%;
+    height: 100%;
 }
 #undo:hover, #redo:hover {
                  color: white;

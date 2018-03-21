@@ -6,17 +6,37 @@
 /*Style Sheet for the customer page*/
 
 /*HEADER*/
+h1 {
+    display: inline-block;
+    float: none;
+    color: white;
+    margin-left: 1%;
+}
+h2 {
+    display: inline-block;
+    float: none;
+    color: white;
+    margin-left: 3%;
+}
+
+body{
+    background-image: url("../img/background/test.jpg");
+    background-size: cover;
+    max-width: 100%;
+    background-repeat: no-repeat;
+}
 
 header{
     overflow:hidden;
     position: relative;
-   /* background-color: #0A2521;*/
-    background-color: #0A2521;
+   /* background-color: #0A2521;
+    background-color: #0A2521;*/
+    height: 5%;
 
 }
 
 .title {
-    background-color: #0A2521;
+ /*   background-color: #0A2521;*/
     float: left;
     width: 100%;
 
@@ -33,7 +53,7 @@ header{
 .menu {
     width: 70%;
     height: 30%;
-    background-color: #0A2521;
+/*    background-color: #0A2521;*/
     float: left;
     overflow: auto;
 }
@@ -54,7 +74,7 @@ header{
     text-align: center;
 
     float: left;
-    margin-right:10px;
+    margin-right:1.5%;
     padding:3px;
     width: 11%;
     height: 30%;
@@ -90,11 +110,13 @@ header{
 }
 
 .drink_list {
-    width: 70%;
+    width: 68%;
     height: 500px;
+    margin-left: 2%;
     background-color: #A4B9B6;
     float: left;
     overflow: auto;
+    border-bottom-left-radius: 1%;
 }
 
 .drink {
@@ -131,19 +153,21 @@ header{
 
 /*ORDER COLUMN*/
 .selection_header {
-    width: 30%;
-    height: 30%;
+    width: 100%;
+    height: 15%;
     float: right;
 
     background-color: #254540;
 }
 
 .selection {
-    width: 30%;
-    height: 450px;
+    width: 28%;
+    height: 500px;
+    margin-right: 2%;
     background-color: #567973;
     float: right;
     overflow: auto;
+    border-top-right-radius: 1%;
 }
 
 .order {
@@ -172,10 +196,12 @@ header{
 }
 
 .checkout {
-    width: 30%;
-    height: 50px;
+    width: 100%;
+    height: 15%;
+    margin-top: 100%;
     background-color: #254540;
     float: right;
+
 }
 
 .checkout h2 {
@@ -195,11 +221,13 @@ header{
     background-color: #0C2924;
     bottom:0;
     float:bottom;
+
 }
 
 .logout {
     float: left;
     clear: none;
+    margin-left: 2%;
 }
 
 .languages_menu {
@@ -211,7 +239,7 @@ header{
 }
 
 .undo{
-    width: 50px;
+    width: 10%;
 }
 
 footer .small_button{
@@ -223,10 +251,11 @@ footer .small_button{
 
 #pay {
     float: right;
+    margin-right: 2%;
 }
 
 body {
-    heiht: 100%;
+    height: 90%;
     background-color: #0A2521;
 }
 
@@ -237,4 +266,10 @@ body {
 
 #total {
     text-align: center;
+}
+.welcome{
+    display: inline-block;
+    width: 50%;
+    margin-left: 35%;
+    margin-right: 35%;
 }
