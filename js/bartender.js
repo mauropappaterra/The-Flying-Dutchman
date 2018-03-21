@@ -5,16 +5,30 @@
 
 /*BARTENDER PAGE SCRIPTS
 * All scripts related to the bartender page. Each page has their own scripts in a single js document.
-* Methods translate() and responsive() are unique for each individual page.
+* Method translate() is unique for each individual page and can be found at the bottom of each script.
 */
 
-if (localStorage.getItem("SESSION") == null){
-    localStorage.setItem("SESSION",JSON.stringify(DB_TRANSACTIONS));
-    //alert("This is happening!")
+/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
+if (sessionStorage.getItem("SESSION_TRANSACTIONS") == null){
+    sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
+    //alert("Transaction database loaded from script!")
+} else {
+    //alert("Transaction database will be loaded from session storage!")
 }
 
-var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
-//alert(SESSIONS_TRANSACTIONS.toSource());
+if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
+    sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
+
+    //alert("Stock database loaded from script!")
+} else {
+    //alert("Stock database will be loaded from session storage!")
+}
+
+var SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
+//alert(":::: THE FULL TRANSACTION DATABASE ::::: <br> " + SESSIONS_TRANSACTIONS.toSource());
+var SESSIONS_ORDERS = JSON.parse(sessionStorage.getItem("SESSION_ORDERS"));
+
+/* END SESSION STORAGE DATA LOADING*/
 
 var current_bartender = localStorage.getItem('id');
 var current_tab = "all";
@@ -22,8 +36,6 @@ var current_tab = "all";
 /*UNDO-REDO ARRAYS*/
 var done = new Array(); // keeps track of 'done' actions
 var undone = new Array();                    // keeps track of 'redone' actions
-
-
 
 $(document).ready(function() {
     retrieveOrders(); // retrieve all orders from the database
@@ -47,8 +59,7 @@ $(document).ready(function() {
     $("#check").click(function() {
         $("#check").css("background-color","green");
         updateTransactions();
-        clearUndone();
-        clearDone();      
+      
     });
 
     // filter drinks by category
@@ -108,7 +119,6 @@ $(document).ready(function() {
             //alert(SESSIONS_TRANSACTIONS[i].transaction_id + ' vs ' + find_transaction_id);
             if (SESSIONS_TRANSACTIONS[i].transaction_id == find_transaction_id) {
                 break;
-                
             }
         }
 
@@ -116,11 +126,14 @@ $(document).ready(function() {
         SESSIONS_TRANSACTIONS.splice(i, 1);
         //alert(SESSIONS_TRANSACTIONS.toSource());
 
+        // Save changes to session storage
+        sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(SESSIONS_TRANSACTIONS));
+
         // Remove from DOM
         $(this).parent().parent().parent().remove();
         $('#' + find_transaction_id).remove();
         
-        //Undo-Redo
+        // Undo-Redo
         pushStateTo(done);  // update done stack
         clearUndone();      // clear undone stack after a 'proper' action        
     });
@@ -143,6 +156,9 @@ $(document).ready(function() {
         SESSIONS_TRANSACTIONS[i].bartender_id = current_bartender;
         //alert(SESSIONS_TRANSACTIONS[i].toSource())
 
+        // Save changes to session storage
+        sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(SESSIONS_TRANSACTIONS));
+
         // Update DOM
         retrieveOrders(); // retrieve all orders from the database
         addBackground();
@@ -164,32 +180,6 @@ $(document).ready(function() {
     });
     
 });
-
-function translate (index) {
-    $("#page_title").text(page_title[index]);
-    $("#title").text(title[index]);
-    $("#logout").text(logout[index]);
-    $("#login_as").text(login_as[index]);
-    $("#orders_q").text(orders_q[index]);
-    $("#cancel_order").text(cancel_order[index]);
-    $("#mark_paid").text(mark_paid[index]);
-}
-
-function responsive() {
-    //var size = $(document).width();
-
-    if ($(window).width() < 640) { /* Small size */
-        //alert("Small Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 641 && $(window).width() < 1007){/* Medium size */
-        //alert("Medium Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 1008){/* Large size */
-        //alert("Large Size! -> " + size + " px!");
-    }
-}
 
 function printToDOM (element) {
     var i = $.inArray(element,SESSIONS_TRANSACTIONS);
@@ -222,7 +212,6 @@ function printToDOM (element) {
 }
 
 function retrieveOrders() {
-    $("#all_orders").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element){
         printToDOM(this);
     });
@@ -360,14 +349,8 @@ function clearUndone() {
     $("#redo").addClass("fade");
 }
 
-function clearDone() {
-    done = [];
-    pushStateTo(done);
-    $("#undo").addClass("fade");
-}
-
 function rePrintTab() {
-    $("#all_orders").empty();
+    $("#all_drinks").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element) {
         if (current_tab == "all" || ( current_tab == "paid" && this.paid == true) || (current_tab == "unpaid" && this.paid == false)) {    
             printToDOM(this);                
@@ -390,3 +373,12 @@ function updateTransactions() {
     rePrintTab();
 }
 
+function translate (index) {
+    $("#page_title").text(page_title[index]);
+    $("#title").text(title[index]);
+    $("#logout").text(logout[index]);
+    $("#login_as").text(login_as[index]);
+    $("#orders_q").text(orders_q[index]);
+    $("#cancel_order").text(cancel_order[index]);
+    $("#mark_paid").text(mark_paid[index]);
+}
