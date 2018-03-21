@@ -1,26 +1,24 @@
-/* The Flying Dutchman
+/* Bar
    bartender.css
-   Created by 'Pirates of the Caribbean' on 18 of February 2018.
+   Created by Mauro J. Pappaterra on 18 of February 2018.
 */
 
 /*Style Sheet for the bartender page*/
 
 /*MENU COLUMN*/
-body {
-    background-image: url("../img/wood.jpg");
-    font-family: 'Oswald', sans-serif;
-}
 
-h1 {
-    font-family: 'Berkshire Swash', cursive;
+body{
+    background-image: url("../img/background/test.jpg");
+    background-size: cover;
+    max-width: 100%;
+    background-repeat: repeat-y;
 }
 
 .menu {
     width: 100%;
-    height: 20%;
+    height: 30%;/*67px;*/
     float: left;
-    overflow: hidden;
-    color: white;
+    overflow: auto;
 }
 
 .menu ul {
@@ -56,29 +54,44 @@ h1 {
 }
 
 .order_list {
-    width: 100%;
-    height: 555px;
+    width: 96%;
+    height: 500px;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: .5%;
     float: left;
     overflow: auto;
-    z-index: 1;
+    background-color: #567973;
+
+
 }
 
-.background_wallpaper {
-    background-image: url("../img/background.jpg");
-    opacity: 0.3;
-    width: 100%;
-    height: 555px;
-    position: absolute;
-    left: 0px;
-    top: 120px;
-    z-index: -1;
+.order_header {
+    background-color: #C0CFCC;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+
+    border-style: solid;
+    border-color: #C0CFCC;
+    border-width: medium;
+    border-radius: 3%;
+
+
+    width: 90%;
+    height: 500%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    overflow: hidden;
 }
 
 /* ACCORDEON */
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion{
     color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #A4B9B6;
 
     text-align: left;
 
@@ -94,8 +107,9 @@ h1 {
     margin-top: 15px;
 
     border-style: solid;
-    border-color: grey;
-    border-width: thin;
+    border-color: #C0CFCC;
+    border-width: medium;
+    border-radius: 3%;
 
     width: 90%;
     height: 45px;
@@ -116,13 +130,13 @@ h1 {
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
     color: rgb(211, 142, 79);
-    background-color: white;
+    background-color: white;/*rgba(123,194,211,0.6);*/
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
     padding: 0 0px;
-    background-color: rgba(103, 103, 103, 0.7);
+    background-color: #C0CFCC;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -151,16 +165,23 @@ h1 {
 
 
 /*ORDER COLUMN*/
-.order_details {
-    background-color: rgba(255, 255, 255, 0.5);
 
-    color: black;
+.selection {
+    width: 30%;
+    height: 450px;
+    background-color: lightseagreen;
+    float: right;
+    overflow: auto;
+}
+
+.order_details {
+    background-color: white;
 
     padding-left: 1.5%;
     padding-right: 1.5%;
     margin: 1%;
 
-    border-style: solid;
+    border-style: dashed;
     border-color: grey;
     border-width: thin;
 
@@ -173,6 +194,7 @@ h1 {
 
 .order_details .price {
     clear: both;
+
 }
 
 .order_details img {
@@ -182,23 +204,15 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     clear: both;
+    text-align: center;
+
 }
 
 .checkout {
     width: 100%;
     height: 75px;
-    clear: both;
-    text-align: right;
-    background-color: #ffaf40;
-    opacity: 0.6;
-}
-
-.paidfor {
-    color: black;
-    width: 100%;
-    height: 40px;
-    background-color: #128d3d;
-    opacity: 0.6;
+    background-color: #A4B9B6;
+    margin-bottom: 0%;
     clear: both;
     text-align: center;
 }
@@ -206,12 +220,17 @@ h1 {
 .total {
     pointer-events: none;
     float: right;
-    width: 50% ;
+ }
+
+/* FOOTER*/
+footer {
+    background-color: #0C2924;
 }
 
 .logout {
     float: left;
     clear: none;
+    margin-left: 2%;
 }
 
 .languages_menu {
@@ -222,6 +241,10 @@ h1 {
 
 .small_button {
     float: left;
+    height: 50%;
+    border: solid;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .delete, .pay {

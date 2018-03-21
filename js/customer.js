@@ -129,9 +129,13 @@ $(document).ready(function() {
 
             // 'pay' for order immediatly if possible
             if($("#cre").html() >= total) {
-                alert("Your order has been payed, you can pick up your beverages in the VIP fridge");
+                alert("Your order has been payed using your available credit, you can pick up your beverages in the VIP fridge");
                 $('#cre').html( $('#cre').html() - total);
                 newOrder.paid = true;  // mark transaction as paid
+            } else {
+
+                alert("Your order has been placed!, Direct to the counter and pay for your order before you can pick up your drinks!");
+
             }
             
             //alert("NEW ORDER " + newOrder.toSource());
@@ -142,7 +146,8 @@ $(document).ready(function() {
             localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("transaction_counter", transactions_counter);
             localStorage.setItem("NEWORDER", 1);
-            
+
+
             resetPage();
             
         } else {

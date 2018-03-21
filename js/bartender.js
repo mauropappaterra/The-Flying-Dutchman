@@ -47,7 +47,8 @@ $(document).ready(function() {
     $("#check").click(function() {
         $("#check").css("background-color","green");
         updateTransactions();
-      
+        clearUndone();
+        clearDone();      
     });
 
     // filter drinks by category
@@ -221,6 +222,7 @@ function printToDOM (element) {
 }
 
 function retrieveOrders() {
+    $("#all_orders").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element){
         printToDOM(this);
     });
@@ -358,8 +360,14 @@ function clearUndone() {
     $("#redo").addClass("fade");
 }
 
+function clearDone() {
+    done = [];
+    pushStateTo(done);
+    $("#undo").addClass("fade");
+}
+
 function rePrintTab() {
-    $("#all_drinks").empty();
+    $("#all_orders").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element) {
         if (current_tab == "all" || ( current_tab == "paid" && this.paid == true) || (current_tab == "unpaid" && this.paid == false)) {    
             printToDOM(this);                
