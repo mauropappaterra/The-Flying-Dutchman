@@ -1,6 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  view_common.js
- *  Created by Pirates of the Caribbean on 21 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 21 of February 2018.
  */
 
 /* ALL COMMON PAGE TEXTS
