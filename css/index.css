@@ -164,4 +164,21 @@ input[type=submit]:hover {
     float: right;
     width: 30%;
 }
+/*Responsiveness*/
+/* For mobile phones: */
+/* try it with iPhone 6 models*/
+@media only screen and (max-width: 414px)
+{
+    /* only the customer is going to use the App on his phone to order drinks,therefore we hide the management login on phones*/
+    div.margin_button  {display: none;} 
 
+    /* enlarge the order button and the font for easy reading on small phones*/
+    .login_button {
+        float: none;
+        width: 30%;
+        height: auto;
+        display: block;
+        text-align: center;
+        font-size: 100%;
+    }
+}
