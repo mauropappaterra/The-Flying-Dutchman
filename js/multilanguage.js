@@ -1,6 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  multilanguage.js
- *  Created by Pirates of the Caribbean on 09 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 09 of February 2018.
  */
 
 /*LANGUAGE SELECTION CONTROL
