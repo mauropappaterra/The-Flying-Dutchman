@@ -436,7 +436,9 @@ function resetPage() {
     $("#redo").addClass("fade");
 
     $("#drink_selection").empty();
-    //updateTotal();
+    $("#drink_database").empty();
+    addBackground();
+    retrieveSystembolaget();
 }
 
 function translate (index) {
