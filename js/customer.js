@@ -6,25 +6,42 @@
 
 /*CUSTOMER PAGE SCRIPTS
 * All scripts related to the customer page. Each page has their own scripts in a single js document.
-* Methods translate() and responsive() are unique for each individual page.
+* Method translate() is unique for each individual page and can be found at the bottom of each script.
 */
 
-/*LOAD CURRENT SECTION DATA*/
-if (localStorage.getItem("SESSION") == null){
-    localStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
-    localStorage.setItem("transaction_counter",20);
-    //alert("This is happening!")
+/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
+if (sessionStorage.getItem("SESSION_TRANSACTIONS") == null){
+    sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
+    sessionStorage.setItem("SESSION_USER_INFO",JSON.stringify(DB_CUSTOMERS));
+    sessionStorage.setItem("transaction_counter",20);
+    //alert("User and Transaction databases loaded from script!")
+} else {
+    //alert("User and Transaction databases will be loaded from session storage!")
 }
-var SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION_TRANSACTIONS"));
-var transactions_counter = parseInt(localStorage.getItem("transaction_counter"));
-//alert(SESSIONS_TRANSACTIONS.toSource());
+
+if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
+    sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
+    //alert("Stock database loaded from script!")
+} else {
+    //alert("Stock database will be loaded from session storage!")
+}
+
+var SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
+var SESSION_USER_INFO = JSON.parse(sessionStorage.getItem("SESSION_USER_INFO"));
+var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
+var transactions_counter = parseInt(sessionStorage.getItem("transaction_counter"));
+
+//alert("::::::THE FULL TRANSACTION DATABASE: " + SESSIONS_TRANSACTIONS.toSource());
+//alert("Current transaction counter: " + transactions_counter);
+//alert("::::::THE USER DATABASE: " + SESSION_USER_INFO.toSource());
+
+/* END SESSION STORAGE DATA LOADING*/
 
 var order = [];    // keeps list of drinks ordered
 var quantity = []; // keeps list of quantities with matching indexes
 var total = 0;     // calculates the total
 var current_user = localStorage.getItem('id');
 
-var current_stock = DB_STOCK;  // TODO: store this in localstorage or similair, to keep it consistent between customer/bartender/manager
 var current_tab = "all";
 
 /*UNDO-REDO ARRAYS*/
@@ -45,7 +62,7 @@ $(document).ready(function() {
     $("#beers").click(function(){
         current_tab = "all";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(current_stock, function(element){
+        $.each(SESSION_STOCK_INFO, function(element){
             if (this.beer == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -54,7 +71,7 @@ $(document).ready(function() {
 
     $("#wines").click(function(){
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(current_stock, function(element){
+        $.each(SESSION_STOCK_INFO, function(element){
             if (this.wine == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -64,7 +81,7 @@ $(document).ready(function() {
     $("#spirits").click(function(){
         current_tab = "spirit";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(current_stock, function(element){
+        $.each(SESSION_STOCK_INFO, function(element){
             if (this.spirit == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -74,7 +91,7 @@ $(document).ready(function() {
     $("#kosher").click(function(){
         current_tab = "kosher";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(current_stock, function(element){
+        $.each(SESSION_STOCK_INFO, function(element){
             if (this.kosher == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -84,7 +101,7 @@ $(document).ready(function() {
     $("#ecologic").click(function(){
         current_tab = "ecologic";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(current_stock, function(element){
+        $.each(SESSION_STOCK_INFO, function(element){
             if (this.ecologic == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -94,7 +111,7 @@ $(document).ready(function() {
     $("#specials").click(function(){
         current_tab = "special";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(current_stock, function(element){
+        $.each(SESSION_STOCK_INFO, function(element){
             if (this.special == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -110,7 +127,6 @@ $(document).ready(function() {
         redo();
     });
 
-//    $("#pay").click(function() {
     $(document).on('click','#pay',function() {
      
         if (order.length > 0) {
@@ -129,32 +145,46 @@ $(document).ready(function() {
 
             // 'pay' for order immediatly if possible
             if($("#cre").html() >= total) {
-                alert(payed_order_msg);
                 $('#cre').html( $('#cre').html() - total);
                 newOrder.paid = true;  // mark transaction as paid
+                newOrder.bartender_id = "VIP Self-Service";
+                alert("Your order has been payed using your available credit, you can pick up your beverages in the VIP fridge!");
             } else {
-
-                alert(placed_order_msg);
-
+                alert("Your order has been placed!, Direct to the counter and pay for your order before you can pick up your drinks!");
             }
-            
             //alert("NEW ORDER " + newOrder.toSource());
 
             SESSIONS_TRANSACTIONS.push(newOrder);
             //alert(SESSIONS_TRANSACTIONS.toSource());
 
-            localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
-            localStorage.setItem("transaction_counter", transactions_counter);
-            localStorage.setItem("NEWORDER", 1);
+            /*
+             * Update STOCK AND USER TOO! INSERT HERE THAT PART HERE
+             *
+             */
 
+            for (i = 0; i < (SESSION_USER_INFO.length - 1); i++) {
 
+                if (SESSION_USER_INFO[i].customer_id == current_user){
+                    SESSION_USER_INFO[i].credit -= total;
+                    //alert("this is happening")
+                    //alert(SESSION_USER_INFO[i].toSource())
+
+                    break;
+                }
+            };
+
+            /* Save all changes to session storage*/
+            sessionStorage.setItem("SESSION_TRANSACTIONS", JSON.stringify(SESSIONS_TRANSACTIONS));
+            sessionStorage.setItem("SESSION_USER_INFO",JSON.stringify(SESSION_USER_INFO));
+            sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
+            sessionStorage.setItem("transaction_counter", transactions_counter);
+
+            // Clear all fields
             resetPage();
-            
-        } else {
-            alert(empty_order_msg);
-         
-        }
 
+        } else {
+            alert("You must select your drinks before placing an order!")
+        }
     });
 
     $(document).on('click','.drink',function(){
@@ -162,7 +192,7 @@ $(document).ready(function() {
         //alert("You have chosen: " + article_id);
         addOrder(article_id);
         
-        updateStock(article_id, -1);  // update current_stock accordingly
+        updateStock(article_id, -1);  // update SESSION_STOCK_INFO accordingly
         
         //Undo-Redo
         pushOrderTo(done); // update done stack
@@ -171,14 +201,14 @@ $(document).ready(function() {
 
     $(document).on('click','.delete',function(){
 
-        total-= $(this).closest('.order').find('.loreen').html(); // deduct from total
+        total-= $(this).closest('.order').find('.hidden_price').html(); // deduct from total
         updateTotal();
 
         var article_id = $(this).closest('.order').attr('id'); // get id
         var i = $.inArray(article_id,order);
         $.each(order, function(index, element) { if (this == article_id) { i = index; return false;}});
         
-        updateStock(article_id, quantity[i]); // update current_stock accordingly
+        updateStock(article_id, quantity[i]); // update SESSION_STOCK_INFO accordingly
         
         order.splice(i, 1); // remove both order and quantity (same index)
         quantity.splice(i, 1);
@@ -191,50 +221,10 @@ $(document).ready(function() {
     });
 });
 
-function translate (index) {
-    $("#page_title").text(page_title[index]);
-    $("#title").text(title[index]);
-    $("#logout").text(logout[index]);
-    $("#customer").text(customer[index]);
-    $("#credit").text(credit[index]);
-    $("#drink_list").text(drink_list[index]);
-    $("#all").text(all[index]);
-    $("#beers").text(beers[index]);
-    $("#wines").text(wines[index]);
-    $("#spiritis").text(spiritis[index]);
-    $("#kosher").text(kosher[index]);
-    $("#ecologic").text(ecologic[index]);
-    $("#specials").text(specials[index]);
-    $("#your_order").text(your_order[index]);
-    $("#total").text(total[index]);
-    $("#pay").text(pl_order[index]);
-    $("#hello").text(hello[index]);
-    $("#your_credit").text(your_credit[index]);
-    empty_order_msg = (empty_order[index]);
-    payed_order_msg = (payed_order[index]);
-    placed_order_msg = (placed_order[index]);
-}
-
-function responsive() {
-    //var size = $(document).width();
-
-    if ($(window).width() < 640) { /* Small size */
-        //alert("Small Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 641 && $(window).width() < 1007){/* Medium size */
-        //alert("Medium Size! -> " + size + " px!");
-    }
-
-    if ($(window).width() > 1008){/* Large size */
-        //alert("Large Size! -> " + size + " px!");
-    }
-}
-
 /*Call printToDOM() method on all elements in the DB*/
 function retrieveDB () {
-    $.each(current_stock, function(element) {
-        if (!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)) {
+    $.each(SESSION_STOCK_INFO, function(element) {
+        if (!this.special || (this.special && findByID(current_user, SESSION_USER_INFO).vip)) {
             printToDOM(this); // Call method to print to DOM
         }
     });
@@ -269,12 +259,12 @@ function addOrder (article_id) {
     $.each(order, function(index, element) { if (this == article_id) { i = index; return false;}});
     if (i == -1) { // if drink is not already on the order print to DOM
 
-        $.each(current_stock, function(element){
+        $.each(SESSION_STOCK_INFO, function(element){
             if (this.article_id == article_id){ // retrieve article from the database
                 $("#drink_selection").prepend(
                     '<div class="order " id="'+ this.article_id +'">' +
                     '<a class="delete">X</a>' +
-                    '<h4 class="price">SEK <span class="loreen">' + parseInt(this.sale_price) + '</span>:-</h4>' +
+                    '<h4 class="price">SEK <span class="hidden_price">' + parseInt(this.sale_price) + '</span>:-</h4>' +
                     '<span class="sum" hidden>' + this.sale_price + '</span>' +
                     '<img src="img/drinks/' + this.article_id + '.png">' +
                     '<h4>' + this.name + '<span class="quantity textRed"></span></h4>' +
@@ -293,7 +283,7 @@ function addOrder (article_id) {
         $("#"+article_id).find('.quantity').empty().append(" ( x " + quantity[i] + ")");
 
         update_price = parseInt($("#"+article_id).find('.sum').html()) * quantity[i];
-        $("#"+article_id).find('.loreen').empty().append(update_price);
+        $("#"+article_id).find('.hidden_price').empty().append(update_price);
     }
     updateTotal();
     //FOR TESTING PURPOSES
@@ -306,7 +296,7 @@ function updateTotal () {
 
 function checkStock (article_id) {
     var counter = 0;
-    $.each(current_stock, function(element){
+    $.each(SESSION_STOCK_INFO, function(element){
         if (this.article_id == article_id){
             counter = this.in_stock;
         }
@@ -353,13 +343,12 @@ function redo() {
     rePrintTab();
 }
 
-
 function setOrderTo(newOrder) {  // change the entire order beeing displayed
     // clear current order description
     order = [];
     quantity = [];
     total = 0;
-//    current_stock = [];
+//    SESSION_STOCK_INFO = [];
     setStockTo(newOrder[2]);
     
     $(drink_selection).empty();
@@ -397,7 +386,7 @@ function clearUndone() {
 /* updatestock */
 function updateStock(article_id, add_quantity) {
     var rePrint = false;
-    $.each(current_stock, function(element) {
+    $.each(SESSION_STOCK_INFO, function(element) {
         if (this.article_id == article_id) {
             new_quantity = this.in_stock + add_quantity;
     //        alert("new: " + new_quantity + ", old: " + this.in_stock + ", dif: " + add_quantity);
@@ -414,28 +403,24 @@ function updateStock(article_id, add_quantity) {
 // make a list of the current in_stock values
 function copyStock() {  
     stock_copy = [];
-    $.each(current_stock, function(index, element) { stock_copy[index] = this.in_stock; });
+    $.each(SESSION_STOCK_INFO, function(index, element) { stock_copy[index] = this.in_stock; });
     return stock_copy;
 }
 
 function setStockTo(newStock) {
-    $.each(current_stock, function(index, element) {
-        // if (this.name == "Minttu") {alert("Minttu in stock before: " + this.in_stock);}
+    $.each(SESSION_STOCK_INFO, function(index, element) {
         this.in_stock = newStock[index];
-       // if (this.name == "Minttu") {alert("Minttu in stock after: " + this.in_stock);}
     });
-    
 }
 
 function rePrintTab() {
     $("#drink_database").empty();
-    $.each(current_stock, function(element) {
-        if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)))) || this[current_tab] == true) {  
+    $.each(SESSION_STOCK_INFO, function(element) {
+        if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, SESSION_USER_INFO).vip)))) || this[current_tab] == true) {
             printToDOM(this);                
         };
     }); 
 }
-
 
 // resets the page after a order has been payed, this cannot be undone
 function resetPage() {
@@ -447,6 +432,24 @@ function resetPage() {
     undone = new Array();
     $("#undo").addClass("fade");
     $("#redo").addClass("fade");
-
     updateTotal();
+}
+
+function translate (index) {
+    $("#page_title").text(page_title[index]);
+    $("#title").text(title[index]);
+    $("#logout").text(logout[index]);
+    $("#customer").text(customer[index]);
+    $("#credit").text(credit[index]);
+    $("#drink_list").text(drink_list[index]);
+    $("#all").text(all[index]);
+    $("#beers").text(beers[index]);
+    $("#wines").text(wines[index]);
+    $("#spiritis").text(spiritis[index]);
+    $("#kosher").text(kosher[index]);
+    $("#ecologic").text(ecologic[index]);
+    $("#specials").text(specials[index]);
+    $("#your_order").text(your_order[index]);
+    $("#total").text(total[index]);
+    $("#pay").text(pl_order[index]);
 }
