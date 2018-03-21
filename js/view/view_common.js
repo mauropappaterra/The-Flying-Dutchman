@@ -1,6 +1,6 @@
 /** Bar
  *  view_common.js
- *  Created by Mauro J. Pappaterra on 21 of February 2018.
+ *  Created by Pirates of the Caribbean on 21 of February 2018.
  */
 
 /* ALL COMMON PAGE TEXTS
