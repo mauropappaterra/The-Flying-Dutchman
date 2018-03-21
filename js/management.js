@@ -151,7 +151,7 @@ $(document).ready(function() {
             sessionStorage.setItem("orders_counter", orders_counter);
             sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
-            resetPage();
+            //resetPage();
 
         } else {
             alert("You must select drinks before placing a delivery order!")
