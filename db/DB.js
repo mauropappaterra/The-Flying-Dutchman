@@ -374,7 +374,7 @@ var DB_BARTENDERS = [
 
 var DB_MANAGERS =[
     {
-        "manager_id": "M",
+        "manager_id": "M€$#=@",
         "password": "sudo",
         "username": "sudo",
         "first_name": "Super",
