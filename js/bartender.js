@@ -221,6 +221,7 @@ function printToDOM (element) {
 }
 
 function retrieveOrders() {
+    $("#all_orders").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element){
         printToDOM(this);
     });
@@ -359,7 +360,7 @@ function clearUndone() {
 }
 
 function rePrintTab() {
-    $("#all_drinks").empty();
+    $("#all_orders").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element) {
         if (current_tab == "all" || ( current_tab == "paid" && this.paid == true) || (current_tab == "unpaid" && this.paid == false)) {    
             printToDOM(this);                
