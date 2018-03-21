@@ -57,6 +57,9 @@
 .languages_menu{
     margin-left: 15%;
     margin-right: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
 }
 
 body {
@@ -181,4 +184,16 @@ input[type=submit]:hover {
         text-align: center;
         font-size: 100%;
     }
+    .languages_menu{
+        margin-left: 15%;
+        margin-right: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .languages img 
+    {
+        border-radius: 50%;
+    }
+
 }

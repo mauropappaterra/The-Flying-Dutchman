@@ -59,4 +59,21 @@ input[type=submit]:hover {
     box-shadow: 5px 5px 30px black;
 }
 
+@media only screen and (max-width: 414px)
+{
+    /*change the size of the login box to suit the phones*/
+    /* iPhone 6s was my main focus but it looks fine on other phones sizes */
+    .login{
+        background: linear-gradient(#254540,#0C2924);
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 10px;
+        box-shadow: 5px 5px 30px black;
+        font-size: xx-small;
+        height: 46%;
+        margin-top: 0px;
+        margin-left: 14%;
+        width: 51%;
+    }
 
+}
