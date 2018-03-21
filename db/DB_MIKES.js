@@ -1,3 +1,8 @@
+/** The Flying Dutchman
+ *  DB_MIKES.js
+ *  Created by 'Pirates of the Caribbean' on 17 of March 2018.
+ */
+
 var DB_MIKES = [
     {
         "artikelid": "MIKE01",

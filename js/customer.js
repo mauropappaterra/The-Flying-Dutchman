@@ -1,7 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  customer.js
- *  Created by Mauro J. Pappaterra on 11 of February 2018.
- *  Updated by Hassan Odimi on 23 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 11 of February 2018.
  *  Updated on 16 March
  */
 
@@ -128,19 +127,22 @@ $(document).ready(function() {
                 "paid":false
             };
 
-            alert("NEW ORDER " + newOrder.toSource());
+            // 'pay' for order immediatly if possible
+            if($("#cre").html() >= total) {
+                alert("Your order has been payed, you can pick up your beverages in the VIP fridge");
+                $('#cre').html( $('#cre').html() - total);
+                newOrder.paid = true;  // mark transaction as paid
+            }
+            
+            //alert("NEW ORDER " + newOrder.toSource());
 
             SESSIONS_TRANSACTIONS.push(newOrder);
             //alert(SESSIONS_TRANSACTIONS.toSource());
 
             localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("transaction_counter", transactions_counter);
-
-            if($("#cre").html() >= total) {
-                alert("Your order has been payed, you can pick up your beverages in the VIP fridge");
-                $('#cre').html( $('#cre').html() - total);             
-            }
-
+            localStorage.setItem("NEWORDER", 1);
+            
             resetPage();
             
         } else {
@@ -175,9 +177,7 @@ $(document).ready(function() {
         order.splice(i, 1); // remove both order and quantity (same index)
         quantity.splice(i, 1);
 
-        $(this).closest('.order').remove(); // remove from DOM
-
-       
+        $(this).closest('.order').remove(); // remove from DOM       
         
         //Undo-Redo
         pushOrderTo(done);  // update done stack
@@ -419,7 +419,7 @@ function setStockTo(newStock) {
 function rePrintTab() {
     $("#drink_database").empty();
     $.each(current_stock, function(element) {
-        if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)))) || this[current_tab] == true) {    // TODO: dont show specials in all cases
+        if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)))) || this[current_tab] == true) {  
             printToDOM(this);                
         };
     }); 

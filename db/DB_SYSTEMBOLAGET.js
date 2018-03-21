@@ -1,6 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  DB_SYSTEMBOLAGET.js
- *  Created by Mauro J. Pappaterra on 17 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 17 of February 2018.
  */
 
 /*DB of Systembolaget saved as an array of objects, each object represents a beverage*/

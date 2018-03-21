@@ -1,6 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  view_index.js
- *  Created by Mauro J. Pappaterra on 21 of February 2018.
+ *  Created by Pirates of the Caribbean on 21 of February 2018.
  */
 
 /* INDEX PAGE TEXTS
