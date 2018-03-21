@@ -15,16 +15,16 @@ if (sessionStorage.getItem("SESSION_TRANSACTIONS") == null){
     sessionStorage.setItem("SESSION_USER_INFO",JSON.stringify(DB_CUSTOMERS));
     sessionStorage.setItem("transaction_counter",20);
     //alert("User and Transaction databases loaded from script!")
-} else {
-    //alert("User and Transaction databases will be loaded from session storage!")
-}
+} /*else {
+    alert("User and Transaction databases will be loaded from session storage!")
+  }*/
 
 if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
     sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
     //alert("Stock database loaded from script!")
-} else {
-    //alert("Stock database will be loaded from session storage!")
-}
+} /*else {
+    alert("Stock database will be loaded from session storage!")
+}*/
 
 var SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
 var SESSION_USER_INFO = JSON.parse(sessionStorage.getItem("SESSION_USER_INFO"));
@@ -166,9 +166,7 @@ $(document).ready(function() {
 
                 if (SESSION_USER_INFO[i].customer_id == current_user){
                     SESSION_USER_INFO[i].credit -= total;
-                    //alert("this is happening")
                     //alert(SESSION_USER_INFO[i].toSource())
-
                     break;
                 }
             };
