@@ -250,3 +250,18 @@ footer {
 .delete, .pay {
     size: 20px;
 }
+
+.circle {
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  box-shadow: 2px -2px 10px black, 2px 0 10px black;
+  pointer-events: auto;
+}
