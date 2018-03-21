@@ -1,7 +1,7 @@
-/** Bar
+/** The Flying Dutchman
  *  view_customer.js
- *  Created by Mauro J. Pappaterra on 21 of February 2018.
- *  Updated by Hassan Odimi on 23 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 21 of February 2018.
+ *  Updated on 23 of February 2018.
  */
 
 /* CUSTOMER PAGE TEXTS
@@ -30,14 +30,14 @@ var customer= ["Customer:",
 "kund:",
 "cliente:",
 "cliente:",
-"customer:"
+"Macaamiisha:"
 ]
 
 var credit= ["Credit:",
 "Kreditera:",
 "Credito:",
 "Crédito:",
-"Credit:"
+"Amaah:"
 ]
 
 // The drink list panel
@@ -45,14 +45,14 @@ var drink_list= ["Our Drink List",
 "Vår drycklista",
 "La nostra lista delle bevande",
 "Nuestra lista de bebidas",
-"Our Drink List"
+"Liiskayaga cabitaanka"
 ]
 // start drinks taps
 var all= ["All",
 "Allt",
 "Tutti",
 "Todas",
-"All"
+"Dhammaan"
 ]
 
 var beers= ["Beers",
@@ -73,7 +73,7 @@ var spiritis= ["Spirits",
 "Sprit",
 "Sprits",
 "Bebida Espirituosa",
-"EspÃ­ritu"
+"Suufiyada"
 ]
 
 var kosher= ["Kosher",
@@ -87,14 +87,14 @@ var ecologic= ["Ecologic",
 "Ekologisk",
 "Ecologico",
 "Ecológico",
-"Ecological"
+"Ecologic"
 ]
 
-var specials= ["Specials",
+var specials= ["specials",
 "Särskild",
 "Speciali",
 "Especiales",
-"Special"
+"khaas ah"
 ]
 //end of drinks taps
 
@@ -102,19 +102,19 @@ var your_order= ["Your Order",
 "Du beställer",
 "Il tuo ordine",
 "Su pedido",
-"Yer order"
+"Amarkaaga"
 ]
 
 var total= ["TOTAL:",
 "TOTAL:",
 "TOTALE:",
 "TOTAL:",
-"TOTAL:"
+"WADARTA:"
 ]
 
 var pl_order= ["Place Order",
 "Beställa",
 "Invia ordine",
 "Realizar pedido",
-"Place Order"
+"Amarka Goobta"
 ]

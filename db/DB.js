@@ -1,11 +1,22 @@
-/** Bar
+/** The Flying Dutchman
  *  DB.js
- *  Created by Mauro J. Pappaterra on 17 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 17 of February 2018.
  *  Updated by Hassan Odimi
  */
 
 /*DB of all users saved as an array of objects, each object represents a single user*/
 var DB_CUSTOMERS = [
+    {
+        "customer_id": "C",
+        "password": "sudo",
+        "username": "sudo",
+        "first_name": "Super",
+        "last_name": "Duper",
+        "email": "Super.Duper@it.uu.se",
+        "phone": "0000000000",
+        "credit": 44444444444444,
+        "vip": true
+    },
     {
         "customer_id": "C00000",
         "password": "test",
@@ -296,6 +307,16 @@ var DB_CUSTOMERS = [
 
 var DB_BARTENDERS = [
     {
+        "bartender_id": "B",
+        "password": "sudo",
+        "username": "sudo",
+        "first_name": "Super",
+        "last_name": "Duper",
+        "email": "Super.Duper@it.uu.se",
+        "phone": "0000000000"
+
+    },
+    {
         "bartender_id": "B00000",
         "password": "test",
         "username": "test",
@@ -352,6 +373,15 @@ var DB_BARTENDERS = [
 ];
 
 var DB_MANAGERS =[
+    {
+        "manager_id": "M",
+        "password": "sudo",
+        "username": "sudo",
+        "first_name": "Super",
+        "last_name": "Duper",
+        "email": "Super.Duper@it.uu.se",
+        "phone": "0000000000"
+    },
     {
         "manager_id": "M00000",
         "password": "test",
@@ -413,7 +443,7 @@ var DB_TRANSACTIONS = [
         "timestamp": "2014-10-10 19:46:18",
         "paid":true
     },
-    {   // start from here Hassan
+    {
         "transaction_id": "T00004",
         "bartender_id": "B00000",
         "customer_id": "C00004",
@@ -1611,7 +1641,7 @@ var DB_STOCK = [{
         "in_stock": 220,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
    
     }, {
         "article_id": "543793", // same as Sytembolaget
@@ -1780,22 +1810,6 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": true,
         "special": false
-    },  
-      {
-        "article_id": "50229", // same as Sytembolaget
-        "name": "Scarecrow",
-        "beer": false,
-        "wine": false,
-        "spirit": false,
-        "year": null,
-        "country": "Flaska",
-        "volume_ml": 50,
-        "alcohol_percentage": 4.7,
-        "sale_price": 24.90,
-        "in_stock": 151,
-        "kosher": false,
-        "ecologic": true,
-        "special": false
     },
       {
         "article_id": "428969", // same as Sytembolaget
@@ -1957,32 +1971,8 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-    } , {
-        "nr": "49301",
-        "article_id": "411",
-        "varnummer": "493",
-        "name": "Johnnie Walker",
-        "namn2": "Red Label",
-        "sale_price": "249.00",
-        "volymiml": null,
-        "prisperliter": null,
-        "saljstart": "1993-10-01",
-        "slutlev": " ",
-        "varugrupp": "Whisky, Blended",
-        "forpackning": "Flaska",
-        "forslutning": "Skruvkapsyl",
-        "ursprung": "Skottland",
-        "ursprunglandnamn": "Storbritannien",
-        "producent": "John Walker",
-        "leverantor": "Diageo Sweden AB",
-        "argang": "",
-        "provadargang": "",
-        "alkoholhalt": "40%",
-        "modul": "",
-        "sortiment": "FS",
-        "ecologic": "0",
-        "kosher": "0"
-    }, {  // new spirites, different format
+    } ,
+    {  // new spirites, different format
         "nr": "1301",
         "article_id": "370625",
         "varnummer": "13",
@@ -2504,36 +2494,7 @@ var DB_STOCK = [{
         "wine": false,
         "spirit": true,
         "in_stock": 40
-    }, { 
-        "nr": "1030902",
-        "article_id": "489875",
-        "varnummer": "10309",
-        "name": "Artisan Collection",
-        "namn2": "Solera Gran Reserva Limousin Amontillado",
-        "sale_price": "749.00",
-        "volymiml": null,
-        "prisperliter": null,
-        "saljstart": "2010-06-15",
-        "slutlev": " ",
-        "varugrupp": "Brandy och Vinsprit, Brandy",
-        "forpackning": "Flaska",
-        "forslutning": "Naturkork",
-        "ursprung": "Jerez",
-        "ursprunglandnamn": "Spanien",
-        "producent": "Bodegas Rey Fernando de Castil",
-        "leverantor": "Freixenet Nordic AB",
-        "argang": "",
-        "provadargang": "",
-        "alkoholhalt": "41%",
-        "modul": "T9",
-        "sortiment": "TSE",
-        "ecologic": "0",
-        "kosher": "0",
-        "beer": false,
-        "wine": false,
-        "spirit": true,
-        "in_stock": 250
-    }, { 
+    },{
         "nr": "1031001",
         "article_id": "52586",
         "varnummer": "10310",

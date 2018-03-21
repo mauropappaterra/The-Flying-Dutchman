@@ -1,16 +1,34 @@
-/* Bar 
+/* The Flying  Dutchman
    index.css
-   Created by Mauro J. Pappaterra on 20 of February 2018.
+   Created by 'Pirates of the Caribbean' on 20 of February 2018.
 */
 
 /*Style Sheet for the login page*/
 
-#user_name,#password{
-    color: white;
-    cursor: default;
+/*WELCOME PIRATE IMAGE*/
+
+.welcome_pirate_small {
+    width: 65%;
+    height: 65%
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+.welcome_pirate_medium {
+    width: 40%;
+    float: left;
+}
+
+.welcome_pirate_large {
+    width: 40%;
+    float: left;
 }
 
 /*Menu Buttons*/
+
+
 .big_button {
     margin: 5%;
     padding: 2%;
@@ -33,6 +51,8 @@
     clear: none;
 
     margin: 2%;
+    /**  transform: translateY(200%);*/
+
 }
 .languages_menu{
     margin-left: 15%;
@@ -41,15 +61,9 @@
 
 body {
     background-image: url("../img/storm.jpg");
-
     background-size: cover;
-
     max-width: 100%;
     background-repeat: no-repeat;
-
-    font-family: 'Oswald', sans-serif;
-    color: white;
-
 }
 
 .margin_button{
@@ -60,7 +74,7 @@ body {
     margin: 2%;
     text-align: center;
     position: relative;
-    color: white;
+
 }
 
 /*login stuff below*/
@@ -99,11 +113,10 @@ input[type=submit]:hover {
     margin-top: 50%;
     margin: 80px 100px;
     border-radius: 5px;
-    background-color: rgba(12,41,36,0.5);
+    background-color: #0C2924;
     padding: 20px;
     position: absolute;
     z-index:1;
-    color: white;
 }
 
 .close {
@@ -118,10 +131,11 @@ input[type=submit]:hover {
     display:inline-block;
     padding:2px 5px;
     background:#ccc;
-    color:red;
+    color:#fff;
 }
 
 .gif {
+    float:center;
     vertical-align: middle;
     display:none;
 }
@@ -136,20 +150,18 @@ input[type=submit]:hover {
     float: none;
     width: 30%;
     height: 40px;
-
+    margin: 3%;
+    margin-left: 35%;
+    margin-right: 35%;
     padding: 1%;
-
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
-    font-size: 30px;
-    color: white;
+    font-size: 35px;
 
 }
 #barManLog{
     display: inline;
-    float: left;
+    float: right;
     width: 30%;
-    color: white;
 }
+

@@ -1,6 +1,6 @@
-/* Bar 
+/* The Flying Dutchman
    style.css
-   Created by Mauro J. Pappaterra on 09 of February 2018.
+   Created by 'Pirates of the Caribbean' on 09 of February 2018.
 */
 
 /*Style Sheet common to all pages*/
@@ -83,18 +83,17 @@ a:active {
 .undo_redo_menu {
 /**    background-color: #a4a4a4;*/
     float: left;
-    margin: 2%;
+    margin: 1%;
     margin-top: 1%;
+
 
 }
 
 #undo, #redo {
     color: #A4B9B6;
-    float: left;
-    vertical-align: middle;
-
-    width: 50px;
-    height: 80px;
+    float: none;
+    width: 10%;
+    height: 100%;
 }
 #undo:hover, #redo:hover {
                  color: white;
@@ -174,7 +173,7 @@ a:active {
     border-width: thin;
     border-style: solid;
     border-radius: 7px;
-    box-shadow: 2px 2px 10px #2b150c, -2px -2px 10px #2b150c;
+    box-shadow: 2px 2px 10px black, -2px -2px 10px black;
 }
 
 .light_orange {

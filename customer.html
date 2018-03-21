@@ -1,6 +1,6 @@
-<!-- Bar 
+<!-- The Flying Dutchman
      customer.html
-     Created by Mauro J. Pappaterra on 09 of February 2018. -->
+     Created by 'Pirates of the Caribbean' on 09 of February 2018. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <!-- Metadata-->
     <title id="page_title">The Flying Dutchman</title>
     <meta name="Description goes here" content="">
-    <meta name="Mauro José Pappaterra" content="tags go here">
+    <meta name="Pirates of the Caribbean" content="tags go here">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png">
@@ -30,33 +30,21 @@
     <!-- Your code starts here -->
 
     <header>
-
+      <!--
         <div class="title">
-            <h1 id="title">The Flying Dutchman's List of Drinks</h1>
+            <h1 id="title">The Flying Dutchman's List of Drinks</h1> 
         </div>
-    <table class="info">
-      <tr>
-        <th id="customer"> Costumer:  </th>
-        <td id="usr"> usr </td>
-      </tr>
-        <tr id="creditDisplay">
-        <th id="credit"> Credit:  </th>
-        <td id="cre"> cre </td>
-        </tr>
-    </table>
-
-    <!--
-        <div class="info">
-    <b id="customer">Customer:</b>John Smith <br>
-    <b id="credit">Credit:</b> SEK 1000
-
+        -->
+        <div class ="welcome">
+            <div class="user_welcome">
+                <h1 id="hello" class="hello">Hello </h1><h1 id="usr" class="hello">usr</h1><h1>!</h1>
+                <h2 id="your_credit" class="hello">Your credit is </h2> <h2 id="cre" class="hello">cre</h2>
+            </div>
         </div>
 
-        <hr> -->
     </header>
 
     <div class="menu">
-        <h2 id="drink_list">Our Drink List</h2>
 
         <ul class="menu_tabs">
             <a><li id="all">All</li></a>
@@ -70,22 +58,22 @@
 
     </div>
 
-    <div class="selection_header">
-        <h2 id="your_order">Your Order</h2>
-    </div>
+
  
     <div class="drink_list" id="drink_database">
-        <div class="piraty"></div>
         <!-- Drinks Database loads here -->
     </div>
 
-    <div class="selection piraty" id="drink_selection">
+    <div class="selection" id="drink_selection">
+        <div class="selection_header">
+            <h2 id="your_order">Your Order</h2>
+        </div>
         <!-- Drink Selection pops up here -->
+        <div class="checkout">
+            <h2 id="total">Total: SEK 0 :-</h2>
+        </div>
     </div>
 
-    <div class="checkout">
-        <h2 id="total">Total: SEK 0 :-</h2>
-    </div>   
 
     <footer>
 
@@ -109,7 +97,7 @@
         </div>
 
         <!-- PAY BUTTON -->
-        <a href=""><div class="small_button blue" id="pay">Place Order</div></a>
+        <a><div class="small_button blue" id="pay">Place Order</div></a>
 
     </footer>
 

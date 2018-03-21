@@ -1,7 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  customer.js
- *  Created by Mauro J. Pappaterra on 11 of February 2018.
- *  Updated by Hassan Odimi on 23 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 11 of February 2018.
  *  Updated on 16 March
  */
 
@@ -25,8 +24,11 @@ var quantity = []; // keeps list of quantities with matching indexes
 var total = 0;     // calculates the total
 var current_user = localStorage.getItem('id');
 
+var current_stock = DB_STOCK;  // TODO: store this in localstorage or similair, to keep it consistent between customer/bartender/manager
+var current_tab = "all";
+
 /*UNDO-REDO ARRAYS*/
-var done = new Array([]); //keeps track of 'done' actions
+var done = new Array([[], [], copyStock()]); //keeps track of 'done' actions
 var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
@@ -34,15 +36,16 @@ $(document).ready(function() {
     retrieveDB(); // load database on page load
 
     // filter drinks by category
-    $("#all").click(function(){
+    $("#all").click(function() {
         $("#drink_database").empty(); // empty current <div> contents
         retrieveDB();
         $(this).addClass('highlight');
     });
 
     $("#beers").click(function(){
+        current_tab = "all";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
+        $.each(current_stock, function(element){
             if (this.beer == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -51,7 +54,7 @@ $(document).ready(function() {
 
     $("#wines").click(function(){
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
+        $.each(current_stock, function(element){
             if (this.wine == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -59,8 +62,9 @@ $(document).ready(function() {
     });
 
     $("#spirits").click(function(){
+        current_tab = "spirit";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
+        $.each(current_stock, function(element){
             if (this.spirit == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -68,8 +72,9 @@ $(document).ready(function() {
     });
 
     $("#kosher").click(function(){
+        current_tab = "kosher";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
+        $.each(current_stock, function(element){
             if (this.kosher == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -77,17 +82,19 @@ $(document).ready(function() {
     });
 
     $("#ecologic").click(function(){
+        current_tab = "ecologic";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
+        $.each(current_stock, function(element){
             if (this.ecologic == true){
                 printToDOM(this);// Call method to print to DOM
             };
         });
     });
 
-    $("#specials").click(function(){ 
+    $("#specials").click(function(){
+        current_tab = "special";
         $("#drink_database").empty(); // empty current <div> contents
-        $.each(DB_STOCK, function(element){
+        $.each(current_stock, function(element){
             if (this.special == true){
                 printToDOM(this);// Call method to print to DOM
             };
@@ -103,9 +110,10 @@ $(document).ready(function() {
         redo();
     });
 
-    $("#pay").click(function(){
-
-        if (order.length > 0){
+//    $("#pay").click(function() {
+    $(document).on('click','#pay',function() {
+     
+        if (order.length > 0) {
 
             transactions_counter ++;
             var newOrder = {
@@ -119,14 +127,24 @@ $(document).ready(function() {
                 "paid":false
             };
 
-            alert("NEW ORDER " + newOrder.toSource());
+            // 'pay' for order immediatly if possible
+            if($("#cre").html() >= total) {
+                alert("Your order has been payed, you can pick up your beverages in the VIP fridge");
+                $('#cre').html( $('#cre').html() - total);
+                newOrder.paid = true;  // mark transaction as paid
+            }
+            
+            //alert("NEW ORDER " + newOrder.toSource());
 
             SESSIONS_TRANSACTIONS.push(newOrder);
             //alert(SESSIONS_TRANSACTIONS.toSource());
 
             localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("transaction_counter", transactions_counter);
-
+            localStorage.setItem("NEWORDER", 1);
+            
+            resetPage();
+            
         } else {
             alert("You must select your drinks before placing an order!")
         }
@@ -137,7 +155,9 @@ $(document).ready(function() {
         var article_id = $(this).find('span').html();
         //alert("You have chosen: " + article_id);
         addOrder(article_id);
-
+        
+        updateStock(article_id, -1);  // update current_stock accordingly
+        
         //Undo-Redo
         pushOrderTo(done); // update done stack
         clearUndone(); // clear undone stack after a 'proper' action
@@ -150,12 +170,15 @@ $(document).ready(function() {
 
         var article_id = $(this).closest('.order').attr('id'); // get id
         var i = $.inArray(article_id,order);
-
+        $.each(order, function(index, element) { if (this == article_id) { i = index; return false;}});
+        
+        updateStock(article_id, quantity[i]); // update current_stock accordingly
+        
         order.splice(i, 1); // remove both order and quantity (same index)
         quantity.splice(i, 1);
 
-        $(this).closest('.order').remove(); // remove from DOM
-
+        $(this).closest('.order').remove(); // remove from DOM       
+        
         //Undo-Redo
         pushOrderTo(done);  // update done stack
         clearUndone(); // clear undone stack after a 'proper' action
@@ -199,7 +222,7 @@ function responsive() {
 
 /*Call printToDOM() method on all elements in the DB*/
 function retrieveDB () {
-    $.each(DB_STOCK, function(element) {
+    $.each(current_stock, function(element) {
         if (!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)) {
             printToDOM(this); // Call method to print to DOM
         }
@@ -232,11 +255,10 @@ function printToDOM (element) {
 
 function addOrder (article_id) {
     i = -1;//$.inArray(article_id,order);
-    $.each(order, function(index, element){ if (this == article_id) { i = index; return false;}});
- 
-    if (i == -1){ // if drink is not already on the order print to DOM
+    $.each(order, function(index, element) { if (this == article_id) { i = index; return false;}});
+    if (i == -1) { // if drink is not already on the order print to DOM
 
-        $.each(DB_STOCK, function(element){
+        $.each(current_stock, function(element){
             if (this.article_id == article_id){ // retrieve article from the database
                 $("#drink_selection").prepend(
                     '<div class="order " id="'+ this.article_id +'">' +
@@ -262,7 +284,6 @@ function addOrder (article_id) {
         update_price = parseInt($("#"+article_id).find('.sum').html()) * quantity[i];
         $("#"+article_id).find('.loreen').empty().append(update_price);
     }
-
     updateTotal();
     //FOR TESTING PURPOSES
     //alert (order +' X '+quantity)
@@ -274,7 +295,7 @@ function updateTotal () {
 
 function checkStock (article_id) {
     var counter = 0;
-    $.each(DB_STOCK, function(element){
+    $.each(current_stock, function(element){
         if (this.article_id == article_id){
             counter = this.in_stock;
         }
@@ -303,6 +324,8 @@ function undo() {
     // make sure undo/redo can/cant be clicked
     $("#redo").removeClass("fade");
     if (done.length <= 1) { $("#undo").addClass("fade"); }
+    
+    rePrintTab();
 }
 
 function redo() {
@@ -315,6 +338,8 @@ function redo() {
     // make sure undo/redo can/cant be clicked
     $("#undo").removeClass("fade");
     if (undone.length < 1) { $("#redo").addClass("fade"); }
+    
+    rePrintTab();
 }
 
 
@@ -323,6 +348,9 @@ function setOrderTo(newOrder) {  // change the entire order beeing displayed
     order = [];
     quantity = [];
     total = 0;
+//    current_stock = [];
+    setStockTo(newOrder[2]);
+    
     $(drink_selection).empty();
 
     // add the beers from the newOrder
@@ -340,15 +368,74 @@ function pushOrderTo(stack) {  // add an order instance to the done or undone st
     var currentOrder = [];
     currentOrder[0] = order.slice();
     currentOrder[1] = quantity.slice();
+    currentOrder[2] = copyStock();
+    
     stack.push(currentOrder);
     updateTotal();
-
+    
     // make sure undo/redo can/cant be clicked
     if (stack == done) { $("#undo").removeClass("fade");
     } else { $("#redo").removeClass("fade"); }
-}
+} 
 
 function clearUndone() {
     undone = [];
     $("#redo").addClass("fade");
+}
+
+/* updatestock */
+function updateStock(article_id, add_quantity) {
+    var rePrint = false;
+    $.each(current_stock, function(element) {
+        if (this.article_id == article_id) {
+            new_quantity = this.in_stock + add_quantity;
+    //        alert("new: " + new_quantity + ", old: " + this.in_stock + ", dif: " + add_quantity);
+            
+            if ((this.in_stock < 10) != (new_quantity < 10) || (new_quantity < 1 || this.in_stock < 1)) { rePrint = true; }
+            this.in_stock = new_quantity;
+            return false;
+        } 
+    });
+    // reprint stock if a beverage has changed between out of stock/ low stock/ normal
+    if (rePrint == true) { rePrintTab(); }
+}
+
+// make a list of the current in_stock values
+function copyStock() {  
+    stock_copy = [];
+    $.each(current_stock, function(index, element) { stock_copy[index] = this.in_stock; });
+    return stock_copy;
+}
+
+function setStockTo(newStock) {
+    $.each(current_stock, function(index, element) {
+        // if (this.name == "Minttu") {alert("Minttu in stock before: " + this.in_stock);}
+        this.in_stock = newStock[index];
+       // if (this.name == "Minttu") {alert("Minttu in stock after: " + this.in_stock);}
+    });
+    
+}
+
+function rePrintTab() {
+    $("#drink_database").empty();
+    $.each(current_stock, function(element) {
+        if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, DB_CUSTOMERS).vip)))) || this[current_tab] == true) {  
+            printToDOM(this);                
+        };
+    }); 
+}
+
+
+// resets the page after a order has been payed, this cannot be undone
+function resetPage() {
+    order = [];    
+    quantity = [];
+    total = 0;
+    $(drink_selection).empty();
+    done = new Array([[], [], copyStock()]);
+    undone = new Array();
+    $("#undo").addClass("fade");
+    $("#redo").addClass("fade");
+
+    updateTotal();
 }

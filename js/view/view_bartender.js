@@ -1,7 +1,7 @@
-/** Bar
+/** The Flying Dutchman
  *  view_bartender.js
- *  Created by Mauro J. Pappaterra on 21 of February 2018.
- *  Updated by Hassan Odimi on 23 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 21 of February 2018.
+ *  Updated on 23 of February 2018.
  */
 
 /* BARTENDER PAGE TEXTS
@@ -22,32 +22,32 @@
 var title = ["Bartender View",
     "Bartendersidan",
     "Vista Barista",
-    "Vista Barista",
-    "Powder Monkeys"]
+    "Vista de barman",
+    "Bartender View"]
 
 var login_as = ["Log in as:",
     "Logga in som:",
     "Accedi come:",
     "Iniciar sesión como:",
-    "Log in as pirate:"]
+    "Gali sida:"]
 
 var orders_q= ["Orders Queue",
 "Beställningar kö",
 "Coda ordini",
 "Pedidos en cola",
-"Orders Queueeee"]
+"Dalbashada safka"]
 
 var cancel_order= ["Cancel Order",
 "Avbryt beställning",
 "Annulla Ordine",
 "Cancelar orden",
-"Cancel Order"]
+"Ka Jooji Amarka"]
 
 var mark_paid= ["Mark as Paid",
 "Markera som betald",
 "Contrassegna come pagato",
 "Marcar como pagado",
-"Mark as Paid"]
+"Ku calaamadee sida lagu bixiyo"]
 
 // The following words dosn't have corresbondents either in bartender.js nor the bartender.html
 // Please check it
@@ -56,7 +56,7 @@ var order= ["Order",
 "Beställa",
 "Ordine",
 "Orden",
-"Order"
+"Dalbo"
 ]
 
 //Customer name in the accordion panel
@@ -64,7 +64,7 @@ var customer= ["Customer:",
 "kund:",
 "cliente:",
 "cliente:",
-"customer:"
+"Macaamiisha:"
 ]
 
 //total amount in the accordion panel
@@ -72,5 +72,5 @@ var total= ["TOTAL:",
 "TOTAL:",
 "TOTALE:",
 "TOTAL:",
-"TOTAL:"
+"WADARTA:"
 ]

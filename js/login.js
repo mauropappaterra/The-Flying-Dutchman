@@ -56,10 +56,11 @@ function loginDB(form) {
     alert(wrong);
 }
 
-function checkAccess() { 
+function checkAccess() {
+    
     var ut = localStorage.getItem('usertype');
     var page = window.location.pathname.split("/").pop().split(".")[0];
-    if ((ut == page) || (ut == null && page == 'index') || (page == 'index')) {return;}
+    if ((ut == page) || (ut == null && page == 'index') || page == 'index' || localStorage.getItem("id").length < 2 ) {return;}
     else {
         alert("Acces Denied");
         goToUserPage(ut);
@@ -75,7 +76,7 @@ function isVIP(user) {
     return user.vip;
 }
 
-$(function (){
+$(function () {
     checkAccess();
     user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
     
