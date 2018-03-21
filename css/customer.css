@@ -273,3 +273,15 @@ body {
     margin-left: 35%;
     margin-right: 35%;
 }
+
+/*Responsiveness*/
+/* For mobile phones: */
+
+@media only screen and (max-width: 768px) 
+{
+    /* hide the language menu on the small screens*/
+div.languages_menu
+    {
+    display: none;
+    }
+}
