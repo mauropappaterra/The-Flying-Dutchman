@@ -12,22 +12,23 @@
 if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
     sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
     //alert("Stock database loaded from script!")
-} else {
-    //alert("Stock database will be loaded from session storage!")
-}
+} /* else {
+    alert("Stock database will be loaded from session storage!")
+}*/
 
 if (sessionStorage.getItem("SESSION_ORDERS") == null){
     sessionStorage.setItem("SESSION_ORDERS",JSON.stringify(DB_ORDERS));
-    sessionStorage.setItem("orders_counter",22);
+    sessionStorage.setItem("orders_counter",15);
     //alert("Orders database loaded from script!")
-} else {
-    //alert("Orders database will be loaded from session storage!")
-}
+} /*else {
+    alert("Orders database will be loaded from session storage!")
+}*/
 
 var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
 var orders_counter = sessionStorage.getItem("orders_counter");
 
 var SESSIONS_ORDERS = JSON.parse(sessionStorage.getItem("SESSION_ORDERS"));
+//alert(SESSIONS_ORDERS.toSource())
 /* END SESSION STORAGE DATA LOADING*/
 
 
@@ -81,6 +82,9 @@ $(document).ready(function() {
 
     $("#pay").click(function(){
 
+        //alert(big_orders);
+        //alert(big_quantity);
+
         if (big_orders.length > 0){
             //alert(big_orders);
             //alert(big_quantity);
@@ -95,19 +99,59 @@ $(document).ready(function() {
                 "timestamp": formatDate(new Date($.now()))
             };
 
-            alert("NEW BIG ORDER " + newBigOrder.toSource());
-
+            //alert("NEW BIG ORDER " + newBigOrder.toSource());
             SESSIONS_ORDERS.push(newBigOrder);
             //alert(SESSIONS_ORDERS.toSource());
 
-            /*
-             * Update STOCK TOO! INSERT THAT PART HERE
-             *
-             */
+            var flag;
+            for (i = 0 ; i < (big_orders.length); i++){
+                flag = true;
+                for (j = 0 ; j < (SESSION_STOCK_INFO.length); j++){
+                    //alert("i: " + i + " j: " + j);
+                    //alert (big_orders[i] + ' vs ' + SESSION_STOCK_INFO[j].article_id);
+                    if (SESSION_STOCK_INFO[j].article_id == big_orders[i]){
+                        flag = false;
+                        //alert("Already in stock!")
+                        //alert(SESSION_STOCK_INFO[j].toSource())
+                        SESSION_STOCK_INFO[j].in_stock += big_quantity[i]; // if already in stock update stock
+                        //alert(SESSION_STOCK_INFO[j].toSource())
+                    }
+                }
 
-            localStorage.setItem("SESSION_ORDERS",JSON.stringify(SESSIONS_ORDERS));
-            localStorage.setItem("orders_counter", orders_counter);
-            localStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
+                if (flag){ // if not in stock add object to array
+                    //alert("Not currently in stock!");
+
+                    var drinkIndex= getDrinkIndex(big_orders[i]);
+                    //alert("Index found -> " + parseInt(drinkIndex));
+
+                    var newObject = {
+                        "article_id": DB_SYSTEMBOLAGET[drinkIndex].artikelid, // same as Sytembolaget
+                        "name": DB_SYSTEMBOLAGET[drinkIndex].namn +  ' ' + DB_SYSTEMBOLAGET[drinkIndex].namn2,
+                        "beer": DB_SYSTEMBOLAGET[drinkIndex].varugrupp.indexOf("öl") >= 0,
+                        "wine": DB_SYSTEMBOLAGET[drinkIndex].varugrupp.indexOf("vin") >= 0,
+                        "spirit": DB_SYSTEMBOLAGET[drinkIndex].varugrupp.indexOf("vodka") >= 0,
+                        "year": DB_SYSTEMBOLAGET[drinkIndex].year,
+                        "country": DB_SYSTEMBOLAGET[drinkIndex].ursprunglandnamn,
+                        "volume_ml": DB_SYSTEMBOLAGET[drinkIndex].volymiml,
+                        "alcohol_percentage": DB_SYSTEMBOLAGET[drinkIndex].alkoholhalt,
+                        "sale_price": DB_SYSTEMBOLAGET[drinkIndex].prisinklmoms,
+                        "in_stock": big_quantity[i],
+                        "kosher": (DB_SYSTEMBOLAGET[drinkIndex].kosher == "1"),
+                        "ecologic": (DB_SYSTEMBOLAGET[drinkIndex].ekologisk == "1"),
+                        "special": false // all special drinks are already on the database!
+                    };
+
+                    //alert(newObject.toSource());
+
+                    SESSION_STOCK_INFO.push(newObject);
+                }
+            }
+
+            sessionStorage.setItem("SESSION_ORDERS",JSON.stringify(SESSIONS_ORDERS));
+            sessionStorage.setItem("orders_counter", orders_counter);
+            sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
+
+            resetPage();
 
         } else {
             alert("You must select drinks before placing a delivery order!")
@@ -280,7 +324,7 @@ function addOrder (article_id, number) {
         big_orders.push(article_id);
         big_quantity.push(number);
 
-    } else { // if the drink is already in the big_orders, update counter on DOM
+    } else { // if the drink is already in the order, update counter on DOM
         big_quantity[i]+= number;
 
         big_total += parseInt($("#"+article_id).find('.sum').html()) * number;
@@ -360,6 +404,16 @@ function pushOrderTo(stack) {  // add an order instance to the done or undone st
     } else { $("#redo").removeClass("fade"); }
 }
 
+function getDrinkIndex (id){
+    //alert(id)
+    for (index = 0; index < DB_SYSTEMBOLAGET.length; index++){
+        if (parseInt(DB_SYSTEMBOLAGET[index].artikelid) == id){
+            return index;
+        }
+    }
+    return -1;
+}
+
 function clearUndone() {
     undone = [];
     $("#redo").addClass("fade");
@@ -367,6 +421,22 @@ function clearUndone() {
 
 function addBackground (){
     $("#drink_database").append('<div class="background_wallpaper"></div>');
+}
+
+function resetPage() {
+    big_orders = [];
+    big_quantity = [];
+    total = 0;
+
+    $(drink_selection).empty();
+
+    done = new Array([[], [], copyStock()]);
+    undone = new Array();
+    $("#undo").addClass("fade");
+    $("#redo").addClass("fade");
+
+    $("#drink_selection").empty();
+    //updateTotal();
 }
 
 function translate (index) {
