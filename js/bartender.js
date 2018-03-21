@@ -1,6 +1,6 @@
-/** Bar
+/** The Flying Dutchman
  *  bartender.js
- *  Created by Pirates of the Caribbean on 11 of February 2018.
+ *  Created by 'Pirates of the Caribbean' on 11 of February 2018.
 */
 
 /*BARTENDER PAGE SCRIPTS
