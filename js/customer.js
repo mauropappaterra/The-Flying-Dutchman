@@ -142,7 +142,8 @@ $(document).ready(function() {
 
             localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("transaction_counter", transactions_counter);
-
+            localStorage.setItem("NEWORDER", 1);
+            
             resetPage();
             
         } else {
