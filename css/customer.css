@@ -286,4 +286,40 @@ div.languages_menu
     {
     display: none;
     }
+    div.drink_list{
+        width: 98%;
+
+    }
+    div.drink{
+        display: inline;
+        width: 91%;
+        height: 25%;
+        text-align: center;
+        
+    }
+    div.drink img{
+        display: flex;
+        width:  auto;
+        height: 85%;
+        margin-top: 3.5%;
+        float: left;
+
+    }
+    h4{
+        display: inline-block;
+        margin: 2%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        font-size: 120%;
+
+    }
+    header{
+        display:none;
+    }
+    div.selection{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
 }
