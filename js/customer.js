@@ -49,9 +49,7 @@ var done = new Array([[], [], copyStock()]); //keeps track of 'done' actions
 var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
-
     retrieveDB(); // load database on page load
-
     // filter drinks by category
     $("#all").click(function() {
         $("#drink_database").empty(); // empty current <div> contents
@@ -128,9 +126,8 @@ $(document).ready(function() {
     });
 
     $(document).on('click','#pay',function() {
-     
+        
         if (order.length > 0) {
-
             transactions_counter ++;
             var newOrder = {
                 "transaction_id": "T" + ((transactions_counter + 100000).toString()).slice(1),
@@ -157,6 +154,8 @@ $(document).ready(function() {
             //alert("NEW ORDER " + newOrder.toSource());
 
             SESSIONS_TRANSACTIONS.push(newOrder);
+
+            localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("NEWORDER", 1);
             //alert(SESSIONS_TRANSACTIONS.toSource());
 
@@ -227,6 +226,7 @@ $(document).ready(function() {
 function retrieveDB () {
     $.each(SESSION_STOCK_INFO, function(element) {
         if (!this.special || (this.special && findByID(current_user, SESSION_USER_INFO).vip)) {
+            
             printToDOM(this); // Call method to print to DOM
         }
     });

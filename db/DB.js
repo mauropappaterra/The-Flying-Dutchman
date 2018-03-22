@@ -14,7 +14,7 @@ var DB_CUSTOMERS = [
         "last_name": "Duper",
         "email": "Super.Duper@it.uu.se",
         "phone": "0000000000",
-        "credit": 0,
+        "credit": 4444,
         "vip": true
     },
     {

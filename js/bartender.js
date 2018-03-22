@@ -42,7 +42,25 @@ $(document).ready(function() {
     pushStateTo(done);  // push initial state to 'done' stack
     $("#redo").addClass("fade");
     $("#undo").addClass("fade");
+    
+    // check if a new order has been submitted
+    t1 = window.setInterval(function() {checkOnOrders()}, 2000);
+    function checkOnOrders() {
+        if (localStorage.getItem("NEWORDER") != 0) {
+            $("#check").css("background-color","red");           
+          //  alert(localStorage.getItem("NEWORDER"));
+            localStorage.setItem("NEWORDER", 0);
+        }          
+    }
 
+    // display new orders on click 
+    $("#check").click(function() {
+        $("#check").css("background-color","green");
+        updateTransactions();
+        clearUndone();
+        clearDone();      
+});
+    
     // filter orders by category
     $("#all").click(function() {
         current_tab = "all";
@@ -367,6 +385,8 @@ function countPaid(trans) {
 
 function updateTransactions() {
     SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
+  
+  //  SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
     rePrintTab();
 }
 
