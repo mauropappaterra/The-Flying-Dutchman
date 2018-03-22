@@ -148,13 +148,16 @@ $(document).ready(function() {
                 $('#cre').html( $('#cre').html() - total);
                 newOrder.paid = true;  // mark transaction as paid
                 newOrder.bartender_id = "VIP Self-Service";
-                alert("Your order has been payed using your available credit, you can pick up your beverages in the VIP fridge!");
+                alert(payed_order_msg);
+//                alert("Your order has been payed using your available credit, you can pick up your beverages in the VIP fridge!");
             } else {
-                alert("Your order has been placed!, Direct to the counter and pay for your order before you can pick up your drinks!");
+                alert(placed_order_msg);
+        //        alert("Your order has been placed!, Direct to the counter and pay for your order before you can pick up your drinks!");
             }
             //alert("NEW ORDER " + newOrder.toSource());
 
             SESSIONS_TRANSACTIONS.push(newOrder);
+            localStorage.setItem("NEWORDER", 1);
             //alert(SESSIONS_TRANSACTIONS.toSource());
 
             /*
@@ -181,7 +184,8 @@ $(document).ready(function() {
             resetPage();
 
         } else {
-            alert("You must select your drinks before placing an order!")
+            alert(empty_order_msg);
+            //alert("You must select your drinks before placing an order!")
         }
     });
 
@@ -450,4 +454,9 @@ function translate (index) {
     $("#your_order").text(your_order[index]);
     $("#total").text(total[index]);
     $("#pay").text(pl_order[index]);
+    $("#hello").text(hello[index]);		
+    $("#your_credit").text(your_credit[index]);		
+    empty_order_msg = (empty_order[index]);		
+    payed_order_msg = (payed_order[index]);		
+    placed_order_msg = (placed_order[index]);
 }
