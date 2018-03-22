@@ -29,25 +29,25 @@ var login_as = ["Log in as:",
     "Logga in som:",
     "Accedi come:",
     "Iniciar sesión como:",
-    "Gali sida:"]
+    "Log in as:"]
 
 var orders_q= ["Orders Queue",
 "Beställningar kö",
 "Coda ordini",
 "Pedidos en cola",
-"Dalbashada safka"]
+"Orders Queue"]
 
 var cancel_order= ["Cancel Order",
 "Avbryt beställning",
 "Annulla Ordine",
 "Cancelar orden",
-"Ka Jooji Amarka"]
+"Cancel Order"]
 
 var mark_paid= ["Mark as Paid",
 "Markera som betald",
 "Contrassegna come pagato",
 "Marcar como pagado",
-"Ku calaamadee sida lagu bixiyo"]
+"Mark as Paid"]
 
 // The following words dosn't have corresbondents either in bartender.js nor the bartender.html
 // Please check it
@@ -56,7 +56,7 @@ var order= ["Order",
 "Beställa",
 "Ordine",
 "Orden",
-"Dalbo"
+"Order"
 ]
 
 //Customer name in the accordion panel
@@ -64,7 +64,7 @@ var customer= ["Customer:",
 "kund:",
 "cliente:",
 "cliente:",
-"Macaamiisha:"
+"Customer:"
 ]
 
 //total amount in the accordion panel
@@ -72,5 +72,5 @@ var total= ["TOTAL:",
 "TOTAL:",
 "TOTALE:",
 "TOTAL:",
-"WADARTA:"
+"TOTAL:"
 ]
