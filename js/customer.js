@@ -159,11 +159,7 @@ $(document).ready(function() {
             localStorage.setItem("NEWORDER", 1);
             //alert(SESSIONS_TRANSACTIONS.toSource());
 
-            /*
-             * Update STOCK AND USER TOO! INSERT HERE THAT PART HERE
-             *
-             */
-
+           /*Update user info for the session*/
             for (i = 0; i < (SESSION_USER_INFO.length - 1); i++) {
 
                 if (SESSION_USER_INFO[i].customer_id == current_user){
