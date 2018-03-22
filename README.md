@@ -59,7 +59,6 @@
 <h4>js:</h4>
 <ul>
     <li><b>multilanguage.js:</b> Script for multilanguage functionality</li>
-    <li><b>responsive.js:</b> Script for responsive functionality</li>
     <li><b>index.js:</b> Scripts for log in screen</li>
     <li><b>bartender.js:</b> Scripts for bartender view</li>
     <li><b>customer.js:</b> Scripts for customer view</li>
