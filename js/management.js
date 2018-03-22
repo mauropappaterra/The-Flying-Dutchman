@@ -152,9 +152,12 @@ $(document).ready(function() {
             sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
             //resetPage();
-
+            alert((placed_order_msg);
+            //alert("Your order has been placed!")
+            
         } else {
-            alert("You must select drinks before placing a delivery order!")
+           alert(empty_order_msg);
+            //alert("You must select drinks before placing a delivery order!")
         }
 
     });
