@@ -111,7 +111,7 @@ $(document).ready(function() {
                 //alert("j: " + j + " m: " + m);
                //alert (SESSIONS_TRANSACTIONS[i].order[j] + ' vs ' + SESSION_STOCK_INFO[m].article_id);
                 if (SESSION_STOCK_INFO[m].article_id == SESSIONS_TRANSACTIONS[i].order[j]){
-                    alert("Item found, ready to retrieve!")
+                    //alert("Item found, ready to retrieve!")
                     //alert(SESSION_STOCK_INFO[j].toSource())
                     SESSION_STOCK_INFO[m].in_stock += SESSIONS_TRANSACTIONS[i].quantities[j]; // return to stock
                     //alert(SESSION_STOCK_INFO[j].toSource())
