@@ -51,13 +51,13 @@ var undone = new Array(); //keeps track of 'redone' actions
 $(document).ready(function() {
     retrieveDB(); // load database on page load
     // filter drinks by category
-    $("#all").click(function() {
+    $(".all").click(function() {
         $("#drink_database").empty(); // empty current <div> contents
         retrieveDB();
         $(this).addClass('highlight');
     });
 
-    $("#beers").click(function(){
+    $(".beers").click(function(){
         current_tab = "all";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -67,7 +67,7 @@ $(document).ready(function() {
         });
     });
 
-    $("#wines").click(function(){
+    $(".wines").click(function(){
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
             if (this.wine == true){
@@ -76,7 +76,7 @@ $(document).ready(function() {
         });
     });
 
-    $("#spirits").click(function(){
+    $(".spirits").click(function(){
         current_tab = "spirit";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -86,7 +86,7 @@ $(document).ready(function() {
         });
     });
 
-    $("#kosher").click(function(){
+    $(".kosher").click(function(){
         current_tab = "kosher";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -96,7 +96,7 @@ $(document).ready(function() {
         });
     });
 
-    $("#ecologic").click(function(){
+    $(".ecologic").click(function(){
         current_tab = "ecologic";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -106,7 +106,7 @@ $(document).ready(function() {
         });
     });
 
-    $("#specials").click(function(){
+    $(".specials").click(function(){
         current_tab = "special";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
