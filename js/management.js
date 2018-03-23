@@ -80,6 +80,34 @@ $(document).ready(function() {
         });
     });
 
+    
+    $(document).on('click','#add1',function(){
+        var article_id = $(this).parent().find('span').html();
+        addOrder(article_id, 1);
+
+        //Undo-Redo
+        pushOrderTo(done); // update done stack
+        clearUndone();     // clear undone stack after a 'proper' action
+    });
+
+    $(document).on('click','#add10',function(){
+        var article_id = $(this).parent().find('span').html();
+        addOrder(article_id, 10);
+
+        //Undo-Redo
+        pushOrderTo(done); // update done stack
+        clearUndone();     // clear undone stack after a 'proper' action
+    });
+
+    $(document).on('click','#add100',function(){
+        var article_id = $(this).parent().find('span').html();
+        addOrder(article_id, 100);
+
+        //Undo-Redo
+        pushOrderTo(done); // update done stack
+        clearUndone();     // clear undone stack after a 'proper' action
+    });
+    
     $("#pay").click(function(){
 
         if (big_orders.length > 0){
@@ -135,37 +163,10 @@ $(document).ready(function() {
             sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
             //resetPage();
-            alert(placed_order_msg);
+            alert("Order is placed message goes here!");
             
-        } else { alert(empty_order_msg); }
+        } else { alert("Order is empty message goes here!"); }
 
-    });
-
-    $(document).on('click','#add1',function(){
-        var article_id = $(this).parent().find('span').html();
-        addOrder(article_id, 1);
-
-        //Undo-Redo
-        pushOrderTo(done); // update done stack
-        clearUndone();     // clear undone stack after a 'proper' action
-    });
-
-    $(document).on('click','#add10',function(){
-        var article_id = $(this).parent().find('span').html();
-        addOrder(article_id, 10);
-
-        //Undo-Redo
-        pushOrderTo(done); // update done stack
-        clearUndone();     // clear undone stack after a 'proper' action
-    });
-
-    $(document).on('click','#add100',function(){
-        var article_id = $(this).parent().find('span').html();
-        addOrder(article_id, 100);
-
-        //Undo-Redo
-        pushOrderTo(done); // update done stack
-        clearUndone();     // clear undone stack after a 'proper' action
     });
 
     $(document).on('click','.delete',function(){
