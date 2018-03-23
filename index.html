@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
 
     <!-- Metadata-->
@@ -26,64 +26,58 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Oswald" rel="stylesheet">
 
-</head>
-<body>
+  </head>
+  <body>
 
-  <!-- Your code starts here -->
-  <div id="barManLog">
-    <a onclick="openLogin('loginBox', 'block', 'bartender')"><div class="margin_button flipper" id="bartender">Bartender login</div></a>
-    <a onclick="openLogin('loginBox', 'block', 'management')"><div class="margin_button flipper" id="management">Management login</div></a>
-  </div>
+    <!-- Your code starts here -->
+    <div id="barManLog">
+      <a onclick="openLogin('loginBox', 'block', 'bartender')"><div class="margin_button flipper" id="bartender">Bartender login</div></a>
+      <a onclick="openLogin('loginBox', 'block', 'management')"><div class="margin_button flipper" id="management">Management login</div></a>
+    </div>
 
-  <!-- login box -->
-  <div id="loginBox" class="login">
+    <!-- login box -->
+    <div id="loginBox" class="login">
 
-    <button id = "close" class="close" onclick="changeDisplay('loginBox', 'none')">X</button>
-    <form name = "loginForm" action="javascript: void(0);">
+      <button id = "close" class="close" onclick="$('#loginBox').hide()">X</button>
+      <form name = "loginForm" action="javascript: void(0);">
 
         <h1>Log into The Flying Dutchman</h1>
 
         <a id="user_name"><h2>User name</h2></a>
-      <input type="text" name="user_name" placeholder="Enter your user name">
+        <input type="text" name="user_name" placeholder="Enter your user name">
 
-      <a id="password"><h2>Password</h2></a>
-      <input type="password" name="password" placeholder="Enter your password">
+        <a id="password"><h2>Password</h2></a>
+        <input type="password" name="password" placeholder="Enter your password">
 
-      <div align="center">
-        <!-- <input type="submit" id="login" name="login" value="login" onClick="checkLogin(loginForm)"> -->
-        <input type="submit" id="login" name="login" value="Log into the Flying Dutchman!" onClick="loginDB(loginForm)">
+        <div align="center">
+          <input type="submit" id="login" name="login" value="Log into the Flying Dutchman!" onClick="loginDB(loginForm)">
 
-      </div>
-    </form>
-  </div>
+        </div>
+      </form>
+    </div>
 
+    <!-- DnD pics/gifs -->
+    <div align="center" ondrop="picToGif(event)"  ondragover="allowDrop(event)">
 
-  <!-- DnD pics/gifs -->
-  <div align="center" ondrop="picToGif(event)"  ondragover="allowDrop(event)">
-
-    <img id="piratePic" class="gif" style="display:block; height: 40%; width: 40%; margin-right: 28%; margin-left: 32%;" src="img/logo/white3.png">
-    <video id="great" class="gif" id="gifPirate" preload="auto" poster="https://img-9gag-fun.9cache.com/photo/ajEXymq_460s.jpg" loop="loop" style="display:none; height: 40%; width: 40%; margin-right: 28%; margin-left: 32%;">
+      <img id="piratePic" class="gif" style="display:block; height: 40%; width: 40%; margin-right: 28%; margin-left: 32%;" src="img/logo/white3.png">
+      <video id="great" class="gif" id="gifPirate" preload="auto" poster="https://img-9gag-fun.9cache.com/photo/ajEXymq_460s.jpg" loop="loop" style="display:none; height: 40%; width: 40%; margin-right: 28%; margin-left: 32%;">
         <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460sv.mp4" type="video/mp4">
-        <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460svwm.webm" type="video/webm">
-    </video>
-  </div>
-
-  <a display="block" onclick="openLogin('loginBox', 'block', 'customer')"><div class="login_button flipper" id="customer">Order your Drinks!</div></a>
-
-
-  <!-- LANGUAGE MENU -->
-  <div class="languages_menu">
-    <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
-    <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
-        <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
-        <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg" id="pirateFlag" draggable="true" ondragstart="drag(event)"></div></a>
+          <source src="https://img-9gag-fun.9cache.com/photo/ajEXymq_460svwm.webm" type="video/webm">
+      </video>
     </div>
 
-    <div>
+    <a display="block" onclick="openLogin('loginBox', 'block', 'customer')"><div class="login_button flipper" id="customer">Order your Drinks!</div></a>
 
 
+    <!-- LANGUAGE MENU -->
+    <div class="languages_menu">
+      <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+      <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+      <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
+      <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
+      <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg" id="pirateFlag" draggable="true" ondragstart="drag(event)"></div></a>
     </div>
+
     <!-- Your code ends here -->
 
     <!-- External Scripts -->
@@ -92,7 +86,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Load Database -->
-   <script src="db/DB.js" type="text/javascript"></script>
+    <script src="db/DB.js" type="text/javascript"></script>
 
     <!-- Scripts -->
     <script src="js/view/view_common.js" type="text/javascript"></script>
@@ -101,10 +95,6 @@
     <script src="js/index.js" type="text/javascript"></script>
     <script src="js/login.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
-    <script src="js/responsive.js" type="text/javascript"></script>
 
-
-
-
-</body>
+  </body>
 </html>

@@ -23,101 +23,101 @@ var title = ["The Flying Dutchman's List of Drinks",
     "Flygande Holländaren drycklista",
     "Lista di bevande nell'Olandese Volante",
     "Lista de tragos del Holandés Volador",
-    "Noocyada Taxanaha Leh ee Holland"]
+    "TODO: USE OLD"];
 
 // User info panel (top right corner)
 var customer= ["Customer:",
-"kund:",
-"cliente:",
-"cliente:",
-"Macaamiisha:"
-]
+"Kund:",
+"Cliente:",
+"Cliente:",
+"Pirate:"
+];
 
 var credit= ["Credit:",
-"Kreditera:",
+"Kredit:",
 "Credito:",
 "Crédito:",
-"Amaah:"
-]
+"Yu'r Loot:"
+];
 
 // The drink list panel
 var drink_list= ["Our Drink List",
 "Vår drycklista",
 "La nostra lista delle bevande",
 "Nuestra lista de bebidas",
-"Liiskayaga cabitaanka"
-]
+"Booty Chest"
+];
 // start drinks taps
 var all= ["All",
 "Allt",
-"Tutti",
+"Tutte",
 "Todas",
-"Dhammaan"
-]
+"Argh!"
+];
 
 var beers= ["Beers",
-"Beers",
+"Öl",
 "Birre",
 "Cervezas",
-"Beers"
-]
+"Them Beers"
+];
 
 var wines= ["Wines",
 "Vin",
 "Vini",
 "Vinos",
-"Wines"
-]
+"Ol' Wines"
+];
 
-var spiritis= ["Spirits",
+var spirits= ["Spirits",
 "Sprit",
 "Sprits",
 "Bebida Espirituosa",
-"Suufiyada"
-]
+"Rons!"
+];
 
 var kosher= ["Kosher",
 "Koscher",
 "Kosher",
 "Kosher",
-"Kosher"
-]
+"K'sher"
+];
 
 var ecologic= ["Ecologic",
 "Ekologisk",
 "Ecologico",
 "Ecológico",
-"Ecologic"
-]
+"'Cologic"
+];
 
 var specials= ["specials",
 "Särskild",
 "Speciali",
 "Especiales",
-"khaas ah"
-]
+"King' Onlies"
+];
 //end of drinks taps
 
 var your_order= ["Your Order",
-"Du beställer",
+"Din beställning",
 "Il tuo ordine",
 "Su pedido",
-"Amarkaaga"
-]
+"Th' Booty"
+];
 
 var total= ["TOTAL:",
-"TOTAL:",
+"TOTALT:",
 "TOTALE:",
 "TOTAL:",
 "WADARTA:"
-]
+];
 
 var pl_order= ["Place Order",
-"Beställa",
+"Beställ",
 "Invia ordine",
 "Realizar pedido",
-"Amarka Goobta"
-]
+"Board 'hem!"
+];
 
 var hello = ["Hello ",
              "Hejsan ",

@@ -22,10 +22,10 @@ var page_title = ["The Flying Dutchman",
     "Flygande Holländaren",
     "L'Olandese Volante",
     "El Holandés Volador",
-    "Qofka Naafada ah"]
+    "Th' Flyin' Dutchman"]
 
 var logout = ["Log Out",
     "Logga Ut",
     "Esci",
     "Cerrar Sesión",
-    "Ka bax"]
+    "Log Out"]

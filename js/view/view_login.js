@@ -8,16 +8,16 @@ var user_name = ["User name",
                  "Användarnamn",
                  "Nome utente",
                  "Nombre de usuario",
-                 "Magaca isticmaalaha"]
+                 "User name"]
 
 var password = ["Password",
                 "Lösenord",
                 "Parola d'ordine",
                 "Contraseña",
-                "Furaha"]
+                "Password"]
 
 var login = ["Login",
              "Logga in",
              "Accesso",
              "Iniciar sesión",
-             "Galitaanka"]
+             "Login"]

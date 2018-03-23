@@ -12,22 +12,20 @@
 if (sessionStorage.getItem("SESSION_TRANSACTIONS") == null){
     sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
     //alert("Transaction database loaded from script!")
-} else {
-    //alert("Transaction database will be loaded from session storage!")
-}
+} /*else {
+    alert("Transaction database will be loaded from session storage!")
+}*/
 
 if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
     sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
-
     //alert("Stock database loaded from script!")
-} else {
-    //alert("Stock database will be loaded from session storage!")
-}
+} /*else {
+    alert("Stock database will be loaded from session storage!")
+}*/
 
 var SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
 //alert(":::: THE FULL TRANSACTION DATABASE ::::: <br> " + SESSIONS_TRANSACTIONS.toSource());
-var SESSIONS_ORDERS = JSON.parse(sessionStorage.getItem("SESSION_ORDERS"));
-
+var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
 /* END SESSION STORAGE DATA LOADING*/
 
 var current_bartender = localStorage.getItem('id');
@@ -44,13 +42,12 @@ $(document).ready(function() {
     pushStateTo(done);  // push initial state to 'done' stack
     $("#redo").addClass("fade");
     $("#undo").addClass("fade");
-
+    
     // check if a new order has been submitted
     t1 = window.setInterval(function() {checkOnOrders()}, 2000);
     function checkOnOrders() {
         if (localStorage.getItem("NEWORDER") != 0) {
-            $("#check").css("background-color","red");           
-          //  alert(localStorage.getItem("NEWORDER"));
+            $("#check").css("background-color","red");                  
             localStorage.setItem("NEWORDER", 0);
         }          
     }
@@ -59,10 +56,11 @@ $(document).ready(function() {
     $("#check").click(function() {
         $("#check").css("background-color","green");
         updateTransactions();
-      
-    });
-
-    // filter drinks by category
+        clearUndone();
+        clearDone();      
+});
+    
+    // filter orders by category
     $("#all").click(function() {
         current_tab = "all";
         $("#all_orders").empty();
@@ -122,49 +120,61 @@ $(document).ready(function() {
             }
         }
 
-        //alert ("Index found " + i);
+        /* If an order is canceled, the drinks should are put back in the stock and available
+        for other customers to purchase them*/
+        for (j = 0 ; j < (SESSIONS_TRANSACTIONS[i].order.length); j++){
+            for (m = 0 ; m < (SESSION_STOCK_INFO.length); m++){
+                //alert("j: " + j + " m: " + m);
+               //alert (SESSIONS_TRANSACTIONS[i].order[j] + ' vs ' + SESSION_STOCK_INFO[m].article_id);
+                if (SESSION_STOCK_INFO[m].article_id == SESSIONS_TRANSACTIONS[i].order[j]){
+                    //alert("Item found, ready to retrieve!")
+                    //alert(SESSION_STOCK_INFO[j].toSource())
+                    SESSION_STOCK_INFO[m].in_stock += SESSIONS_TRANSACTIONS[i].quantities[j]; // return to stock
+                    //alert(SESSION_STOCK_INFO[j].toSource())
+                }
+            }
+        }
+  
         SESSIONS_TRANSACTIONS.splice(i, 1);
         //alert(SESSIONS_TRANSACTIONS.toSource());
 
-        // Save changes to session storage
+        /* Save changes to session storage */
         sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(SESSIONS_TRANSACTIONS));
+        sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
-        // Remove from DOM
+
+        /* Remove from DOM */
         $(this).parent().parent().parent().remove();
         $('#' + find_transaction_id).remove();
         
-        // Undo-Redo
+        /* Undo-Redo */
         pushStateTo(done);  // update done stack
         clearUndone();      // clear undone stack after a 'proper' action        
     });
 
     $(document).on('click','.pay',function() {
-        var find_transaction_id = $(this).attr('id');
-
-        //alert("Ready to mark as paid " + find_transaction_id);
-
+        var find_transaction_id = $(this).attr('id');     
         for (i = SESSIONS_TRANSACTIONS.length - 1; i > -1; i--) {
             //alert(SESSIONS_TRANSACTIONS[i].transaction_id + ' vs ' + find_transaction_id);
             if (SESSIONS_TRANSACTIONS[i].transaction_id == find_transaction_id) {
                 break;
             }
         }
-
-        //alert ("Index found " + i);
+   
         //alert(SESSIONS_TRANSACTIONS[i].toSource())
         SESSIONS_TRANSACTIONS[i].paid = true;
         SESSIONS_TRANSACTIONS[i].bartender_id = current_bartender;
         //alert(SESSIONS_TRANSACTIONS[i].toSource())
 
-        // Save changes to session storage
+        /* Save changes to session storage */
         sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(SESSIONS_TRANSACTIONS));
 
-        // Update DOM
+        /* Update DOM */
         retrieveOrders(); // retrieve all orders from the database
         addBackground();
         current_tab = "all";
         
-        //Undo-Redo
+        /* Undo-Redo */
         pushStateTo(done);  // update done stack
         clearUndone();      // clear undone stack after a 'proper' action
     });
@@ -317,7 +327,6 @@ function redo() {
     rePrintTab();
 }
 
-
 function setStateTo(newState) {  // change the entire state beeing displayed
     // clear current state description
     SESSIONS_TRANSACTIONS = [];
@@ -349,7 +358,7 @@ function clearUndone() {
     $("#redo").addClass("fade");
 }
 
-function rePrintTab() {
+function rePrintTab() {   // reprint the currently displayed tab
     $("#all_drinks").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element) {
         if (current_tab == "all" || ( current_tab == "paid" && this.paid == true) || (current_tab == "unpaid" && this.paid == false)) {    
@@ -359,17 +368,8 @@ function rePrintTab() {
     addBackground();
 }
 
-function countPaid(trans) {
-    var c = 0;
-    $.each(trans, function(element) {
-        if (this.paid) {c++;}
-    });
-
-    return c;
-}
-
-function updateTransactions() {
-    SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
+function updateTransactions() { // update the current transactions, local storage
+    SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));  
     rePrintTab();
 }
 

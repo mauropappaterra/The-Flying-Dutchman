@@ -23,7 +23,7 @@ body{
     background-image: url("../img/background/test.jpg");
     background-size: cover;
     max-width: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 }
 
 header{
@@ -84,8 +84,6 @@ header{
     border-top-right-radius: 10px;
 
     box-shadow: 2px -2px 10px black, 2px 0 10px black;
-
-
 
 }
 
@@ -153,21 +151,35 @@ header{
 
 /*ORDER COLUMN*/
 .selection_header {
-    width: 100%;
-    height: 15%;
+    width: 28%;
+    height: 75px;
+    margin-right: 2%;
+
+
     float: right;
+
+    overflow: auto;
+    border-top-right-radius: 1%;
 
     background-color: #254540;
 }
 
 .selection {
     width: 28%;
+    height: 350px; /* 500px*/
+    background-color: #567973;
+    margin-right: 2%;
+    float: right;
+    overflow: auto;  
+}
+
+.selection_div {
+    width: 28%;
     height: 500px;
     margin-right: 2%;
-    background-color: #567973;
     float: right;
-    overflow: auto;
-    border-top-right-radius: 1%;
+    overflow: auto;    
+
 }
 
 .order {
@@ -196,11 +208,13 @@ header{
 }
 
 .checkout {
-    width: 100%;
-    height: 15%;
-    margin-top: 100%;
+    width: 28%;
+    height: 75px;
     background-color: #254540;
     float: right;
+    margin-right: 2%;
+    overflow: auto;
+    border-bottom-right-radius: 1%;   
 
 }
 
@@ -217,12 +231,6 @@ header{
 }
 
 /* FOOTER*/
-.footer {
-    background-color: #0C2924;
-    bottom:0;
-    float:bottom;
-
-}
 
 .logout {
     float: left;
@@ -242,11 +250,18 @@ header{
     width: 10%;
 }
 
+.opt_menu{
+    display: block;
+}
+
 footer .small_button{
+    display: inline-block;
     float: left;
     height: 50%;
     border: solid;
     border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
 }
 
 #pay {
@@ -276,7 +291,79 @@ body {
     float: center;
 }
 
-/*Responsiveness*/
+.dropdown {
+    display: none;
+    position: relative;
+    margin: 2%;
+    width: 70%;
+    color: white;
+    z-index: 1;
+
+
+}
+.dropdown ul {
+    list-style-type: none;
+    padding: 0px;
+}
+.dropdown li{
+    text-align: center;
+    border-bottom: medium black;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 0%;
+    background-color: whitesmoke;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    font-size: 200%;
+    border-radius: 1%;
+    border: medium;
+    border: solid;
+    border-color: #3240ff;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: solid;
+
+}
+
+
+.dropdown ul a:hover{
+    background-color: lightgrey;
+}
+
+
+.dropdown:hover .dropdown-content {
+     display: block;
+ }
+
+.log_button{
+    display: none;
+    position: relative;
+    margin-top: -10%;
+    z-index: -1;
+    float:right;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+    border: medium;
+    border-color: black;
+    border-style: solid;
+
+}
+
+
+
+
+                          /*Responsiveness*/
 /* For mobile phones: */
 
 @media only screen and (min-width:320px) and (max-width:768px) /*reminder :Check with Elsa*/
@@ -288,6 +375,10 @@ div.languages_menu
     }
     div.drink_list{
         width: 98%;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px black, 2px 0 10px black;
+        border: medium;
+        border-color: black;
 
     }
     div.drink{
@@ -310,16 +401,56 @@ div.languages_menu
         margin: 2%;
         margin-top: 20%;
         margin-bottom: 20%;
-        font-size: 120%;
-
+        font-size: 100%;
     }
     header{
         display:none;
     }
     div.selection{
         display: none;
+        position: absolute;
+        z-index: 3;
+    }
+    div.selection_header{
+        display: none;
+    }
+    div.checkout{
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 3;
+    }
+    div.order{
     }
     footer{
         display: none;
+        height: 0px;
     }
+    div.menu{
+        display: none;
+    }
+    div.dropdown{
+        display: inline-block;
+
+    }
+    div.log_button{
+        display: inline-block;
+    }
+    
+    div.selection_div{
+        position: fixed;
+        width: 94%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 100%;
+        z-index: 2;
+    
+    }
+    div.checkout:hover .selection{
+        display: block;
+    }
+
+
+
+
 }
