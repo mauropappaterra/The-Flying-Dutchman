@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
 
     <!-- Metadata-->
@@ -28,47 +28,35 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Oswald" rel="stylesheet">
 
-</head>
-<body>
-  <!-- Your code starts here -->
+  </head>
+  <body>
+    <!-- Your code starts here -->
 
-  <header>
-    <!--
-        <div class="title">
-          <h1 id="title">The Flying Dutchman's List of Drinks</h1> 
+    <header>
+      <div class ="welcome">
+        <div style="display:inline;">
+          <h1 id="hello">Hello </h1><h1 id="usr">usr</h1><h1>!</h1>
         </div>
-        -->
-    <div class ="welcome">
-      <div style="display:inline;">
-       <h1 id="hello">Hello </h1><h1 id="usr">usr</h1><h1>!</h1>
-      </div>
-      <div id="creditDisplay" style="display:inline;">
-        <h2 id="your_credit">Your credit is </h2><h2 id="cre">cre</h2>
-      </div>
-    </div>
-    
-    
-
+        <div id="creditDisplay" style="display:inline;">
+          <h2 id="your_credit">Your credit is </h2><h2 id="cre">cre</h2>
+        </div>
+      </div>    
     </header>
 
     <div class="menu">
-
       <ul class="menu_tabs">
         <a><li id="all">All</li></a>
-            <a><li id="beers">Beers</li></a>
-            <a><li id="wines">Wines</li></a>
-            <a><li id="spirits">Spirits</li></a>
-            <a><li id="kosher">Kosher</li></a>
-            <a><li id="ecologic">Ecologic</li></a>
-            <a><li id="specials">Specials</li></a>
-        </ul>
-
+        <a><li id="beers">Beers</li></a>
+        <a><li id="wines">Wines</li></a>
+        <a><li id="spirits">Spirits</li></a>
+        <a><li id="kosher">Kosher</li></a>
+        <a><li id="ecologic">Ecologic</li></a>
+        <a><li id="specials">Specials</li></a>
+      </ul>
     </div>
-
-
- 
+    
     <div class="drink_list" id="drink_database">
-        <!-- Drinks Database loads here -->
+      <!-- Drinks Database loads here -->
     </div>
     
     <div class="selection_header">
@@ -84,27 +72,26 @@
     </div>    
 
     <footer>
-        <!-- LOG OUT BUTTON -->
-        <!-- <a href="index.html"><div class="small_button red logout" id="logout">Log Out</div></a> -->
-        <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
+      <!-- LOG OUT BUTTON -->
+      <a onClick="logOut()"><div class="small_button red logout" id="logout">Log Out</div></a>
 
-        <!-- LANGUAGE MENU -->
-        <div class="languages_menu">
-            <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
-            <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
-            <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
-            <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
-            <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
-        </div>
+      <!-- LANGUAGE MENU -->
+      <div class="languages_menu">
+        <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+        <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+        <a href="#" id="ita"><div class="languages"> <img src="img/ita.svg"></div></a>
+        <a href="#" id="esp"><div class="languages"> <img src="img/esp.png"></div></a>
+        <a href="#" id="pirate"><div class="languages"> <img src="img/pirate.jpg"></div></a>
+      </div>
 
-        <!-- UNDO-REDO MENU -->
-        <div class="undo_redo_menu">
-            <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
-            <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
-        </div>
+      <!-- UNDO-REDO MENU -->
+      <div class="undo_redo_menu">
+        <a href="#" id="undo" class="fade"><i class="fa fa-arrow-left fa-2x"></i></a>
+        <a href="#" id="redo" class="fade"><i class="fa fa-arrow-right fa-2x"></i></a>
+      </div>
 
-        <!-- PAY BUTTON -->
-        <a><div class="small_button blue" id="pay">Place Order</div></a>
+      <!-- PAY BUTTON -->
+      <a><div class="small_button blue" id="pay">Place Order</div></a>
 
     </footer>
 
@@ -114,8 +101,10 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <!-- Load Database -->
     <script src="db/DB.js" type="text/javascript"></script>
+    
     <!-- Scripts -->
     <script src="js/view/view_common.js" type="text/javascript"></script>
     <script src="js/view/view_customer.js" type="text/javascript"></script>
@@ -123,5 +112,5 @@
     <script src="js/customer.js" type="text/javascript"></script>
     <script src="js/login.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
-</body>
+  </body>
 </html>
