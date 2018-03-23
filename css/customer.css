@@ -153,9 +153,9 @@ header{
 
 /*ORDER COLUMN*/
 .selection_header {
-    width: 28%;
+    width: 100%;
     height: 15%;
-    margin-right: 2%;
+  
     float: right;
 
     overflow: auto;
@@ -165,13 +165,22 @@ header{
 }
 
 .selection {
-    width: 28%;
-    height: 362.5px; /* 500px*/
+    width: 100%;
+    height: 350px; /* 500px*/
     margin-right: 2%;
     background-color: #567973;
     float: right;
-    overflow: auto;
-  
+    overflow: auto;  
+}
+
+.selection_div {
+    width: 28%;
+    height: 500px;
+    margin-right: 2%;
+    background-color: #567973;
+    float: right;
+    overflow: auto;    
+
 }
 
 .order {
@@ -200,14 +209,11 @@ header{
 }
 
 .checkout {
-    width: 28%;
+    width: 100%;
     height: 15%;   
     background-color: #254540;
     float: right;
-
-
-
-    margin-right: 2%;
+    float: bottom;
     overflow: auto;
     border-bottom-right-radius: 1%;   
 
