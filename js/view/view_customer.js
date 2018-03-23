@@ -34,7 +34,7 @@ var customer= ["Customer:",
 ];
 
 var credit= ["Credit:",
-"Kreditera:",
+"Kredit:",
 "Credito:",
 "Crédito:",
 "Yu'r Loot:"
@@ -56,7 +56,7 @@ var all= ["All",
 ];
 
 var beers= ["Beers",
-"Beers",
+"Öl",
 "Birre",
 "Cervezas",
 "Them Beers"
@@ -69,7 +69,7 @@ var wines= ["Wines",
 "Ol' Wines"
 ];
 
-var spiritis= ["Spirits",
+var spirits= ["Spirits",
 "Sprit",
 "Sprits",
 "Bebida Espirituosa",
@@ -99,21 +99,21 @@ var specials= ["specials",
 //end of drinks taps
 
 var your_order= ["Your Order",
-"Du beställer",
+"Din beställning",
 "Il tuo ordine",
 "Su pedido",
 "Th' Booty"
 ];
 
 var total= ["TOTAL:",
-"TOTAL:",
+"TOTALT:",
 "TOTALE:",
 "TOTAL:",
 "WADARTA:"
 ];
 
 var pl_order= ["Place Order",
-"Beställa",
+"Beställ",
 "Invia ordine",
 "Realizar pedido",
 "Board 'hem!"

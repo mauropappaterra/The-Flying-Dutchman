@@ -433,7 +433,7 @@ function translate (index) {
     $("#all").text(all[index]);
     $("#beers").text(beers[index]);
     $("#wines").text(wines[index]);
-    $("#spiritis").text(spiritis[index]);
+    $("#spirits").text(spirits[index]);
     $("#kosher").text(kosher[index]);
     $("#ecologic").text(ecologic[index]);
     $("#specials").text(specials[index]);
