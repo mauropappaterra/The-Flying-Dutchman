@@ -47,8 +47,7 @@ $(document).ready(function() {
     t1 = window.setInterval(function() {checkOnOrders()}, 2000);
     function checkOnOrders() {
         if (localStorage.getItem("NEWORDER") != 0) {
-            $("#check").css("background-color","red");           
-          //  alert(localStorage.getItem("NEWORDER"));
+            $("#check").css("background-color","red");                  
             localStorage.setItem("NEWORDER", 0);
         }          
     }
@@ -123,7 +122,6 @@ $(document).ready(function() {
 
         /* If an order is canceled, the drinks should are put back in the stock and available
         for other customers to purchase them*/
-
         for (j = 0 ; j < (SESSIONS_TRANSACTIONS[i].order.length); j++){
             for (m = 0 ; m < (SESSION_STOCK_INFO.length); m++){
                 //alert("j: " + j + " m: " + m);
@@ -136,8 +134,7 @@ $(document).ready(function() {
                 }
             }
         }
-
-        //alert ("Index found " + i);
+  
         SESSIONS_TRANSACTIONS.splice(i, 1);
         //alert(SESSIONS_TRANSACTIONS.toSource());
 
@@ -156,17 +153,14 @@ $(document).ready(function() {
     });
 
     $(document).on('click','.pay',function() {
-        var find_transaction_id = $(this).attr('id');
-
-        //alert("Ready to mark as paid " + find_transaction_id);
+        var find_transaction_id = $(this).attr('id');     
         for (i = SESSIONS_TRANSACTIONS.length - 1; i > -1; i--) {
             //alert(SESSIONS_TRANSACTIONS[i].transaction_id + ' vs ' + find_transaction_id);
             if (SESSIONS_TRANSACTIONS[i].transaction_id == find_transaction_id) {
                 break;
             }
         }
-
-        //alert ("Index found " + i);
+   
         //alert(SESSIONS_TRANSACTIONS[i].toSource())
         SESSIONS_TRANSACTIONS[i].paid = true;
         SESSIONS_TRANSACTIONS[i].bartender_id = current_bartender;
@@ -364,7 +358,7 @@ function clearUndone() {
     $("#redo").addClass("fade");
 }
 
-function rePrintTab() {
+function rePrintTab() {   // reprint the currently displayed tab
     $("#all_drinks").empty();
     $.each(SESSIONS_TRANSACTIONS, function(element) {
         if (current_tab == "all" || ( current_tab == "paid" && this.paid == true) || (current_tab == "unpaid" && this.paid == false)) {    
@@ -374,19 +368,8 @@ function rePrintTab() {
     addBackground();
 }
 
-function countPaid(trans) {
-    var c = 0;
-    $.each(trans, function(element) {
-        if (this.paid) {c++;}
-    });
-
-    return c;
-}
-
-function updateTransactions() {
-    SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));
-  
-  //  SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
+function updateTransactions() { // update the current transactions, local storage
+    SESSIONS_TRANSACTIONS = JSON.parse(localStorage.getItem("SESSION"));  
     rePrintTab();
 }
 
