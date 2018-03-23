@@ -146,18 +146,12 @@ $(document).ready(function() {
                 newOrder.paid = true;  // mark transaction as paid
                 newOrder.bartender_id = "VIP Self-Service";
                 alert(payed_order_msg);
-//                alert("Your order has been payed using your available credit, you can pick up your beverages in the VIP fridge!");
-            } else {
-                alert(placed_order_msg);
-        //        alert("Your order has been placed!, Direct to the counter and pay for your order before you can pick up your drinks!");
-            }
-            //alert("NEW ORDER " + newOrder.toSource());
+            } else { alert(placed_order_msg); }
 
             SESSIONS_TRANSACTIONS.push(newOrder);
 
             localStorage.setItem("SESSION",JSON.stringify(SESSIONS_TRANSACTIONS));
             localStorage.setItem("NEWORDER", 1);
-            //alert(SESSIONS_TRANSACTIONS.toSource());
 
            /*Update user info for the session*/
             for (i = 0; i < (SESSION_USER_INFO.length - 1); i++) {
@@ -178,22 +172,18 @@ $(document).ready(function() {
             // Clear all fields
             resetPage();
 
-        } else {
-            alert(empty_order_msg);
-            //alert("You must select your drinks before placing an order!")
-        }
+        } else { alert(empty_order_msg); }
     });
 
     $(document).on('click','.drink',function(){
         var article_id = $(this).find('span').html();
-        //alert("You have chosen: " + article_id);
         addOrder(article_id);
         
         updateStock(article_id, -1);  // update SESSION_STOCK_INFO accordingly
         
         //Undo-Redo
         pushOrderTo(done); // update done stack
-        clearUndone(); // clear undone stack after a 'proper' action
+        clearUndone();     // clear undone stack after a 'proper' action
     });
 
     $(document).on('click','.delete',function(){
@@ -214,7 +204,7 @@ $(document).ready(function() {
         
         //Undo-Redo
         pushOrderTo(done);  // update done stack
-        clearUndone(); // clear undone stack after a 'proper' action
+        clearUndone();      // clear undone stack after a 'proper' action
     });
 });
 
@@ -292,6 +282,8 @@ function updateTotal () {
     $('#total').empty().append('Total: SEK ' + Math.max(total,0) + ':-')
 }
 
+
+// return the number of in_stock for given article_id
 function checkStock (article_id) {
     var counter = 0;
     $.each(SESSION_STOCK_INFO, function(element){
@@ -346,9 +338,7 @@ function setOrderTo(newOrder) {  // change the entire order beeing displayed
     order = [];
     quantity = [];
     total = 0;
-//    SESSION_STOCK_INFO = [];
-    setStockTo(newOrder[2]);
-    
+    setStockTo(newOrder[2]);    
     $(drink_selection).empty();
 
     // add the beers from the newOrder
@@ -385,11 +375,11 @@ function clearUndone() {
 function updateStock(article_id, add_quantity) {
     var rePrint = false;
     $.each(SESSION_STOCK_INFO, function(element) {
-        if (this.article_id == article_id) {
+        if (this.article_id == article_id) {  // found the relevant aticle
             new_quantity = this.in_stock + add_quantity;
-    //        alert("new: " + new_quantity + ", old: " + this.in_stock + ", dif: " + add_quantity);
-            
-            if ((this.in_stock < 10) != (new_quantity < 10) || (new_quantity < 1 || this.in_stock < 1)) { rePrint = true; }
+
+            // check if the beverages will need to be reprinted
+            if ((this.in_stock < 10) != (new_quantity < 10) || (new_quantity < 1 || this.in_stock < 1)) { rePrint = true; } 
             this.in_stock = new_quantity;
             return false;
         } 
@@ -405,13 +395,13 @@ function copyStock() {
     return stock_copy;
 }
 
-function setStockTo(newStock) {
+function setStockTo(newStock) {  // set the current stock to a new given stock
     $.each(SESSION_STOCK_INFO, function(index, element) {
         this.in_stock = newStock[index];
     });
 }
 
-function rePrintTab() {
+function rePrintTab() {  // reprint the currently displayed beverage tab
     $("#drink_database").empty();
     $.each(SESSION_STOCK_INFO, function(element) {
         if ((current_tab == "all" && ((!this.special || (this.special && findByID(current_user, SESSION_USER_INFO).vip)))) || this[current_tab] == true) {
@@ -420,7 +410,7 @@ function rePrintTab() {
     }); 
 }
 
-// resets the page after a order has been payed, this cannot be undone
+// resets the page after an order has been payed, this cannot be undone
 function resetPage() {
     order = [];    
     quantity = [];
