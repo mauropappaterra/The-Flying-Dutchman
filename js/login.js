@@ -1,5 +1,12 @@
-//const DB = require('../db/DB.js');
-//import {tmp} from '../db/DB';
+/** The Flying Dutchman
+ *  login.js
+ *  Created by 'Pirates of the Caribbean' on .. of February 2018.
+ */
+
+/*LOGIN PAGE SCRIPTS
+* All scripts related to the login. Each page uses this script to keep track of the logged in user and their allowed access.
+*/
+
 
 /* login functions */
 
@@ -44,7 +51,7 @@ function loginDB(form) {
                 $.each(this, function(element) {
                    localStorage.setItem('id', this); return false;                    
                 });
-                goToUserPage(localStorage.getItem('usertype'));
+                goToUserPage(localStorage.getItem('usertype')); // redirect to appropriate page 
             } else { alert("Wrong password"); return false; }
             return false;
         }
@@ -56,21 +63,17 @@ function loginDB(form) {
 function checkAccess() {    
     var ut = localStorage.getItem('usertype');
     var page = window.location.pathname.split("/").pop().split(".")[0];
-    var id = (localStorage.getItem("id")).slice(1, localStorage.getItem("id").length);
+    var id = (localStorage.getItem("id")).slice(1, localStorage.getItem("id").length);  // used to check if the user has unquestionale access
     if ((ut == page) || (ut == null && page == 'index') || page == 'index' || id == "€$#=@") {return;}
-    else {
+    else { // redirect to appropriate page if a user tries to access a page they are not allowed to
         alert("Acces Denied");
         goToUserPage(ut);
     }
 }
 
-function logOut() {  // TODO: pop asking to confirm?
+function logOut() { 
     localStorage.clear();
     window.location.href = "index.html";
-}
-
-function isVIP(user) {
-    return user.vip;
 }
 
 // onload, check the users access and load the users name etc for display
@@ -78,12 +81,11 @@ $(function () {
     checkAccess();
     user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
     
-    if (!isVIP(user)) {
+    if (!(user.vip)) {
         $('#specials').hide();
         $('#creditDisplay').hide();
     }
    
-    // TODO:setup differently depending on current page/user, depending on design
     $('#usr').html(user.first_name);
     $('#cre').html(user.credit);
 });

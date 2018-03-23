@@ -17,20 +17,18 @@ function openLogin(elem, show, user) {
     localStorage.setItem('usertype', user);
     $('#loginBox').show();
 }
-function changeDisplay(elem, show) {
-        document.getElementById(elem).style.display = show;
-}
 
+// change between displaying picture/gif
 function picToGif(ev) {
     ev.preventDefault();
-    if($('#piratePic').css('display') == 'block') { // the logo is currently displayed
+    if($('#piratePic').css('display') == 'block') { // if the logo is currently displayed
         $('#piratePic').hide();
         $('#great').show();
-      //  $('#great').gifplayer('play');
+   
         document.getElementById('great').play();
         $('body').css('background-color', "#62CB62");
         $('body').css('background-image', 'none');
-    } else { // the gif is currently displayed
+    } else { // if the gif is currently displayed
         $('#piratePic').show();
         $('#great').hide();
         document.getElementById('great').pause();
