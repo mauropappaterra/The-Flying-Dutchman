@@ -206,6 +206,18 @@ $(document).ready(function() {
         pushOrderTo(done);  // update done stack
         clearUndone();      // clear undone stack after a 'proper' action
     });
+    
+    // hover function for small screen
+    $('.pay_button').hover(function() { $('.selection').css("display", "block")},
+                           function() { $('.selection').css("display", "none") }
+                          );
+    
+    // make sure the selection is displayed in bigscreen mode
+    $(window).resize(function(){
+        if ($(window).width() > 768) { $('.selection').css("display", "block") }
+        else { $('.selection').css("display", "none") }
+    });
+    
 });
 
 /*Call printToDOM() method on all elements in the DB*/
