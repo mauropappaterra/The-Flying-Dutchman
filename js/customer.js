@@ -52,13 +52,14 @@ $(document).ready(function() {
     retrieveDB(); // load database on page load
     // filter drinks by category
     $(".all").click(function() {
+        current_tab = "all";
         $("#drink_database").empty(); // empty current <div> contents
         retrieveDB();
-        $(this).addClass('highlight');
+        $(this).addClass('highlight');   
     });
 
     $(".beers").click(function(){
-        current_tab = "all";
+        current_tab = "beer";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
             if (this.beer == true){
@@ -68,6 +69,7 @@ $(document).ready(function() {
     });
 
     $(".wines").click(function(){
+        current_tab = "wine";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
             if (this.wine == true){

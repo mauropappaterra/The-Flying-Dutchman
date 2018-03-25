@@ -11,12 +11,14 @@ h1 {
     float: none;
     color: white;
     margin-left: 1%;
+    color: #edefcb;     /*off-white*/
 }
 h2 {
     display: inline-block;
     float: none;
-    color: white;
+    color:white;
     margin-left: 3%;
+    color: #edefcb;    /*off-white*/
 }
 
 body{
@@ -24,6 +26,11 @@ body{
     background-size: cover;
     max-width: 100%;
     background-repeat: repeat-y;
+
+    /* standard font settings */
+    /*font-family: 'Cormorant Infant';*/
+    font-family: 'Ovo';
+    font-size: 20px;
 }
 
 header{
@@ -32,7 +39,7 @@ header{
    /* background-color: #0A2521;
     background-color: #0A2521;*/
     height: 5%;
-
+    font-size: 25px;
 }
 
 .title {
@@ -215,7 +222,6 @@ header{
     margin-right: 2%;
     overflow: auto;
     border-bottom-right-radius: 1%;   
-
 }
 
 .checkout h2 {
