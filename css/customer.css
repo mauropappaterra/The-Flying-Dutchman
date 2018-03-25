@@ -272,6 +272,7 @@ footer .small_button{
 body {
     height: 90%;
     background-color: #0A2521;
+
 }
 
 .highlight {
@@ -375,6 +376,14 @@ body {
     border: medium;
     border-color: black;
     border-style: solid;
+}
+
+.shopping_basket {
+    filter: brightness(0) invert(1);
+    margin-left: 70px;
+    display:inline-block;
+    height:40px;
+    float:center;
 }
 
 

@@ -74,11 +74,12 @@
             <a><li class="kosher">Kosher</li></a>
             <a><li class="ecologic">Ecologic</li></a>
             <a><li class="specials">Specials</li></a>
-        </ul>    
+        </ul>
+
+      <!--   <img src="img/basket.png" id="basket" class="shopping_basket" onClick="$('.selection').toggle();"> -->
     </div>
     
-    <!-- logout button for small screen -->
-
+<!-- logout button for small screen -->
     <a onClick="logOut()"><div class="log_button red logout" id="logout">Log Out</div></a>
    
 
@@ -96,7 +97,7 @@
       <!-- Drink Selection pops up here -->
     </div>
     
-    <div class="checkout">
+    <div class="checkout" onClick="if ($(window).width() <= 768) {$('.selection').toggle()}">
       <h2 id="total">Total: SEK 0 :-</h2>
     </div>
 

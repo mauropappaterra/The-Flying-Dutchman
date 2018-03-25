@@ -211,6 +211,7 @@ $(document).ready(function() {
     $('.pay_button').hover(function() { $('.selection').css("display", "block")},
                            function() { $('.selection').css("display", "none") }
                           );
+    
     // make sure the selection is displayed in bigscreen mode
     $(window).resize(function(){
         if ($(window).width() > 768) { $('.selection').css("display", "block") }
