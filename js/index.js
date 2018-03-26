@@ -39,7 +39,7 @@ function picToGif(ev) {
         $('#great').hide();
         document.getElementById('great').pause();
         $('body').css('background-color', "white");
-        //$('body').css('background-image', 'url(img/storm.jpg)');
+        $('body').css('background-image', 'url(img/storm.jpg)');
     }
 }
 
