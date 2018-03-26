@@ -12,11 +12,6 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-h1 {
-    font-family: 'Berkshire Swash', cursive;
-}
-
-
 header{
     overflow:hidden;
     position: relative;
@@ -75,22 +70,13 @@ header{
     background-color: #ff2d1b;
 }
 
-.background_wallpaper {
-    background-image: url("../img/background.jpg");
-    opacity: 0.4;
-    width: 100%;
-    height: 515px;
-    position: absolute;
-    left: 0px;
-    top: 130px;
-    z-index: -1;
-}
-
 .drink_list {
     width: 70%;
     height: 500px;
     float: left;
     overflow: auto;
+    background-color: #A4B9B6;
+
 }
 
 .drink {
@@ -172,10 +158,14 @@ a:hover h4 {
     height: 450px;
     float: right;
     overflow: auto;
+    background-color: #567973;
+
 }
 
 .order {
     background-color: rgba(255, 255, 255, 0.9);
+    background-color: #A4B9B6;
+
 
     padding-left: 1.5%;
     padding-right: 1.5%;
@@ -195,6 +185,8 @@ a:hover h4 {
 
 .order .price {
     float: right;
+    background-color: #A4B9B6;
+
 }
 
 .order img {
@@ -206,12 +198,13 @@ a:hover h4 {
     width: 30%;
     height: 50px;
     float: right;
+    background-color: #254540;
 
 }
 
 .checkout h2 {
     float: right;
-    color: white;
+    color: #96b9a5;
 }
 
 .delete {
