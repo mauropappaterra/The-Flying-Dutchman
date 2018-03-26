@@ -21,7 +21,6 @@
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/login.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Oswald" rel="stylesheet">
@@ -35,26 +34,30 @@
       <a onclick="openLogin('loginBox', 'block', 'management')"><div class="margin_button flipper" id="management">Management login</div></a>
     </div>
 
+    <div id="overlay" class="hidden"></div>
+
     <!-- login box -->
-    <div id="loginBox" class="login">
+      <div id="loginBox" class="login">
 
-      <button id = "close" class="close" onclick="$('#loginBox').hide()">X</button>
-      <form name = "loginForm" action="javascript: void(0);">
+        <button id = "close" class="close" onclick="closeLogin()">X</button>
+        <form name = "loginForm" action="javascript: void(0);">
 
-        <h1>Log into The Flying Dutchman</h1>
+          <h1>Log into The Flying Dutchman</h1>
 
-        <a id="user_name"><h2>User name</h2></a>
-        <input type="text" name="user_name" placeholder="Enter your user name">
+          <a id="user_name"><h2>User name</h2></a>
+          <input type="text" name="user_name" placeholder="Enter your user name">
 
-        <a id="password"><h2>Password</h2></a>
-        <input type="password" name="password" placeholder="Enter your password">
+          <a id="password"><h2>Password</h2></a>
+          <input type="password" name="password" placeholder="Enter your password">
 
-        <div align="center">
-          <input type="submit" id="login" name="login" value="Log into the Flying Dutchman!" onClick="loginDB(loginForm)">
+          <div align="center">
+            <input type="submit" id="login" name="login" value="Log into the Flying Dutchman!" onClick="loginDB(loginForm)">
 
-        </div>
-      </form>
-    </div>
+          </div>
+        </form>
+      </div>
+
+
 
     <!-- DnD pics/gifs -->
     <div align="center" ondrop="picToGif(event)"  ondragover="allowDrop(event)">

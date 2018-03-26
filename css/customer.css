@@ -11,37 +11,27 @@ h1 {
     float: none;
     color: white;
     margin-left: 1%;
-    color: #edefcb;     /*off-white, yellow*/
 }
+
 h2 {
     display: inline-block;
     float: none;
-    color:white;
+    color: #96b9a5;
     margin-left: 3%;
-
-    color: #edefcb;    /*off-white, yellow*/
-    color: #dcefcb;    /*off-white, green*/
 }
 
-body{ 
-    background-image: url("../img/background/test.jpg");
+body {
+    background-image: url("../img/wood2.jpg");
     background-size: cover;
     max-width: 100%;
     background-repeat: repeat-y;
-    
-    /* standard font settings */
-    /*font-family: 'Cormorant Infant';*/
-    font-family: 'Ovo';
-    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
 }
 
-header{
+header {
     overflow:hidden;
     position: relative;
-   /* background-color: #0A2521;
-    background-color: #0A2521;*/
     height: 10%;
-
 }
 
 .title {
@@ -49,6 +39,7 @@ header{
     float: left;
     width: 100%;
 }
+
 .info {
     background-color: #797979;
     position: absolute;
@@ -170,22 +161,20 @@ header{
 .selection_header {
     width: 28%;
 /*    height: 75px;*/
-    height: 15%;
+    height: 12%;
     margin-right: 2%;
-
 
     float: right;
 
     overflow: hidden;
     border-top-right-radius: 1%;
-
     background-color: #254540;
 }
 
 .selection {
     width: 28%;
 /*    height: 350px; *//* 500px*/
-    height: 70.1%;
+    height: 76.1%;
     background-color: #567973;
     margin-right: 2%;
     float: right;
@@ -229,7 +218,7 @@ header{
 .checkout {
     width: 28%;
 /*    height: 75px;*/
-    height: 15%;
+    height: 12%;
     background-color: #254540;
     float: right;
     margin-right: 2%;
@@ -280,7 +269,6 @@ footer .small_button{
     border: solid;
     border-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
 }
 
 #pay {
@@ -307,7 +295,6 @@ body {
     margin-left: 35%;
     margin-right: 35%;
     text-align:center;
-    float: center;
 }
 
 .dropdown {
@@ -317,18 +304,17 @@ body {
     width: 70%;
     color: white;
     z-index: 1;
-
-
 }
+
 .dropdown ul {
     list-style-type: none;
     padding: 0px;
 }
+
 .dropdown li{
     text-align: center;
     border-bottom: medium black;
 }
-
 
 .dropdown-content {
     display: none;
@@ -351,14 +337,11 @@ body {
     text-decoration: none;
     display: block;
     border-bottom: solid;
-
 }
-
 
 .dropdown ul a:hover{
     background-color: lightgrey;
 }
-
 
 .dropdown:hover .dropdown-content {
      display: block;
@@ -401,7 +384,6 @@ body {
     margin-left: 70px;
     display:inline-block;
     height:40px;
-    float:center;
 }
 
 
@@ -456,7 +438,7 @@ div.languages_menu
         
         width: 88%;
         height: auto;
-        max-height: 480px;
+        max-height: 66.5%;/*480px;*/
         float: right;
         position: absolute;  
         z-index: 3;

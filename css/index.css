@@ -3,32 +3,14 @@
    Created by 'Pirates of the Caribbean' on 20 of February 2018.
 */
 
+
 /*Style Sheet for the login page*/
-
-/*WELCOME PIRATE IMAGE*/
-
-.welcome_pirate_small {
-    width: 65%;
-    height: 65%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    clear: both;
-}
-
-.welcome_pirate_medium {
-    width: 40%;
-    float: left;
-}
-
-.welcome_pirate_large {
-    width: 40%;
-    float: left;
+#user_name,#password{
+    color: white;
+    cursor: default;
 }
 
 /*Menu Buttons*/
-
-
 .big_button {
     margin: 5%;
     padding: 2%;
@@ -51,22 +33,23 @@
     clear: none;
 
     margin: 2%;
-    /**  transform: translateY(200%);*/
-
 }
 .languages_menu{
     margin-left: 15%;
     margin-right: 15%;
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
 }
 
 body {
     background-image: url("../img/storm.jpg");
+
     background-size: cover;
+
     max-width: 100%;
     background-repeat: no-repeat;
+
+    font-family: 'Oswald', sans-serif;
+    color: white;
+
 }
 
 .margin_button{
@@ -77,7 +60,96 @@ body {
     margin: 2%;
     text-align: center;
     position: relative;
+    color: white;
+}
 
+/*login stuff below*/
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 60%;
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: darkgreen;
+}
+
+.login {
+    display: none;
+    width: 100%;
+    margin: 80px 100px;
+    border-radius: 5px;
+    background-color: rgba(12,41,36,0.5);
+    padding: 20px;
+    position: absolute;
+    color: white;
+}
+
+.close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+
+.close:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+    color:red;
+}
+
+.gif {
+    vertical-align: middle;
+    display:none;
+}
+
+.test {
+    loop: loop;
+    autoplay: autoplay;
+}
+
+/*why wont u center...*/
+.login_button {
+    float: none;
+    width: 30%;
+    height: 40px;
+
+    padding: 1%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+
+}
+#barManLog{
+    display: inline;
+    float: left;
+    width: 30%;
+    color: white;
 }
 
 /*login stuff below*/
@@ -119,7 +191,6 @@ input[type=submit]:hover {
     background-color: #0C2924;
     padding: 20px;
     position: absolute;
-    z-index:1;
 }
 
 .close {
@@ -138,7 +209,6 @@ input[type=submit]:hover {
 }
 
 .gif {
-    float:center;
     vertical-align: middle;
     display:none;
 }
@@ -148,32 +218,138 @@ input[type=submit]:hover {
     autoplay: autoplay;
 }
 
-/*why wont u center...*/
 .login_button {
     float: none;
     width: 30%;
     height: 40px;
     margin: 3%;
+
     margin-left: 35%;
     margin-right: 35%;
+
     padding: 1%;
     display: block;
     text-align: center;
     font-size: 35px;
 
 }
+
 #barManLog{
     display: inline;
-    float: right;
+    float: left;
     width: 30%;
 }
+
+/*Log in window*/
+
+.hidden {
+    visibility: hidden;
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top:0px ;
+    z-index: 5;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.login {
+    border-radius: 5px;
+    /*background-color: #0C2924;*/
+    background-image: url("../img/wood3.jpg");
+    background-size:cover;
+    padding: 20px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    /*background: linear-gradient(#254540,#0C2924);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;*/
+    box-shadow: 5px 5px 30px black;
+    z-index: 10;
+    clear: both;
+
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 60%;
+    background: linear-gradient(darkgray,grey);
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: black;
+    box-shadow: 1px 1px 20px #061614, -1px -1px 20px #061614;
+
+}
+
+input[type=submit]:hover {
+    background-color: darkgreen;
+}
+
+@media only screen and (max-width: 414px)
+{
+    /*change the size of the login box to suit the phones*/
+    /* iPhone 6s was my main focus but it looks fine on other phones sizes */
+    .login{
+        background: linear-gradient(#254540,#0C2924);
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 10px;
+        box-shadow: 5px 5px 30px black;
+        font-size: xx-small;
+        height: 46%;
+        margin-top: 0px;
+        margin-left: 14%;
+        width: 51%;
+    }
+}
+
+
 /*Responsiveness*/
 /* For mobile phones: */
 /* try it with iPhone 6 models*/
 @media only screen and (max-width: 414px)
 {
     /* only the customer is going to use the App on his phone to order drinks,therefore we hide the management login on phones*/
-    div.margin_button  {display: none;} 
+    div.margin_button  {display: none;}
 
     /* enlarge the order button and the font for easy reading on small phones*/
     .login_button {
