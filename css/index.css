@@ -195,5 +195,5 @@ input[type=submit]:hover {
     {
         border-radius: 50%;
     }
-
+    body{background-size: auto;}
 }
