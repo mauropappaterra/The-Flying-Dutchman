@@ -182,9 +182,10 @@ $(document).ready(function() {
             sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
             //resetPage();
-            alert("Order is placed message goes here!");
+            alert(placed_order_msg);
+//            alert("Order is placed message goes here!");
             
-        } else { alert("Order is empty message goes here!"); }
+        } else { alert(empty_order_msg); }
 
     });
 
@@ -469,4 +470,8 @@ function translate (index) {
 
     $("#big_total").text(big_total[index]);
     $("#pay").text(pay[index]);
+
+    // Translating the alert messages
+    empty_order_msg = (empty_order[index]);		
+    placed_order_msg = (placed_order[index]);
 }

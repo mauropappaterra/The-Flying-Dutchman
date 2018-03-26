@@ -452,7 +452,9 @@ function resetPage() {
 // highlight the currently displayed tab 
 function highlightTab(new_tab) {
     // reset previous tab display
-    previous_tab = '.' + current_tab;
+    //previous_tab = '.' + current_tab;
+    previous_tab = '*#' + current_tab;
+    
     $(previous_tab).css("background", "#567973");
     $(previous_tab + 's').css("background", "#567973");   // ugly solution...
 
