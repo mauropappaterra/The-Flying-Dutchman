@@ -59,11 +59,11 @@ a:active {
 
 /* LANGUAGE MENU */
 .languages {
-    padding-left: 25%;
+    margin-left: 20%;
 }
 
 .languages img {
-    width:70px;
+    width: 70px;
     height: 40px;
     float: left;
     padding: 2%;
@@ -133,7 +133,7 @@ a:active {
 }
 
 .blue {
-    background-color: #AA8139;
+    background: linear-gradient(#AA8139, #84642b);
 }
 
 .orange {
@@ -141,7 +141,7 @@ a:active {
 }
 
 .red {
-    background-color: #AD2535;
+    background: linear-gradient(#AD2535,#8e1f2c);
 }
 .headergreen {
     background-color: #0C2924;

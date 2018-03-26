@@ -89,4 +89,3 @@ $(function () {
     $('#usr').html(user.first_name);
     $('#cre').html(user.credit);
 });
-

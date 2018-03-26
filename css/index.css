@@ -9,6 +9,13 @@
     color: white;
     cursor: default;
 }
+#piratePic {
+    display:block;
+    height: 40%;
+    width: 40%;
+    margin-right: 29%;
+    margin-left: 31%;
+}
 
 /*Menu Buttons*/
 .big_button {
@@ -35,65 +42,32 @@
     margin: 2%;
 }
 .languages_menu{
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 body {
     background-image: url("../img/storm.jpg");
-
     background-size: cover;
 
     max-width: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 
     font-family: 'Oswald', sans-serif;
     color: white;
-
 }
 
 .margin_button{
     display: inline-block;
-    font-size: 17px;
+    font-size: 80%;
     width: 40%;
     clear: both;
     margin: 2%;
     text-align: center;
     position: relative;
     color: white;
-}
 
-/*login stuff below*/
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
 }
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    width: 60%;
-    background-color: green;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: darkgreen;
-}
-
-
 
 .close {
     float:right;
@@ -108,11 +82,6 @@ input[type=submit]:hover {
     padding:2px 5px;
     background:#ccc;
     color:red;
-}
-
-.gif {
-    vertical-align: middle;
-    display:none;
 }
 
 .test {
@@ -143,38 +112,6 @@ input[type=submit]:hover {
     color: white;
 }
 
-/*login stuff below*/
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    width: 60%;
-    background-color: green;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: darkgreen;
-}
-
-
-
 .close {
     float:right;
     display:inline-block;
@@ -193,6 +130,7 @@ input[type=submit]:hover {
 .gif {
     vertical-align: middle;
     display:none;
+    clear: both;
 }
 
 .test {
@@ -212,7 +150,7 @@ input[type=submit]:hover {
     padding: 1%;
     display: block;
     text-align: center;
-    font-size: 35px;
+    font-size: 150%;
 
 }
 
@@ -266,6 +204,17 @@ input[type=submit]:hover {
     clear: both;
 }
 
+/*login stuff below*/
+
+input[type=submit] {
+    width: 60%;
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 input[type=text] {
     width: 100%;
@@ -345,22 +294,38 @@ input[type=submit]:hover {
     /* enlarge the order button and the font for easy reading on small phones*/
     .login_button {
         float: none;
-        width: 30%;
+        width: 70%;
         height: auto;
         display: block;
         text-align: center;
-        font-size: 100%;
-    }
-    .languages_menu{
+        font-size: 150%;
         margin-left: 15%;
-        margin-right: 15%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-top: 15%;
     }
+    #piratePic{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 30%;
+    }
+
+
+    .languages_menu {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-top: 30%;
+    }
+
     .languages img 
     {
-        border-radius: 50%;
+/*
+        width: 45px;
+        height: 25px;*/
+        width: 15%;
+        height: 15%;
     }
+    .languages {
+        margin-left: 2%
+    }
+    
     body{background-size: auto;}
 }

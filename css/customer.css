@@ -11,14 +11,17 @@ h1 {
     float: none;
     color: white;
     margin-left: 1%;
+    font-family: 'Berkshire Swash', cursive;
+
 }
 
 h2 {
-    display: inline-block;
     float: none;
     color: #96b9a5;
     margin-left: 3%;
+
 }
+
 
 body {
     background-image: url("../img/wood2.jpg");
@@ -28,10 +31,15 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+
 header {
     overflow:hidden;
     position: relative;
     height: 10%;
+}
+
+header h2 {
+    display: inline-block;
 }
 
 .title {
@@ -167,7 +175,11 @@ header {
     overflow: hidden;
     border-top-right-radius: 1%;
     background-color: #254540;
+    text-align: center;
+
 }
+
+
 
 .selection {
     width: 28%;
@@ -226,6 +238,8 @@ header {
 
 .checkout h2 {
     float: left;
+    color: #96b9a5;
+    margin-left: 4%;
 }
 
 .delete {
@@ -348,33 +362,40 @@ body {
 .log_button{
     display: none;
     position: relative;
-    margin-top: -10%;
+    margin-top: -13%;
+    margin-bottom: 3%;
+
     left: -15px;
   /*  z-index: -1; */
     float:right;
     width: 30%;
     height: 30px;
     text-align: center;
-    border: medium;
+    border: thin;
     border-color: black;
     border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
 }
 
 .pay_button{
     display: none;
     position: relative;
-    margin-top: -55px;
-    left: -15px;
+    margin-top: -12%;
+    left: -5%;
   /*  margin-right: 100%;
     z-index: -1; */
     float: left;
     width: 30%;
     height: 30px;
     text-align: center;
-    border: medium;
+    border: thin;
     border-color: black;
     border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
 }
 
 .shopping_basket {
@@ -392,14 +413,30 @@ body {
 @media only screen and (min-width:320px) and (max-width:768px) /*reminder :Check with Elsa*/
 {
     /* hide the language menu on the small screens*/
-div.languages_menu
+    footer .languages_menu {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-top: 5%;
+    }
+    footer .undo_redo_menu{
+        display: none;
+    }
+
+    .languages img
     {
-    display: none;
+
+        width: 15%;
+        height: 15%;
+    }
+    .languages {
+        margin-left: 2%
     }
     div.drink_list{
-        width: 98%;
-        border-radius: 5px;
-        box-shadow: 2px 2px 10px black, 2px 0 10px black;
+        width: 96%;
+        border-radius: 0px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: 2px 0px 10px black;
         border: medium;
         border-color: black;
 
@@ -426,6 +463,11 @@ div.languages_menu
         margin-bottom: 20%;
         font-size: 100%;
     }
+    h2 {
+        font-size: 100%;
+    }
+
+    
     header{
         display:none;
     }
@@ -469,17 +511,25 @@ div.languages_menu
     div.checkout{
         display: block;
       /*  position: absolute; */
-        width: 94%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-       /* z-index: 3; */     
+        width: 96%;
+
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-left: 2%;
+
+        box-shadow: 2px 2px 10px black, 2px 0 10px black;
+
+        /* z-index: 3; */
     }    
     div.order{
     }
     footer{
-        display: none;
         height: 0px;
     }
+    footer .small_button{
+        display: none;
+    }
+
     div.menu{
         display: none;
     }
