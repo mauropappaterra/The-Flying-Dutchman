@@ -80,7 +80,6 @@ header {
     border-color: #567973;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
     box-shadow: 2px -2px 10px black, 2px 0 10px black;
 
 }
@@ -112,8 +111,7 @@ header {
     height: 100%; 
     overflow: hidden;
     overflow-y: scroll;
-
-                    
+    top: 0px;
     margin-left: 2%;
     background-color: #A4B9B6;
     float: left;
@@ -164,7 +162,7 @@ header {
     height: 12%;
     margin-right: 2%;
 
-    float: right;
+    float: left;
 
     overflow: hidden;
     border-top-right-radius: 1%;
@@ -177,7 +175,7 @@ header {
     height: 76.1%;
     background-color: #567973;
     margin-right: 2%;
-    float: right;
+    float: left;
     overflow: auto;  
 }
 
@@ -185,7 +183,7 @@ header {
     width: 28%;
     height: 500px;
     margin-right: 2%;
-    float: right;
+    float: left;
     overflow: auto;    
 
 }
@@ -220,7 +218,7 @@ header {
 /*    height: 75px;*/
     height: 12%;
     background-color: #254540;
-    float: right;
+    float: left;
     margin-right: 2%;
     overflow: hidden;
     border-bottom-right-radius: 1%;   
