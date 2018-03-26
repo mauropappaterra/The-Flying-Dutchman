@@ -467,7 +467,7 @@ function translate (index) {
     $("#customer").text(customer[index]);
     $("#credit").text(credit[index]);
     $("#drink_list").text(drink_list[index]);
-    $("#all").text(all[index]);
+    $("#all").text(all[index]);    
     $("#beers").text(beers[index]);
     $("#wines").text(wines[index]);
     $("#spirits").text(spirits[index]);
