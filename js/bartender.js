@@ -55,11 +55,12 @@ $(document).ready(function() {
 
     // display new orders on click 
     $("#retrieve_orders").click(function() {
-        $("#retrieve_orders").css("background","");
-        updateTransactions();
-        clearUndone();
-        clearDone();      
-});
+        if (localStorage.getItem("NEWORDER") == 1) {
+            $("#retrieve_orders").css("background","");
+            updateTransactions();
+            clearUndone();
+            clearDone();      }
+    });
     
     // filter orders by category
     $("#all").click(function() {
