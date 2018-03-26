@@ -15,7 +15,13 @@ if (localStorage.getItem("index") == null){
 // login/gif related functions
 function openLogin(elem, show, user) {
     localStorage.setItem('usertype', user);
+    $("#overlay").removeClass("hidden");
     $('#loginBox').show();
+}
+
+function closeLogin(){
+    $("#overlay").addClass("hidden");
+    $('#loginBox').hide();
 }
 
 // change between displaying picture/gif
