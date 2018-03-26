@@ -377,9 +377,12 @@ function highlightTab(new_tab) {
     // reset previous tab display
     previous_tab = '*#' + current_tab;
     $(previous_tab).css("background", "");
+    $(previous_tab).css("border-color", "#567973");
     $(previous_tab + 's').css("background", "");   // ugly solution...
+    $(previous_tab + 's').css("border-color", "#567973"); 
     // highlight current tab
-    $(new_tab).css("background", "#A4B9B6");    
+    $(new_tab).css("background", "#A4B9B6");
+    $(new_tab).css("border-color", "#A4B9B6");
 }
 
 function updateTransactions() { // update the current transactions, local storage
