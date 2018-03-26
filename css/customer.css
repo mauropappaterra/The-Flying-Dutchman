@@ -11,22 +11,24 @@ h1 {
     float: none;
     color: white;
     margin-left: 1%;
-    color: #edefcb;     /*off-white*/
+    color: #edefcb;     /*off-white, yellow*/
 }
 h2 {
     display: inline-block;
     float: none;
     color:white;
     margin-left: 3%;
-    color: #edefcb;    /*off-white*/
+
+    color: #edefcb;    /*off-white, yellow*/
+    color: #dcefcb;    /*off-white, green*/
 }
 
-body{
+body{ 
     background-image: url("../img/background/test.jpg");
     background-size: cover;
     max-width: 100%;
     background-repeat: repeat-y;
-
+    
     /* standard font settings */
     /*font-family: 'Cormorant Infant';*/
     font-family: 'Ovo';
@@ -38,16 +40,14 @@ header{
     position: relative;
    /* background-color: #0A2521;
     background-color: #0A2521;*/
-    height: 5%;
-    font-size: 25px;
+    height: 10%;
+
 }
 
 .title {
  /*   background-color: #0A2521;*/
     float: left;
     width: 100%;
-
-
 }
 .info {
     background-color: #797979;
@@ -59,7 +59,7 @@ header{
 /*MENU COLUMN*/
 .menu {
     width: 70%;
-    height: 30%;
+/*    height: 30%;*/  
 /*    background-color: #0A2521;*/
     float: left;
     overflow: auto;
@@ -116,13 +116,23 @@ header{
 
 .drink_list {
     width: 68%;
-    height: 500px;
+   /* height: 500px;*/
+    
+    height: 100%; 
+    overflow: hidden;
+    overflow-y: scroll;
+
+                    
     margin-left: 2%;
     background-color: #A4B9B6;
     float: left;
-    overflow: auto;
+/*    overflow: auto; */
     border-bottom-left-radius: 1%;
 }
+
+.main_section{
+    float: top;
+    height: 70%;}
 
 .drink {
     background-color: #C0CFCC;
@@ -159,13 +169,14 @@ header{
 /*ORDER COLUMN*/
 .selection_header {
     width: 28%;
-    height: 75px;
+/*    height: 75px;*/
+    height: 15%;
     margin-right: 2%;
 
 
     float: right;
 
-    overflow: auto;
+    overflow: hidden;
     border-top-right-radius: 1%;
 
     background-color: #254540;
@@ -173,7 +184,8 @@ header{
 
 .selection {
     width: 28%;
-    height: 350px; /* 500px*/
+/*    height: 350px; *//* 500px*/
+    height: 70.1%;
     background-color: #567973;
     margin-right: 2%;
     float: right;
@@ -216,11 +228,12 @@ header{
 
 .checkout {
     width: 28%;
-    height: 75px;
+/*    height: 75px;*/
+    height: 15%;
     background-color: #254540;
     float: right;
     margin-right: 2%;
-    overflow: auto;
+    overflow: hidden;
     border-bottom-right-radius: 1%;   
 }
 
@@ -274,12 +287,11 @@ footer .small_button{
     float: right;
     margin-right: 2%;
 }
-
+/*  blubb, rem
 body {
     height: 90%;
     background-color: #0A2521;
-
-}
+} */
 
 .highlight {
     background-color: #3240ff;
