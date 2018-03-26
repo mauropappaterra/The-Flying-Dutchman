@@ -452,19 +452,11 @@ function resetPage() {
 // highlight the currently displayed tab 
 function highlightTab(new_tab) {
     // reset previous tab display
-    //previous_tab = '.' + current_tab;
     previous_tab = '*#' + current_tab;
-
     $(previous_tab).css("background", "");
     $(previous_tab + 's').css("background", "");   // ugly solution...
-  //  $(previous_tab).removeClass("highlight");
-//    $(previous_tab).css("background", "#567973");
-//    $(previous_tab + 's').css("background", "#567973");   // ugly solution...
-
     // highlight current tab
-
-//    $(new_tab).addClass("highlight");
-       $(new_tab).css("background", "#A4B9B6");    
+    $(new_tab).css("background", "#A4B9B6");    
 }
 
 function translate (index) {

@@ -37,6 +37,7 @@ var big_quantity = []; // keeps list of quantities with matching indexes
 var big_total = 0; // calculates the big_total
 
 var current_manager = localStorage.getItem('id');
+var current_tab = "#drinks_list";
 
 /*UNDO-REDO ARRAYS*/
 var done = new Array([]);    //keeps track of 'done' actions
@@ -46,14 +47,17 @@ $(document).ready(function() {
 
     //addBackground();
     retrieveSystembolaget(); // load database on page load
-
+    highlightTab("#drinks_list");
+    
     $("#drinks_list").click(function(){ /* Retrieve from Systembolaget*/
+        highlightTab("#drinks_list");
         $("#drink_database").empty();
         //addBackground();
         retrieveSystembolaget();
     });
 
     $("#specials_db").click(function(){ /* Retrieve from Mike's Specials*/
+        highlightTab("#specials_db");
         $("#drink_database").empty();
         //addBackground();
         $.each(DB_MIKES, function(element){
@@ -62,6 +66,7 @@ $(document).ready(function() {
     });
 
     $("#check_stock").click(function(){ /* Retrieve in stock*/
+        highlightTab("#check_stock");
         $("#drink_database").empty();
         //addBackground();
         $.each(DB_SYSTEMBOLAGET, function(element){
@@ -72,6 +77,7 @@ $(document).ready(function() {
     });
 
     $("#shortage_alert").click(function(){ /* Retrieve on shortage alert*/
+        highlightTab("#shortage_alert");
         $("#drink_database").empty();
         //addBackground();
         $.each(DB_SYSTEMBOLAGET, function(element){
@@ -437,6 +443,15 @@ function resetPage() {
     $("#drink_database").empty();
     //addBackground();
     retrieveSystembolaget();
+}
+
+// highlight the currently displayed tab 
+function highlightTab(new_tab) {
+    // reset previous tab display
+    $(current_tab).css("background", "");   
+    // highlight current tab
+    $(new_tab).css("background", "#A4B9B6");
+    current_tab = new_tab;
 }
 
 function translate (index) {
