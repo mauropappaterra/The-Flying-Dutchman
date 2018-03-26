@@ -265,5 +265,5 @@ footer {
     border-width: thin;
     box-shadow: 2px -2px 10px black, 2px 0 10px black;
     pointer-events: auto;
-    position: absolute;
+    position: absolute; 
 }

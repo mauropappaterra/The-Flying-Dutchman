@@ -158,8 +158,8 @@ $(document).ready(function() {
                 $('#cre').html( $('#cre').html() - total);
                 newOrder.paid = true;  // mark transaction as paid
                 newOrder.bartender_id = "VIP Self-Service";
-                alert(payed_order_msg);
-            } else { alert(placed_order_msg); }
+                alert(payed_order[localStorage.getItem("index")]);
+            } else { alert(placed_order[localStorage.getItem("index")]); }
 
             SESSIONS_TRANSACTIONS.push(newOrder);
 
@@ -185,7 +185,7 @@ $(document).ready(function() {
             // Clear all fields
             resetPage();
 
-        } else { alert(empty_order_msg); }
+        } else { alert(empty_order[localStorage.getItem("index")]); }
     });
 
     $(document).on('click','.drink',function(){
@@ -452,19 +452,14 @@ function resetPage() {
 // highlight the currently displayed tab 
 function highlightTab(new_tab) {
     // reset previous tab display
-    //previous_tab = '.' + current_tab;
     previous_tab = '*#' + current_tab;
-
     $(previous_tab).css("background", "");
+    $(previous_tab).css("border-color", "#567973");
     $(previous_tab + 's').css("background", "");   // ugly solution...
-  //  $(previous_tab).removeClass("highlight");
-//    $(previous_tab).css("background", "#567973");
-//    $(previous_tab + 's').css("background", "#567973");   // ugly solution...
-
+    $(previous_tab + 's').css("border-color", "#567973"); 
     // highlight current tab
-
-//    $(new_tab).addClass("highlight");
-       $(new_tab).css("background", "#A4B9B6");    
+    $(new_tab).css("background", "#A4B9B6");   
+    $(new_tab).css("border-color", "#A4B9B6");
 }
 
 function translate (index) {
@@ -486,7 +481,4 @@ function translate (index) {
     $("*#pay").text(pl_order[index]);
     $("#hello").text(hello[index]);		
     $("#your_credit").text(your_credit[index]);		
-    empty_order_msg = (empty_order[index]);		
-    payed_order_msg = (payed_order[index]);		
-    placed_order_msg = (placed_order[index]);
 }

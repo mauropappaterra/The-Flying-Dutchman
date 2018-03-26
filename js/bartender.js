@@ -38,6 +38,7 @@ var undone = new Array();                    // keeps track of 'redone' actions
 $(document).ready(function() {
     retrieveOrders(); // retrieve all orders from the database
     addBackground();
+     highlightTab("*#all"); // highlight the 'all'-tab
 
     pushStateTo(done);  // push initial state to 'done' stack
     $("#redo").addClass("fade");
@@ -47,14 +48,14 @@ $(document).ready(function() {
     t1 = window.setInterval(function() {checkOnOrders()}, 2000);
     function checkOnOrders() {
         if (localStorage.getItem("NEWORDER") != 0) {
-            $("#check").css("background-color","red");                  
+            $("#retrieve_orders").css("background-color","red");                  
             localStorage.setItem("NEWORDER", 0);
         }          
     }
 
     // display new orders on click 
-    $("#check").click(function() {
-        $("#check").css("background-color","green");
+    $("#retrieve_orders").click(function() {
+        $("#retrieve_orders").css("background","");
         updateTransactions();
         clearUndone();
         clearDone();      
@@ -62,6 +63,7 @@ $(document).ready(function() {
     
     // filter orders by category
     $("#all").click(function() {
+        highlightTab("*#all");
         current_tab = "all";
         $("#all_orders").empty();
         retrieveOrders();
@@ -69,6 +71,7 @@ $(document).ready(function() {
     });
 
     $("#unpaid").click(function() {
+        highlightTab("*#unpaid");
         current_tab = "unpaid";
         $("#all_orders").empty();
         $.each(SESSIONS_TRANSACTIONS, function(element){
@@ -80,6 +83,7 @@ $(document).ready(function() {
     });
 
     $("#paid").click(function() {
+        highlightTab("*#paid");
         current_tab = "paid";
         $("#all_orders").empty();
         $.each(SESSIONS_TRANSACTIONS, function(element){
@@ -366,6 +370,19 @@ function rePrintTab() {   // reprint the currently displayed tab
         };
     });
     addBackground();
+}
+
+// highlight the currently displayed tab 
+function highlightTab(new_tab) {
+    // reset previous tab display
+    previous_tab = '*#' + current_tab;
+    $(previous_tab).css("background", "");
+    $(previous_tab).css("border-color", "#567973");
+    $(previous_tab + 's').css("background", "");   // ugly solution...
+    $(previous_tab + 's').css("border-color", "#567973"); 
+    // highlight current tab
+    $(new_tab).css("background", "#A4B9B6");
+    $(new_tab).css("border-color", "#A4B9B6");
 }
 
 function updateTransactions() { // update the current transactions, local storage

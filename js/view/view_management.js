@@ -164,6 +164,3 @@ var placed_order = ["Your order has been placed!",
                     "Il tuo ordine è stato inoltrato!",
                     "¡Su orden ha sido puesta!",
                     "Yer order has been placed!"];
-
-var empty_order_msg = empty_order[0];
-var placed_order_msg = placed_order[0];
