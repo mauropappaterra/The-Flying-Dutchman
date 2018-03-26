@@ -816,8 +816,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-    }, { // new beers, Same format 
-        
+    }, { // new beers, Same format   
         "article_id": "622011",
         "name": "San Miguel",
         "beer": true,
@@ -834,7 +833,6 @@ var DB_STOCK = [{
         "special": false
         
     }, {
-      
         "article_id": "680440",
         "name": "Staropramen",
         "beer": true,
@@ -850,7 +848,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false 
     }, {            
-       
         "article_id": "7627",
         "name": "Budweiser",
         "beer": true,
@@ -865,8 +862,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false 
-    }, {            
-       
+    }, {              
         "article_id": "509794",
         "name": "Seven Giraffes",
         "beer": true,
@@ -881,8 +877,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-    },{            
-        
+    },{               
         "article_id": "395750",
         "name": "Breznak",
         "beer": true,
@@ -928,7 +923,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false
     }, {
-      
         "article_id": "1193",
         "name": "Lapin Kulta",
         "beer": true,
@@ -989,7 +983,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false
     }, {
-      
         "article_id": "1163",
         "name": "Guinness",
         "beer": true,
@@ -1050,7 +1043,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false
     },  {
-
         "article_id": "191617",
         "name": "Mythos",
         "beer": true,
@@ -1143,7 +1135,7 @@ var DB_STOCK = [{
         "in_stock": 20,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
     }, {
         "article_id": "12730", // same as Sytembolaget
         "name": "Pinot Blanc",
@@ -1158,8 +1150,7 @@ var DB_STOCK = [{
         "in_stock": 340,
         "kosher": false,
         "ecologic": false,
-        "special": false,
-      
+        "special": false
     }, {            
        "article_id": "32777", // same as Sytembolaget
         "name": "Wild Strawberry Sparklingc",
@@ -1175,7 +1166,6 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-   
     }, {
         "article_id": "543793", // same as Sytembolaget
         "name": "Kiviks äppelvin",
@@ -1190,7 +1180,7 @@ var DB_STOCK = [{
         "in_stock": 210,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
     },{
         "article_id": "34443", // same as Sytembolaget
         "name": "Hermon",
@@ -1205,7 +1195,7 @@ var DB_STOCK = [{
         "in_stock": 22,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
     },{
         "article_id": "50229", // same as Sytembolaget
         "name": "Scarecrow",
@@ -1220,7 +1210,7 @@ var DB_STOCK = [{
         "in_stock": 221,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
    },{
         "article_id": "405628", // same as Sytembolaget
         "name": "Altissima",
@@ -1235,7 +1225,7 @@ var DB_STOCK = [{
         "in_stock": 27,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
         },{
         "article_id": "489875", // same as Sytembolaget
         "name": "Artisan Collection",
@@ -1250,7 +1240,7 @@ var DB_STOCK = [{
         "in_stock": 32,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
    },{
         "article_id": "567642", // same as Sytembolaget
         "name": "Eau de Vie de Kirsch Vieux",
@@ -1265,7 +1255,7 @@ var DB_STOCK = [{
         "in_stock": 62,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
    },{
         "article_id": "628817", // same as Sytembolaget
         "name": "Three Amigos",
@@ -1280,7 +1270,7 @@ var DB_STOCK = [{
         "in_stock": 92,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
     },{
         "article_id": "665387", // same as Sytembolaget
         "name": "Falcon",
@@ -1295,7 +1285,7 @@ var DB_STOCK = [{
         "in_stock": 86,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
       },{
         "article_id": "733468", // same as Sytembolaget
         "name": "Single Cask",
@@ -1310,7 +1300,7 @@ var DB_STOCK = [{
         "in_stock": 12,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
      }, {
         "article_id": "734572", // same as Sytembolaget
         "name": "Poli Grappa Barrel Pack",
@@ -1325,7 +1315,7 @@ var DB_STOCK = [{
         "in_stock": 11,
         "kosher": false,
         "ecologic": false,
-        "special": false,
+        "special": false
    },
     /*ekologisk*/
       {
@@ -1597,7 +1587,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false
     },  { 
-       
         "article_id": "676690",
         "name": "Roslags Svenska Hallon",
         "beer": false,
@@ -1628,7 +1617,6 @@ var DB_STOCK = [{
         "ecologic": false,
         "special": false
     }, { 
-       
         "article_id": "673941",
         "name": "Hine Rare",
         "beer": false,
@@ -1643,9 +1631,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-
-    }, {
-       
+    }, {  
         "article_id": "677091",
         "name": "Lochnagar",
         "beer": false,
@@ -1660,8 +1646,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-    }, {
-        
+    }, {   
         "article_id": "568606",
         "name": "Deanston",
         "beer": false,
@@ -1691,8 +1676,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-    }, {
-       
+    }, {   
         "article_id": "52586",
         "name": "Rum Plantation",
         "beer": false,
@@ -1752,8 +1736,7 @@ var DB_STOCK = [{
         "kosher": false,
         "ecologic": false,
         "special": false
-    }, { 
-       
+    }, {    
         "article_id": "548667",
         "name": "Collection 3",
         "beer": false,
