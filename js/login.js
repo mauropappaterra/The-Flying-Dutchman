@@ -1,92 +1,66 @@
 /** The Flying Dutchman
- *  login.js
- *  Created by 'Pirates of the Caribbean' on .. of February 2018.
+ *  index.js
+ *  Created by 'Pirates of the Caribbean' on 11 of February 2018.
  */
 
-/*LOGIN PAGE SCRIPTS
-* All scripts related to the login. Each page uses this script to keep track of the logged in user and their allowed access.
+/*INDEX PAGE SCRIPTS
+* All scripts related to the index page. Each page has their own scripts in a single js document.
+* Methods translate() and responsive() are unique for each individual page.
 */
 
-
-/* login functions */
-
-var user = "blank";
-
-function findByID(id, db) { // assuming 'id' is the first objectvalue    
-    var new_user;
-    $.each(db, function(element) {
-        var found = false;
-        $.each(this, function(element) {
-            if (this == id) { found = true; return false;}            
-        });
-        if (found == true) { new_user = this; return false; }
-    });
-    return new_user;
+if (localStorage.getItem("index") == null){
+    localStorage.setItem("index",0)
 }
 
-function typeToDB(usertype) {
-    if (usertype == 'customer')   { return DB_CUSTOMERS;}
-    if (usertype == 'bartender')  { return DB_BARTENDERS;}
-    if (usertype == 'management') { return DB_MANAGERS;}
+// login/gif related functions
+function openLogin(elem, show, user) {
+    localStorage.setItem('usertype', user);
+    $("#overlay").removeClass("hidden");
+    $('#loginBox').show();
 }
 
-// direct the user to correct page on login
-function goToUserPage(usertype) {
-    if      (usertype == 'customer')   { window.location.href = "customer.html";}
-    else if (usertype == 'bartender')  { window.location.href = "bartender.html";}
-    else if (usertype == 'management') { window.location.href = "management.html";}
-    else { window.location.href = "index.html";}
+function closeLogin(){
+    $("#overlay").addClass("hidden");
+    $('#loginBox').hide();
 }
 
-// login the user if they have valid credentials
-function loginDB(form) {
-    var username = form.user_name.value;
-    var password = form.password.value;
-    var db = typeToDB(localStorage.getItem('usertype'));
-    
-    $.each(db, function(index, element) {
-        if (this.username == username) {
-            if (this.password == password) {
-                user = this;
-                $.each(this, function(element) {
-                   localStorage.setItem('id', this); return false;                    
-                });
-                goToUserPage(localStorage.getItem('usertype')); // redirect to appropriate page 
-            } else { alert("Wrong password"); return false; }
-            return false;
-        }
-        if (index + 1 == db.length) {alert("Wrong username");}
-    });   
-}
-
-// check if the currently logged in user have the proper level of access to use the current page
-function checkAccess() {    
-    var ut = localStorage.getItem('usertype');
-    var page = window.location.pathname.split("/").pop().split(".")[0];
-    var id = (localStorage.getItem("id")).slice(1, localStorage.getItem("id").length);  // used to check if the user has unquestionale access
-    if ((ut == page) || (ut == null && page == 'index') || page == 'index' || id == "€$#=@") {return;}
-    else { // redirect to appropriate page if a user tries to access a page they are not allowed to
-        alert("Acces Denied");
-        goToUserPage(ut);
-    }
-}
-
-function logOut() { 
-    localStorage.clear();
-    window.location.href = "index.html";
-}
-
-// onload, check the users access and load the users name etc for display
-$(function () {
-    checkAccess();
-    user = findByID(localStorage.getItem("id"), typeToDB(localStorage.getItem("usertype")));
-    
-    if (!(user.vip)) {
-        $('#specials').hide();
-        $('#creditDisplay').hide();
-    }
+// change between displaying picture/gif
+function picToGif(ev) {
+    ev.preventDefault();
+    if($('#piratePic').css('display') == 'block') { // if the logo is currently displayed
+        $('#piratePic').hide();
+        $('#great').show();
    
-    $('#usr').html(user.first_name);
-    $('#cre').html(user.credit);
-});
+        document.getElementById('great').play();
+        $('body').css('background-color', "#62CB62");
+        $('body').css('background-image', 'none');
+    } else { // if the gif is currently displayed
+        $('#piratePic').show();
+        $('#great').hide();
+        document.getElementById('great').pause();
+        $('body').css('background-color', "white");
+        $('body').css('background-image', 'url("img/background/back12.png")');
+    }
+}
 
+function allowDrop(ev) { ev.preventDefault(); }
+
+function drag(ev) { ev.dataTransfer.setData("text", ev.target.id);}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.target.id;
+    alert(data);
+    document.getElementById(ev).style.display = "none";
+}
+
+function translate (index) {
+    $("#page_title").text(page_title[index]);
+    $("#welcome").text(welcome[index]);
+    $("#customer").text(customer[index]);
+    $("#bartender").text(bartender[index]);
+    $("#management").text(management[index]);
+    $("#user_name").text(user_name[index]);
+    $("#password").text(password[index]);
+    $("#login").text(login[index]);
+}
