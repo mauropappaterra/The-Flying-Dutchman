@@ -56,15 +56,15 @@ $(document).ready(function() {
     
     // filter drinks by category
     $(".all").click(function() {
-        highlightTab(this);
+        highlightTab("*#all");
         current_tab = "all";
         $("#drink_database").empty(); // empty current <div> contents
         retrieveDB();
-        $(this).addClass('highlight');
+     //   $(this).addClass('highlight');
     });
 
     $(".beers").click(function(){
-        highlightTab(this);
+        highlightTab("*#beers");
         current_tab = "beer";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -75,7 +75,7 @@ $(document).ready(function() {
     });
 
     $(".wines").click(function(){
-        highlightTab(this);
+        highlightTab("*#wines");
         current_tab = "wine";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -86,7 +86,7 @@ $(document).ready(function() {
     });
 
     $(".spirits").click(function(){
-        highlightTab(this);
+        highlightTab("*#spirits");
         current_tab = "spirit";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -97,7 +97,7 @@ $(document).ready(function() {
     });
 
     $(".kosher").click(function(){
-        highlightTab(this);
+        highlightTab("*#kosher");
         current_tab = "kosher";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -108,7 +108,7 @@ $(document).ready(function() {
     });
 
     $(".ecologic").click(function(){
-        highlightTab(this);
+        highlightTab("*#ecologic");
         current_tab = "ecologic";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -119,7 +119,7 @@ $(document).ready(function() {
     });
 
     $(".specials").click(function(){
-        highlightTab(this);
+        highlightTab("*#specials");
         current_tab = "special";
         $("#drink_database").empty(); // empty current <div> contents
         $.each(SESSION_STOCK_INFO, function(element){
@@ -454,12 +454,17 @@ function highlightTab(new_tab) {
     // reset previous tab display
     //previous_tab = '.' + current_tab;
     previous_tab = '*#' + current_tab;
-    
-    $(previous_tab).css("background", "#567973");
-    $(previous_tab + 's').css("background", "#567973");   // ugly solution...
+
+    $(previous_tab).css("background", "");
+    $(previous_tab + 's').css("background", "");   // ugly solution...
+  //  $(previous_tab).removeClass("highlight");
+//    $(previous_tab).css("background", "#567973");
+//    $(previous_tab + 's').css("background", "#567973");   // ugly solution...
 
     // highlight current tab
-    $(new_tab).css("background", "#A4B9B6");    
+
+//    $(new_tab).addClass("highlight");
+       $(new_tab).css("background", "#A4B9B6");    
 }
 
 function translate (index) {
