@@ -23,6 +23,7 @@ h1 {
 header{
     overflow:hidden;
     position: relative;
+    height: 10%;
     color: white;
 }
 
@@ -41,6 +42,7 @@ header{
     width: 70%;
     /*    height: 30%;*/
     /*    background-color: #0A2521;*/
+    bottom: 0px;
     float: left;
     overflow: auto;
 }
@@ -69,7 +71,6 @@ header{
     border-color: #567973;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
     box-shadow: 2px -2px 10px black, 2px 0 10px black;
 
 }
@@ -103,7 +104,7 @@ header{
 
 .drink_list {
     background-color: #3240ff;
-    width: 70%;
+    width: 68%;
     height: 500px;
     margin-left: 2%;
 
@@ -185,7 +186,7 @@ a:hover h4 {
     height: 12%;
     margin-right: 2%;
 
-    float: right;
+    float: left;
 
     overflow: hidden;
     border-top-right-radius: 1%;
@@ -195,10 +196,11 @@ a:hover h4 {
 .selection {
     width: 28%;
     /*    height: 350px; *//* 500px*/
-    height: 76.1%;
+    height: 380px;
     background-color: #567973;
+
     margin-right: 2%;
-    float: right;
+    float: left;
     overflow: auto;
 }
 
