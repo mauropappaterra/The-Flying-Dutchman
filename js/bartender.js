@@ -47,14 +47,14 @@ $(document).ready(function() {
     t1 = window.setInterval(function() {checkOnOrders()}, 2000);
     function checkOnOrders() {
         if (localStorage.getItem("NEWORDER") != 0) {
-            $("#check").css("background-color","red");                  
+            $("#retrieve_orders").css("background-color","red");                  
             localStorage.setItem("NEWORDER", 0);
         }          
     }
 
     // display new orders on click 
-    $("#check").click(function() {
-        $("#check").css("background-color","green");
+    $("#retrieve_orders").click(function() {
+        $("#retrieve_orders").css("background","");
         updateTransactions();
         clearUndone();
         clearDone();      
