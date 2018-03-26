@@ -55,7 +55,11 @@ h1 {
 }
 
 .menu a:hover li {
-    background-color: #ff2d1b;
+    background-color: #D6DDDC;
+    border: solid;
+    border-color: #D6DDDC;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .order_list {
@@ -111,7 +115,7 @@ h1 {
     border-style: solid;
     border-color: #C0CFCC;
     border-width: medium;
-    border-radius: 3%;
+    border-radius: 3px;
 
     width: 90%;
     height: 45px;

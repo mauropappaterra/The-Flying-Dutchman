@@ -450,6 +450,7 @@ body {
     }
     div.drink_list{
         width: 96%;
+        height: 100%;
         border-radius: 0px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -529,6 +530,7 @@ body {
         display: block;
       /*  position: absolute; */
         width: 96%;
+        height: 12%;
 
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
