@@ -44,18 +44,18 @@ var undone = new Array(); //keeps track of 'redone' actions
 
 $(document).ready(function() {
 
-    addBackground();
+    //addBackground();
     retrieveSystembolaget(); // load database on page load
 
     $("#drinks_list").click(function(){ /* Retrieve from Systembolaget*/
         $("#drink_database").empty();
-        addBackground();
+        //addBackground();
         retrieveSystembolaget();
     });
 
     $("#specials_db").click(function(){ /* Retrieve from Mike's Specials*/
         $("#drink_database").empty();
-        addBackground();
+        //addBackground();
         $.each(DB_MIKES, function(element){
             printToDOM(this);
         });
@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     $("#check_stock").click(function(){ /* Retrieve in stock*/
         $("#drink_database").empty();
-        addBackground();
+        //addBackground();
         $.each(DB_SYSTEMBOLAGET, function(element){
             if (checkStock(this.artikelid) > 0){
                 printToDOM(this);
@@ -73,7 +73,7 @@ $(document).ready(function() {
 
     $("#shortage_alert").click(function(){ /* Retrieve on shortage alert*/
         $("#drink_database").empty();
-        addBackground();
+        //addBackground();
         $.each(DB_SYSTEMBOLAGET, function(element){
             if (checkStock(this.artikelid) > 0 && checkStock(this.artikelid) < 15){
                 printToDOM(this);}
@@ -136,14 +136,33 @@ $(document).ready(function() {
                 if (flag){ // if not in stock add object to array
                     //alert("Not currently in stock!");
 
-                    var drinkIndex= getDrinkIndex(big_orders[i]);                 
+                    var drinkIndex= getDrinkIndex(big_orders[i]);
+
+                    is_wine = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vin") >= 0);
+
+                    is_beer = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("öl") >= 0 ||
+                               (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("larger") >= 0 ||
+                               (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("pale") >= 0 ||
+                               (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("ale") >= 0 );
+
+                    is_spirit = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vodka") >= 0) ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("cognac") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("bourbon") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("cider") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("gin") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("rom") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("sprit") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("blended") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("whiskey") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("whisky") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("malt") >= 0;
 
                     var newObject = {
                         "article_id": DB_SYSTEMBOLAGET[drinkIndex].artikelid, // same as Sytembolaget
                         "name": DB_SYSTEMBOLAGET[drinkIndex].namn +  ' ' + DB_SYSTEMBOLAGET[drinkIndex].namn2,
-                        "beer": DB_SYSTEMBOLAGET[drinkIndex].varugrupp.indexOf("öl") >= 0,
-                        "wine": DB_SYSTEMBOLAGET[drinkIndex].varugrupp.indexOf("vin") >= 0,
-                        "spirit": DB_SYSTEMBOLAGET[drinkIndex].varugrupp.indexOf("vodka") >= 0,
+                        "beer": is_beer,
+                        "wine": is_wine,
+                        "spirit":is_spirit,
                         "year": DB_SYSTEMBOLAGET[drinkIndex].year,
                         "country": DB_SYSTEMBOLAGET[drinkIndex].ursprunglandnamn,
                         "volume_ml": DB_SYSTEMBOLAGET[drinkIndex].volymiml,
@@ -396,9 +415,10 @@ function clearUndone() {
     $("#redo").addClass("fade");
 }
 
+/*
 function addBackground () {
     $("#drink_database").append('<div class="background_wallpaper"></div>');
-}
+}*/
 
 function resetPage() { 
     big_orders = [];
@@ -414,7 +434,7 @@ function resetPage() {
 
     $("#drink_selection").empty();
     $("#drink_database").empty();
-    addBackground();
+    //addBackground();
     retrieveSystembolaget();
 }
 
