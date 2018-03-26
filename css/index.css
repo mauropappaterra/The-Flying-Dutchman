@@ -93,16 +93,7 @@ input[type=submit]:hover {
     background-color: darkgreen;
 }
 
-.login {
-    display: none;
-    width: 100%;
-    margin: 80px 100px;
-    border-radius: 5px;
-    background-color: rgba(12,41,36,0.5);
-    padding: 20px;
-    position: absolute;
-    color: white;
-}
+
 
 .close {
     float:right;
@@ -182,16 +173,7 @@ input[type=submit]:hover {
     background-color: darkgreen;
 }
 
-.login {
-    display: none;
-    width: 100%;
-    margin-top: 50%;
-    margin: 80px 100px;
-    border-radius: 5px;
-    background-color: #0C2924;
-    padding: 20px;
-    position: absolute;
-}
+
 
 .close {
     float:right;
@@ -259,6 +241,14 @@ input[type=submit]:hover {
 }
 
 .login {
+    margin: 80px 100px;
+    margin-top: 50%;
+    margin: 80px 100px;
+}
+
+.login {
+    display: none;
+    position: absolute;
     border-radius: 5px;
     /*background-color: #0C2924;*/
     background-image: url("../img/wood3.jpg");
@@ -274,8 +264,8 @@ input[type=submit]:hover {
     box-shadow: 5px 5px 30px black;
     z-index: 10;
     clear: both;
-
 }
+
 
 input[type=text] {
     width: 100%;
@@ -329,7 +319,8 @@ input[type=submit]:hover {
     /*change the size of the login box to suit the phones*/
     /* iPhone 6s was my main focus but it looks fine on other phones sizes */
     .login{
-        background: linear-gradient(#254540,#0C2924);
+        background-image: url("../img/wood3.jpg");
+        background-size:cover;
         border-width: 1px;
         border-style: solid;
         border-radius: 10px;
