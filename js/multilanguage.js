@@ -20,7 +20,7 @@ $(document).ready(function () { /*Call translate() on menu (flags) selection*/
 
     $("#sve").click(function(){
         translate(1)
-        localStorage.setItem("index",1);
+        localStorage.setItem("index",1);      
     })
 
     $("#ita").click(function(){
