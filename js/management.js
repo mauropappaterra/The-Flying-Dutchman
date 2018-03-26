@@ -80,7 +80,7 @@ $(document).ready(function() {
         });
     });
 
-    
+
     $(document).on('click','#add1',function(){
         var article_id = $(this).parent().find('span').html();
         addOrder(article_id, 1);
@@ -107,7 +107,7 @@ $(document).ready(function() {
         pushOrderTo(done); // update done stack
         clearUndone();     // clear undone stack after a 'proper' action
     });
-    
+
     $("#pay").click(function(){
 
         if (big_orders.length > 0){
@@ -120,7 +120,7 @@ $(document).ready(function() {
                 "quantities": big_quantity,
                 "amount": big_total,
                 "timestamp": formatDate(new Date($.now()))
-            };         
+            };
             SESSIONS_ORDERS.push(newBigOrder);
 
             var flag;
@@ -141,9 +141,9 @@ $(document).ready(function() {
                     is_wine = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vin") >= 0);
 
                     is_beer = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("öl") >= 0 ||
-                               (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("larger") >= 0 ||
-                               (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("pale") >= 0 ||
-                               (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("ale") >= 0 );
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("larger") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("pale") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("ale") >= 0 );
 
                     is_spirit = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vodka") >= 0) ||
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("cognac") >= 0 ||
@@ -172,7 +172,7 @@ $(document).ready(function() {
                         "kosher": (DB_SYSTEMBOLAGET[drinkIndex].kosher == "1"),
                         "ecologic": (DB_SYSTEMBOLAGET[drinkIndex].ekologisk == "1"),
                         "special": false // all special drinks are already on the database!
-                    };                 
+                    };
                     SESSION_STOCK_INFO.push(newObject);
                 }
             }
@@ -182,10 +182,10 @@ $(document).ready(function() {
             sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
             //resetPage();
-            alert(placed_order_msg);
+            alert(placed_order[localStorage.getItem("index")]);
 //            alert("Order is placed message goes here!");
-            
-        } else { alert(empty_order_msg); }
+
+        } else { alert(empty_order[localStorage.getItem("index")]); }
 
     });
 
@@ -285,7 +285,7 @@ function printToDOM (element) {
 function addOrder (article_id, number) {
     i = -1;//$.inArray(article_id, big_orders);
     $.each(big_orders, function(index, element){ if (this == article_id) { i = index; return false;}});
-    
+
     if (i == -1){ // if drink is not already on the big_orders print to DOM
 
         $.each(DB_SYSTEMBOLAGET, function(element){
@@ -421,7 +421,7 @@ function addBackground () {
     $("#drink_database").append('<div class="background_wallpaper"></div>');
 }*/
 
-function resetPage() { 
+function resetPage() {
     big_orders = [];
     big_quantity = [];
     total = 0;
@@ -470,8 +470,4 @@ function translate (index) {
 
     $("#big_total").text(big_total[index]);
     $("#pay").text(pay[index]);
-
-    // Translating the alert messages
-    empty_order_msg = (empty_order[index]);		
-    placed_order_msg = (placed_order[index]);
 }
