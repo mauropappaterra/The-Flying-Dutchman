@@ -15,15 +15,16 @@ h1 {
 h2 {
     display: inline-block;
     float: none;
-    color: white;
+    color: #96b9a5;
     margin-left: 3%;
 }
 
 body{
-    background-image: url("../img/background/test.jpg");
+    background-image: url("../img/wood2.jpg");
     background-size: cover;
     max-width: 100%;
     background-repeat: repeat-y;
+    font-family: 'Oswald', sans-serif;
 }
 
 header{
@@ -32,16 +33,14 @@ header{
    /* background-color: #0A2521;
     background-color: #0A2521;*/
     height: 5%;
-
 }
 
 .title {
  /*   background-color: #0A2521;*/
     float: left;
     width: 100%;
-
-
 }
+
 .info {
     background-color: #797979;
     position: absolute;
@@ -261,7 +260,6 @@ footer .small_button{
     border: solid;
     border-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
 }
 
 #pay {
@@ -289,7 +287,6 @@ body {
     margin-left: 35%;
     margin-right: 35%;
     text-align:center;
-    float: center;
 }
 
 .dropdown {
@@ -299,18 +296,17 @@ body {
     width: 70%;
     color: white;
     z-index: 1;
-
-
 }
+
 .dropdown ul {
     list-style-type: none;
     padding: 0px;
 }
+
 .dropdown li{
     text-align: center;
     border-bottom: medium black;
 }
-
 
 .dropdown-content {
     display: none;
@@ -333,14 +329,11 @@ body {
     text-decoration: none;
     display: block;
     border-bottom: solid;
-
 }
-
 
 .dropdown ul a:hover{
     background-color: lightgrey;
 }
-
 
 .dropdown:hover .dropdown-content {
      display: block;
@@ -383,7 +376,6 @@ body {
     margin-left: 70px;
     display:inline-block;
     height:40px;
-    float:center;
 }
 
 
