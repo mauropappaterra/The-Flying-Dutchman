@@ -144,11 +144,18 @@ $(document).ready(function() {
 
                     var drinkIndex= getDrinkIndex(big_orders[i]);
 
-                    is_wine = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vin") >= 0);
+                    is_wine = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vin") >= 0 ||
+                              (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("fruktvin") >= 0 ||
+                              (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("shiraz") >= 0 ||
+                              (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("pinot") >= 0 ||
+                              (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("rött vin") >= 0 ||
+                              (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vitt vin") >= 0 ||
+                              (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("champagne") >= 0);
 
                     is_beer = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("öl") >= 0 ||
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("larger") >= 0 ||
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("pale") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("stout") >= 0 ||
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("ale") >= 0 );
 
                     is_spirit = ((DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("vodka") >= 0) ||
@@ -161,6 +168,10 @@ $(document).ready(function() {
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("blended") >= 0 ||
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("whiskey") >= 0 ||
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("whisky") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("sake") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("aquavit") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("chartreuse") >= 0 ||
+                        (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("likör") >= 0 ||
                         (DB_SYSTEMBOLAGET[drinkIndex].varugrupp).toLowerCase().indexOf("malt") >= 0;
 
                     var newObject = {
