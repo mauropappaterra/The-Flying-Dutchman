@@ -199,10 +199,10 @@ $(document).ready(function() {
             sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(SESSION_STOCK_INFO));
 
             //resetPage();
-            alert(placed_order[localStorage.getItem("index")]);
+            alert(message_placed_order[localStorage.getItem("index")]);
 //            alert("Order is placed message goes here!");
 
-        } else { alert(empty_order[localStorage.getItem("index")]); }
+        } else { alert(message_empty_order[localStorage.getItem("index")]); }
 
     });
 

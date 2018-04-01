@@ -19,9 +19,9 @@
 */
 
 var title = ["Drink Delivery Database System",
-             "Drink Delivery Database System",
-             "Sistema di database di consegna",
-             "Sistema de base de datos de entrega",
+             "Databas för Drikesleverance",
+             "Sistema di database per consegne",
+             "Sistema de base de datos para entregas",
              "Drink Delivery Database System"];
 
 var stock_order = ["Stock Order",
@@ -34,7 +34,7 @@ var login_as = ["Log in as:",
                 "Logga in som:",
                 "Accedi come:",
                 "Iniciar sesión como:",
-                "Log in as:"];
+                "The King:"];
 
  var drinks_list = ["Full Drinks List",
                     "Full drinklista",
@@ -151,15 +151,14 @@ var pay= ["Place Stock Order",
         "Realizar pedido",
         "Place Stock Order"];
 
-var empty_order = ["You must select your drinks before placing an order!",
+// Alert pop-up messages
+var message_empty_order = ["You must select your drinks before placing an order!",
                    "Du måste välja dina drycker innan du gör din beställning!",
                    "È necessario selezionare le bevande prima di effettuare un ordine!",
                    "¡Debe seleccionar sus bebidas antes de realizar un pedido!",
                    "Ye must select yer drinks afore placin' an order!"];
 
-
-
-var placed_order = ["Your order has been placed!",
+var message_placed_order = ["Your order has been placed!",
                     "Din beställning är skickad!",
                     "Il tuo ordine è stato inoltrato!",
                     "¡Su orden ha sido puesta!",

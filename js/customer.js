@@ -158,8 +158,8 @@ $(document).ready(function() {
                 $('#cre').html( $('#cre').html() - total);
                 newOrder.paid = true;  // mark transaction as paid
                 newOrder.bartender_id = "VIP Self-Service";
-                alert(payed_order[localStorage.getItem("index")]);
-            } else { alert(placed_order[localStorage.getItem("index")]); }
+                alert(message_payed_order[localStorage.getItem("index")]);
+            } else { alert(message_placed_order[localStorage.getItem("index")]); }
 
             SESSIONS_TRANSACTIONS.push(newOrder);
 
@@ -185,7 +185,7 @@ $(document).ready(function() {
             // Clear all fields
             resetPage();
 
-        } else { alert(empty_order[localStorage.getItem("index")]); }
+        } else { alert(message_empty_order[localStorage.getItem("index")]); }
     });
 
     $(document).on('click','.drink',function(){

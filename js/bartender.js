@@ -154,7 +154,10 @@ $(document).ready(function() {
         
         /* Undo-Redo */
         pushStateTo(done);  // update done stack
-        clearUndone();      // clear undone stack after a 'proper' action        
+        clearUndone();      // clear undone stack after a 'proper' action
+
+        /* Alert user*/
+        alert(message_delete_order(find_transaction_id,parseInt(localStorage.getItem('index'))))
     });
 
     $(document).on('click','.pay',function() {
@@ -182,6 +185,9 @@ $(document).ready(function() {
         /* Undo-Redo */
         pushStateTo(done);  // update done stack
         clearUndone();      // clear undone stack after a 'proper' action
+
+        /* Alert user*/
+        alert(message_mark_paid(find_transaction_id,parseInt(localStorage.getItem('index'))))
     });
     
     $(document).on('click','#undo',function() {

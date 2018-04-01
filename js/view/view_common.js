@@ -19,13 +19,13 @@
 */
 
 var page_title = ["The Flying Dutchman",
-    "Flygande Holländaren",
-    "L'Olandese Volante",
-    "El Holandés Volador",
-    "Th' Flyin' Dutchman"]
+                    "Flygande Holländaren",
+                    "L'Olandese Volante",
+                    "El Holandés Volador",
+                    "Th' Flyin' Dutchman"]
 
 var logout = ["Log Out",
-    "Logga Ut",
-    "Esci",
-    "Cerrar Sesión",
-    "Log Out"]
+            "Logga Ut",
+            "Esci",
+            "Cerrar Sesión",
+            "Scutter"]
