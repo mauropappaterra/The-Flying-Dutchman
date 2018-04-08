@@ -260,7 +260,11 @@ function printToDOM (element) {
     }
 
     if (checkStock(element.artikelid) == 0) {
-        classes = ' class ="textGrey"';
+        classes = ' class ="textLightGreen"';
+    }
+
+    if (checkStock(element.artikelid) > 15) {
+        classes = ' class ="textDarkGreen"';
     }
 
     $("#drink_database").append(

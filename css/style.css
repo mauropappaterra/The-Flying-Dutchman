@@ -197,7 +197,10 @@ a:active {
     border-color: red;
 }
 
-.textGrey{
-    color: #676767;
+.textDarkGreen{
+    color: #15443d;
 }
 
+.textLightGreen{
+    color: #96b9a5;
+}
