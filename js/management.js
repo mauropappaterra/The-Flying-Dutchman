@@ -285,13 +285,13 @@ function printToDOM (element) {
 
         '<div class="c3">' +
         '<br><br><br>' +
-        '<h2 '+ classes +'>Current Stock <br> '+ checkStock(element.artikelid) +'</h2>' +
+        '<h2 '+ classes +'><span class="inStock">Current Stock</span> <br> '+ checkStock(element.artikelid) +'</h2>' +
         '</div>' +
 
         '<div class="c4">' +
-        '<a class="add_button add_one" id="add1"><h4>Add +1</h4></a>' +
-        '<a class="add_button add_ten" id="add10"><h4>Add +10</h4></a>' +
-        '<a class="add_button add_hundred" id="add100"><h4>Add +100</h4></a>' +
+        '<a class="add_button" id="add1"><h4 class="add_one">Add +1</h4></a>' +
+        '<a class="add_button" id="add10"><h4 class="add_ten">Add +10</h4></a>' +
+        '<a class="add_button" id="add100"><h4 class="add_hundred">Add +100</h4></a>' +
         '<span hidden>' + element.artikelid + '</span>'+
         '<span hidden>' + element.prisinklmoms +'</span>'+
         '</div>'+
@@ -492,7 +492,7 @@ function translate (index) {
     $(".cost").text(cost[index]);
     // <end> Translating the drink's details
 
-    $("#inStock").text(inStock[index]);
+    $(".inStock").text(inStock[index]);
     $(".add_one").text(add_one[index]);
     $(".add_ten").text(add_ten[index]);
     $(".add_hundred").text(add_hundred[index]);
