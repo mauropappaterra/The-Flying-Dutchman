@@ -289,9 +289,9 @@ function printToDOM (element) {
         '</div>' +
 
         '<div class="c4">' +
-        '<a class="add_button" id="add1"><h4>Add +1</h4></a>' +
-        '<a class="add_button" id="add10"><h4>Add +10</h4></a>' +
-        '<a class="add_button" id="add100"><h4>Add +100</h4></a>' +
+        '<a class="add_button add_one" id="add1"><h4>Add +1</h4></a>' +
+        '<a class="add_button add_ten" id="add10"><h4>Add +10</h4></a>' +
+        '<a class="add_button add_hundred" id="add100"><h4>Add +100</h4></a>' +
         '<span hidden>' + element.artikelid + '</span>'+
         '<span hidden>' + element.prisinklmoms +'</span>'+
         '</div>'+
@@ -493,9 +493,9 @@ function translate (index) {
     // <end> Translating the drink's details
 
     $("#inStock").text(inStock[index]);
-    $("#add_one").text(add_one[index]);
-    $("#add_ten").text(add_ten[index]);
-    $("#add_hundred").text(add_hundred[index]);
+    $(".add_one").text(add_one[index]);
+    $(".add_ten").text(add_ten[index]);
+    $(".add_hundred").text(add_hundred[index]);
 
     $("#big_total").text(big_total[index]);
     $("#pay").text(pay[index]);
