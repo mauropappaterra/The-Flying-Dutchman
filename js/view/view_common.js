@@ -22,10 +22,16 @@ var page_title = ["The Flying Dutchman",
                     "Flygande Holländaren",
                     "L'Olandese Volante",
                     "El Holandés Volador",
-                    "Th' Flyin' Dutchman"]
+                    "Th' Flyin' Dutchman"];
 
 var logout = ["Log Out",
             "Logga Ut",
             "Esci",
             "Cerrar Sesión",
-            "Scutter"]
+            "Scutter"];
+
+var login_as = ["Log in as:",
+                "Logga in som:",
+                "Accesso come:",
+                "Sesión de:",
+                "The King:"];

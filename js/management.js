@@ -268,7 +268,7 @@ function printToDOM (element) {
         classes = ' class ="textLightGreen"';
     }
 
-    if (checkStock(element.artikelid) > 15) {
+    if (checkStock(element.artikelid) >= 15) {
         classes = ' class ="textDarkGreen"';
     }
 

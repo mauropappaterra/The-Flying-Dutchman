@@ -23,31 +23,25 @@ var title = ["Bartender View",
             "Bartendersidan",
             "Vista Barista",
             "Vista de barman",
-            "Bartender View"]
-
-var login_as = ["Log in as:",
-                "Logga in som:",
-                "Accedi come:",
-                "Iniciar sesión como:",
-                "Log in as:"]
+            "Bartender View"];
 
 var orders_q= ["Orders Queue",
                 "Beställningar kö",
                 "Coda ordini",
                 "Pedidos en cola",
-                "Orders Queue"]
+                "Orders Queue"];
 
 var cancel_order= ["Cancel Order",
                     "Avbryt beställning",
                     "Annulla Ordine",
                     "Cancelar orden",
-                    "Cancel Order"]
+                    "Cancel Order"];
 
 var mark_paid= ["Mark as Paid",
                 "Markera som betald",
                 "Contrassegna come pagato",
                 "Marcar como pagado",
-                "Mark as Paid"]
+                "Mark as Paid"];
 
 
 // Alert pop-up messages

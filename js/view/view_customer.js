@@ -43,7 +43,7 @@ var credit= ["Credit:",
 // The drink list panel
 var drink_list= ["Our Drink List",
                 "Vår drycklista",
-                "La nostra lista delle bevande",
+                "Nostra lista de bevande",
                 "Nuestra lista de bebidas",
                 "Booty Chest"
 ];
@@ -71,8 +71,8 @@ var wines= ["Wines",
 
 var spirits= ["Spirits",
             "Sprit",
-            "Sprits",
-            "Bebida Espirituosa",
+            "Distillate",
+            "Destiladas",
             "Rons!"
 ];
 
@@ -151,5 +151,5 @@ var message_placed_order = ["Your order has been placed! Direct to the counter a
                     "Il tuo ordine è stato inoltrato! Direttamente al banco e paga il tuo ordine prima di poter ritirare i tuoi drink.",
                     "¡Su orden ha sido puesta! Dirígete al mostrador y paga tu pedido antes de que puedas recoger tus bebidas.",
                     "Yer order has been placed! Direct t' th' counter 'n pay fer yer order afore ye can pick up yer drinks."         
-                 ] ;
+                   ];
 

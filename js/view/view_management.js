@@ -30,12 +30,6 @@ var stock_order = ["Stock Order",
                    "Orden de Stock",
                     "Stock Order"];
 
-var login_as = ["Log in as:",
-                "Logga in som:",
-                "Accedi come:",
-                "Iniciar sesión como:",
-                "The King:"];
-
  var drinks_list = ["Full Drinks List",
                     "Full drinklista",
                     "Lista completa",
