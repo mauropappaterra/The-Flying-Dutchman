@@ -187,8 +187,8 @@ h1 {
     padding-right: 1.5%;
     margin: 1%;
 
-    border-style: dashed;
-    border-color: grey;
+    border-style: solid;
+    border-color: white;
     border-width: thin;
 
     text-align: center;
