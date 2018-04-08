@@ -113,7 +113,7 @@ header{
     border-radius: 4%;
 
     width: 90%;
-    height: 200px;
+    height: 250px;
 
     float: left;
 
@@ -213,8 +213,8 @@ a:hover h4 {
     margin: 2%;
     margin-bottom: 10%;
 
-    border-style: dashed;
-    border-color: #254540;
+    border-style: solid;
+    border-color: #A4B9B6;
     border-width: thin;
 
     width: 92%;

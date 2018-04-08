@@ -271,16 +271,16 @@ function printToDOM (element) {
         '</div>' +
 
         '<div class="c2">'+
-        '<b>Name:</b> ' + element.namn + ' ' + element.namn2 + '<br>' +
-        '<b>Type:</b> ' + element.varugrupp + '<br>' +
-        '<b>Price:</b> SEK ' + parseInt(element.prisinklmoms) + ':-<br>' +
-        '<b>Country:</b> ' + element.ursprunglandnamn + '<br>' +
-        '<b>Volume:</b> ' + element.volymiml + '<br>' +
-        '<b>Alcohol:</b> ' + element.alkoholhalt + '<br>' +
-        '<b>ID:</b> '+ element.artikelid +'<br>' +
-        '<b>Producer:</b> '+ element.producent +'<br>' +
-        '<b>Delivery:</b> '+ element.leverantor +'<br>' +
-        '<b>Cost per Liter:</b> SEK '+ element.prisperliter + '<br>' +
+        '<b class="drink_name">Name:</b> ' + element.namn + ' ' + element.namn2 + '<br>' +
+        '<b class="type">Type:</b> ' + element.varugrupp + '<br>' +
+        '<b class="price">Price:</b> SEK ' + parseInt(element.prisinklmoms) + ':-<br>' +
+        '<b class="country">Country:</b> ' + element.ursprunglandnamn + '<br>' +
+        '<b class="volume">Volume:</b> ' + element.volymiml + '<br>' +
+        '<b class="alcohol">Alcohol:</b> ' + element.alkoholhalt + '<br>' +
+        '<b class="drink_id">ID:</b> '+ element.artikelid +'<br>' +
+        '<b class="producer">Producer:</b> '+ element.producent +'<br>' +
+        '<b class="delivery">Delivery:</b> '+ element.leverantor +'<br>' +
+        '<b class="cost">Cost per Liter:</b> SEK '+ element.prisperliter + '<br>' +
         '</div>' +
 
         '<div class="c3">' +
@@ -480,16 +480,16 @@ function translate (index) {
     $("#shortage_alert").text(shortage_alert[index]);
 
     // Translating the drink's details
-    $("#drink_name").text(drink_name[index]);
-    $("#type").text(type[index]);
-    $("#price").text(price[index]);
-    $("#country").text(country[index]);
-    $("#volume").text(volume[index]);
-    $("#alcohol").text(alcohol[index]);
-    $("#drink_id").text(drink_id[index]);
-    $("#producer").text(producer[index]);
-    $("#delivery").text(delivery[index]);
-    $("#cost").text(cost[index]);
+    $(".drink_name").text(drink_name[index]);
+    $(".type").text(type[index]);
+    $(".price").text(price[index]);
+    $(".country").text(country[index]);
+    $(".volume").text(volume[index]);
+    $(".alcohol").text(alcohol[index]);
+    $(".drink_id").text(drink_id[index]);
+    $(".producer").text(producer[index]);
+    $(".delivery").text(delivery[index]);
+    $(".cost").text(cost[index]);
     // <end> Translating the drink's details
 
     $("#inStock").text(inStock[index]);

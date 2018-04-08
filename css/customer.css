@@ -146,7 +146,7 @@ header h2 {
     border-radius: 3%;
 
     width: 170px;
-    height: 280px;
+    height: 335px;
 
     float: left;
     text-align: center;
@@ -209,8 +209,8 @@ header h2 {
     margin: 2%;
     margin-bottom: 10%;
 
-    border-style: dashed;
-    border-color: #254540;
+    border-style: solid;
+    border-color: #A4B9B6;
     border-width: thin;
 
     width: 92%;
