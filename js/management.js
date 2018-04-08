@@ -84,6 +84,11 @@ $(document).ready(function() {
             if (checkStock(this.artikelid) > 0 && checkStock(this.artikelid) < 15){
                 printToDOM(this);}
         });
+
+        $.each(DB_MIKES, function(element){
+            if (checkStock(this.artikelid) > 0 && checkStock(this.artikelid) < 15){
+                printToDOM(this);}
+        });
     });
 
 
