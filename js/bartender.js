@@ -8,26 +8,6 @@
 * Method translate() is unique for each individual page and can be found at the bottom of each script.
 */
 
-/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-if (sessionStorage.getItem("SESSION_TRANSACTIONS") == null){
-    sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
-    //alert("Transaction database loaded from script!")
-} /*else {
-    alert("Transaction database will be loaded from session storage!")
-}*/
-
-if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
-    sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
-    //alert("Stock database loaded from script!")
-} /*else {
-    alert("Stock database will be loaded from session storage!")
-}*/
-
-var SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
-//alert(":::: THE FULL TRANSACTION DATABASE ::::: <br> " + SESSIONS_TRANSACTIONS.toSource());
-var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
-/* END SESSION STORAGE DATA LOADING*/
-
 var current_bartender = localStorage.getItem('id');
 var current_tab = "all";
 

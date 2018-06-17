@@ -7,7 +7,6 @@
 * All scripts related to the login. Each page uses this script to keep track of the logged in user and their allowed access.
 */
 
-
 /* login functions */
 
 var user = "blank";

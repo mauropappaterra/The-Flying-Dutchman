@@ -112,6 +112,115 @@ body {
     color: white;
 }
 
+#about{
+    background-color: rgba(251, 0, 27,0.6);
+    color: rgb(255, 255, 255);
+
+    border-style: solid;
+    border-right-style: none;
+    position: fixed;
+    border-width: 0.5px;
+    border-color: rgb(255, 255, 255);
+    height: 14px;
+    width: 10px;
+    right: 0px;
+    font-family: "Consolas", "Menlo", "Courier", monospace;
+    font-size: 15px;
+    padding: 7px;
+    z-index: 999;
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+#about:hover {
+    animation: appear 500ms cubic-bezier(.83,.67,.83,.67)forwards;
+}
+
+@keyframes appear {
+    0% {width: 15px;}
+    20% {width: 20px;}
+    40% {width: 60px;}
+    60% {width: 100px;}
+    80% {width: 140px;}
+    100% {width: 180px;}
+}
+@keyframes whiteLetters {
+    from {color: black;}
+    to {color: white;}
+}
+
+#about_window, #passwords_window {
+    position: fixed;
+    border-radius: 5px;
+
+    background-color: rgba(255, 0, 0, 0.5);
+    background-size:cover;
+    padding: 20px;
+
+    width: 40%;
+    height: 500px;
+    margin-top: 5%;
+
+    margin-left: 30%;
+    margin-right: 30%;
+
+    box-shadow: 5px 5px 30px black;
+
+    clear: both;
+    z-index: 999;
+}
+
+#passwords_window {
+    background-color: rgba(51, 201, 45, 0.5);
+}
+
+#passwords{
+    background-color: rgba(0, 255, 0,0.6);
+    color: rgb(255, 255, 255);
+
+    border-style: solid;
+    border-right-style: none;
+    position: fixed;
+    border-width: 0.5px;
+    border-color: rgb(255, 255, 255);
+    height: 14px;
+    width: 10px;
+    right: 0px;
+    top: 45px;
+    font-family: "Consolas", "Menlo", "Courier", monospace;
+    font-size: 15px;
+    padding: 7px;
+    z-index: 999;
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+#passwords:hover {
+    animation: appear 500ms cubic-bezier(.83,.67,.83,.67)forwards;
+}
+
+.full_length {
+    width: 180px;
+}
+
+.scrollable {
+    overflow: auto;
+    height: 400px;
+}
+
+.close_window{
+    font-size: 25px;
+    cursor: pointer;
+    float: right;
+}
+
+
 .close {
     float:right;
     display:inline-block;
@@ -151,7 +260,6 @@ body {
     display: block;
     text-align: center;
     font-size: 150%;
-
 }
 
 #barManLog{
@@ -327,6 +435,7 @@ input[type=submit]:hover {
     .languages {
         margin-left: 2%
     }
+
     .login {
         width: 65%;
         margin-left: 10%;

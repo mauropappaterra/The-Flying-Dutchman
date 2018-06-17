@@ -151,7 +151,7 @@ var DB_CUSTOMERS = [
     },
     {   //Non-VIP customer with no credit.
         "customer_id": "C00012",
-        "password": "1db930e727e73c027fc58b5554935be8",
+        "password": "nonvip123",
         "username": "janhei",
         "first_name": "Jancsi",
         "last_name": "Heiman",
@@ -393,11 +393,11 @@ var DB_MANAGERS =[
     },
     {
         "manager_id": "M00001",
-        "password": "man1",
-        "username": "man1",
-        "first_name": "Nika",
-        "last_name": "Proulx",
-        "email": "nika.proulx@it.uu.se",
+        "password": "mauro123",
+        "username": "mauro",
+        "first_name": "Mauro",
+        "last_name": "Pappaterra",
+        "email": "mauro.pappaterra@gmail.com",
         "phone": "0706412621"
     },
     {
@@ -2011,3 +2011,39 @@ var DB_STOCK = [{
         "special": true
     } 
 ];
+
+/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
+if (sessionStorage.getItem("SESSION_TRANSACTIONS") == null){
+    sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
+    sessionStorage.setItem("SESSION_USER_INFO",JSON.stringify(DB_CUSTOMERS));
+    sessionStorage.setItem("transaction_counter",20);
+    //alert("User and Transaction databases loaded from script!")
+} /*else {
+    alert("User and Transaction databases will be loaded from session storage!")
+  }*/
+
+if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
+    sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
+    //alert("Stock database loaded from script!")
+} /*else {
+    alert("Stock database will be loaded from session storage!")
+}*/
+
+if (sessionStorage.getItem("SESSION_ORDERS") == null){
+    sessionStorage.setItem("SESSION_ORDERS",JSON.stringify(DB_ORDERS));
+    sessionStorage.setItem("orders_counter",15);
+    //alert("Orders database loaded from script!")
+} /*else {
+    alert("Orders database will be loaded from session storage!")
+}*/
+
+var SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
+var SESSION_USER_INFO = JSON.parse(sessionStorage.getItem("SESSION_USER_INFO"));
+var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
+var SESSIONS_ORDERS = JSON.parse(sessionStorage.getItem("SESSION_ORDERS"));
+
+var transactions_counter = parseInt(sessionStorage.getItem("transaction_counter"));
+var orders_counter = sessionStorage.getItem("orders_counter");
+//alert(SESSIONS_ORDERS.toSource())
+
+/* END SESSION STORAGE DATA LOADING*/

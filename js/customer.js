@@ -9,34 +9,6 @@
 * Method translate() is unique for each individual page and can be found at the bottom of each script.
 */
 
-/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-if (sessionStorage.getItem("SESSION_TRANSACTIONS") == null){
-    sessionStorage.setItem("SESSION_TRANSACTIONS",JSON.stringify(DB_TRANSACTIONS));
-    sessionStorage.setItem("SESSION_USER_INFO",JSON.stringify(DB_CUSTOMERS));
-    sessionStorage.setItem("transaction_counter",20);
-    //alert("User and Transaction databases loaded from script!")
-} /*else {
-    alert("User and Transaction databases will be loaded from session storage!")
-  }*/
-
-if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
-    sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
-    //alert("Stock database loaded from script!")
-} /*else {
-    alert("Stock database will be loaded from session storage!")
-}*/
-
-var SESSIONS_TRANSACTIONS = JSON.parse(sessionStorage.getItem("SESSION_TRANSACTIONS"));
-var SESSION_USER_INFO = JSON.parse(sessionStorage.getItem("SESSION_USER_INFO"));
-var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
-var transactions_counter = parseInt(sessionStorage.getItem("transaction_counter"));
-
-//alert("::::::THE FULL TRANSACTION DATABASE: " + SESSIONS_TRANSACTIONS.toSource());
-//alert("Current transaction counter: " + transactions_counter);
-//alert("::::::THE USER DATABASE: " + SESSION_USER_INFO.toSource());
-
-/* END SESSION STORAGE DATA LOADING*/
-
 var order = [];    // keeps list of drinks ordered
 var quantity = []; // keeps list of quantities with matching indexes
 var total = 0;     // calculates the total

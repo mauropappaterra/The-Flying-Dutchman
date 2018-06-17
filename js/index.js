@@ -54,6 +54,36 @@ function drop(ev) {
     document.getElementById(ev).style.display = "none";
 }
 
+$(document).on('click','#about',function() {
+    $("#passwords_window").addClass("hidden");
+    $("#passwords").removeClass("full_length");
+
+    $("#about").addClass("full_length");
+    $("#about_window").removeClass("hidden");
+
+    $("#overlay").removeClass("hidden");
+});
+
+$(document).on('click','#passwords',function() {
+    $("#about_window").addClass("hidden");
+    $("#about").removeClass("full_length");
+
+    $("#passwords_window").removeClass("hidden");
+    $("#passwords").addClass("full_length");
+
+    $("#overlay").removeClass("hidden");
+});
+
+$(document).on('click','.close_window',function() {
+    $("#about_window").addClass("hidden");
+    $("#passwords_window").addClass("hidden");
+
+    $("#about").removeClass("full_length");
+    $("#passwords").removeClass("full_length");
+
+    $("#overlay").addClass("hidden");
+});
+
 function translate (index) {
     $("#page_title").text(page_title[index]);
     $("#welcome").text(welcome[index]);

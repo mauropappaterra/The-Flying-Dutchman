@@ -6,11 +6,11 @@
 
 <h2>Group Members are:</h2>
 <ul>
-    <li>Hassan Odimi</li>
-    <li>Elsa Slättegård</li>
-    <li>Jenny Olsson</li>
-    <li>Yawen Yi</li>
     <li>Mauro José Pappaterra</li>
+    <li>Jenny Olsson</li>
+    <li>Hassan Odimi</li>
+    <li>Yawen Yi</li>
+    <li>Elsa Slättegård</li>
 </ul>
 
 <hr>

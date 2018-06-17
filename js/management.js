@@ -8,30 +8,6 @@
 * Method translate() is unique for each individual page and can be found at the bottom of each script.
 */
 
-/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-if (sessionStorage.getItem("SESSION_STOCK_INFO") == null){
-    sessionStorage.setItem("SESSION_STOCK_INFO",JSON.stringify(DB_STOCK));
-    //alert("Stock database loaded from script!")
-} /* else {
-    alert("Stock database will be loaded from session storage!")
-}*/
-
-if (sessionStorage.getItem("SESSION_ORDERS") == null){
-    sessionStorage.setItem("SESSION_ORDERS",JSON.stringify(DB_ORDERS));
-    sessionStorage.setItem("orders_counter",15);
-    //alert("Orders database loaded from script!")
-} /*else {
-    alert("Orders database will be loaded from session storage!")
-}*/
-
-var SESSION_STOCK_INFO = JSON.parse(sessionStorage.getItem("SESSION_STOCK_INFO"));
-var orders_counter = sessionStorage.getItem("orders_counter");
-
-var SESSIONS_ORDERS = JSON.parse(sessionStorage.getItem("SESSION_ORDERS"));
-//alert(SESSIONS_ORDERS.toSource())
-/* END SESSION STORAGE DATA LOADING*/
-
-
 var big_orders = []; // keeps list of drinks ordered
 var big_quantity = []; // keeps list of quantities with matching indexes
 var big_total = 0; // calculates the big_total
