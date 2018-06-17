@@ -205,8 +205,9 @@ body {
     animation: appear 500ms cubic-bezier(.83,.67,.83,.67)forwards;
 }
 
-.full_length {
+#passwords.full_length,#about.full_length{
     width: 180px;
+    pointer-events: none;
 }
 
 .scrollable {
