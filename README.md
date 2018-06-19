@@ -1,6 +1,6 @@
 <h1>Welcome to The Flying Dutchman!</h1>
 
-<p>This is our submission for User Interface I. <a href="http://188.226.149.149/The_Flying_Dutchman/index.html">Online Version</a></p>
+<p>This is our submission for User Interface I. <a href="http://http://www.engpappa.com/dutchman">Online Version</a></p>
 
 <img src="https://i.imgur.com/UZSXGaC.png">
 
